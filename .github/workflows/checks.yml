@@ -1,0 +1,62 @@
+name: Checks
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  prettier:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'pnpm'
+      - name: Install Node Dependencies
+        run: pnpm install
+      - name: Check with prettier
+        run: pnpm run lint:prettier
+
+  eslint:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      checks: write
+      pull-requests: read
+    steps:
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'pnpm'
+      - name: Install Node Dependencies
+        run: pnpm install
+      - name: Generate svelte-kit types
+        run: pnpm exec svelte-kit sync
+      - name: Save Code Linting Report JSON
+        run: pnpm run lint:eslint --output-file eslint_report.json --format json
+        continue-on-error: ${{ github.actor != 'dependabot[bot]' }} # as dependabot does not allow annotations, still fail
+      - name: Annotate Code Linting Results
+        uses: ataylorme/eslint-annotate-action@v2
+        if: ${{ github.actor != 'dependabot[bot]' }} # dependabot doesn't have permissions
+        with:
+          fail-on-warning: true
+          markdown-report-on-step-summary: true
+          report-json: 'eslint_report.json'
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: eslint_report
+          path: eslint_report.json
+          retention-days: 7
