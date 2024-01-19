@@ -1,8 +1,46 @@
 ---
-import Layout from '@layouts/Layout.astro';
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/homepage/Hero.astro';
+import ReadMore from '../components/homepage/ReadMore.astro';
+import Events from '../components/homepage/Events.astro';
+import Testimonials from '../components/Testimonials.svelte';
+
+import AndreaPortrait from '../data/assets/Portrait-Andrea.jpg';
+import LenaPortrait from '../data/assets/Portrait-Lena.jpeg';
+
+type Testimonial = {
+	name: string;
+	age: number;
+	text: string;
+	image: string;
+};
+
+const testimonials: Testimonial[] = [
+	{
+		name: 'Andrea',
+		age: 22,
+		text: 'Young Vision bedeutet für mich Verbundenheit mit mir selbst und anderen Leuten sowie Leichtigkeit und einfach einen Ort zu haben wo man für einen Moment mal den Alltagsstress beiseite lassen kann',
+		image: AndreaPortrait.src,
+	},
+	{
+		name: 'Lena',
+		age: 17,
+		text: 'YoungVision bedeutet für mich, mich mit mir selbst zu beschäftigen, mich (besser) kennenzulernen, eine wundervolle Gemeinschaft mit absolut faszinierenden Begegnungen, einfach Liebe, Wohlfühlen, Erfüllung und Auftanken',
+		image: LenaPortrait.src,
+	},
+];
 ---
 
-<Layout title="YoungVision e.V.">
-	<h1>Test</h1>
-	<p>Hello World.</p>
+<Layout title="Young Vision e.V.">
+	<main>
+		<Hero />
+		<ReadMore />
+		<Events />
+		<div id="testimonials-and-instagram">
+			<Testimonials client:visible {testimonials} />
+			<!-- <Instagram /> -->
+		</div>
+	</main>
 </Layout>
+
+<style></style>
