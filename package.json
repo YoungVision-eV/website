@@ -18,6 +18,7 @@
 		"@astrojs/check": "0.4.1",
 		"@astrojs/svelte": "5.0.3",
 		"@astrojs/tailwind": "5.1.0",
+		"@melt-ui/svelte": "0.70.0",
 		"astro": "4.2.1",
 		"clsx": "2.1.0",
 		"svelte": "4.2.9",
@@ -25,6 +26,7 @@
 		"typescript": "5.3.3"
 	},
 	"devDependencies": {
+		"@melt-ui/pp": "0.3.0",
 		"@typescript-eslint/eslint-plugin": "6.19.0",
 		"@typescript-eslint/parser": "6.19.0",
 		"eslint": "8.56.0",
@@ -35,6 +37,7 @@
 		"prettier-plugin-astro": "0.12.3",
 		"prettier-plugin-svelte": "3.1.2",
 		"prettier-plugin-tailwindcss": "0.5.11",
-		"sharp": "0.33.2"
+		"sharp": "0.33.2",
+		"svelte-sequential-preprocessor": "2.0.1"
 	}
 }
