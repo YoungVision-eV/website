@@ -1,15 +1,32 @@
 {
-  "name": "homepage-astro",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro check && astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "astro": "4.2.1"
-  }
+	"name": "homepage-astro",
+	"type": "module",
+	"private": true,
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro check && astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"lint": "pnpm run lint:prettier && pnpm run lint:eslint",
+		"lint:prettier": "prettier --check .",
+		"lint:eslint": "eslint .",
+		"format": "prettier --write ."
+	},
+	"dependencies": {
+		"astro": "4.2.1"
+	},
+	"devDependencies": {
+		"@typescript-eslint/eslint-plugin": "6.19.0",
+		"@typescript-eslint/parser": "6.19.0",
+		"eslint": "8.56.0",
+		"eslint-config-prettier": "9.1.0",
+		"eslint-plugin-astro": "0.31.3",
+		"eslint-plugin-svelte": "2.35.1",
+		"prettier": "3.2.4",
+		"prettier-plugin-astro": "0.12.3",
+		"prettier-plugin-svelte": "3.1.2",
+		"prettier-plugin-tailwindcss": "0.5.11"
+	}
 }
