@@ -1,6 +1,13 @@
 <script>
+	import { melt } from '@melt-ui/svelte';
 	import ArrowRight from '@assets/icons/ArrowRight.svelte';
 	import YoungVisionLogoFull from '@assets/icons/YoungVisionLogoFull.svelte';
+
+	import newsletterSignup from '@components/stores/newsletterSignup';
+
+	const {
+		elements: { trigger },
+	} = newsletterSignup;
 </script>
 
 <footer class="w-full bg-green-50 px-4 py-6 lg:px-20">
@@ -31,7 +38,7 @@
 							placeholder="you@example.com"
 						/>
 						<div class="absolute inset-y-0 right-0 flex items-center pr-3">
-							<button type="submit" class="text-green-200">
+							<button type="submit" class="text-green-200" use:melt={$trigger}>
 								<span class="sr-only">Sign up</span>
 								<ArrowRight /></button
 							>
