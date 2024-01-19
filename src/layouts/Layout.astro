@@ -1,0 +1,28 @@
+---
+import Navbar from '@components/Navbar.svelte';
+
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8" />
+		<title>{title}</title>
+		<meta name="viewport" content="width=device-width" />
+	</head>
+
+	<body class="bg-background">
+		<Navbar currentPage={Astro.url.pathname} client:load />
+		<main>
+			<slot />
+		</main>
+
+		<!-- <MainSponsors /> -->
+		<!-- <Footer /> -->
+	</body>
+</html>
