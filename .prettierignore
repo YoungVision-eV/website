@@ -19,3 +19,6 @@ yarn.lock
 
 # Ignore binary assets
 /src/lib/assets
+*.png
+*.jpg
+*.jpeg
