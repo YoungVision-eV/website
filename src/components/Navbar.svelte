@@ -33,7 +33,7 @@
 		<div class="flex lg:hidden">
 			<button
 				type="button"
-				class="text-dark-green -m-2.5 inline-flex items-center justify-center rounded-md p-2.5"
+				class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-dark-green"
 				on:click={openMenu}
 			>
 				<span class="sr-only">Open main menu</span>

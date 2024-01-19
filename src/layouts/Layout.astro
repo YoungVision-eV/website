@@ -1,8 +1,10 @@
 ---
 import Navbar from '@components/Navbar.svelte';
+import MainSponsors from '@components/footer/MainSponsors.astro';
+import Footer from '@components/footer/Footer.svelte';
 
 export interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -10,19 +12,19 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang="de">
-	<head>
-		<meta charset="utf-8" />
-		<title>{title}</title>
-		<meta name="viewport" content="width=device-width" />
-	</head>
+  <head>
+    <meta charset="utf-8" />
+    <title>{title}</title>
+    <meta name="viewport" content="width=device-width" />
+  </head>
 
-	<body class="bg-background">
-		<Navbar currentPage={Astro.url.pathname} client:load />
-		<main>
-			<slot />
-		</main>
+  <body class="bg-background">
+    <Navbar currentPage={Astro.url.pathname} client:load />
+    <main>
+      <slot />
+    </main>
 
-		<!-- <MainSponsors /> -->
-		<!-- <Footer /> -->
-	</body>
+    <MainSponsors />
+    <Footer />
+  </body>
 </html>
