@@ -16,7 +16,6 @@ pnpm-debug.log*
 playwright-report/
 test-results/
 
-
 # environment variables
 .env
 .env.production
