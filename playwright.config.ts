@@ -4,9 +4,9 @@ import { devices } from '@playwright/test';
 const webServer = process.env.PLAYWRIGHT_TEST_BASE_URL
 	? undefined
 	: {
-			command: 'pnpm run build && pnpm run preview',
-			port: 4321,
-		};
+		command: 'pnpm run build && pnpm run preview',
+		port: 4321,
+	};
 
 const config: PlaywrightTestConfig = {
 	use: { actionTimeout: 10000 },
