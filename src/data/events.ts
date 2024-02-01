@@ -50,7 +50,7 @@ const yearlyEvents: YVEvent[] = [
 		image: EventImage3.src,
 		for_all: false,
 		// testimonials: []
-	}
+	},
 ];
 
 const next3Events = [
@@ -59,25 +59,25 @@ const next3Events = [
 		date: new Date(2023, 11, 29),
 		description: 'Lass uns gemeinsam in das neue Jahr starten!',
 		image: {
-			src: thirdEvent
-		}
+			src: thirdEvent,
+		},
 	},
 	{
 		title: 'Bauwoche in Rosow',
 		date: new Date(2024, 3, 1),
 		description: 'Können wir das schaffen? Yo wir schaffen das!',
 		image: {
-			src: calendarCover
-		}
+			src: calendarCover,
+		},
 	},
 	{
 		title: 'Mitgliederversammlung',
 		date: new Date(2024, 3, 4),
 		description: 'Alle Jahre wieder: Sei dabei, entscheide und gestalte mit!',
 		image: {
-			src: pastEvent
-		}
-	}
+			src: pastEvent,
+		},
+	},
 	/*{
 		title: 'Gathering',
 		date: new Date(2024, 9, 2),
