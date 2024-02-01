@@ -4,19 +4,22 @@ import Layout from '@layouts/Layout.astro';
 import Hero from '@components/index/Hero.astro';
 import ReadMore from '@components/index/ReadMore.astro';
 import Events from '@components/index/Events.astro';
+
 import Testimonials from '@components/Testimonials.svelte';
+import Instagram from '@components/index/Instagram.astro';
 
 import { getTestimonials } from '@data/testimonials';
 
 const testimonials = await getTestimonials();
 ---
 
-<Layout title="YoungVision e.V." />
+<Layout title="YoungVision e.V.">
+  <Hero />
+  <ReadMore />
+  <Events />
 
-<Hero />
-<ReadMore />
-<Events />
-
-<div id="testimonials-and-instagram">
-	<Testimonials client:visible {testimonials} />
-</div>
+  <div id="testimonials-and-instagram">
+    <Testimonials client:visible {testimonials} />
+    <Instagram />
+  </div>
+</Layout>
