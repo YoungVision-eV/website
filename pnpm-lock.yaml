@@ -49,6 +49,12 @@ devDependencies:
   '@typescript-eslint/parser':
     specifier: 6.20.0
     version: 6.20.0(eslint@8.56.0)(typescript@5.3.3)
+  embla-carousel:
+    specifier: 8.0.0-rc22
+    version: 8.0.0-rc22
+  embla-carousel-svelte:
+    specifier: 8.0.0-rc22
+    version: 8.0.0-rc22(svelte@4.2.9)
   eslint:
     specifier: 8.56.0
     version: 8.56.0
@@ -2183,6 +2189,28 @@ packages:
   /electron-to-chromium@1.4.639:
     resolution: {integrity: sha512-CkKf3ZUVZchr+zDpAlNLEEy2NJJ9T64ULWaDgy3THXXlPVPkLu3VOs9Bac44nebVtdwl2geSj6AxTtGDOxoXhg==}
     dev: false
+
+  /embla-carousel-reactive-utils@8.0.0-rc22(embla-carousel@8.0.0-rc22):
+    resolution: {integrity: sha512-K4b8QhQGXYW5wr4l+U6XryhafsFV5c/IyohDnZN3MGoYIB9xY7qpjUWAcs5bTDjAD+qCZPOuXre0D3IVa28mqw==}
+    peerDependencies:
+      embla-carousel: 8.0.0-rc22
+    dependencies:
+      embla-carousel: 8.0.0-rc22
+    dev: true
+
+  /embla-carousel-svelte@8.0.0-rc22(svelte@4.2.9):
+    resolution: {integrity: sha512-kRcKJXslkfrtXjS97AdJHQ28ctm0HOfcTA3Fb9Y57fzLzrB5uC+qOGF7nLSI8Z1s+0ww+OaouxIvbrS987CkfA==}
+    peerDependencies:
+      svelte: ^3.49.0 || ^4.0.0
+    dependencies:
+      embla-carousel: 8.0.0-rc22
+      embla-carousel-reactive-utils: 8.0.0-rc22(embla-carousel@8.0.0-rc22)
+      svelte: 4.2.9
+    dev: true
+
+  /embla-carousel@8.0.0-rc22:
+    resolution: {integrity: sha512-MeXnPT1LShfgAu8qXj3CskayV0R6OkHx7w3cPTx+Q5ZWKyShKpIuu7qVQJ5BoFegalE4n6yxqoQaRuGFbK9pYw==}
+    dev: true
 
   /emmet@2.4.6:
     resolution: {integrity: sha512-dJfbdY/hfeTyf/Ef7Y7ubLYzkBvPQ912wPaeVYpAxvFxkEBf/+hJu4H6vhAvFN6HlxqedlfVn2x1S44FfQ97pg==}

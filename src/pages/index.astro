@@ -4,6 +4,11 @@ import Layout from '@layouts/Layout.astro';
 import Hero from '@components/index/Hero.astro';
 import ReadMore from '@components/index/ReadMore.astro';
 import Events from '@components/index/Events.astro';
+import Testimonials from '@components/Testimonials.svelte';
+
+import { getTestimonials } from '@data/testimonials';
+
+const testimonials = await getTestimonials();
 ---
 
 <Layout title="YoungVision e.V." />
@@ -11,3 +16,7 @@ import Events from '@components/index/Events.astro';
 <Hero />
 <ReadMore />
 <Events />
+
+<div id="testimonials-and-instagram">
+	<Testimonials client:visible {testimonials} />
+</div>
