@@ -13,7 +13,8 @@
 		"lint:prettier": "prettier --check .",
 		"lint:eslint": "eslint .",
 		"format": "prettier --write .",
-		"test": "playwright test"
+		"test": "playwright test",
+		"test:ui": "pnpm run test --ui-host localhost --ui-port 33333"
 	},
 	"dependencies": {
 		"@astrojs/check": "0.4.1",

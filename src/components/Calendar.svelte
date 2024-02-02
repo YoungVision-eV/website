@@ -22,6 +22,7 @@
 			{#each events as event, index}
 				<img
 					loading="lazy"
+					id="event-{index}"
 					{...event.image.src.attributes}
 					src={event.image.src.src}
 					alt="Leute sitzen am Tisch"
@@ -49,8 +50,8 @@
 					<circle cx="50" cy="50" r="50" />
 				</svg>
 				<div class="h-full lg:flex lg:flex-col lg:justify-center lg:gap-y-1">
-					{#each events as _event, index}
-						<button on:click={() => (selectedEvent = index)}>
+					{#each events as event, index}
+						<button on:click={() => (selectedEvent = index)} aria-label={event.title}>
 							<svg
 								class="h-5 w-5 text-yellow-500 text-opacity-60"
 								fill="currentColor"
@@ -68,6 +69,7 @@
 	<ul
 		class="relative z-10 col-span-4 row-span-3 -mt-4 grid grid-cols-subgrid grid-rows-subgrid
 		lg:col-span-5 lg:col-start-5 lg:row-start-1 lg:mt-0"
+		role="tablist"
 	>
 		<div
 			class={clsx(
@@ -78,12 +80,15 @@
 		/>
 		{#each events as event, index}
 			<li
+				role="tab"
+				aria-selected={index === selectedEvent}
 				class={clsx(
 					'col-span-4 grid grid-cols-subgrid bg-yellow-700 transition-colors lg:col-span-5 lg:bg-yellow-500 lg:bg-opacity-60',
 					index === 0 ? 'rounded-t-2xl lg:rounded-tl-none' : '',
 				)}
 			>
 				<button
+					aria-labelledby="title-{event.title}"
 					class="col-span-4 grid grid-cols-subgrid items-center py-7 text-left lg:col-span-5"
 					on:click={() => (selectedEvent = index)}
 					disabled={selectedEvent === index}
@@ -96,7 +101,7 @@
 						</p>
 					</div>
 					<div class="z-30 col-span-3 px-4 lg:col-span-4 lg:px-10 lg:py-3">
-						<h3 class="font-bold lg:text-xl">{event.title}</h3>
+						<h3 class="font-bold lg:text-xl" id={`title-${event.title}`}>{event.title}</h3>
 						<p>{event.description}</p>
 					</div>
 				</button>

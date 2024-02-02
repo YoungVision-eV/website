@@ -1,4 +1,6 @@
 ---
+import InstagramBackground from '@assets/instagram/background-instagram.jpeg';
+
 import Layout from '@layouts/Layout.astro';
 
 import Hero from '@components/index/Hero.astro';
@@ -23,3 +25,16 @@ const testimonials = await getTestimonials();
 		<Instagram />
 	</div>
 </Layout>
+
+<style define:vars={{ 'background-image': `url(${InstagramBackground.src})` }}>
+	#testimonials-and-instagram {
+		background-position: bottom -200px right 95%;
+		background-repeat: no-repeat;
+		background-image: var(--background-image);
+	}
+	@media (min-width: 1024px) {
+		#testimonials-and-instagram {
+			background-position: bottom -100px right -500px;
+		}
+	}
+</style>

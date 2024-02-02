@@ -19,12 +19,14 @@ const images = await getRecentPhotos();
 			{
 				images.map((image) => (
 					<a href={image.link} target="_blank" rel="noopener">
-						<img
-							class="h-52 w-52 shrink-0 object-cover"
-							srcset={image.src.srcSet.attribute}
-							{...image.src.attributes}
-							alt={image.alt}
-						/>
+						<div class="h-52 w-52 shrink-0 ">
+							<img
+								class="object-cover"
+								srcset={image.src.srcSet.attribute}
+								{...image.src.attributes}
+								alt={image.alt}
+							/>
+						</div>
 					</a>
 				))
 			}
