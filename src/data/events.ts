@@ -58,18 +58,20 @@ export type YVEvent = {
 	day: string;
 	month: string;
 	short_description: string;
-	image: string;
+	image: {
+		src: Awaited<ReturnType<typeof getImage>>;
+	};
 	for_all: boolean;
 	future?: string;
 };
 
-export async function getEventBySlug(slug: string) {
+export async function getEventBySlug(slug: string): Promise<YVEvent | undefined> {
 	const allEvents = await getAllYearlyEvents();
 	return allEvents.find((e) => e.slug === slug);
 }
 
-export async function getAllYearlyEvents() {
-	const yearlyEvents: YVEvent[] = [
+export async function getAllYearlyEvents(): Promise<YVEvent[]> {
+	return [
 		{
 			slug: 'summer-gathering',
 			title: 'Sommer Gathering',
@@ -77,7 +79,7 @@ export async function getAllYearlyEvents() {
 			month: 'September',
 			short_description:
 				'Unsere jährliche Sommerveranstaltung ist für viele das Highlight des Jahres!',
-			image: EventImage1.src,
+			image: { src: await getImage({ src: EventImage1 }) },
 			for_all: true,
 		},
 		{
@@ -87,7 +89,7 @@ export async function getAllYearlyEvents() {
 			month: 'Dezember',
 			short_description:
 				'Lass uns das vergangene Jahr ausklingen lassen und gemeinsam in das neue Jahr starten!',
-			image: EventImage2.src,
+			image: { src: await getImage({ src: EventImage2 }) },
 			for_all: true,
 		},
 		{
@@ -97,9 +99,8 @@ export async function getAllYearlyEvents() {
 			month: 'April',
 			short_description:
 				'Werde Mitglied und entscheide gemeinsam über die Zukunft von YoungVision!',
-			image: EventImage3.src,
+			image: { src: await getImage({ src: EventImage3 }) },
 			for_all: false,
 		},
 	];
-	return yearlyEvents;
 }
