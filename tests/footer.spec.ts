@@ -11,6 +11,10 @@ for (const subPage of SUB_PAGES) {
 
 test('Opens dialog from footer', async ({ page }) => {
 	await page.goto('/');
+	// because astro lazy loads the JS of the footer we need to wait for it
+	// otherwise the button is pressed before interactivity is available
+	// this only seems to be an issue on firefox
+	await page.waitForLoadState('networkidle');
 	await page.getByRole('button', { name: 'Sign up' }).click();
 	await expect(page.getByRole('dialog')).toBeVisible();
 });

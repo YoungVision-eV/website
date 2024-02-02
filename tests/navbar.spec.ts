@@ -33,6 +33,13 @@ test.describe('Navigation', () => {
 test.describe('Mobile only', () => {
 	test.skip(({ isMobile }) => !isMobile, 'Mobile only');
 
+	test.beforeEach(async ({ page }) => {
+		// mobile menu is very interactive
+		// astro loads interactivity on page load
+		// this can cause race conditions where we click before the event handler is attached
+		await page.waitForLoadState('networkidle');
+	});
+
 	test('on mobile opens main menu', async ({ page }) => {
 		await page.getByRole('button', { name: 'Open main menu' }).click();
 
