@@ -1,8 +1,40 @@
 ---
+import InstagramBackground from '@assets/instagram/background-instagram.jpeg';
+
 import Layout from '@layouts/Layout.astro';
+
+import Hero from '@components/index/Hero.astro';
+import ReadMore from '@components/index/ReadMore.astro';
+import Events from '@components/index/Events.astro';
+
+import Testimonials from '@components/Testimonials.svelte';
+import Instagram from '@components/index/Instagram.astro';
+
+import { getTestimonials } from '@data/testimonials';
+
+const testimonials = await getTestimonials();
 ---
 
 <Layout title="YoungVision e.V.">
-	<h1>Test</h1>
-	<p>Hello World.</p>
+	<Hero />
+	<ReadMore />
+	<Events />
+
+	<div id="testimonials-and-instagram">
+		<Testimonials client:visible {testimonials} />
+		<Instagram />
+	</div>
 </Layout>
+
+<style define:vars={{ 'background-image': `url(${InstagramBackground.src})` }}>
+	#testimonials-and-instagram {
+		background-position: bottom -200px right 95%;
+		background-repeat: no-repeat;
+		background-image: var(--background-image);
+	}
+	@media (min-width: 1024px) {
+		#testimonials-and-instagram {
+			background-position: bottom -100px right -500px;
+		}
+	}
+</style>

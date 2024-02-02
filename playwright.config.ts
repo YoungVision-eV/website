@@ -10,6 +10,10 @@ const webServer = process.env.PLAYWRIGHT_TEST_BASE_URL
 
 const config: PlaywrightTestConfig = {
 	use: { actionTimeout: 10000 },
+	expect: {
+		// because of image optimizations we have to be lenient during the port to astro
+		toHaveScreenshot: { maxDiffPixels: 500, maxDiffPixelRatio: 0.05 },
+	},
 	webServer,
 	projects: [
 		{
