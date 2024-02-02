@@ -28,7 +28,7 @@
 	},
 	"devDependencies": {
 		"@melt-ui/pp": "0.3.0",
-		"@typescript-eslint/eslint-plugin": "6.19.1",
+		"@typescript-eslint/eslint-plugin": "6.20.0",
 		"@typescript-eslint/parser": "6.19.1",
 		"@playwright/test": "1.41.0",
 		"@types/node": "20.11.5",
