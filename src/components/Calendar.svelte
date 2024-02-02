@@ -28,7 +28,7 @@
 					alt="Leute sitzen am Tisch"
 					class={clsx(
 						'absolute left-0 top-0 h-full w-full rounded-t-2xl object-cover transition-opacity duration-300 lg:rounded-l-2xl lg:rounded-tr-none',
-						index === selectedEvent ? 'opacity-100' : 'opacity-5',
+						index === selectedEvent ? 'opacity-100' : 'opacity-0',
 					)}
 				/>
 			{/each}
