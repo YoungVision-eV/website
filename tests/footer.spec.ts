@@ -3,7 +3,7 @@ import { SUB_PAGES } from './data';
 
 for (const subPage of SUB_PAGES) {
 	test(`${subPage.name} has footer`, async ({ page }) => {
-		test.fail(subPage.name !== 'Home');
+		test.fail(subPage.name !== 'Home' && subPage.name !== 'Veranstaltungen');
 		await page.goto(subPage.url);
 		await expect(page.getByRole('contentinfo')).toBeVisible();
 	});
