@@ -19,7 +19,7 @@
 		"@astrojs/check": "0.4.1",
 		"@astrojs/svelte": "5.0.3",
 		"@astrojs/tailwind": "5.1.0",
-		"@melt-ui/svelte": "0.71.0",
+		"@melt-ui/svelte": "0.71.1",
 		"astro": "4.3.1",
 		"clsx": "2.1.0",
 		"svelte": "4.2.9",
