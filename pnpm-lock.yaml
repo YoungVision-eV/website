@@ -10,16 +10,16 @@ dependencies:
     version: 0.4.1(prettier-plugin-astro@0.13.0)(prettier@3.2.4)(typescript@5.3.3)
   '@astrojs/svelte':
     specifier: 5.0.3
-    version: 5.0.3(astro@4.3.1)(svelte@4.2.9)(typescript@5.3.3)(vite@5.0.12)
+    version: 5.0.3(astro@4.3.2)(svelte@4.2.9)(typescript@5.3.3)(vite@5.0.12)
   '@astrojs/tailwind':
     specifier: 5.1.0
-    version: 5.1.0(astro@4.3.1)(tailwindcss@3.4.1)
+    version: 5.1.0(astro@4.3.2)(tailwindcss@3.4.1)
   '@melt-ui/svelte':
     specifier: 0.71.1
     version: 0.71.1(svelte@4.2.9)
   astro:
-    specifier: 4.3.1
-    version: 4.3.1(@types/node@20.11.16)(typescript@5.3.3)
+    specifier: 4.3.2
+    version: 4.3.2(@types/node@20.11.16)(typescript@5.3.3)
   clsx:
     specifier: 2.1.0
     version: 2.1.0
@@ -196,7 +196,7 @@ packages:
       prismjs: 1.29.0
     dev: false
 
-  /@astrojs/svelte@5.0.3(astro@4.3.1)(svelte@4.2.9)(typescript@5.3.3)(vite@5.0.12):
+  /@astrojs/svelte@5.0.3(astro@4.3.2)(svelte@4.2.9)(typescript@5.3.3)(vite@5.0.12):
     resolution: {integrity: sha512-6TUBRUxmsEczKPBT6oDUAfvzuFCmITuhZfKPT5ZtOOyj9XOVnEnj/Iobd3ajKUbpWNYX7qZVAd1KMkmJc1Nhsg==}
     engines: {node: '>=18.14.1'}
     peerDependencies:
@@ -204,7 +204,7 @@ packages:
       svelte: ^4.0.0 || ^5.0.0-next.1
     dependencies:
       '@sveltejs/vite-plugin-svelte': 3.0.1(svelte@4.2.9)(vite@5.0.12)
-      astro: 4.3.1(@types/node@20.11.16)(typescript@5.3.3)
+      astro: 4.3.2(@types/node@20.11.16)(typescript@5.3.3)
       svelte: 4.2.9
       svelte2tsx: 0.6.27(svelte@4.2.9)(typescript@5.3.3)
     transitivePeerDependencies:
@@ -213,13 +213,13 @@ packages:
       - vite
     dev: false
 
-  /@astrojs/tailwind@5.1.0(astro@4.3.1)(tailwindcss@3.4.1):
+  /@astrojs/tailwind@5.1.0(astro@4.3.2)(tailwindcss@3.4.1):
     resolution: {integrity: sha512-BJoCDKuWhU9FT2qYg+fr6Nfb3qP4ShtyjXGHKA/4mHN94z7BGcmauQK23iy+YH5qWvTnhqkd6mQPQ1yTZTe9Ig==}
     peerDependencies:
       astro: ^3.0.0 || ^4.0.0
       tailwindcss: ^3.0.24
     dependencies:
-      astro: 4.3.1(@types/node@20.11.16)(typescript@5.3.3)
+      astro: 4.3.2(@types/node@20.11.16)(typescript@5.3.3)
       autoprefixer: 10.4.17(postcss@8.4.33)
       postcss: 8.4.33
       postcss-load-config: 4.0.2(postcss@8.4.33)
@@ -1629,8 +1629,8 @@ packages:
       - supports-color
     dev: true
 
-  /astro@4.3.1(@types/node@20.11.16)(typescript@5.3.3):
-    resolution: {integrity: sha512-LAY2zQHOuOXEhpguyw5X0AIz6Xq+TAkBNEqrgIxwj72R87mmRQqQWmjChMPPkK95nFHkYR/71M2BrKunpbsfyw==}
+  /astro@4.3.2(@types/node@20.11.16)(typescript@5.3.3):
+    resolution: {integrity: sha512-SJotHzKG/I32ruYWItMRJjtmNQh14mVS7kahu3XfYyxvo6nx08PGJBTSPbqPrW1sjeQPHwcpVDFx3yMMK2kaxQ==}
     engines: {node: '>=18.14.1', npm: '>=6.14.0'}
     hasBin: true
     dependencies:
