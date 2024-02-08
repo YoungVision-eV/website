@@ -1,14 +1,21 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, type Page } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {
 	await page.goto('/events');
 });
 
-test('Projects page screenshot', async ({ page }) => {
-	// force load lazy loaded images
+// Because we lazy load images but compare them in screenshots
+// we have to first make sure that they are loaded by scrolling them into view
+async function forceLoadImages(page: Page) {
 	await page.getByRole('contentinfo').scrollIntoViewIfNeeded();
+	await page.locator('#event-1').scrollIntoViewIfNeeded();
+	await page.waitForTimeout(500);
 	await page.getByRole('list').getByRole('heading', { name: 'Silvester' }).scrollIntoViewIfNeeded();
-	await page.waitForLoadState('networkidle');
+	await page.waitForTimeout(500);
+}
+
+test('Projects page screenshot', async ({ page }) => {
+	await forceLoadImages(page);
 
 	await expect(page).toHaveScreenshot({ fullPage: true });
 });
@@ -16,8 +23,8 @@ test('Projects page screenshot', async ({ page }) => {
 test('Filter members_only', async ({ page }) => {
 	await page.getByLabel('Nur Mitglieder').click();
 	await expect(page.getByRole('list').getByText('Nur Mitglieder')).not.toBeVisible();
-	await page.getByRole('contentinfo').scrollIntoViewIfNeeded();
-	await page.waitForLoadState('networkidle');
+
+	await forceLoadImages(page);
 
 	await expect(page).toHaveScreenshot({ fullPage: true });
 });

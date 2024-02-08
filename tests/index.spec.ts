@@ -12,6 +12,7 @@ test('index page screenshot', async ({ page, browserName }) => {
 	}
 	await page.getByRole('contentinfo').scrollIntoViewIfNeeded();
 
+	await page.waitForTimeout(1000);
 	await page.waitForLoadState('networkidle');
 
 	await expect(page).toHaveScreenshot({ fullPage: true });
