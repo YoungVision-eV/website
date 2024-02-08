@@ -1,10 +1,39 @@
 ---
+import Layout from '@layouts/Layout.astro';
+import VisionMissionValues from '@components/about-us/VisionMissionValues.svelte';
+import History from '@components/about-us/History.svelte';
 import TeamMembers from '@components/about-us/TeamMembers.astro';
 import WhatWeDo from '@components/about-us/WhatWeDo.svelte';
-import Layout from '@layouts/Layout.astro';
+
+import Background from '@assets/about-us/background-vision-statement.png';
 ---
 
 <Layout title="YoungVision e.V. - About Us">
-  <TeamMembers />
-  <WhatWeDo client:load />
+	<div class="relative overflow-hidden">
+		<img
+			class="absolute right-[-5rem] top-[-5rem] -z-10 h-[19rem] w-auto lg:right-[-7rem] lg:top-[-7rem] lg:h-[32rem]"
+			src={Background.src}
+			alt="YoungVision Logo"
+		/>
+		<img
+			class="absolute left-[-7rem] top-[7rem] -z-10 h-[14rem] w-auto lg:left-[-14rem] lg:top-[17rem] lg:h-[25rem]"
+			src={Background.src}
+			alt="YoungVision Logo"
+		/>
+		<img
+			class="absolute bottom-[-7rem] right-[-4rem] -z-10 h-[14rem] w-auto"
+			src={Background.src}
+			alt="YoungVision Logo"
+		/>
+		<img
+			class="absolute left-[-4rem] top-[70rem] -z-10 h-[14rem] w-auto lg:left-[5rem] lg:top-[43rem]"
+			src={Background.src}
+			alt="YoungVision Logo"
+		/>
+		<VisionMissionValues />
+		<History />
+	</div>
+
+	<TeamMembers />
+	<WhatWeDo client:load />
 </Layout>

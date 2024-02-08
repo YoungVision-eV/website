@@ -5,44 +5,44 @@ import RebeccaPortrait from '@assets/team-members/rebecca-portrait.jpeg';
 import JonasPortrait from '@assets/team-members/jonas-portrait.jpeg';
 
 const members = [
-  {
-    name: 'Emma',
-    job: 'Design, ÖA',
-    image: EmmaPortrait,
-  },
-  {
-    name: 'Jakob',
-    job: 'Finanzen, Events',
-    image: JakobPortrait,
-  },
-  {
-    name: 'Rebecca',
-    job: 'ÖA, Events',
-    image: RebeccaPortrait,
-  },
-  {
-    name: 'Jonas',
-    job: 'IT, Datenschutz',
-    image: JonasPortrait,
-  },
+	{
+		name: 'Emma',
+		job: 'Design, ÖA',
+		image: EmmaPortrait,
+	},
+	{
+		name: 'Jakob',
+		job: 'Finanzen, Events',
+		image: JakobPortrait,
+	},
+	{
+		name: 'Rebecca',
+		job: 'ÖA, Events',
+		image: RebeccaPortrait,
+	},
+	{
+		name: 'Jonas',
+		job: 'IT, Datenschutz',
+		image: JonasPortrait,
+	},
 ];
 ---
 
 <section class="bg-light-green px-5 py-14 lg:px-20 lg:pb-36 lg:pt-20">
-  <h1 class="font-serif text-3xl font-bold">Das Team</h1>
-  <div class="mt-14 grid grid-cols-2 gap-x-5 gap-y-14 lg:grid-cols-4 lg:gap-x-24">
-    {
-      members.map((member) => (
-        <div class="flex flex-col items-center">
-          <img
-            src={member.image.src}
-            alt={member.name}
-            class="aspect-square h-auto w-full rounded-full bg-white object-cover object-center"
-          />
-          <h2 class="mt-6 font-sans font-bold lg:mt-5 lg:text-xl">{member.name}</h2>
-          <p class="lg:mt-3">{member.job}</p>
-        </div>
-      ))
-    }
-  </div>
+	<h1 class="font-serif text-3xl font-bold">Das Team</h1>
+	<div class="mt-14 grid grid-cols-2 gap-x-5 gap-y-14 lg:grid-cols-4 lg:gap-x-24">
+		{
+			members.map((member) => (
+				<div class="flex flex-col items-center">
+					<img
+						src={member.image.src}
+						alt={member.name}
+						class="aspect-square h-auto w-full rounded-full bg-white object-cover object-center"
+					/>
+					<h2 class="mt-6 font-sans font-bold lg:mt-5 lg:text-xl">{member.name}</h2>
+					<p class="lg:mt-3">{member.job}</p>
+				</div>
+			))
+		}
+	</div>
 </section>
