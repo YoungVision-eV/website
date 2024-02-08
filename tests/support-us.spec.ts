@@ -1,12 +1,11 @@
 import { expect, test } from '@playwright/test';
 
-test.fail();
-
 test.beforeEach(async ({ page }) => {
 	await page.goto('/support-us');
 });
 
 test('support-us page screenshot', async ({ page }) => {
+	await page.getByRole('contentinfo').scrollIntoViewIfNeeded();
 	await expect(page).toHaveScreenshot({ fullPage: true });
 });
 
