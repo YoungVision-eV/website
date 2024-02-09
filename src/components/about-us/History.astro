@@ -1,6 +1,7 @@
-<script>
-	import OgYoungvisionPeople from '@assets/about-us/OG-youngvision-people.jpg';
-</script>
+---
+import OgYoungvisionPeople from '@assets/about-us/OG-youngvision-people.jpg';
+import { Image } from 'astro:assets';
+---
 
 <section class="mb-28 px-4 lg:px-20">
 	<div
@@ -8,8 +9,8 @@
 	>
 		<h2 class="font-serif text-2xl font-bold lg:hidden">YoungVision's Entstehung</h2>
 		<div class="mt-7 flex-none lg:mt-0">
-			<img
-				src={OgYoungvisionPeople.src}
+			<Image
+				src={OgYoungvisionPeople}
 				alt=""
 				class="h-96 w-full rounded-2xl object-cover lg:h-[30rem] lg:w-[29rem] lg:rounded-r-none"
 			/>
