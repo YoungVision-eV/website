@@ -1,6 +1,7 @@
 ---
 import Button from '@components/Button.astro';
 import TriadenThumbnail from '@assets/about-us/triaden-thumbnail.jpeg';
+import { Image } from 'astro:assets';
 ---
 
 <section
@@ -10,7 +11,11 @@ import TriadenThumbnail from '@assets/about-us/triaden-thumbnail.jpeg';
 		Probier’s mit deinen Freunden aus!
 	</h2>
 	<div class="mt-10 h-60 w-60 flex-shrink-0 lg:mt-0">
-		<img class="h-full w-full object-cover" src={TriadenThumbnail.src} />
+		<Image
+			class="h-full w-full object-cover"
+			alt="Vorschau vom Triaden Pdf"
+			src={TriadenThumbnail}
+		/>
 	</div>
 	<div>
 		<h2 class="hidden text-center font-serif text-2xl font-bold lg:block lg:text-left lg:text-4xl">

@@ -3,6 +3,7 @@ import EmmaPortrait from '@assets/team-members/emma-portrait.png';
 import JakobPortrait from '@assets/team-members/jakob-portait.jpeg';
 import RebeccaPortrait from '@assets/team-members/rebecca-portrait.jpeg';
 import JonasPortrait from '@assets/team-members/jonas-portrait.jpeg';
+import { Image } from 'astro:assets';
 
 const members = [
 	{
@@ -34,8 +35,8 @@ const members = [
 		{
 			members.map((member) => (
 				<div class="flex flex-col items-center">
-					<img
-						src={member.image.src}
+					<Image
+						src={member.image}
 						alt={member.name}
 						class="aspect-square h-auto w-full rounded-full bg-white object-cover object-center"
 					/>
