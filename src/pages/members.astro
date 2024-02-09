@@ -3,9 +3,18 @@ import Layout from '@layouts/Layout.astro';
 
 import Hero from '@components/members/Hero.astro';
 import MemberBenefits from '@components/members/MemberBenefits.astro';
+import Testimonials from '@components/Testimonials.svelte';
+
+import { getTestimonials } from '@data/testimonials';
+
+const testimonials = await getTestimonials();
 ---
 
 <Layout title="Mitgliedschaft">
 	<Hero />
 	<MemberBenefits />
+
+	<div class="lg:py-24">
+		<Testimonials client:load {testimonials} />
+	</div>
 </Layout>
