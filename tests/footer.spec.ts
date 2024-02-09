@@ -3,7 +3,11 @@ import { SUB_PAGES } from './data';
 
 for (const subPage of SUB_PAGES) {
 	test(`${subPage.name} has footer`, async ({ page }) => {
-		test.fail(subPage.name !== 'Home' && subPage.name !== 'Veranstaltungen');
+		test.fail(
+			subPage.name !== 'Home' &&
+				subPage.name !== 'Veranstaltungen' &&
+				subPage.name !== 'Unterstütze uns',
+		);
 		await page.goto(subPage.url);
 		await expect(page.getByRole('contentinfo')).toBeVisible();
 	});
