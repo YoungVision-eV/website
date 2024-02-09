@@ -13,10 +13,17 @@ try:
 except IndexError:
     BRANCH = "main"
 
-response = requests.get(ARTIFACTS_URL)
+
+page = 1
+response = requests.get(ARTIFACTS_URL + '?per_page=100', headers={
+    "X-GitHub-Api-Version": "2022-11-28",
+    "Accept": "application/vnd.github+json",
+    "Authorization": f"Bearer {GITHUB_TOKEN}"
+})
 data = response.json()
 i = 0
 
+# TODO: read more pages
 
 TEMP_DIR = pathlib.Path(tempfile.mkdtemp(prefix="playwright-reports"))
 OUTPUT_DIR = pathlib.Path(__file__).parent / "reports"
