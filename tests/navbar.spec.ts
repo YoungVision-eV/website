@@ -11,7 +11,8 @@ test.describe('Navigation', () => {
 			test.fail(
 				subPage.name !== 'Home' &&
 					subPage.name !== 'Veranstaltungen' &&
-					subPage.name !== 'Unterstütze uns',
+					subPage.name !== 'Unterstütze uns' &&
+					subPage.name !== 'Über Uns',
 			);
 			if (isMobile) {
 				await page.getByRole('button', { name: 'Open main menu' }).click();

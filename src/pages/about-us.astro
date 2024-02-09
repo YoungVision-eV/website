@@ -1,0 +1,44 @@
+---
+import Layout from '@layouts/Layout.astro';
+import VisionMissionValues from '@components/about-us/VisionMissionValues.astro';
+import History from '@components/about-us/History.astro';
+import TeamMembers from '@components/about-us/TeamMembers.astro';
+import WhatWeDo from '@components/about-us/WhatWeDo.svelte';
+
+import Background from '@assets/about-us/background-vision-statement.png';
+import TryThisAtHome from '@components/about-us/TryThisAtHome.astro';
+import FlowerDecoration from '@components/about-us/FlowerDecoration.astro';
+import { Image } from 'astro:assets';
+---
+
+<Layout title="YoungVision e.V. - About Us">
+	<div class="relative overflow-hidden">
+		<Image
+			class="absolute right-[-5rem] top-[-5rem] -z-10 h-[19rem] w-auto lg:right-[-7rem] lg:top-[-7rem] lg:h-[32rem]"
+			src={Background}
+			alt="YoungVision Logo"
+		/>
+		<Image
+			class="absolute left-[-7rem] top-[7rem] -z-10 h-[14rem] w-auto lg:left-[-14rem] lg:top-[17rem] lg:h-[25rem]"
+			src={Background}
+			alt="YoungVision Logo"
+		/>
+		<Image
+			class="absolute bottom-[-7rem] right-[-4rem] -z-10 h-[14rem] w-auto"
+			src={Background}
+			alt="YoungVision Logo"
+		/>
+		<Image
+			class="absolute left-[-4rem] top-[70rem] -z-10 h-[14rem] w-auto lg:left-[5rem] lg:top-[43rem]"
+			src={Background}
+			alt="YoungVision Logo"
+		/>
+		<VisionMissionValues />
+		<History />
+	</div>
+
+	<TeamMembers />
+	<WhatWeDo client:load />
+	<TryThisAtHome />
+	<FlowerDecoration />
+</Layout>

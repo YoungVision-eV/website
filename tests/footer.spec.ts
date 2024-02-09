@@ -6,7 +6,8 @@ for (const subPage of SUB_PAGES) {
 		test.fail(
 			subPage.name !== 'Home' &&
 				subPage.name !== 'Veranstaltungen' &&
-				subPage.name !== 'Unterstütze uns',
+				subPage.name !== 'Unterstütze uns' &&
+				subPage.name !== 'Über Uns',
 		);
 		await page.goto(subPage.url);
 		await expect(page.getByRole('contentinfo')).toBeVisible();

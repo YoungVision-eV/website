@@ -7,7 +7,7 @@
 	import ExpertiseImage from '@assets/support-us/Expertise-spenden.jpeg';
 	import PartnerImage from '@assets/support-us/Partner-werden.jpeg';
 
-	import JakobPortrait from '@assets/support-us/jakob-portait.jpeg';
+	import JakobPortrait from '@assets/team-members/jakob-portait.jpeg';
 	import Button from '@components/Button.svelte';
 	import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@rgossiaux/svelte-headlessui';
 	import HandShake from '@assets/icons/HandShake.svelte';
