@@ -5,5 +5,6 @@ test.beforeEach(async ({ page }) => {
 });
 
 test('About Us page screenshot', async ({ page }) => {
+	await page.getByRole('contentinfo').scrollIntoViewIfNeeded();
 	await expect(page).toHaveScreenshot({ fullPage: true });
 });
