@@ -40,6 +40,9 @@ devDependencies:
   '@playwright/test':
     specifier: 1.41.2
     version: 1.41.2
+  '@rgossiaux/svelte-headlessui':
+    specifier: 2.0.0
+    version: 2.0.0(svelte@4.2.9)
   '@types/node':
     specifier: 20.11.16
     version: 20.11.16
@@ -1064,6 +1067,14 @@ packages:
     hasBin: true
     dependencies:
       playwright: 1.41.2
+    dev: true
+
+  /@rgossiaux/svelte-headlessui@2.0.0(svelte@4.2.9):
+    resolution: {integrity: sha512-ksh245HqMM8yqkzd/OyAK2FCHZYOSA3ldLIHab7C9S60FmifqT24JFVgi8tZpsDEMk3plbfQvfah93n5IEi8sg==}
+    peerDependencies:
+      svelte: ^3.47.0
+    dependencies:
+      svelte: 4.2.9
     dev: true
 
   /@rollup/rollup-android-arm-eabi@4.9.5:
