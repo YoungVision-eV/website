@@ -22,3 +22,6 @@ test-results/
 
 # macOS-specific files
 .DS_Store
+
+# python
+.venv/
