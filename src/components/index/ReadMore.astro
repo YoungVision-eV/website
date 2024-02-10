@@ -1,9 +1,11 @@
 ---
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import Button from '@components/Button.astro';
 
 import ReadMoreImage from './read-more-image.jpeg';
 import Background from './background-read-more.png';
+
+const BackgroundUrl = await getImage(Background);
 ---
 
 <section class="w-full bg-cover pb-7 pt-8 lg:px-20">
@@ -34,7 +36,7 @@ import Background from './background-read-more.png';
 	</div>
 </section>
 
-<style define:vars={{ Background: `url(${Background.src})` }}>
+<style define:vars={{ Background: `url(${BackgroundUrl.src})` }}>
 	section {
 		background-image: var(--Background);
 	}
