@@ -1,3 +1,11 @@
+---
+import { getImage } from 'astro:assets';
+
+import Background from '@assets/events/events-hero-bg.jpeg';
+
+const backgroundImage = await getImage({ src: Background, width: 1920, height: 1080 });
+---
+
 <section class="flex h-[44rem] w-full flex-col justify-between bg-cover bg-center pt-12 lg:pt-20">
 	<h1 class="text-center font-serif text-4xl font-bold text-white lg:text-5xl">Sei Dabei</h1>
 	<div class="w-full bg-gray-800 bg-opacity-60 px-4 pb-6 pt-10 text-white lg:px-20">
@@ -12,8 +20,8 @@
 	</div>
 </section>
 
-<style>
+<style define:vars={{ backgroundImage: `url(${backgroundImage.src})` }}>
 	section {
-		background-image: url('../../assets/events/events-hero-bg.jpeg');
+		background-image: var(--backgroundImage);
 	}
 </style>

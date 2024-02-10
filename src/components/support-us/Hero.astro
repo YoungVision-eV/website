@@ -1,12 +1,15 @@
 ---
+import { getImage } from 'astro:assets';
 import SupportUsHeroBackground from '@assets/support-us/support-us-hero-background.jpeg';
+
+const SupportUsHeroBackgroundUrl = await getImage(SupportUsHeroBackground);
 ---
 
 <section class="h-[34rem] w-full bg-cover bg-center pt-10 lg:pt-16">
 	<h1 class="text-center font-serif text-3xl font-bold text-white lg:text-5xl">Unterstütze Uns</h1>
 </section>
 
-<style define:vars={{ backgroundImage: `url(${SupportUsHeroBackground.src})` }}>
+<style define:vars={{ backgroundImage: `url(${SupportUsHeroBackgroundUrl.src})` }}>
 	section {
 		background-image: var(--backgroundImage);
 	}
