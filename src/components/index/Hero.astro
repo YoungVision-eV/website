@@ -1,10 +1,13 @@
 ---
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import Button from '@components/Button.astro';
 
 import HeroImage from './hero-image.jpeg';
 import LandscapeBackground from './background-hero-landscape.png';
 import PortraitBackground from './background-hero.png';
+
+const LandscapeBackgroundUrl = await getImage(LandscapeBackground);
+const PortraitBackgroundUrl = await getImage(PortraitBackground);
 ---
 
 <section class="w-full bg-cover">
@@ -37,8 +40,8 @@ import PortraitBackground from './background-hero.png';
 
 <style
 	define:vars={{
-		LandscapeBackground: `url(${LandscapeBackground.src})`,
-		PortraitBackground: `url(${PortraitBackground.src})`,
+		LandscapeBackground: `url(${LandscapeBackgroundUrl.src})`,
+		PortraitBackground: `url(${PortraitBackgroundUrl.src})`,
 	}}
 >
 	section {

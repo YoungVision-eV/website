@@ -1,4 +1,5 @@
 ---
+import { getImage } from 'astro:assets';
 import InstagramBackground from '@assets/instagram/background-instagram.jpeg';
 
 import Layout from '@layouts/Layout.astro';
@@ -13,6 +14,8 @@ import Instagram from '@components/index/Instagram.astro';
 import { getTestimonials } from '@data/testimonials';
 
 const testimonials = await getTestimonials();
+
+const InstagramBackgroundUrl = await getImage(InstagramBackground);
 ---
 
 <Layout title="YoungVision e.V.">
@@ -26,7 +29,7 @@ const testimonials = await getTestimonials();
 	</div>
 </Layout>
 
-<style define:vars={{ 'background-image': `url(${InstagramBackground.src})` }}>
+<style define:vars={{ 'background-image': `url(${InstagramBackgroundUrl.src})` }}>
 	#testimonials-and-instagram {
 		background-position: bottom -200px right 95%;
 		background-repeat: no-repeat;
