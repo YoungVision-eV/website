@@ -1,0 +1,872 @@
+<testsuites id="" name="" tests="99" failures="2" skipped="20" errors="0" time="134.368684">
+<testsuite name="about-us.spec.ts" timestamp="2024-02-09T19:18:25.529Z" hostname="chromium" tests="1" failures="1" skipped="0" time="33.677" errors="0">
+<testcase name="About Us page screenshot" classname="about-us.spec.ts" time="33.677">
+<failure message="about-us.spec.ts:7:1 About Us page screenshot" type="FAILURE">
+<![CDATA[  [chromium] › about-us.spec.ts:7:1 › About Us page screenshot ─────────────────────────────────────
+
+    Error: Screenshot comparison failed:
+
+      Timeout 5000ms exceeded.
+
+    Expected: /__w/homepage-astro/homepage-astro/tests/about-us.spec.ts-snapshots/About-Us-page-screenshot-1-chromium-linux.png
+    Received: /__w/homepage-astro/homepage-astro/test-results/about-us-About-Us-page-screenshot-chromium/About-Us-page-screenshot-1-actual.png
+        Diff: /__w/homepage-astro/homepage-astro/test-results/about-us-About-Us-page-screenshot-chromium/About-Us-page-screenshot-1-diff.png
+
+    Call log:
+      - page._expectScreenshot with timeout 5000ms
+      -   verifying given screenshot expectation
+      - taking page screenshot
+      -   disabled all CSS animations
+      - waiting for fonts to load...
+      - fonts loaded
+      - 6350 pixels (ratio 0.01 of all image pixels) are different.
+      - waiting 100ms before taking screenshot
+      - taking page screenshot
+      -   disabled all CSS animations
+      - waiting for fonts to load...
+      - fonts loaded
+      - 6334 pixels (ratio 0.01 of all image pixels) are different.
+      - waiting 250ms before taking screenshot
+      - taking page screenshot
+      -   disabled all CSS animations
+      - waiting for fonts to load...
+      - fonts loaded
+      - Timeout 5000ms exceeded.
+
+
+      11 | 	await page.waitForTimeout(1000);
+      12 | 	await page.getByRole('contentinfo').scrollIntoViewIfNeeded();
+    > 13 | 	await expect(page).toHaveScreenshot({ fullPage: true });
+         | 	                   ^
+      14 | });
+      15 |
+
+        at /__w/homepage-astro/homepage-astro/tests/about-us.spec.ts:13:21
+
+    attachment #1: About-Us-page-screenshot-1-expected.png (image/png) ─────────────────────────────
+    tests/about-us.spec.ts-snapshots/About-Us-page-screenshot-1-chromium-linux.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: About-Us-page-screenshot-1-actual.png (image/png) ───────────────────────────────
+    test-results/about-us-About-Us-page-screenshot-chromium/About-Us-page-screenshot-1-actual.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: About-Us-page-screenshot-1-diff.png (image/png) ─────────────────────────────────
+    test-results/about-us-About-Us-page-screenshot-chromium/About-Us-page-screenshot-1-diff.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: Screenshot comparison failed:
+
+      Timeout 5000ms exceeded.
+
+    Expected: /__w/homepage-astro/homepage-astro/tests/about-us.spec.ts-snapshots/About-Us-page-screenshot-1-chromium-linux.png
+    Received: /__w/homepage-astro/homepage-astro/test-results/about-us-About-Us-page-screenshot-chromium-retry1/About-Us-page-screenshot-1-actual.png
+        Diff: /__w/homepage-astro/homepage-astro/test-results/about-us-About-Us-page-screenshot-chromium-retry1/About-Us-page-screenshot-1-diff.png
+
+    Call log:
+      - page._expectScreenshot with timeout 5000ms
+      -   verifying given screenshot expectation
+      - taking page screenshot
+      -   disabled all CSS animations
+      - waiting for fonts to load...
+      - fonts loaded
+      - 6350 pixels (ratio 0.01 of all image pixels) are different.
+      - waiting 100ms before taking screenshot
+      - taking page screenshot
+      -   disabled all CSS animations
+      - waiting for fonts to load...
+      - fonts loaded
+      - 6334 pixels (ratio 0.01 of all image pixels) are different.
+      - waiting 250ms before taking screenshot
+      - taking page screenshot
+      -   disabled all CSS animations
+      - waiting for fonts to load...
+      - fonts loaded
+      - Timeout 5000ms exceeded.
+
+
+      11 | 	await page.waitForTimeout(1000);
+      12 | 	await page.getByRole('contentinfo').scrollIntoViewIfNeeded();
+    > 13 | 	await expect(page).toHaveScreenshot({ fullPage: true });
+         | 	                   ^
+      14 | });
+      15 |
+
+        at /__w/homepage-astro/homepage-astro/tests/about-us.spec.ts:13:21
+
+    attachment #1: About-Us-page-screenshot-1-expected.png (image/png) ─────────────────────────────
+    tests/about-us.spec.ts-snapshots/About-Us-page-screenshot-1-chromium-linux.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: About-Us-page-screenshot-1-actual.png (image/png) ───────────────────────────────
+    test-results/about-us-About-Us-page-screenshot-chromium-retry1/About-Us-page-screenshot-1-actual.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: About-Us-page-screenshot-1-diff.png (image/png) ─────────────────────────────────
+    test-results/about-us-About-Us-page-screenshot-chromium-retry1/About-Us-page-screenshot-1-diff.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Retry #2 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: Screenshot comparison failed:
+
+      Timeout 5000ms exceeded.
+
+    Expected: /__w/homepage-astro/homepage-astro/tests/about-us.spec.ts-snapshots/About-Us-page-screenshot-1-chromium-linux.png
+    Received: /__w/homepage-astro/homepage-astro/test-results/about-us-About-Us-page-screenshot-chromium-retry2/About-Us-page-screenshot-1-actual.png
+        Diff: /__w/homepage-astro/homepage-astro/test-results/about-us-About-Us-page-screenshot-chromium-retry2/About-Us-page-screenshot-1-diff.png
+
+    Call log:
+      - page._expectScreenshot with timeout 5000ms
+      -   verifying given screenshot expectation
+      - taking page screenshot
+      -   disabled all CSS animations
+      - waiting for fonts to load...
+      - fonts loaded
+      - 14708 pixels (ratio 0.01 of all image pixels) are different.
+      - waiting 100ms before taking screenshot
+      - taking page screenshot
+      -   disabled all CSS animations
+      - waiting for fonts to load...
+      - fonts loaded
+      - 13268 pixels (ratio 0.01 of all image pixels) are different.
+      - waiting 250ms before taking screenshot
+      - taking page screenshot
+      -   disabled all CSS animations
+      - waiting for fonts to load...
+      - fonts loaded
+      - Timeout 5000ms exceeded.
+
+
+      11 | 	await page.waitForTimeout(1000);
+      12 | 	await page.getByRole('contentinfo').scrollIntoViewIfNeeded();
+    > 13 | 	await expect(page).toHaveScreenshot({ fullPage: true });
+         | 	                   ^
+      14 | });
+      15 |
+
+        at /__w/homepage-astro/homepage-astro/tests/about-us.spec.ts:13:21
+
+    attachment #1: About-Us-page-screenshot-1-expected.png (image/png) ─────────────────────────────
+    tests/about-us.spec.ts-snapshots/About-Us-page-screenshot-1-chromium-linux.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: About-Us-page-screenshot-1-actual.png (image/png) ───────────────────────────────
+    test-results/about-us-About-Us-page-screenshot-chromium-retry2/About-Us-page-screenshot-1-actual.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: About-Us-page-screenshot-1-diff.png (image/png) ─────────────────────────────────
+    test-results/about-us-About-Us-page-screenshot-chromium-retry2/About-Us-page-screenshot-1-diff.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Retry #3 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: Screenshot comparison failed:
+
+      Timeout 5000ms exceeded.
+
+    Expected: /__w/homepage-astro/homepage-astro/tests/about-us.spec.ts-snapshots/About-Us-page-screenshot-1-chromium-linux.png
+    Received: /__w/homepage-astro/homepage-astro/test-results/about-us-About-Us-page-screenshot-chromium-retry3/About-Us-page-screenshot-1-actual.png
+        Diff: /__w/homepage-astro/homepage-astro/test-results/about-us-About-Us-page-screenshot-chromium-retry3/About-Us-page-screenshot-1-diff.png
+
+    Call log:
+      - page._expectScreenshot with timeout 5000ms
+      -   verifying given screenshot expectation
+      - taking page screenshot
+      -   disabled all CSS animations
+      - waiting for fonts to load...
+      - fonts loaded
+      - 14708 pixels (ratio 0.01 of all image pixels) are different.
+      - waiting 100ms before taking screenshot
+      - taking page screenshot
+      -   disabled all CSS animations
+      - waiting for fonts to load...
+      - fonts loaded
+      - 13268 pixels (ratio 0.01 of all image pixels) are different.
+      - waiting 250ms before taking screenshot
+      - Timeout 5000ms exceeded.
+
+
+      11 | 	await page.waitForTimeout(1000);
+      12 | 	await page.getByRole('contentinfo').scrollIntoViewIfNeeded();
+    > 13 | 	await expect(page).toHaveScreenshot({ fullPage: true });
+         | 	                   ^
+      14 | });
+      15 |
+
+        at /__w/homepage-astro/homepage-astro/tests/about-us.spec.ts:13:21
+
+    attachment #1: About-Us-page-screenshot-1-expected.png (image/png) ─────────────────────────────
+    tests/about-us.spec.ts-snapshots/About-Us-page-screenshot-1-chromium-linux.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: About-Us-page-screenshot-1-actual.png (image/png) ───────────────────────────────
+    test-results/about-us-About-Us-page-screenshot-chromium-retry3/About-Us-page-screenshot-1-actual.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: About-Us-page-screenshot-1-diff.png (image/png) ─────────────────────────────────
+    test-results/about-us-About-Us-page-screenshot-chromium-retry3/About-Us-page-screenshot-1-diff.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|tests/about-us.spec.ts-snapshots/About-Us-page-screenshot-1-chromium-linux.png]]
+
+[[ATTACHMENT|test-results/about-us-About-Us-page-screenshot-chromium/About-Us-page-screenshot-1-actual.png]]
+
+[[ATTACHMENT|test-results/about-us-About-Us-page-screenshot-chromium/About-Us-page-screenshot-1-diff.png]]
+
+[[ATTACHMENT|tests/about-us.spec.ts-snapshots/About-Us-page-screenshot-1-chromium-linux.png]]
+
+[[ATTACHMENT|test-results/about-us-About-Us-page-screenshot-chromium-retry1/About-Us-page-screenshot-1-actual.png]]
+
+[[ATTACHMENT|test-results/about-us-About-Us-page-screenshot-chromium-retry1/About-Us-page-screenshot-1-diff.png]]
+
+[[ATTACHMENT|tests/about-us.spec.ts-snapshots/About-Us-page-screenshot-1-chromium-linux.png]]
+
+[[ATTACHMENT|test-results/about-us-About-Us-page-screenshot-chromium-retry2/About-Us-page-screenshot-1-actual.png]]
+
+[[ATTACHMENT|test-results/about-us-About-Us-page-screenshot-chromium-retry2/About-Us-page-screenshot-1-diff.png]]
+
+[[ATTACHMENT|tests/about-us.spec.ts-snapshots/About-Us-page-screenshot-1-chromium-linux.png]]
+
+[[ATTACHMENT|test-results/about-us-About-Us-page-screenshot-chromium-retry3/About-Us-page-screenshot-1-actual.png]]
+
+[[ATTACHMENT|test-results/about-us-About-Us-page-screenshot-chromium-retry3/About-Us-page-screenshot-1-diff.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="footer.spec.ts" timestamp="2024-02-09T19:18:25.529Z" hostname="chromium" tests="6" failures="0" skipped="0" time="8.207" errors="0">
+<testcase name="Home has footer" classname="footer.spec.ts" time="0.594">
+</testcase>
+<testcase name="Über Uns has footer" classname="footer.spec.ts" time="0.572">
+</testcase>
+<testcase name="Veranstaltungen has footer" classname="footer.spec.ts" time="0.667">
+</testcase>
+<testcase name="Unterstütze uns has footer" classname="footer.spec.ts" time="0.406">
+</testcase>
+<testcase name="Mitgliedschaft has footer" classname="footer.spec.ts" time="5.092">
+<properties>
+<property name="fail" value="">
+</property>
+</properties>
+</testcase>
+<testcase name="Opens dialog from footer" classname="footer.spec.ts" time="0.876">
+</testcase>
+</testsuite>
+<testsuite name="index.spec.ts" timestamp="2024-02-09T19:18:25.529Z" hostname="chromium" tests="2" failures="1" skipped="0" time="26.059" errors="0">
+<testcase name="index page screenshot" classname="index.spec.ts" time="22.062">
+<failure message="index.spec.ts:7:1 index page screenshot" type="FAILURE">
+<![CDATA[  [chromium] › index.spec.ts:7:1 › index page screenshot ───────────────────────────────────────────
+
+    Error: locator.scrollIntoViewIfNeeded: Element is not attached to the DOM
+    Call log:
+      -   waiting for element to be stable
+      -   element is stable
+
+
+       9 | 	// TODO: remove this after port
+      10 | 	if (browserName !== 'firefox') {
+    > 11 | 		await page.getByTestId('testimonials').scrollIntoViewIfNeeded();
+         | 		                                       ^
+      12 | 	}
+      13 | 	await page.getByRole('contentinfo').scrollIntoViewIfNeeded();
+      14 |
+
+        at /__w/homepage-astro/homepage-astro/tests/index.spec.ts:11:42
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: Screenshot comparison failed:
+
+      Timeout 5000ms exceeded.
+
+    Expected: /__w/homepage-astro/homepage-astro/tests/index.spec.ts-snapshots/index-page-screenshot-1-chromium-linux.png
+    Received: /__w/homepage-astro/homepage-astro/test-results/index-index-page-screenshot-chromium-retry1/index-page-screenshot-1-actual.png
+        Diff: /__w/homepage-astro/homepage-astro/test-results/index-index-page-screenshot-chromium-retry1/index-page-screenshot-1-diff.png
+
+    Call log:
+      - page._expectScreenshot with timeout 5000ms
+      -   verifying given screenshot expectation
+      - taking page screenshot
+      -   disabled all CSS animations
+      - waiting for fonts to load...
+      - fonts loaded
+      - 213941 pixels (ratio 0.05 of all image pixels) are different.
+      - waiting 100ms before taking screenshot
+      - taking page screenshot
+      -   disabled all CSS animations
+      - waiting for fonts to load...
+      - fonts loaded
+      - 207709 pixels (ratio 0.05 of all image pixels) are different.
+      - waiting 250ms before taking screenshot
+      - taking page screenshot
+      -   disabled all CSS animations
+      - waiting for fonts to load...
+      - fonts loaded
+      - Timeout 5000ms exceeded.
+
+
+      16 | 	await page.waitForLoadState('networkidle');
+      17 |
+    > 18 | 	await expect(page).toHaveScreenshot({ fullPage: true });
+         | 	                   ^
+      19 | });
+      20 |
+      21 | test('testimonials can be scrolled', async ({ page }) => {
+
+        at /__w/homepage-astro/homepage-astro/tests/index.spec.ts:18:21
+
+    attachment #1: index-page-screenshot-1-expected.png (image/png) ────────────────────────────────
+    tests/index.spec.ts-snapshots/index-page-screenshot-1-chromium-linux.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: index-page-screenshot-1-actual.png (image/png) ──────────────────────────────────
+    test-results/index-index-page-screenshot-chromium-retry1/index-page-screenshot-1-actual.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: index-page-screenshot-1-diff.png (image/png) ────────────────────────────────────
+    test-results/index-index-page-screenshot-chromium-retry1/index-page-screenshot-1-diff.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Retry #2 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: Screenshot comparison failed:
+
+      Timeout 5000ms exceeded.
+
+    Expected: /__w/homepage-astro/homepage-astro/tests/index.spec.ts-snapshots/index-page-screenshot-1-chromium-linux.png
+    Received: /__w/homepage-astro/homepage-astro/test-results/index-index-page-screenshot-chromium-retry2/index-page-screenshot-1-actual.png
+        Diff: /__w/homepage-astro/homepage-astro/test-results/index-index-page-screenshot-chromium-retry2/index-page-screenshot-1-diff.png
+
+    Call log:
+      - page._expectScreenshot with timeout 5000ms
+      -   verifying given screenshot expectation
+      - taking page screenshot
+      -   disabled all CSS animations
+      - waiting for fonts to load...
+      - fonts loaded
+      - 213941 pixels (ratio 0.05 of all image pixels) are different.
+      - waiting 100ms before taking screenshot
+      - taking page screenshot
+      -   disabled all CSS animations
+      - waiting for fonts to load...
+      - fonts loaded
+      - 207709 pixels (ratio 0.05 of all image pixels) are different.
+      - waiting 250ms before taking screenshot
+      - taking page screenshot
+      -   disabled all CSS animations
+      - waiting for fonts to load...
+      - fonts loaded
+      - Timeout 5000ms exceeded.
+
+
+      16 | 	await page.waitForLoadState('networkidle');
+      17 |
+    > 18 | 	await expect(page).toHaveScreenshot({ fullPage: true });
+         | 	                   ^
+      19 | });
+      20 |
+      21 | test('testimonials can be scrolled', async ({ page }) => {
+
+        at /__w/homepage-astro/homepage-astro/tests/index.spec.ts:18:21
+
+    attachment #1: index-page-screenshot-1-expected.png (image/png) ────────────────────────────────
+    tests/index.spec.ts-snapshots/index-page-screenshot-1-chromium-linux.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: index-page-screenshot-1-actual.png (image/png) ──────────────────────────────────
+    test-results/index-index-page-screenshot-chromium-retry2/index-page-screenshot-1-actual.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: index-page-screenshot-1-diff.png (image/png) ────────────────────────────────────
+    test-results/index-index-page-screenshot-chromium-retry2/index-page-screenshot-1-diff.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Retry #3 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: Screenshot comparison failed:
+
+      Timeout 5000ms exceeded.
+
+    Expected: /__w/homepage-astro/homepage-astro/tests/index.spec.ts-snapshots/index-page-screenshot-1-chromium-linux.png
+    Received: /__w/homepage-astro/homepage-astro/test-results/index-index-page-screenshot-chromium-retry3/index-page-screenshot-1-actual.png
+        Diff: /__w/homepage-astro/homepage-astro/test-results/index-index-page-screenshot-chromium-retry3/index-page-screenshot-1-diff.png
+
+    Call log:
+      - page._expectScreenshot with timeout 5000ms
+      -   verifying given screenshot expectation
+      - taking page screenshot
+      -   disabled all CSS animations
+      - waiting for fonts to load...
+      - fonts loaded
+      - 465955 pixels (ratio 0.10 of all image pixels) are different.
+      - waiting 100ms before taking screenshot
+      - taking page screenshot
+      -   disabled all CSS animations
+      - waiting for fonts to load...
+      - fonts loaded
+      - 255461 pixels (ratio 0.06 of all image pixels) are different.
+      - waiting 250ms before taking screenshot
+      - taking page screenshot
+      -   disabled all CSS animations
+      - waiting for fonts to load...
+      - fonts loaded
+      - 207709 pixels (ratio 0.05 of all image pixels) are different.
+      - waiting 500ms before taking screenshot
+      - Timeout 5000ms exceeded.
+
+
+      16 | 	await page.waitForLoadState('networkidle');
+      17 |
+    > 18 | 	await expect(page).toHaveScreenshot({ fullPage: true });
+         | 	                   ^
+      19 | });
+      20 |
+      21 | test('testimonials can be scrolled', async ({ page }) => {
+
+        at /__w/homepage-astro/homepage-astro/tests/index.spec.ts:18:21
+
+    attachment #1: index-page-screenshot-1-expected.png (image/png) ────────────────────────────────
+    tests/index.spec.ts-snapshots/index-page-screenshot-1-chromium-linux.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: index-page-screenshot-1-actual.png (image/png) ──────────────────────────────────
+    test-results/index-index-page-screenshot-chromium-retry3/index-page-screenshot-1-actual.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: index-page-screenshot-1-diff.png (image/png) ────────────────────────────────────
+    test-results/index-index-page-screenshot-chromium-retry3/index-page-screenshot-1-diff.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|tests/index.spec.ts-snapshots/index-page-screenshot-1-chromium-linux.png]]
+
+[[ATTACHMENT|test-results/index-index-page-screenshot-chromium-retry1/index-page-screenshot-1-actual.png]]
+
+[[ATTACHMENT|test-results/index-index-page-screenshot-chromium-retry1/index-page-screenshot-1-diff.png]]
+
+[[ATTACHMENT|tests/index.spec.ts-snapshots/index-page-screenshot-1-chromium-linux.png]]
+
+[[ATTACHMENT|test-results/index-index-page-screenshot-chromium-retry2/index-page-screenshot-1-actual.png]]
+
+[[ATTACHMENT|test-results/index-index-page-screenshot-chromium-retry2/index-page-screenshot-1-diff.png]]
+
+[[ATTACHMENT|tests/index.spec.ts-snapshots/index-page-screenshot-1-chromium-linux.png]]
+
+[[ATTACHMENT|test-results/index-index-page-screenshot-chromium-retry3/index-page-screenshot-1-actual.png]]
+
+[[ATTACHMENT|test-results/index-index-page-screenshot-chromium-retry3/index-page-screenshot-1-diff.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="testimonials can be scrolled" classname="index.spec.ts" time="3.997">
+</testcase>
+</testsuite>
+<testsuite name="members.spec.ts" timestamp="2024-02-09T19:18:25.529Z" hostname="chromium" tests="1" failures="0" skipped="0" time="5.926" errors="0">
+<testcase name="members page screenshot" classname="members.spec.ts" time="5.926">
+<properties>
+<property name="fail" value="">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|tests/members.spec.ts-snapshots/members-page-screenshot-1-chromium-linux.png]]
+
+[[ATTACHMENT|test-results/members-members-page-screenshot-chromium/members-page-screenshot-1-actual.png]]
+
+[[ATTACHMENT|test-results/members-members-page-screenshot-chromium/members-page-screenshot-1-diff.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="navbar.spec.ts" timestamp="2024-02-09T19:18:25.529Z" hostname="chromium" tests="12" failures="0" skipped="7" time="16.512" errors="0">
+<testcase name="Navigation › clicking &apos;Home&apos; navigates to /" classname="navbar.spec.ts" time="1.113">
+</testcase>
+<testcase name="Navigation › clicking &apos;Über Uns&apos; navigates to /about-us" classname="navbar.spec.ts" time="1.63">
+</testcase>
+<testcase name="Navigation › clicking &apos;Veranstaltungen&apos; navigates to /events" classname="navbar.spec.ts" time="1.707">
+</testcase>
+<testcase name="Navigation › clicking &apos;Unterstütze uns&apos; navigates to /support-us" classname="navbar.spec.ts" time="1.17">
+</testcase>
+<testcase name="Navigation › clicking &apos;Mitgliedschaft&apos; navigates to /members" classname="navbar.spec.ts" time="10.84">
+<properties>
+<property name="fail" value="">
+</property>
+</properties>
+</testcase>
+<testcase name="Mobile only › on mobile opens main menu" classname="navbar.spec.ts" time="0.011">
+<properties>
+<property name="skip" value="Mobile only">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile only › on mobile closes main menu" classname="navbar.spec.ts" time="0.008">
+<properties>
+<property name="skip" value="Mobile only">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile only › menu closes when clicking Home" classname="navbar.spec.ts" time="0.008">
+<properties>
+<property name="skip" value="Mobile only">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile only › menu closes when clicking Über Uns" classname="navbar.spec.ts" time="0.007">
+<properties>
+<property name="skip" value="Mobile only">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile only › menu closes when clicking Veranstaltungen" classname="navbar.spec.ts" time="0.006">
+<properties>
+<property name="skip" value="Mobile only">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile only › menu closes when clicking Unterstütze uns" classname="navbar.spec.ts" time="0.006">
+<properties>
+<property name="skip" value="Mobile only">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile only › menu closes when clicking Mitgliedschaft" classname="navbar.spec.ts" time="0.006">
+<properties>
+<property name="skip" value="Mobile only">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="projects.spec.ts" timestamp="2024-02-09T19:18:25.529Z" hostname="chromium" tests="5" failures="0" skipped="2" time="16.354" errors="0">
+<testcase name="Projects page screenshot" classname="projects.spec.ts" time="3.258">
+</testcase>
+<testcase name="Filter members_only" classname="projects.spec.ts" time="5.182">
+</testcase>
+<testcase name="Filter for_all" classname="projects.spec.ts" time="7.914">
+</testcase>
+<testcase name="Click on Mitgliederversammlung" classname="projects.spec.ts" time="0">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Click on Silvester" classname="projects.spec.ts" time="0">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="support-us.spec.ts" timestamp="2024-02-09T19:18:25.529Z" hostname="chromium" tests="6" failures="0" skipped="0" time="9.312" errors="0">
+<testcase name="support-us page screenshot" classname="support-us.spec.ts" time="1.319">
+</testcase>
+<testcase name="Expanding Fördermitglieder" classname="support-us.spec.ts" time="0.751">
+</testcase>
+<testcase name="Donation method details › Expanding &apos;Partner werden&apos;" classname="support-us.spec.ts" time="1.874">
+</testcase>
+<testcase name="Donation method details › Expanding &apos;Geld spenden&apos;" classname="support-us.spec.ts" time="0.701">
+</testcase>
+<testcase name="Donation method details › Expanding &apos;Expertise Spenden&apos;" classname="support-us.spec.ts" time="2.212">
+</testcase>
+<testcase name="Donation method details › Expanding &apos;Sachspenden&apos;" classname="support-us.spec.ts" time="2.455">
+</testcase>
+</testsuite>
+<testsuite name="about-us.spec.ts" timestamp="2024-02-09T19:18:25.529Z" hostname="firefox" tests="1" failures="0" skipped="0" time="8.297" errors="0">
+<testcase name="About Us page screenshot" classname="about-us.spec.ts" time="8.297">
+</testcase>
+</testsuite>
+<testsuite name="footer.spec.ts" timestamp="2024-02-09T19:18:25.529Z" hostname="firefox" tests="6" failures="0" skipped="0" time="20.66" errors="0">
+<testcase name="Home has footer" classname="footer.spec.ts" time="1.861">
+</testcase>
+<testcase name="Über Uns has footer" classname="footer.spec.ts" time="8.831">
+</testcase>
+<testcase name="Veranstaltungen has footer" classname="footer.spec.ts" time="2.038">
+</testcase>
+<testcase name="Unterstütze uns has footer" classname="footer.spec.ts" time="0.602">
+</testcase>
+<testcase name="Mitgliedschaft has footer" classname="footer.spec.ts" time="5.278">
+<properties>
+<property name="fail" value="">
+</property>
+</properties>
+</testcase>
+<testcase name="Opens dialog from footer" classname="footer.spec.ts" time="2.05">
+</testcase>
+</testsuite>
+<testsuite name="index.spec.ts" timestamp="2024-02-09T19:18:25.529Z" hostname="firefox" tests="2" failures="0" skipped="0" time="7.11" errors="0">
+<testcase name="index page screenshot" classname="index.spec.ts" time="2.515">
+</testcase>
+<testcase name="testimonials can be scrolled" classname="index.spec.ts" time="4.595">
+</testcase>
+</testsuite>
+<testsuite name="members.spec.ts" timestamp="2024-02-09T19:18:25.529Z" hostname="firefox" tests="1" failures="0" skipped="0" time="4.299" errors="0">
+<testcase name="members page screenshot" classname="members.spec.ts" time="4.299">
+<properties>
+<property name="fail" value="">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|tests/members.spec.ts-snapshots/members-page-screenshot-1-firefox-linux.png]]
+
+[[ATTACHMENT|test-results/members-members-page-screenshot-firefox/members-page-screenshot-1-actual.png]]
+
+[[ATTACHMENT|test-results/members-members-page-screenshot-firefox/members-page-screenshot-1-diff.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="navbar.spec.ts" timestamp="2024-02-09T19:18:25.529Z" hostname="firefox" tests="12" failures="0" skipped="7" time="18.187" errors="0">
+<testcase name="Navigation › clicking &apos;Home&apos; navigates to /" classname="navbar.spec.ts" time="1.054">
+</testcase>
+<testcase name="Navigation › clicking &apos;Über Uns&apos; navigates to /about-us" classname="navbar.spec.ts" time="1.619">
+</testcase>
+<testcase name="Navigation › clicking &apos;Veranstaltungen&apos; navigates to /events" classname="navbar.spec.ts" time="2.548">
+</testcase>
+<testcase name="Navigation › clicking &apos;Unterstütze uns&apos; navigates to /support-us" classname="navbar.spec.ts" time="1.533">
+</testcase>
+<testcase name="Navigation › clicking &apos;Mitgliedschaft&apos; navigates to /members" classname="navbar.spec.ts" time="11.354">
+<properties>
+<property name="fail" value="">
+</property>
+</properties>
+</testcase>
+<testcase name="Mobile only › on mobile opens main menu" classname="navbar.spec.ts" time="0.01">
+<properties>
+<property name="skip" value="Mobile only">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile only › on mobile closes main menu" classname="navbar.spec.ts" time="0.011">
+<properties>
+<property name="skip" value="Mobile only">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile only › menu closes when clicking Home" classname="navbar.spec.ts" time="0.009">
+<properties>
+<property name="skip" value="Mobile only">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile only › menu closes when clicking Über Uns" classname="navbar.spec.ts" time="0.011">
+<properties>
+<property name="skip" value="Mobile only">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile only › menu closes when clicking Veranstaltungen" classname="navbar.spec.ts" time="0.011">
+<properties>
+<property name="skip" value="Mobile only">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile only › menu closes when clicking Unterstütze uns" classname="navbar.spec.ts" time="0.015">
+<properties>
+<property name="skip" value="Mobile only">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile only › menu closes when clicking Mitgliedschaft" classname="navbar.spec.ts" time="0.012">
+<properties>
+<property name="skip" value="Mobile only">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="projects.spec.ts" timestamp="2024-02-09T19:18:25.529Z" hostname="firefox" tests="5" failures="0" skipped="2" time="8.945" errors="0">
+<testcase name="Projects page screenshot" classname="projects.spec.ts" time="4.096">
+</testcase>
+<testcase name="Filter members_only" classname="projects.spec.ts" time="2.574">
+</testcase>
+<testcase name="Filter for_all" classname="projects.spec.ts" time="2.275">
+</testcase>
+<testcase name="Click on Mitgliederversammlung" classname="projects.spec.ts" time="0">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Click on Silvester" classname="projects.spec.ts" time="0">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="support-us.spec.ts" timestamp="2024-02-09T19:18:25.529Z" hostname="firefox" tests="6" failures="0" skipped="0" time="8.625" errors="0">
+<testcase name="support-us page screenshot" classname="support-us.spec.ts" time="3.488">
+</testcase>
+<testcase name="Expanding Fördermitglieder" classname="support-us.spec.ts" time="0.864">
+</testcase>
+<testcase name="Donation method details › Expanding &apos;Partner werden&apos;" classname="support-us.spec.ts" time="0.845">
+</testcase>
+<testcase name="Donation method details › Expanding &apos;Geld spenden&apos;" classname="support-us.spec.ts" time="1.295">
+</testcase>
+<testcase name="Donation method details › Expanding &apos;Expertise Spenden&apos;" classname="support-us.spec.ts" time="1.246">
+</testcase>
+<testcase name="Donation method details › Expanding &apos;Sachspenden&apos;" classname="support-us.spec.ts" time="0.887">
+</testcase>
+</testsuite>
+<testsuite name="about-us.spec.ts" timestamp="2024-02-09T19:18:25.529Z" hostname="Mobile Chrome" tests="1" failures="0" skipped="0" time="5.231" errors="0">
+<testcase name="About Us page screenshot" classname="about-us.spec.ts" time="5.231">
+</testcase>
+</testsuite>
+<testsuite name="footer.spec.ts" timestamp="2024-02-09T19:18:25.529Z" hostname="Mobile Chrome" tests="6" failures="0" skipped="0" time="14.191" errors="0">
+<testcase name="Home has footer" classname="footer.spec.ts" time="0.391">
+</testcase>
+<testcase name="Über Uns has footer" classname="footer.spec.ts" time="6.95">
+</testcase>
+<testcase name="Veranstaltungen has footer" classname="footer.spec.ts" time="0.571">
+</testcase>
+<testcase name="Unterstütze uns has footer" classname="footer.spec.ts" time="0.235">
+</testcase>
+<testcase name="Mitgliedschaft has footer" classname="footer.spec.ts" time="5.085">
+<properties>
+<property name="fail" value="">
+</property>
+</properties>
+</testcase>
+<testcase name="Opens dialog from footer" classname="footer.spec.ts" time="0.959">
+</testcase>
+</testsuite>
+<testsuite name="index.spec.ts" timestamp="2024-02-09T19:18:25.529Z" hostname="Mobile Chrome" tests="2" failures="0" skipped="0" time="7.574" errors="0">
+<testcase name="index page screenshot" classname="index.spec.ts" time="3.985">
+</testcase>
+<testcase name="testimonials can be scrolled" classname="index.spec.ts" time="3.589">
+</testcase>
+</testsuite>
+<testsuite name="members.spec.ts" timestamp="2024-02-09T19:18:25.529Z" hostname="Mobile Chrome" tests="1" failures="0" skipped="0" time="1.231" errors="0">
+<testcase name="members page screenshot" classname="members.spec.ts" time="1.231">
+<properties>
+<property name="fail" value="">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|tests/members.spec.ts-snapshots/members-page-screenshot-1-Mobile-Chrome-linux.png]]
+
+[[ATTACHMENT|test-results/members-members-page-screenshot-Mobile-Chrome/members-page-screenshot-1-actual.png]]
+
+[[ATTACHMENT|test-results/members-members-page-screenshot-Mobile-Chrome/members-page-screenshot-1-diff.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="navbar.spec.ts" timestamp="2024-02-09T19:18:25.529Z" hostname="Mobile Chrome" tests="12" failures="0" skipped="0" time="19.193" errors="0">
+<testcase name="Navigation › clicking &apos;Home&apos; navigates to /" classname="navbar.spec.ts" time="0.716">
+</testcase>
+<testcase name="Navigation › clicking &apos;Über Uns&apos; navigates to /about-us" classname="navbar.spec.ts" time="0.93">
+</testcase>
+<testcase name="Navigation › clicking &apos;Veranstaltungen&apos; navigates to /events" classname="navbar.spec.ts" time="0.968">
+</testcase>
+<testcase name="Navigation › clicking &apos;Unterstütze uns&apos; navigates to /support-us" classname="navbar.spec.ts" time="0.68">
+</testcase>
+<testcase name="Navigation › clicking &apos;Mitgliedschaft&apos; navigates to /members" classname="navbar.spec.ts" time="6.623">
+<properties>
+<property name="fail" value="">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|tests/navbar.spec.ts-snapshots/Navigation-clicking-Mitgliedschaft-navigates-to-members-1-Mobile-Chrome-linux.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Mobile only › on mobile opens main menu" classname="navbar.spec.ts" time="1.108">
+</testcase>
+<testcase name="Mobile only › on mobile closes main menu" classname="navbar.spec.ts" time="1.265">
+</testcase>
+<testcase name="Mobile only › menu closes when clicking Home" classname="navbar.spec.ts" time="1.055">
+</testcase>
+<testcase name="Mobile only › menu closes when clicking Über Uns" classname="navbar.spec.ts" time="2.314">
+</testcase>
+<testcase name="Mobile only › menu closes when clicking Veranstaltungen" classname="navbar.spec.ts" time="1.302">
+</testcase>
+<testcase name="Mobile only › menu closes when clicking Unterstütze uns" classname="navbar.spec.ts" time="1.032">
+</testcase>
+<testcase name="Mobile only › menu closes when clicking Mitgliedschaft" classname="navbar.spec.ts" time="1.2">
+</testcase>
+</testsuite>
+<testsuite name="projects.spec.ts" timestamp="2024-02-09T19:18:25.529Z" hostname="Mobile Chrome" tests="5" failures="0" skipped="2" time="8.102" errors="0">
+<testcase name="Projects page screenshot" classname="projects.spec.ts" time="2.36">
+</testcase>
+<testcase name="Filter members_only" classname="projects.spec.ts" time="2.271">
+</testcase>
+<testcase name="Filter for_all" classname="projects.spec.ts" time="3.471">
+</testcase>
+<testcase name="Click on Mitgliederversammlung" classname="projects.spec.ts" time="0">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Click on Silvester" classname="projects.spec.ts" time="0">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="support-us.spec.ts" timestamp="2024-02-09T19:18:25.529Z" hostname="Mobile Chrome" tests="6" failures="0" skipped="0" time="4.676" errors="0">
+<testcase name="support-us page screenshot" classname="support-us.spec.ts" time="0.853">
+</testcase>
+<testcase name="Expanding Fördermitglieder" classname="support-us.spec.ts" time="0.652">
+</testcase>
+<testcase name="Donation method details › Expanding &apos;Partner werden&apos;" classname="support-us.spec.ts" time="0.587">
+</testcase>
+<testcase name="Donation method details › Expanding &apos;Geld spenden&apos;" classname="support-us.spec.ts" time="0.557">
+</testcase>
+<testcase name="Donation method details › Expanding &apos;Expertise Spenden&apos;" classname="support-us.spec.ts" time="1.448">
+</testcase>
+<testcase name="Donation method details › Expanding &apos;Sachspenden&apos;" classname="support-us.spec.ts" time="0.579">
+</testcase>
+</testsuite>
+</testsuites>
