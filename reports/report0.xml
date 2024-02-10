@@ -1,0 +1,435 @@
+<testsuites id="" name="" tests="99" failures="0" skipped="20" errors="0" time="131.889808">
+<testsuite name="about-us.spec.ts" timestamp="2024-02-10T12:43:02.440Z" hostname="chromium" tests="1" failures="0" skipped="0" time="8.399" errors="0">
+<testcase name="About Us page screenshot" classname="about-us.spec.ts" time="8.399">
+</testcase>
+</testsuite>
+<testsuite name="footer.spec.ts" timestamp="2024-02-10T12:43:02.440Z" hostname="chromium" tests="6" failures="0" skipped="0" time="10.525" errors="0">
+<testcase name="Home has footer" classname="footer.spec.ts" time="1.221">
+</testcase>
+<testcase name="Über Uns has footer" classname="footer.spec.ts" time="0.993">
+</testcase>
+<testcase name="Veranstaltungen has footer" classname="footer.spec.ts" time="1.164">
+</testcase>
+<testcase name="Unterstütze uns has footer" classname="footer.spec.ts" time="0.798">
+</testcase>
+<testcase name="Mitgliedschaft has footer" classname="footer.spec.ts" time="5.129">
+<properties>
+<property name="fail" value="">
+</property>
+</properties>
+</testcase>
+<testcase name="Opens dialog from footer" classname="footer.spec.ts" time="1.22">
+</testcase>
+</testsuite>
+<testsuite name="index.spec.ts" timestamp="2024-02-10T12:43:02.440Z" hostname="chromium" tests="2" failures="0" skipped="0" time="11.447" errors="0">
+<testcase name="index page screenshot" classname="index.spec.ts" time="7.615">
+</testcase>
+<testcase name="testimonials can be scrolled" classname="index.spec.ts" time="3.832">
+</testcase>
+</testsuite>
+<testsuite name="members.spec.ts" timestamp="2024-02-10T12:43:02.440Z" hostname="chromium" tests="1" failures="0" skipped="0" time="4.004" errors="0">
+<testcase name="members page screenshot" classname="members.spec.ts" time="4.004">
+<properties>
+<property name="fail" value="">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|tests/members.spec.ts-snapshots/members-page-screenshot-1-chromium-linux.png]]
+
+[[ATTACHMENT|test-results/members-members-page-screenshot-chromium/members-page-screenshot-1-actual.png]]
+
+[[ATTACHMENT|test-results/members-members-page-screenshot-chromium/members-page-screenshot-1-diff.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="navbar.spec.ts" timestamp="2024-02-10T12:43:02.440Z" hostname="chromium" tests="12" failures="0" skipped="7" time="28.268" errors="0">
+<testcase name="Navigation › clicking &apos;Home&apos; navigates to /" classname="navbar.spec.ts" time="2.204">
+</testcase>
+<testcase name="Navigation › clicking &apos;Über Uns&apos; navigates to /about-us" classname="navbar.spec.ts" time="10.472">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|tests/navbar.spec.ts-snapshots/Navigation-clicking-Über-Uns-navigates-to-about-us-1-chromium-linux.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Navigation › clicking &apos;Veranstaltungen&apos; navigates to /events" classname="navbar.spec.ts" time="1.347">
+</testcase>
+<testcase name="Navigation › clicking &apos;Unterstütze uns&apos; navigates to /support-us" classname="navbar.spec.ts" time="0.998">
+</testcase>
+<testcase name="Navigation › clicking &apos;Mitgliedschaft&apos; navigates to /members" classname="navbar.spec.ts" time="13.145">
+<properties>
+<property name="fail" value="">
+</property>
+</properties>
+</testcase>
+<testcase name="Mobile only › on mobile opens main menu" classname="navbar.spec.ts" time="0.014">
+<properties>
+<property name="skip" value="Mobile only">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile only › on mobile closes main menu" classname="navbar.spec.ts" time="0.011">
+<properties>
+<property name="skip" value="Mobile only">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile only › menu closes when clicking Home" classname="navbar.spec.ts" time="0.017">
+<properties>
+<property name="skip" value="Mobile only">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile only › menu closes when clicking Über Uns" classname="navbar.spec.ts" time="0.02">
+<properties>
+<property name="skip" value="Mobile only">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile only › menu closes when clicking Veranstaltungen" classname="navbar.spec.ts" time="0.021">
+<properties>
+<property name="skip" value="Mobile only">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile only › menu closes when clicking Unterstütze uns" classname="navbar.spec.ts" time="0.01">
+<properties>
+<property name="skip" value="Mobile only">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile only › menu closes when clicking Mitgliedschaft" classname="navbar.spec.ts" time="0.009">
+<properties>
+<property name="skip" value="Mobile only">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="projects.spec.ts" timestamp="2024-02-10T12:43:02.440Z" hostname="chromium" tests="5" failures="0" skipped="2" time="19.621" errors="0">
+<testcase name="Projects page screenshot" classname="projects.spec.ts" time="7.051">
+</testcase>
+<testcase name="Filter members_only" classname="projects.spec.ts" time="3.662">
+</testcase>
+<testcase name="Filter for_all" classname="projects.spec.ts" time="8.908">
+</testcase>
+<testcase name="Click on Mitgliederversammlung" classname="projects.spec.ts" time="0">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Click on Silvester" classname="projects.spec.ts" time="0">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="support-us.spec.ts" timestamp="2024-02-10T12:43:02.440Z" hostname="chromium" tests="6" failures="0" skipped="0" time="11.311" errors="0">
+<testcase name="support-us page screenshot" classname="support-us.spec.ts" time="1.421">
+</testcase>
+<testcase name="Expanding Fördermitglieder" classname="support-us.spec.ts" time="0.741">
+</testcase>
+<testcase name="Donation method details › Expanding &apos;Partner werden&apos;" classname="support-us.spec.ts" time="1.914">
+</testcase>
+<testcase name="Donation method details › Expanding &apos;Geld spenden&apos;" classname="support-us.spec.ts" time="2.328">
+</testcase>
+<testcase name="Donation method details › Expanding &apos;Expertise Spenden&apos;" classname="support-us.spec.ts" time="2.887">
+</testcase>
+<testcase name="Donation method details › Expanding &apos;Sachspenden&apos;" classname="support-us.spec.ts" time="2.02">
+</testcase>
+</testsuite>
+<testsuite name="about-us.spec.ts" timestamp="2024-02-10T12:43:02.440Z" hostname="firefox" tests="1" failures="0" skipped="0" time="18.582" errors="0">
+<testcase name="About Us page screenshot" classname="about-us.spec.ts" time="18.582">
+</testcase>
+</testsuite>
+<testsuite name="footer.spec.ts" timestamp="2024-02-10T12:43:02.440Z" hostname="firefox" tests="6" failures="0" skipped="0" time="11.524" errors="0">
+<testcase name="Home has footer" classname="footer.spec.ts" time="1.608">
+</testcase>
+<testcase name="Über Uns has footer" classname="footer.spec.ts" time="1.27">
+</testcase>
+<testcase name="Veranstaltungen has footer" classname="footer.spec.ts" time="1.011">
+</testcase>
+<testcase name="Unterstütze uns has footer" classname="footer.spec.ts" time="0.517">
+</testcase>
+<testcase name="Mitgliedschaft has footer" classname="footer.spec.ts" time="5.291">
+<properties>
+<property name="fail" value="">
+</property>
+</properties>
+</testcase>
+<testcase name="Opens dialog from footer" classname="footer.spec.ts" time="1.827">
+</testcase>
+</testsuite>
+<testsuite name="index.spec.ts" timestamp="2024-02-10T12:43:02.440Z" hostname="firefox" tests="2" failures="0" skipped="0" time="7.845" errors="0">
+<testcase name="index page screenshot" classname="index.spec.ts" time="2.733">
+</testcase>
+<testcase name="testimonials can be scrolled" classname="index.spec.ts" time="5.112">
+</testcase>
+</testsuite>
+<testsuite name="members.spec.ts" timestamp="2024-02-10T12:43:02.440Z" hostname="firefox" tests="1" failures="0" skipped="0" time="4.744" errors="0">
+<testcase name="members page screenshot" classname="members.spec.ts" time="4.744">
+<properties>
+<property name="fail" value="">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|tests/members.spec.ts-snapshots/members-page-screenshot-1-firefox-linux.png]]
+
+[[ATTACHMENT|test-results/members-members-page-screenshot-firefox/members-page-screenshot-1-actual.png]]
+
+[[ATTACHMENT|test-results/members-members-page-screenshot-firefox/members-page-screenshot-1-diff.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="navbar.spec.ts" timestamp="2024-02-10T12:43:02.440Z" hostname="firefox" tests="12" failures="0" skipped="7" time="19.312" errors="0">
+<testcase name="Navigation › clicking &apos;Home&apos; navigates to /" classname="navbar.spec.ts" time="1.441">
+</testcase>
+<testcase name="Navigation › clicking &apos;Über Uns&apos; navigates to /about-us" classname="navbar.spec.ts" time="2.31">
+</testcase>
+<testcase name="Navigation › clicking &apos;Veranstaltungen&apos; navigates to /events" classname="navbar.spec.ts" time="2.534">
+</testcase>
+<testcase name="Navigation › clicking &apos;Unterstütze uns&apos; navigates to /support-us" classname="navbar.spec.ts" time="1.53">
+</testcase>
+<testcase name="Navigation › clicking &apos;Mitgliedschaft&apos; navigates to /members" classname="navbar.spec.ts" time="11.438">
+<properties>
+<property name="fail" value="">
+</property>
+</properties>
+</testcase>
+<testcase name="Mobile only › on mobile opens main menu" classname="navbar.spec.ts" time="0.007">
+<properties>
+<property name="skip" value="Mobile only">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile only › on mobile closes main menu" classname="navbar.spec.ts" time="0.01">
+<properties>
+<property name="skip" value="Mobile only">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile only › menu closes when clicking Home" classname="navbar.spec.ts" time="0.011">
+<properties>
+<property name="skip" value="Mobile only">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile only › menu closes when clicking Über Uns" classname="navbar.spec.ts" time="0.01">
+<properties>
+<property name="skip" value="Mobile only">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile only › menu closes when clicking Veranstaltungen" classname="navbar.spec.ts" time="0.008">
+<properties>
+<property name="skip" value="Mobile only">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile only › menu closes when clicking Unterstütze uns" classname="navbar.spec.ts" time="0.006">
+<properties>
+<property name="skip" value="Mobile only">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile only › menu closes when clicking Mitgliedschaft" classname="navbar.spec.ts" time="0.007">
+<properties>
+<property name="skip" value="Mobile only">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="projects.spec.ts" timestamp="2024-02-10T12:43:02.440Z" hostname="firefox" tests="5" failures="0" skipped="2" time="10.301" errors="0">
+<testcase name="Projects page screenshot" classname="projects.spec.ts" time="4.826">
+</testcase>
+<testcase name="Filter members_only" classname="projects.spec.ts" time="3.432">
+</testcase>
+<testcase name="Filter for_all" classname="projects.spec.ts" time="2.043">
+</testcase>
+<testcase name="Click on Mitgliederversammlung" classname="projects.spec.ts" time="0">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Click on Silvester" classname="projects.spec.ts" time="0">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="support-us.spec.ts" timestamp="2024-02-10T12:43:02.440Z" hostname="firefox" tests="6" failures="0" skipped="0" time="7.989" errors="0">
+<testcase name="support-us page screenshot" classname="support-us.spec.ts" time="3.379">
+</testcase>
+<testcase name="Expanding Fördermitglieder" classname="support-us.spec.ts" time="0.859">
+</testcase>
+<testcase name="Donation method details › Expanding &apos;Partner werden&apos;" classname="support-us.spec.ts" time="0.873">
+</testcase>
+<testcase name="Donation method details › Expanding &apos;Geld spenden&apos;" classname="support-us.spec.ts" time="0.777">
+</testcase>
+<testcase name="Donation method details › Expanding &apos;Expertise Spenden&apos;" classname="support-us.spec.ts" time="1.223">
+</testcase>
+<testcase name="Donation method details › Expanding &apos;Sachspenden&apos;" classname="support-us.spec.ts" time="0.878">
+</testcase>
+</testsuite>
+<testsuite name="about-us.spec.ts" timestamp="2024-02-10T12:43:02.440Z" hostname="Mobile Chrome" tests="1" failures="0" skipped="0" time="17.312" errors="0">
+<testcase name="About Us page screenshot" classname="about-us.spec.ts" time="17.312">
+</testcase>
+</testsuite>
+<testsuite name="footer.spec.ts" timestamp="2024-02-10T12:43:02.440Z" hostname="Mobile Chrome" tests="6" failures="0" skipped="0" time="8.208" errors="0">
+<testcase name="Home has footer" classname="footer.spec.ts" time="0.531">
+</testcase>
+<testcase name="Über Uns has footer" classname="footer.spec.ts" time="0.617">
+</testcase>
+<testcase name="Veranstaltungen has footer" classname="footer.spec.ts" time="0.773">
+</testcase>
+<testcase name="Unterstütze uns has footer" classname="footer.spec.ts" time="0.288">
+</testcase>
+<testcase name="Mitgliedschaft has footer" classname="footer.spec.ts" time="5.118">
+<properties>
+<property name="fail" value="">
+</property>
+</properties>
+</testcase>
+<testcase name="Opens dialog from footer" classname="footer.spec.ts" time="0.881">
+</testcase>
+</testsuite>
+<testsuite name="index.spec.ts" timestamp="2024-02-10T12:43:02.440Z" hostname="Mobile Chrome" tests="2" failures="0" skipped="0" time="9.325" errors="0">
+<testcase name="index page screenshot" classname="index.spec.ts" time="4.003">
+</testcase>
+<testcase name="testimonials can be scrolled" classname="index.spec.ts" time="5.322">
+</testcase>
+</testsuite>
+<testsuite name="members.spec.ts" timestamp="2024-02-10T12:43:02.440Z" hostname="Mobile Chrome" tests="1" failures="0" skipped="0" time="1.437" errors="0">
+<testcase name="members page screenshot" classname="members.spec.ts" time="1.437">
+<properties>
+<property name="fail" value="">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|tests/members.spec.ts-snapshots/members-page-screenshot-1-Mobile-Chrome-linux.png]]
+
+[[ATTACHMENT|test-results/members-members-page-screenshot-Mobile-Chrome/members-page-screenshot-1-actual.png]]
+
+[[ATTACHMENT|test-results/members-members-page-screenshot-Mobile-Chrome/members-page-screenshot-1-diff.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="navbar.spec.ts" timestamp="2024-02-10T12:43:02.440Z" hostname="Mobile Chrome" tests="12" failures="0" skipped="0" time="22.796" errors="0">
+<testcase name="Navigation › clicking &apos;Home&apos; navigates to /" classname="navbar.spec.ts" time="3.078">
+</testcase>
+<testcase name="Navigation › clicking &apos;Über Uns&apos; navigates to /about-us" classname="navbar.spec.ts" time="1.436">
+</testcase>
+<testcase name="Navigation › clicking &apos;Veranstaltungen&apos; navigates to /events" classname="navbar.spec.ts" time="1.258">
+</testcase>
+<testcase name="Navigation › clicking &apos;Unterstütze uns&apos; navigates to /support-us" classname="navbar.spec.ts" time="1.02">
+</testcase>
+<testcase name="Navigation › clicking &apos;Mitgliedschaft&apos; navigates to /members" classname="navbar.spec.ts" time="5.761">
+<properties>
+<property name="fail" value="">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|tests/navbar.spec.ts-snapshots/Navigation-clicking-Mitgliedschaft-navigates-to-members-1-Mobile-Chrome-linux.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Mobile only › on mobile opens main menu" classname="navbar.spec.ts" time="3.305">
+</testcase>
+<testcase name="Mobile only › on mobile closes main menu" classname="navbar.spec.ts" time="1.009">
+</testcase>
+<testcase name="Mobile only › menu closes when clicking Home" classname="navbar.spec.ts" time="1.448">
+</testcase>
+<testcase name="Mobile only › menu closes when clicking Über Uns" classname="navbar.spec.ts" time="1.09">
+</testcase>
+<testcase name="Mobile only › menu closes when clicking Veranstaltungen" classname="navbar.spec.ts" time="1.18">
+</testcase>
+<testcase name="Mobile only › menu closes when clicking Unterstütze uns" classname="navbar.spec.ts" time="1.008">
+</testcase>
+<testcase name="Mobile only › menu closes when clicking Mitgliedschaft" classname="navbar.spec.ts" time="1.203">
+</testcase>
+</testsuite>
+<testsuite name="projects.spec.ts" timestamp="2024-02-10T12:43:02.440Z" hostname="Mobile Chrome" tests="5" failures="0" skipped="2" time="8.523" errors="0">
+<testcase name="Projects page screenshot" classname="projects.spec.ts" time="2.314">
+</testcase>
+<testcase name="Filter members_only" classname="projects.spec.ts" time="2.542">
+</testcase>
+<testcase name="Filter for_all" classname="projects.spec.ts" time="3.667">
+</testcase>
+<testcase name="Click on Mitgliederversammlung" classname="projects.spec.ts" time="0">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Click on Silvester" classname="projects.spec.ts" time="0">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="support-us.spec.ts" timestamp="2024-02-10T12:43:02.440Z" hostname="Mobile Chrome" tests="6" failures="0" skipped="0" time="5.185" errors="0">
+<testcase name="support-us page screenshot" classname="support-us.spec.ts" time="0.85">
+</testcase>
+<testcase name="Expanding Fördermitglieder" classname="support-us.spec.ts" time="0.605">
+</testcase>
+<testcase name="Donation method details › Expanding &apos;Partner werden&apos;" classname="support-us.spec.ts" time="1.429">
+</testcase>
+<testcase name="Donation method details › Expanding &apos;Geld spenden&apos;" classname="support-us.spec.ts" time="0.607">
+</testcase>
+<testcase name="Donation method details › Expanding &apos;Expertise Spenden&apos;" classname="support-us.spec.ts" time="1.05">
+</testcase>
+<testcase name="Donation method details › Expanding &apos;Sachspenden&apos;" classname="support-us.spec.ts" time="0.644">
+</testcase>
+</testsuite>
+</testsuites>
