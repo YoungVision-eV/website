@@ -1,0 +1,75 @@
+---
+import { Image } from 'astro:assets';
+
+import BenefitsImage from '@assets/members/members-benefits.jpeg';
+import Background from '@assets/members/members-background.png';
+import Image1 from '@assets/members/member-benefits-image-1.jpeg';
+import Image2 from '@assets/members/member-benefits-image-2.jpeg';
+
+import Button from '@components/Button.astro';
+---
+
+<main class="relative flex-col items-center px-4 pt-14 lg:flex lg:px-44 lg:pt-36">
+	<Image
+		class="absolute left-0 top-0 -z-10 h-full w-full object-cover opacity-40"
+		src={Background}
+		alt="Background"
+	/>
+
+	<Image
+		src={BenefitsImage}
+		alt="Leute sitzen im Kreis auf dem Boden"
+		class="h-48 w-full bg-gray-300 object-cover object-bottom lg:h-[27rem] lg:w-[50rem]"
+	/>
+	<h2 class="mt-10 text-center font-serif text-2xl font-bold lg:hidden">Werde Mitglied</h2>
+	<h2 class="mt-20 hidden text-center font-serif text-4xl font-bold lg:block">
+		Deine Vorteile als Mitglied
+	</h2>
+	<p class="mt-10">
+		Wir möchten dich herzlich dazu einladen, nicht nur Mitglied, sondern ein aktiver Teil unserer
+		YoungVision-Gemeinschaft zu werden. Mit einem jährlichen Mitgliedsbeitrag von 60€ (ermäßigt 24€)
+		stehen dir zahlreiche Vorteile offen, darunter:
+	</p>
+	<div class="mt-6 grid grid-cols-1 gap-4 lg:mt-12 lg:grid-cols-2">
+		<div class="flex flex-col gap-6">
+			<p>
+				Als Mitglied gehörst du zu einer inspirierenden Gemeinschaft von Gleichgesinnten, die sich
+				für persönliche Entwicklung, Achtsamkeit und soziales Engagement einsetzen.
+			</p>
+			<p>
+				Du erhältst exklusiven Zugang zu unserer Online-Plattform, wo du dich mit anderen
+				Mitgliedern vernetzen, Ideen teilen und über Events innerhalb der Community informiert
+				bleiben kannst.
+			</p>
+			<p>
+				Nutze die Chance, eigene Projekte, Veranstaltungen und Initiativen innerhalb unserer
+				YoungVision Community zu realisieren und so einen positiven Beitrag zu unserer Gemeinschaft
+				und der Welt zu leisten.
+			</p>
+		</div>
+		<div class="flex flex-col gap-6">
+			<p>
+				Deine Stimme zählt! Nimm an unseren Mitgliederversammlungen teil und gestalte aktiv unsere
+				Vereinsziele und -richtlinien mit.
+			</p>
+			<p class="row-span-2">
+				Schließe dich uns an und werde Teil unserer YoungVision Community. Wir glauben fest daran,
+				dass jede*r Einzelne einen Unterschied machen kann, und wir freuen uns darauf, dich auf
+				unserer Reise zur persönlichen Entwicklung, Gemeinschaft und positiven Veränderung
+				willkommen zu heißen!
+			</p>
+		</div>
+	</div>
+
+	<Button
+		class="mt-12 lg:mt-6"
+		text="Mitglied werden"
+		href="https://easyverein.com/public/yv/applicationform/7213"
+		color="dark"
+	/>
+
+	<div class="mt-10 flex w-full flex-col gap-4 lg:mt-20 lg:h-[22rem] lg:flex-row">
+		<Image src={Image1} alt="YoungVision" class="h-48 w-full bg-gray-300 object-cover lg:h-full" />
+		<Image src={Image2} alt="YoungVision" class="h-48 w-full bg-gray-300 object-cover lg:h-full" />
+	</div>
+</main>
