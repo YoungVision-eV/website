@@ -8,12 +8,6 @@ test.beforeEach(async ({ page }) => {
 test.describe('Navigation', () => {
 	for (const subPage of SUB_PAGES) {
 		test(`clicking '${subPage.name}' navigates to ${subPage.url}`, async ({ page, isMobile }) => {
-			test.fail(
-				subPage.name !== 'Home' &&
-					subPage.name !== 'Veranstaltungen' &&
-					subPage.name !== 'Unterstütze uns' &&
-					subPage.name !== 'Über Uns',
-			);
 			if (isMobile) {
 				await page.getByRole('button', { name: 'Open main menu' }).click();
 			}
