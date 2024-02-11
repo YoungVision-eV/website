@@ -27,7 +27,7 @@ jobs:
         env:
           PLAYWRIGHT_JUNIT_OUTPUT_NAME: playwright-results.xml
           PLAYWRIGHT_TEST_BASE_URL: ${{ github.event.deployment_status.target_url }}
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: playwright-report
