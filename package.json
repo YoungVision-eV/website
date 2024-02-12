@@ -23,7 +23,7 @@
 		"@melt-ui/svelte": "0.71.2",
 		"astro": "4.3.2",
 		"clsx": "2.1.0",
-		"svelte": "4.2.9",
+		"svelte": "4.2.10",
 		"tailwindcss": "3.4.1",
 		"typescript": "5.3.3"
 	},
