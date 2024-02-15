@@ -1,7 +1,7 @@
 <script lang="ts">
 	import clsx from 'clsx';
 
-	import { fade } from 'svelte/transition';
+	import { fade, blur } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
 	import { tweened } from 'svelte/motion';
 	import type { Event } from '@data/events';
@@ -15,7 +15,8 @@
 	const location = tweened(0, { duration: ANIMATION_DURATION, easing: cubicOut });
 	$: location.set(selectedEvent);
 
-	export let events: Event[];
+	export let events: [Event, Event, Event];
+	const [firstEvent, secondEvent, thirdEvent] = events;
 </script>
 
 <div class="grid w-full grid-cols-4 lg:grid-cols-9 lg:px-20">
@@ -23,19 +24,48 @@
 		class="col-start-1 col-end-5 row-end-2 lg:relative lg:col-end-6 lg:row-start-1 lg:row-end-4 lg:rounded-l-2xl lg:rounded-r-none"
 	>
 		<div class="relative h-[22rem] w-full lg:h-full">
-			{#each events as event, index}
+			{#if selectedEvent === 0}
 				<img
+					transition:blur={{
+						duration: ANIMATION_DURATION,
+						easing: cubicOut,
+					}}
 					loading="lazy"
-					id="event-{index}"
-					{...event.image.src.attributes}
-					src={event.image.src.src}
+					id="event-1"
+					{...firstEvent.image.src.attributes}
+					src={firstEvent.image.src.src}
 					alt="Leute sitzen am Tisch"
-					class={clsx(
-						'absolute left-0 top-0 h-full w-full rounded-t-2xl object-cover transition-opacity duration-300 lg:rounded-l-2xl lg:rounded-tr-none',
-						index === selectedEvent ? 'opacity-100' : 'opacity-0',
-					)}
+					class="absolute left-0 top-0 h-full w-full rounded-t-2xl object-cover transition-opacity lg:rounded-l-2xl lg:rounded-tr-none"
 				/>
-			{/each}
+			{/if}
+			{#if selectedEvent === 1}
+				<img
+					transition:blur={{
+						duration: ANIMATION_DURATION,
+						easing: cubicOut,
+					}}
+					loading="lazy"
+					id="event-2"
+					{...secondEvent.image.src.attributes}
+					src={secondEvent.image.src.src}
+					alt="Leute sitzen am Tisch"
+					class="absolute left-0 top-0 h-full w-full rounded-t-2xl object-cover transition-opacity lg:rounded-l-2xl lg:rounded-tr-none"
+				/>
+			{/if}
+			{#if selectedEvent === 2}
+				<img
+					transition:blur={{
+						duration: ANIMATION_DURATION,
+						easing: cubicOut,
+					}}
+					loading="lazy"
+					id="event-3"
+					{...thirdEvent.image.src.attributes}
+					src={thirdEvent.image.src.src}
+					alt="Leute sitzen am Tisch"
+					class="absolute left-0 top-0 h-full w-full rounded-t-2xl object-cover transition-opacity lg:rounded-l-2xl lg:rounded-tr-none"
+				/>
+			{/if}
 		</div>
 		<div
 			class="hidden lg:absolute lg:inset-y-0 lg:right-[27%] lg:flex lg:flex-col lg:justify-center"
