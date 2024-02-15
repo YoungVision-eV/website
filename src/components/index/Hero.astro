@@ -6,8 +6,8 @@ import HeroImage from './hero-image.jpeg';
 import LandscapeBackground from './background-hero-landscape.png';
 import PortraitBackground from './background-hero.png';
 
-const LandscapeBackgroundUrl = await getImage(LandscapeBackground);
-const PortraitBackgroundUrl = await getImage(PortraitBackground);
+const LandscapeBackgroundUrl = await getImage({ src: LandscapeBackground });
+const PortraitBackgroundUrl = await getImage({ src: PortraitBackground });
 ---
 
 <section class="w-full bg-cover">
