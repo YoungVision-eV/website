@@ -12,6 +12,7 @@ export interface Event {
 	title: string;
 	date: Date;
 	description: string;
+	slug?: string;
 	image: {
 		src: Awaited<ReturnType<typeof getImage>>;
 	};
@@ -35,6 +36,7 @@ export async function getNext3Events(): Promise<[Event, Event, Event]> {
 			title: 'Bauwoche in Rosow',
 			date: new Date(2024, 3, 1),
 			description: 'Können wir das schaffen? Yo wir schaffen das!',
+			slug: 'bauwoche-2024',
 			image: {
 				src: image2,
 			},
