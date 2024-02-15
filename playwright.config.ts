@@ -4,17 +4,17 @@ import { devices } from '@playwright/test';
 const webServer = process.env.PLAYWRIGHT_TEST_BASE_URL
 	? undefined
 	: {
-			command: 'pnpm run build && pnpm run preview',
-			port: 4321,
-		};
+		command: 'pnpm run build && pnpm run preview',
+		port: 4321,
+	};
 
 const reporter: ReporterDescription[] = process.env.CI
 	? [
-			['github', { outputMode: 'summary' }],
-			['html', { outputFolder: 'playwright-report', open: 'never' }],
-			['junit', { outputFile: 'playwright-results.xml' }],
-		]
-	: [['list']];
+		['github', { outputMode: 'summary' }],
+		['html', { outputFolder: 'playwright-report', open: 'never' }],
+		['junit', { outputFile: 'playwright-results.xml' }],
+	]
+	: [['list'], ['html']];
 
 const config: PlaywrightTestConfig = {
 	retries: 3,
