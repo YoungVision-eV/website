@@ -10,8 +10,30 @@ async function forceLoadImages(page: Page) {
 	await page.getByRole('contentinfo').scrollIntoViewIfNeeded();
 	await page.locator('#event-1').scrollIntoViewIfNeeded();
 	await page.waitForTimeout(500);
-	await page.getByRole('list').getByRole('heading', { name: 'Silvester' }).scrollIntoViewIfNeeded();
+	await page
+		.getByRole('list')
+		.getByRole('heading', { name: 'Silvester' })
+		.or(page.getByRole('list').getByRole('heading', { name: 'Mitgliederversammlung' }))
+		.scrollIntoViewIfNeeded();
 	await page.waitForTimeout(500);
+}
+
+async function expectForAllSelected(page: Page) {
+	for (const e of await page.getByRole('list').getByText('Nur Mitglieder').all()) {
+		await expect(e).not.toBeVisible();
+	}
+	for (const e of await page.getByRole('list').getByText('Für Alle').all()) {
+		await expect(e).toBeVisible();
+	}
+}
+
+async function expectOnlyMemebersSelected(page: Page) {
+	for (const e of await page.getByRole('list').getByText('Nur Mitglieder').all()) {
+		await expect(e).toBeVisible();
+	}
+	for (const e of await page.getByRole('list').getByText('Für Alle').all()) {
+		await expect(e).not.toBeVisible();
+	}
 }
 
 test('Projects page screenshot', async ({ page }) => {
@@ -20,20 +42,23 @@ test('Projects page screenshot', async ({ page }) => {
 	await expect(page).toHaveScreenshot({ fullPage: true });
 });
 
-test('Filter members_only', async ({ page }) => {
+test('Select members_only', async ({ page }) => {
 	await page.getByLabel('Nur Mitglieder').click();
-	await expect(page.getByRole('list').getByText('Nur Mitglieder')).not.toBeVisible();
+	await expectOnlyMemebersSelected(page);
 
 	await forceLoadImages(page);
 
 	await expect(page).toHaveScreenshot({ fullPage: true });
 });
 
-test('Filter for_all', async ({ page }) => {
+test('Reselect for_all', async ({ page }) => {
 	await page.getByLabel('Für Alle').click();
-	await expect(page.getByRole('list').getByText('Für Alle')).not.toBeVisible();
-	await page.getByRole('contentinfo').scrollIntoViewIfNeeded();
-	await page.waitForLoadState('networkidle');
+	await expectOnlyMemebersSelected(page);
+
+	await page.getByLabel('Für Alle').click();
+	await expectForAllSelected(page);
+
+	await forceLoadImages(page);
 
 	await expect(page).toHaveScreenshot({ fullPage: true });
 });
