@@ -5,7 +5,7 @@ import Button from '@components/Button.astro';
 import ReadMoreImage from './read-more-image.jpeg';
 import Background from './background-read-more.png';
 
-const BackgroundUrl = await getImage(Background);
+const BackgroundUrl = await getImage({ src: Background });
 ---
 
 <section class="w-full bg-cover pb-7 pt-8 lg:px-20">
