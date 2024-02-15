@@ -15,7 +15,7 @@ import { getTestimonials } from '@data/testimonials';
 
 const testimonials = await getTestimonials();
 
-const InstagramBackgroundUrl = await getImage(InstagramBackground);
+const InstagramBackgroundUrl = await getImage({ src: InstagramBackground });
 ---
 
 <Layout title="YoungVision e.V.">
