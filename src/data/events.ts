@@ -17,16 +17,16 @@ export interface Event {
 	};
 }
 
-export async function getNext3Events(): Promise<Event[]> {
+export async function getNext3Events(): Promise<[Event, Event, Event]> {
 	const image1 = await getImage({ src: thirdEventImage });
 	const image2 = await getImage({ src: calendarCoverImage });
 	const image3 = await getImage({ src: pastEvent });
 
-	const next3Events = [
+	const next3Events: [Event, Event, Event] = [
 		{
-			title: 'Silvester',
-			date: new Date(2023, 11, 29),
-			description: 'Lass uns gemeinsam in das neue Jahr starten!',
+			title: 'Mitmach Call',
+			date: new Date(2024, 1, 28),
+			description: 'Sei dabei und gestalte YoungVision mit!',
 			image: {
 				src: image1,
 			},
