@@ -17,7 +17,7 @@
 		"test:ui": "pnpm run test --ui-host localhost --ui-port 33333"
 	},
 	"dependencies": {
-		"@astrojs/check": "0.5.3",
+		"@astrojs/check": "0.5.4",
 		"@astrojs/svelte": "5.0.3",
 		"@astrojs/tailwind": "5.1.0",
 		"@melt-ui/svelte": "0.74.1",
