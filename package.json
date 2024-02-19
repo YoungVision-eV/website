@@ -17,13 +17,13 @@
 		"test:ui": "pnpm run test --ui-host localhost --ui-port 33333"
 	},
 	"dependencies": {
-		"@astrojs/check": "0.5.3",
+		"@astrojs/check": "0.5.4",
 		"@astrojs/svelte": "5.0.3",
 		"@astrojs/tailwind": "5.1.0",
-		"@melt-ui/svelte": "0.71.2",
-		"astro": "4.3.2",
+		"@melt-ui/svelte": "0.74.1",
+		"astro": "4.4.0",
 		"clsx": "2.1.0",
-		"svelte": "4.2.10",
+		"svelte": "4.2.11",
 		"tailwindcss": "3.4.1",
 		"typescript": "5.3.3"
 	},
@@ -35,7 +35,7 @@
 		"@typescript-eslint/eslint-plugin": "6.21.0",
 		"@typescript-eslint/parser": "6.21.0",
 		"embla-carousel": "8.0.0-rc22",
-		"embla-carousel-svelte": "8.0.0-rc22",
+		"embla-carousel-svelte": "8.0.0-rc23",
 		"eslint": "8.56.0",
 		"eslint-config-prettier": "9.1.0",
 		"eslint-plugin-astro": "0.31.4",
