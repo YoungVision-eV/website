@@ -1,9 +1,9 @@
 ---
-import { Image, getImage } from 'astro:assets';
 import Button from '@components/Button.astro';
+import { Image, getImage } from 'astro:assets';
 
-import ReadMoreImage from './read-more-image.jpeg';
 import Background from './background-read-more.png';
+import ReadMoreImage from './read-more-image.jpeg';
 
 const BackgroundUrl = await getImage({ src: Background });
 ---

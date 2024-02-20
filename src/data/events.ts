@@ -1,8 +1,8 @@
 import { getImage } from 'astro:assets';
 
+import calendarCoverImage from '@assets/events/calendar-cover.jpeg';
 import pastEvent from '@assets/events/calendar-past-event.jpeg';
 import thirdEventImage from '@assets/events/calendar-third-event.jpeg';
-import calendarCoverImage from '@assets/events/calendar-cover.jpeg';
 
 import EventImage1 from '@assets/events/projects-event-image-1.jpeg';
 import EventImage2 from '@assets/events/projects-event-image-2.jpeg';
