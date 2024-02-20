@@ -27,7 +27,7 @@ import LagerIcon from '@components/events/bauwoche-2024/LagerIcon.svelte';
 				<ArrowLeft />
 				<span class="sr-only">Zur vorherigen Seite</span>
 			</a>
-			Get Involved
+			Veranstaltungen
 		</div>
 	</div>
 
@@ -35,7 +35,9 @@ import LagerIcon from '@components/events/bauwoche-2024/LagerIcon.svelte';
 		<h1 class="font-serif text-4xl font-bold lg:text-5xl">Bauwoche</h1>
 		<div class="mt-6 lg:mt-14 lg:px-24">
 			<h2 class="font-serif text-2xl font-bold lg:text-4xl">Wichtige Infos</h2>
-			<div class="mt-16 grid grid-cols-2 gap-x-6 gap-y-14 px-4 lg:grid-cols-4 lg:px-0">
+			<div
+				class="mt-16 grid grid-cols-2 gap-x-6 gap-y-14 px-4 text-center lg:grid-cols-4 lg:px-0 lg:text-left"
+			>
 				<div class="flex flex-col items-center">
 					<div
 						class="flex h-40 w-40 items-center justify-center rounded-full bg-yellow-700 shadow-xl"
@@ -73,42 +75,44 @@ import LagerIcon from '@components/events/bauwoche-2024/LagerIcon.svelte';
 						<HandWithMoney class="h-24 w-24" />
 					</div>
 					<h3 class="mt-8 font-serif text-xl font-bold">Kosten</h3>
-					<p class="mt-3">50€ Verpflegungskosten</p>
+					<p class="mt-3">50€ Verpflegung</p>
 				</div>
 			</div>
 			<div class="mt-20 lg:mt-28">
 				<h2 class="font-serif text-2xl font-bold lg:text-4xl">Brief an Euch</h2>
-				<p class="mt-10 lg:mt-12">Hallo du lieber Mensch🧚🏻‍♂️✨,</p>
-				<p class="mt-4">
-					vom <b>1. bis 7. April</b> laden wir dich ein zu einer Woche voller
-					<b>Gemeinschaft, Kreativität und gemeinsamen Schaffens.</b> Zusammen mit etwa
-					<b>20 jungen Menschen</b> werden wir unseren <b>Vereinssitz</b> für die kommende Veranstaltungssaison
-					fit machen.
-				</p>
-				<p class="mt-4">
-					In dieser Woche werden wir eine <b>Komposttoilette</b> bauen, unser <b>Lager</b> einrichten
-					sowie eine <b>Plattform</b> für unser Veranstaltungszelt bauen. Wir werden täglich mit einer
-					<b>Morgenrunde</b> beginnen, um uns zu verbinden und den Tag gemeinsam zu starten. Abends haben
-					wir Zeit für <b>Spiele, Lagerfeuer und Massagen.</b> Du hast Lust einen Programmpunkt anzubieten?
-					Dann schreib uns gerne eine Email an <a
-						class="text-gray-800 underline"
-						href="mailto:jakob.voigt@youngvision.org">jakob.voigt@youngvision.org</a
-					>.
-				</p>
-				<p class="mt-4">
-					Mit deinem Betrag von <b>50€</b> können wir einen Teil deiner Verpflegungskosten decken, die
-					Übernachtung ist für dich kostenfrei. Wenn du dir diesen Beitrag gerade nicht leisten kannst,
-					schreibe uns richtig gerne eine Email.
-				</p>
-				<p class="mt-4">
-					Um die Bauwoche bestmöglich vorzubereiten und uns schon vorab kennenzulernen, laden wir
-					dich herzlich zu unserem Online-Treffen am 13. März 2024 von 17:30 bis 19:00 Uhr ein
-					<i>(optional)</i>.
-				</p>
-				<p class="mt-4">
-					Bis ganz Bald💜,<br />
-					Euer YoungVision Team
-				</p>
+				<div class="max-w-prose text-justify">
+					<p class="mt-10 lg:mt-12">Hallo du lieber Mensch🧚🏻‍♂️✨,</p>
+					<p class="mt-4">
+						vom <b>1. bis 7. April</b> laden wir dich ein zu einer Woche voller
+						<b>Gemeinschaft, Kreativität und gemeinsamen Schaffens.</b> Zusammen mit etwa
+						<b>20 jungen Menschen</b> werden wir unseren <b>Vereinssitz</b> für die kommende Veranstaltungssaison
+						fit machen.
+					</p>
+					<p class="mt-4">
+						In dieser Woche werden wir eine <b>Komposttoilette</b> bauen, unser <b>Lager</b> einrichten
+						sowie eine <b>Plattform</b> für unser Veranstaltungszelt bauen. Wir werden täglich mit einer
+						<b>Morgenrunde</b> beginnen, um uns zu verbinden und den Tag gemeinsam zu starten. Abends
+						haben wir Zeit für <b>Spiele, Lagerfeuer und Massagen.</b> Du hast Lust einen Programmpunkt
+						anzubieten? Dann schreib uns gerne eine Email an <a
+							class="text-gray-800 underline"
+							href="mailto:jakob.voigt@youngvision.org">jakob.voigt@youngvision.org</a
+						>.
+					</p>
+					<p class="mt-4">
+						Mit deinem Betrag von <b>50€</b> können wir einen Teil deiner Verpflegungskosten decken,
+						die Übernachtung ist für dich kostenfrei. Wenn du dir diesen Beitrag gerade nicht leisten
+						kannst, schreibe uns richtig gerne eine Email.
+					</p>
+					<p class="mt-4">
+						Um die Bauwoche bestmöglich vorzubereiten und uns schon vorab kennenzulernen, laden wir
+						dich herzlich zu unserem Online-Treffen am <b>13. März 2024 von 17:30 bis 19:00 Uhr</b> ein
+						<i>(optional)</i>.
+					</p>
+					<p class="mt-4">
+						Bis ganz Bald💜,<br />
+						Euer YoungVision Team
+					</p>
+				</div>
 
 				<Button
 					text="Anmelden"
@@ -124,15 +128,15 @@ import LagerIcon from '@components/events/bauwoche-2024/LagerIcon.svelte';
 				<div class="mt-14 flex flex-col items-center gap-12 lg:flex-row lg:px-10">
 					<div>
 						<KompostToiletteIcon />
-						<h3 class="mt-4 text-xl font-bold">Komposttoilette</h3>
+						<h3 class="mt-4 text-center text-xl font-bold">Komposttoilette</h3>
 					</div>
 					<div>
 						<LagerIcon />
-						<h3 class="mt-4 text-xl font-bold">Lager</h3>
+						<h3 class="mt-4 text-center text-xl font-bold">Lager</h3>
 					</div>
 					<div>
 						<PlattformIcon />
-						<h3 class="mt-4 text-xl font-bold">Plattform</h3>
+						<h3 class="mt-4 text-center text-xl font-bold">Plattform</h3>
 					</div>
 				</div>
 			</div>

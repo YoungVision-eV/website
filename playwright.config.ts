@@ -14,7 +14,7 @@ const reporter: ReporterDescription[] = process.env.CI
 			['html', { outputFolder: 'playwright-report', open: 'never' }],
 			['junit', { outputFile: 'playwright-results.xml' }],
 		]
-	: [['list']];
+	: [['list'], ['html']];
 
 const config: PlaywrightTestConfig = {
 	retries: 3,
