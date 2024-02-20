@@ -25,3 +25,6 @@ test-results/
 
 # python
 .venv/
+
+# flaky test detection
+reports/
