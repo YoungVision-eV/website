@@ -14,9 +14,9 @@
 
 	const location = tweened(0, { duration: ANIMATION_DURATION, easing: cubicOut });
 	$: location.set(selectedEvent);
+	$: currentEvent = events[selectedEvent];
 
 	export let events: [Event, Event, Event];
-	const [firstEvent, secondEvent, thirdEvent] = events;
 </script>
 
 <div class="grid w-full grid-cols-4 lg:grid-cols-9 lg:px-20">
@@ -24,48 +24,20 @@
 		class="col-start-1 col-end-5 row-end-2 lg:relative lg:col-end-6 lg:row-start-1 lg:row-end-4 lg:rounded-l-2xl lg:rounded-r-none"
 	>
 		<div class="relative h-[22rem] w-full lg:h-full">
-			{#if selectedEvent === 0}
+			{#key selectedEvent}
 				<img
 					transition:blur={{
 						duration: ANIMATION_DURATION,
 						easing: cubicOut,
 					}}
 					loading="lazy"
-					id="event-1"
-					{...firstEvent.image.src.attributes}
-					src={firstEvent.image.src.src}
+					id={`event-${selectedEvent + 1}`}
+					{...currentEvent.image.src.attributes}
+					src={currentEvent.image.src.src}
 					alt="Leute sitzen am Tisch"
 					class="absolute left-0 top-0 h-full w-full rounded-t-2xl object-cover transition-opacity lg:rounded-l-2xl lg:rounded-tr-none"
 				/>
-			{/if}
-			{#if selectedEvent === 1}
-				<img
-					transition:blur={{
-						duration: ANIMATION_DURATION,
-						easing: cubicOut,
-					}}
-					loading="lazy"
-					id="event-2"
-					{...secondEvent.image.src.attributes}
-					src={secondEvent.image.src.src}
-					alt="Leute sitzen am Tisch"
-					class="absolute left-0 top-0 h-full w-full rounded-t-2xl object-cover transition-opacity lg:rounded-l-2xl lg:rounded-tr-none"
-				/>
-			{/if}
-			{#if selectedEvent === 2}
-				<img
-					transition:blur={{
-						duration: ANIMATION_DURATION,
-						easing: cubicOut,
-					}}
-					loading="lazy"
-					id="event-3"
-					{...thirdEvent.image.src.attributes}
-					src={thirdEvent.image.src.src}
-					alt="Leute sitzen am Tisch"
-					class="absolute left-0 top-0 h-full w-full rounded-t-2xl object-cover transition-opacity lg:rounded-l-2xl lg:rounded-tr-none"
-				/>
-			{/if}
+			{/key}
 		</div>
 		<div
 			class="hidden lg:absolute lg:inset-y-0 lg:right-[27%] lg:flex lg:flex-col lg:justify-center"
