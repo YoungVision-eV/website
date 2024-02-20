@@ -9,45 +9,45 @@ const images = await getRecentPhotos();
 ---
 
 <section class="w-full pb-32 pt-12 lg:px-6">
-	<h1 class="mx-5 font-serif text-3xl font-bold text-dark-green lg:mx-12 lg:text-black">
-		<a href="https://www.instagram.com/youngvision_ev/" target="_blank" rel="noopener">
-			Folge uns auf Instagram
-		</a>
-	</h1>
-	<div class="relative mt-11">
-		<div class="flex max-w-full gap-x-2 overflow-hidden lg:mx-14">
-			{
-				images.map((image) => (
-					<a href={image.link} target="_blank" rel="noopener">
-						<div class="h-52 w-52 shrink-0 ">
-							<img
-								class="object-cover"
-								srcset={image.src.srcSet.attribute}
-								{...image.src.attributes}
-								alt={image.alt}
-							/>
-						</div>
-					</a>
-				))
-			}
-		</div>
-		<!-- 
+  <h1 class="mx-5 font-serif text-3xl font-bold text-dark-green lg:mx-12 lg:text-black">
+    <a href="https://www.instagram.com/youngvision_ev/" target="_blank" rel="noopener">
+      Folge uns auf Instagram
+    </a>
+  </h1>
+  <div class="relative mt-11">
+    <div class="flex max-w-full gap-x-2 overflow-hidden lg:mx-14">
+      {
+        images.map((image) => (
+          <a href={image.link} target="_blank" rel="noopener">
+            <div class="h-52 w-52 shrink-0 ">
+              <img
+                class="object-cover"
+                srcset={image.src.srcSet.attribute}
+                {...image.src.attributes}
+                alt={image.alt}
+              />
+            </div>
+          </a>
+        ))
+      }
+    </div>
+    <!-- 
 			disable pointer events so the div does not prevent clicking on the image links
 			but we want it on top of the images to show the buttons above the images
 		-->
-		<div class="pointer-events-none absolute top-20 flex w-full items-center justify-between">
-			<button class="pointer-events-auto p-3">
-				<div class="h-6 w-6">
-					<ArrowLeft />
-				</div>
-				<span class="sr-only">Show previous image</span>
-			</button>
-			<button class="pointer-events-auto p-3">
-				<div class="h-6 w-6">
-					<ArrowRight />
-				</div>
-				<span class="sr-only">Show next image</span>
-			</button>
-		</div>
-	</div>
+    <div class="pointer-events-none absolute top-20 flex w-full items-center justify-between">
+      <button class="pointer-events-auto p-3">
+        <div class="h-6 w-6">
+          <ArrowLeft />
+        </div>
+        <span class="sr-only">Show previous image</span>
+      </button>
+      <button class="pointer-events-auto p-3">
+        <div class="h-6 w-6">
+          <ArrowRight />
+        </div>
+        <span class="sr-only">Show next image</span>
+      </button>
+    </div>
+  </div>
 </section>

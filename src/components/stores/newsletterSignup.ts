@@ -1,7 +1,7 @@
 import { createDialog } from '@melt-ui/svelte';
 
 export const dialog = createDialog({
-	forceVisible: true,
+  forceVisible: true,
 });
 
 export default dialog;

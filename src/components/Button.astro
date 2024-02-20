@@ -1,32 +1,32 @@
 ---
 import Circle from '@assets/icons/Circle.astro';
 interface Props {
-	text: string;
-	href: string;
-	download?: string;
-	class?: string;
-	color?: 'dark' | 'bright';
+  text: string;
+  href: string;
+  download?: string;
+  class?: string;
+  color?: 'dark' | 'bright';
 }
 
 const { href, text, download, class: className = '', color = 'dark' } = Astro.props;
 ---
 
 <a
-	{download}
-	{href}
-	class:list={[
-		'inline-flex items-center gap-x-4 p-4 px-8 font-bold',
-		{
-			// black background, white text
-			'bg-green-50': color === 'dark',
-			'text-white': color === 'dark',
-			// white background, black text
-			'bg-white': color === 'bright',
-			'text-black': color === 'bright',
-		},
-		className,
-	]}
+  {download}
+  {href}
+  class:list={[
+    'inline-flex items-center gap-x-4 p-4 px-8 font-bold',
+    {
+      // black background, white text
+      'bg-green-50': color === 'dark',
+      'text-white': color === 'dark',
+      // white background, black text
+      'bg-white': color === 'bright',
+      'text-black': color === 'bright',
+    },
+    className,
+  ]}
 >
-	<Circle />
-	{text}
+  <Circle />
+  {text}
 </a>

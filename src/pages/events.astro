@@ -9,7 +9,7 @@ const yearlyEvents = await getAllYearlyEvents();
 ---
 
 <Layout title="Events">
-	<Hero />
-	<NextEvents />
-	<YearlyEvents client:load events={yearlyEvents} />
+  <Hero />
+  <NextEvents />
+  <YearlyEvents client:load events={yearlyEvents} />
 </Layout>
