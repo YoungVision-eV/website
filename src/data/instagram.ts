@@ -1,11 +1,11 @@
-import { getImage } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
+import { getImage } from 'astro:assets';
 
+import fifthPost from '@assets/instagram/fifth-post.png';
 import firstPost from '@assets/instagram/first-post.png';
+import fourthPost from '@assets/instagram/fourth-post.jpeg';
 import secondPost from '@assets/instagram/second-post.png';
 import thirdPost from '@assets/instagram/third-post.png';
-import fourthPost from '@assets/instagram/fourth-post.jpeg';
-import fifthPost from '@assets/instagram/fifth-post.png';
 
 async function getPhoto(src: ImageMetadata) {
   return getImage({ src, widths: [96, 192, 256, 512] });

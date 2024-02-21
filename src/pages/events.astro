@@ -1,9 +1,9 @@
 ---
-import Layout from '@layouts/Layout.astro';
 import Hero from '@components/events/Hero.astro';
 import NextEvents from '@components/events/NextEvents.astro';
 import YearlyEvents from '@components/events/YearlyEvents.svelte';
 import { getAllYearlyEvents } from '@data/events';
+import Layout from '@layouts/Layout.astro';
 
 const yearlyEvents = await getAllYearlyEvents();
 ---

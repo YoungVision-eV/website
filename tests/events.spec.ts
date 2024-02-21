@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { expect, test } from '@playwright/test';
 
 test('Bauwoche 2024 screenshot', async ({ page, isMobile }) => {
   await page.goto('/events/bauwoche-2024');
