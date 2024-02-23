@@ -14,7 +14,8 @@
 		"lint:eslint": "eslint .",
 		"format": "prettier --write .",
 		"test": "playwright test",
-		"test:ui": "pnpm run test --ui-host localhost --ui-port 33333"
+		"test:ui": "pnpm run test --ui-host localhost --ui-port 33333",
+		"prepare": "node .husky/install.mjs"
 	},
 	"dependencies": {
 		"@astrojs/check": "0.5.4",
@@ -40,6 +41,7 @@
 		"eslint-config-prettier": "9.1.0",
 		"eslint-plugin-astro": "0.31.4",
 		"eslint-plugin-svelte": "2.35.1",
+		"husky": "9.0.11",
 		"prettier": "3.2.5",
 		"prettier-plugin-astro": "0.13.0",
 		"prettier-plugin-svelte": "3.2.1",

@@ -1,0 +1,1 @@
+pnpm exec python ./scripts/git-format-staged.py --formatter 'prettier --stdin-filepath {}' '*.js' '*.ts' '*.svelte' '*.astro' '*.json' '*.mjs' '*.cjs'
