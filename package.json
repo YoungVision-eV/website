@@ -37,7 +37,7 @@
 		"@typescript-eslint/parser": "6.21.0",
 		"embla-carousel": "8.0.0-rc22",
 		"embla-carousel-svelte": "8.0.0-rc23",
-		"eslint": "8.56.0",
+		"eslint": "8.57.0",
 		"eslint-config-prettier": "9.1.0",
 		"eslint-plugin-astro": "0.31.4",
 		"eslint-plugin-svelte": "2.35.1",
