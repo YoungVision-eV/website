@@ -53,8 +53,8 @@ devDependencies:
     specifier: 6.21.0
     version: 6.21.0(eslint@8.57.0)(typescript@5.3.3)
   embla-carousel:
-    specifier: 8.0.0-rc22
-    version: 8.0.0-rc22
+    specifier: 8.0.0
+    version: 8.0.0
   embla-carousel-svelte:
     specifier: 8.0.0-rc23
     version: 8.0.0-rc23(svelte@4.2.11)
@@ -2219,8 +2219,8 @@ packages:
       svelte: 4.2.11
     dev: true
 
-  /embla-carousel@8.0.0-rc22:
-    resolution: {integrity: sha512-MeXnPT1LShfgAu8qXj3CskayV0R6OkHx7w3cPTx+Q5ZWKyShKpIuu7qVQJ5BoFegalE4n6yxqoQaRuGFbK9pYw==}
+  /embla-carousel@8.0.0:
+    resolution: {integrity: sha512-ecixcyqS6oKD2nh5Nj5MObcgoSILWNI/GtBxkidn5ytFaCCmwVHo2SecksaQZHcARMMpIR2dWOlSIdA1LkZFUA==}
     dev: true
 
   /embla-carousel@8.0.0-rc23:
