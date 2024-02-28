@@ -1,52 +1,19 @@
 <script>
+  import SvelteMarkdown from 'svelte-markdown';
   import { createAccordion, melt } from '@melt-ui/svelte';
   import { slide } from 'svelte/transition';
-
-  import SachspendenImage from '@assets/support-us/sachspenden.jpeg';
-  import GeldspendenImage from '@assets/support-us/Geld-spenden.jpeg';
-  import ExpertiseImage from '@assets/support-us/Expertise-spenden.jpeg';
-  import PartnerImage from '@assets/support-us/Partner-werden.jpeg';
 
   import JakobPortrait from '@assets/team-members/jakob-portait.jpeg';
   import Button from '@components/Button.svelte';
   import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@rgossiaux/svelte-headlessui';
-  import HandShake from '@assets/icons/HandShake.svelte';
-  import DonationBoxHand from '@assets/icons/DonationBoxHand.svelte';
-  import HeadLightbulb from '@assets/icons/HeadLightbulb.svelte';
-  import CircleDecorations from '@assets/icons/CircleDecorations.svelte';
 
   import clsx from 'clsx';
+  import { getDonationMethods } from '@data/donations';
+  import Paragraph from './markdown/Paragraph.svelte';
+  import List from './markdown/List.svelte';
+  import ListItem from './markdown/ListItem.svelte';
 
-  const possibilities = [
-    {
-      title: 'Partner werden',
-      description: 'Deine Stiftung oder Organisation ist interessiert an einer Kooperation?',
-      text: 'Wenn deine Stiftung, Organisation oder Unternehmen unsere Werte und Ziele teilen, können wir gemeinsam Projekte entwickeln, die unsere Gemeinschaft und junge Menschen fördern. Für mehr Informationen und Austausch schreibe uns richtig gerne eine Email.',
-      icon: HandShake,
-      image: PartnerImage.src,
-    },
-    {
-      title: 'Geld spenden',
-      description: 'Du willst uns einmalig oder regelmäßig Geld spenden?',
-      text: 'Deine Spende unterstützt YoungVision und seine Mitglieder enorm. Von dem Geld wird die Vereinsstruktur gehalten und Veranstaltungen für junge Menschen realisiert.',
-      icon: DonationBoxHand,
-      image: GeldspendenImage.src,
-    },
-    {
-      title: 'Expertise Spenden',
-      description: 'Du hast Lust deine Expertise mit uns zu teilen?',
-      text: 'Du hast Lust YoungVision mit deiner Expertise voranzubringen?',
-      icon: HeadLightbulb,
-      image: ExpertiseImage.src,
-    },
-    {
-      title: 'Sachspenden',
-      description: 'Du möchtest uns mit einer Sachspende unterszützen?',
-      text: 'Sachspenden, sei es in Form von Ausrüstung, Ressourcen oder anderen Gütern, können einen direkten Einfluss auf unsere Projekte und Veranstaltungen haben.',
-      icon: CircleDecorations,
-      image: SachspendenImage.src,
-    },
-  ];
+  const possibilities = getDonationMethods();
 
   const {
     elements: { content, item, trigger, root },
@@ -95,126 +62,50 @@
       <TabPanels>
         <!-- TODO: is there a better way than this hidden tab? -->
         <TabPanel class="hidden" />
-        <TabPanel class="pb-16 pt-40 text-2xl">
-          <h3 class="text-center font-serif text-5xl font-bold">Partner werden</h3>
-          <div class="mt-16 flex justify-between gap-x-28">
-            <div class="mt-16">
-              <p class="max-w-prose">
-                Wenn deine Stiftung, Organisation oder Unternehmen unsere Werte und Ziele teilen,
-                können wir gemeinsam Projekte entwickeln, die unsere Gemeinschaft und junge Menschen
-                fördern. Für mehr Informationen und Austausch schreibe uns richtig gerne eine Email.
-              </p>
-              <Button
-                class="mt-8"
-                text="Schreibe uns"
-                href="mailto:kontakt@youngvision.org"
-                color="dark"
-              />
+        {#each possibilities as possibility, i}
+          <TabPanel class="pb-16 pt-40 text-2xl">
+            <h3 class="text-center font-serif text-5xl font-bold">{possibility.title}</h3>
+            <div
+              class={clsx('mt-16 flex justify-between gap-x-28', {
+                'flex-row-reverse': i % 2 === 1,
+              })}
+            >
+              <!-- TODO: For some reason only Sachspenden has no top margin... -->
+              <div class:mt-16={possibility.title != 'Sachspenden'}>
+                <p class="max-w-prose">{possibility.text}</p>
+                {#if !possibility.buttonAtEnd}
+                  <Button
+                    class="mt-8"
+                    text="Schreibe uns"
+                    href="mailto:kontakt@youngvision.org"
+                    color="dark"
+                  />
+                {/if}
+                {#if possibility.extraText != null}
+                  <SvelteMarkdown
+                    source={possibility.extraText}
+                    renderers={{ paragraph: Paragraph, list: List, listitem: ListItem }}
+                  />
+                {/if}
+                {#if possibility.buttonAtEnd}
+                  <Button
+                    class="mt-8"
+                    text="Schreibe uns"
+                    href="mailto:kontakt@youngvision.org"
+                    color="dark"
+                  />
+                {/if}
+              </div>
+              <div class="h-[38rem] w-[28rem] flex-none">
+                <img
+                  src={possibility.image}
+                  class="h-full w-full bg-gray-300 object-cover object-center"
+                  alt={possibility.title}
+                />
+              </div>
             </div>
-            <div class="h-[38rem] w-[28rem] flex-none">
-              <img
-                src={PartnerImage.src}
-                class="h-full w-full bg-gray-300 object-cover object-center"
-                alt="Partner werden"
-              />
-            </div>
-          </div>
-        </TabPanel>
-        <TabPanel class="pb-16 pt-40 text-2xl">
-          <h3 class="text-center font-serif text-5xl font-bold">Geld spenden</h3>
-          <div class="mt-16 flex justify-between gap-x-28">
-            <div class="h-[38rem] w-[28rem] flex-none">
-              <img
-                src={GeldspendenImage.src}
-                class="h-full w-full bg-gray-300 object-cover object-center"
-                alt="Geld spenden"
-              />
-            </div>
-            <div class="mt-16">
-              <p class="max-w-prose">
-                Deine Spende unterstützt YoungVision und seine Mitglieder enorm. Von dem Geld wird
-                die Vereinsstruktur gehalten und Veranstaltungen für junge Menschen realisiert.
-              </p>
-              <Button
-                class="mt-8"
-                text="Schreibe uns"
-                href="mailto:kontakt@youngvision.org"
-                color="dark"
-              />
-            </div>
-          </div></TabPanel
-        >
-        <TabPanel class="pb-16 pt-40 text-2xl">
-          <h3 class="text-center font-serif text-5xl font-bold">Expertise Spenden</h3>
-          <div class="mt-16 flex justify-between gap-x-28">
-            <div class="mt-16">
-              <p class="max-w-prose">
-                Du hast Lust YoungVision mit deiner Expertise voranzubringen?
-              </p>
-              <p class="mt-12 max-w-prose">Wir suchen Unterstützung für folgende Bereiche:</p>
-              <ul class="list-inside list-disc">
-                <li>Supervision</li>
-                <li>Kassenprüfer</li>
-                <li>Steuerberatung</li>
-                <li>Therapeutische Begleitung bei Events</li>
-              </ul>
-              <p class="mt-12 max-w-prose">
-                Wir freuen uns auf deine Kontaktaufnahme zu <a href="mailto:kontakt@youngvision.org"
-                  >kontakt@youngvision.org</a
-                >
-              </p>
-              <Button
-                class="mt-8"
-                text="Schreibe uns"
-                href="mailto:kontakt@youngvision.org"
-                color="dark"
-              />
-            </div>
-            <div class="h-[38rem] w-[28rem] flex-none">
-              <img
-                src={ExpertiseImage.src}
-                class="h-full w-full bg-gray-300 object-cover object-center"
-                alt="Expertise Spenden"
-              />
-            </div>
-          </div>
-        </TabPanel>
-        <TabPanel class="pb-16 pt-40 text-2xl">
-          <h3 class="text-center font-serif text-5xl font-bold">Sachspenden</h3>
-          <div class="mt-16 flex items-center justify-between gap-x-28">
-            <div class="h-[38rem] w-[28rem] flex-none">
-              <img
-                src={SachspendenImage.src}
-                class="h-full w-full bg-gray-300 object-cover object-center"
-                alt="Sachspenden"
-              />
-            </div>
-            <div>
-              <p>
-                Sachspenden, sei es in Form von Ausrüstung, Ressourcen oder anderen Gütern, können
-                einen direkten Einfluss auf unsere Projekte und Veranstaltungen haben.
-              </p>
-              <Button
-                class="mt-8"
-                text="Schreibe uns"
-                href="mailto:kontakt@youngvision.org"
-                color="dark"
-              />
-              <p class="mt-12">
-                Oder bring deine Sachspende einfach zum nächsten Event in Rosow mit:).
-              </p>
-              <p class="mt-12">Das wird gerade benötigt</p>
-              <ul class="list-inside list-disc">
-                <li>Laminiergerät</li>
-                <li>Zeltboden</li>
-                <li>Tipis / Pavillons</li>
-                <li>Verschiedener Bürobedarf</li>
-                <li>Papierschneider</li>
-                <li>Haltbare Lebensmittel</li>
-              </ul>
-            </div>
-          </div>
-        </TabPanel>
+          </TabPanel>
+        {/each}
       </TabPanels>
     </TabGroup>
     <ul class="mt-16 px-4 lg:hidden" use:melt={$root}>
