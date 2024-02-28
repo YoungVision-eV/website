@@ -1,18 +1,13 @@
 <script lang="ts">
-  import { getImage } from 'astro:assets';
   import clsx from 'clsx';
 
   import { createCollapsible, melt } from '@melt-ui/svelte';
   import { slide } from 'svelte/transition';
 
+  import type { Exercise } from '@data/exercises';
   import ChevronUp from '@assets/icons/ChevronUp.svelte';
   import ChevronDown from '@assets/icons/ChevronDown.svelte';
 
-  type Exercise = {
-    title: string;
-    description: string;
-    image: Awaited<ReturnType<typeof getImage>>;
-  };
   export let exercises: Exercise[];
 
   const {

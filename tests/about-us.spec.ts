@@ -23,8 +23,8 @@ test('About Us page screenshot', async ({ page }) => {
 });
 
 test('Exercises can be expanded', async ({ page }) => {
-	await expect(page.getByRole('heading', { name: 'Tanzen' })).not.toBeVisible();
-	await page.getByRole('button', { name: 'Mehr lesen' }).click();
-	await expect(page.getByRole('heading', { name: 'Tanzen' })).toBeVisible();
-	await page.getByRole('button', { name: 'Weniger' }).click();
+  await expect(page.getByRole('heading', { name: 'Tanzen' })).not.toBeVisible();
+  await page.getByRole('button', { name: 'Mehr lesen' }).click();
+  await expect(page.getByRole('heading', { name: 'Tanzen' })).toBeVisible();
+  await page.getByRole('button', { name: 'Weniger' }).click();
 });
