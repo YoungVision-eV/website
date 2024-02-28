@@ -2,12 +2,12 @@
 import Layout from '@layouts/Layout.astro';
 
 import BecomeSupportingMember from '@components/support-us/BecomeSupportingMember.astro';
-import DonationMethods from '@components/support-us/DonationMethods.svelte';
+import DonationMethods from '@components/support-us/DonationMethods.astro';
 import Hero from '@components/support-us/Hero.astro';
 ---
 
 <Layout title="Unterstütze uns">
   <Hero />
   <BecomeSupportingMember />
-  <DonationMethods client:load />
+  <DonationMethods />
 </Layout>
