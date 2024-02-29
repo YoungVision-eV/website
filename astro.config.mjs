@@ -7,5 +7,13 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
   server: ({ command }) => ({ port: command === 'dev' ? 5173 : 4321 }),
   trailingSlash: 'never',
+  image: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**.cdninstagram.com',
+      },
+    ],
+  },
   integrations: [svelte(), tailwind()],
 });
