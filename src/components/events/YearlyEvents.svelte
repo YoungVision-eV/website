@@ -5,9 +5,12 @@
 	export let events: YVEvent[];
 
 	let filter_for_all = true;
+
 	function toggleForAll() {
 		filter_for_all = !filter_for_all;
 	}
+
+	$: filteredEvents = events.filter((e) => e.for_all === filter_for_all);
 </script>
 
 <section class="relative mb-20 px-4 pt-14 lg:px-20 lg:pt-24">
@@ -42,37 +45,35 @@
 		</div>
 	</div>
 	<ul class="flex flex-col lg:mt-12 lg:grid lg:grid-cols-2 lg:gap-10">
-		{#each events as event}
-			{#if (event.for_all && filter_for_all) || (!event.for_all && !filter_for_all)}
-				<li
-					class="mt-12 rounded-2xl shadow-lg lg:mt-0 {event.for_all
-						? 'bg-yellow-700'
-						: 'bg-light-green'}"
-				>
-					<img
-						alt=""
-						src={event.image.src.src}
-						{...event.image.src.attributes}
-						class="max-h-64 w-full rounded-t-2xl object-cover"
-					/>
-					<div class="flex p-6">
-						<div class="mt-4 flex flex-col items-center">
-							<div class="font-serif text-5xl font-bold">{event.day}</div>
-							<div>{event.month}</div>
-						</div>
-						<div class="ml-10">
-							<h3 class="inline-block font-bold lg:text-xl">{event.title}</h3>
-							{#if event.future}
-								<span class="italic">ab {event.future}</span>
-							{/if}
-							<p class="mt-3">{event.short_description}</p>
-							<p class="mt-3 inline-block rounded-full bg-white px-5">
-								{event.for_all ? 'Für Alle' : 'Nur Mitglieder'}
-							</p>
-						</div>
+		{#each filteredEvents as event}
+			<li
+				class="mt-12 rounded-2xl shadow-lg lg:mt-0 {event.for_all
+					? 'bg-yellow-700'
+					: 'bg-light-green'}"
+			>
+				<img
+					alt=""
+					src={event.image.src.src}
+					{...event.image.src.attributes}
+					class="max-h-64 w-full rounded-t-2xl object-cover"
+				/>
+				<div class="flex p-6">
+					<div class="mt-4 flex flex-col items-center">
+						<div class="font-serif text-5xl font-bold">{event.day}</div>
+						<div>{event.month}</div>
 					</div>
-				</li>
-			{/if}
+					<div class="ml-10">
+						<h3 class="inline-block font-bold lg:text-xl">{event.title}</h3>
+						{#if event.future}
+							<span class="italic">ab {event.future}</span>
+						{/if}
+						<p class="mt-3">{event.short_description}</p>
+						<p class="mt-3 inline-block rounded-full bg-white px-5">
+							{event.for_all ? 'Für Alle' : 'Nur Mitglieder'}
+						</p>
+					</div>
+				</div>
+			</li>
 		{/each}
 	</ul>
 </section>
