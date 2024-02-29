@@ -35,6 +35,7 @@ def gather_all_archive_urls():
             response = requests.get(
                 ARTIFACTS_URL + f"?per_page=100&page={page}", headers=HEADERS
             )
+            response.raise_for_status()
             data = response.json()
             if not data["artifacts"]:
                 break
