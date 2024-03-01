@@ -1,4 +1,34 @@
-# Astro Starter Kit: Minimal
+# YoungVision Website - Built with Astro
+
+[![Built with Astro](https://astro.badg.es/v2/built-with-astro/small.svg)](https://astro.build)
+
+## 🏃 Get Started
+
+### 📦 Requirements
+
+- Node.js v16 or higher
+- [pnpm](https://pnpm.io)
+- [better-commits](https://github.com/Everduin94/better-commits)
+
+### 📦 Install
+
+```bash
+pnpm install
+```
+
+### 📦 Working on tasks
+
+Choose an issue and then create a branch with
+
+```bash
+better-branch
+```
+
+After you've done some work on it commit your changes with
+
+```bash
+better-commits
+```
 
 ## 🚀 Project Structure
 
