@@ -2,7 +2,7 @@
 import History from '@components/about-us/History.astro';
 import TeamMembers from '@components/about-us/TeamMembers.astro';
 import VisionMissionValues from '@components/about-us/VisionMissionValues.astro';
-import WhatWeDo from '@components/about-us/WhatWeDo.svelte';
+import WhatWeDo from '@components/about-us/WhatWeDo.astro';
 import Layout from '@layouts/Layout.astro';
 
 import Background from '@assets/about-us/background-vision-statement.png';
@@ -38,7 +38,7 @@ import { Image } from 'astro:assets';
   </div>
 
   <TeamMembers />
-  <WhatWeDo client:load />
+  <WhatWeDo />
   <TryThisAtHome />
   <FlowerDecoration />
 </Layout>
