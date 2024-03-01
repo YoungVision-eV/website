@@ -1,24 +1,24 @@
 ---
-import { Image } from 'astro:assets';
-import Button from '@components/Button.astro';
 import DSEELogo from '@assets/footer/DSEE.png';
+import Button from '@components/Button.astro';
+import { Image } from 'astro:assets';
 ---
 
 <section class="bg-green-500 px-4 py-6 lg:px-20">
-	<h2 class="font-bold text-green-50">Hauptförderer</h2>
-	<div class="mt-5 lg:flex lg:justify-between">
-		<a href="https://www.deutsche-stiftung-engagement-und-ehrenamt.de/">
-			<span class="sr-only">Gefördert durch die Deutsche Stiftung für Engagement und Ehrenamt</span>
-			<Image
-				loading="lazy"
-				class="w-full max-w-md"
-				src={DSEELogo}
-				alt="Gefördert durch die Deutsche Stiftung für Engagement und Ehrenamt"
-			/>
-		</a>
+  <h2 class="font-bold text-green-50">Hauptförderer</h2>
+  <div class="mt-5 lg:flex lg:justify-between">
+    <a href="https://www.deutsche-stiftung-engagement-und-ehrenamt.de/">
+      <span class="sr-only">Gefördert durch die Deutsche Stiftung für Engagement und Ehrenamt</span>
+      <Image
+        loading="lazy"
+        class="w-full max-w-md"
+        src={DSEELogo}
+        alt="Gefördert durch die Deutsche Stiftung für Engagement und Ehrenamt"
+      />
+    </a>
 
-		<div class="mt-5 text-center">
-			<Button href="mailto:vorstand@youngvision.org" color="dark" text="Jetzt Partner werden" />
-		</div>
-	</div>
+    <div class="mt-5 text-center">
+      <Button href="mailto:vorstand@youngvision.org" color="dark" text="Jetzt Partner werden" />
+    </div>
+  </div>
 </section>

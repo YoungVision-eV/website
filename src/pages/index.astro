@@ -1,12 +1,12 @@
 ---
-import { getImage } from 'astro:assets';
 import InstagramBackground from '@assets/instagram/background-instagram.jpeg';
+import { getImage } from 'astro:assets';
 
 import Layout from '@layouts/Layout.astro';
 
+import Events from '@components/index/Events.astro';
 import Hero from '@components/index/Hero.astro';
 import ReadMore from '@components/index/ReadMore.astro';
-import Events from '@components/index/Events.astro';
 
 import Testimonials from '@components/Testimonials.svelte';
 import Instagram from '@components/index/Instagram.astro';
@@ -19,25 +19,25 @@ const InstagramBackgroundUrl = await getImage({ src: InstagramBackground });
 ---
 
 <Layout title="YoungVision e.V.">
-	<Hero />
-	<ReadMore />
-	<Events />
+  <Hero />
+  <ReadMore />
+  <Events />
 
-	<div id="testimonials-and-instagram">
-		<Testimonials client:visible {testimonials} />
-		<Instagram />
-	</div>
+  <div id="testimonials-and-instagram">
+    <Testimonials client:visible {testimonials} />
+    <Instagram />
+  </div>
 </Layout>
 
 <style define:vars={{ 'background-image': `url(${InstagramBackgroundUrl.src})` }}>
-	#testimonials-and-instagram {
-		background-position: bottom -200px right 95%;
-		background-repeat: no-repeat;
-		background-image: var(--background-image);
-	}
-	@media (min-width: 1024px) {
-		#testimonials-and-instagram {
-			background-position: bottom -100px right -500px;
-		}
-	}
+  #testimonials-and-instagram {
+    background-position: bottom -200px right 95%;
+    background-repeat: no-repeat;
+    background-image: var(--background-image);
+  }
+  @media (min-width: 1024px) {
+    #testimonials-and-instagram {
+      background-position: bottom -100px right -500px;
+    }
+  }
 </style>

@@ -1,35 +1,35 @@
 ---
-import { getNext3Events } from '@data/events';
 import Button from '@components/Button.astro';
 import Calendar from '@components/Calendar.svelte';
+import { getNext3Events } from '@data/events';
 const events = await getNext3Events();
 ---
 
 <section class="w-full bg-cover pt-16 lg:pb-10">
-	<div class="px-5 lg:px-20">
-		<h1 class="font-serif text-3xl font-bold lg:text-4xl">Unsere Events</h1>
-	</div>
-	<div class="mt-6 lg:mt-14">
-		<Calendar client:load events={events} />
-		<div class="mt-10 px-5 lg:mt-12 lg:px-20">
-			<div class="justify-between gap-x-10 lg:flex">
-				<p class="text-justify">
-					Unsere Veranstaltungen sind Orte der Inspiration, Heilung und Verbundenheit. Hier kannst
-					du dich selbst erkunden, dich entfalten und Gleichgesinnte treffen, die deine Reise
-					begleiten.
-				</p>
-				<p class="hidden text-justify lg:block">
-					Als Mitglied kannst du auch eigene Events ins Leben rufen und deine Leidenschaften teilen.
-					Egal, ob du einen Workshop, ein Treffen oder ein Projekt planst - wir sind für dich da, um
-					deine Vision Wirklichkeit werden zu lassen.
-				</p>
-			</div>
-			<Button
-				class="mx-auto mt-14 lg:mx-0 lg:mt-12"
-				text="Zeig mir mehr"
-				href="/events"
-				color="dark"
-			/>
-		</div>
-	</div>
+  <div class="px-5 lg:px-20">
+    <h1 class="font-serif text-3xl font-bold lg:text-4xl">Unsere Events</h1>
+  </div>
+  <div class="mt-6 lg:mt-14">
+    <Calendar client:load events={events} />
+    <div class="mt-10 px-5 lg:mt-12 lg:px-20">
+      <div class="justify-between gap-x-10 lg:flex">
+        <p class="text-justify">
+          Unsere Veranstaltungen sind Orte der Inspiration, Heilung und Verbundenheit. Hier kannst
+          du dich selbst erkunden, dich entfalten und Gleichgesinnte treffen, die deine Reise
+          begleiten.
+        </p>
+        <p class="hidden text-justify lg:block">
+          Als Mitglied kannst du auch eigene Events ins Leben rufen und deine Leidenschaften teilen.
+          Egal, ob du einen Workshop, ein Treffen oder ein Projekt planst - wir sind für dich da, um
+          deine Vision Wirklichkeit werden zu lassen.
+        </p>
+      </div>
+      <Button
+        class="mx-auto mt-14 lg:mx-0 lg:mt-12"
+        text="Zeig mir mehr"
+        href="/events"
+        color="dark"
+      />
+    </div>
+  </div>
 </section>
