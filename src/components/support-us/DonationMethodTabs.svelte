@@ -9,6 +9,7 @@
   import List from './markdown/List.svelte';
   import ListItem from './markdown/ListItem.svelte';
 
+  /** @type {import('@data/donations').DonationMethod[]} **/
   export let possibilities;
 </script>
 

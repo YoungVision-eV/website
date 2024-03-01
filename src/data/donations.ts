@@ -14,6 +14,7 @@ export type DonationMethod = {
   title: string;
   description: string;
   text: string;
+  buttonAtEnd?: boolean;
   icon: {
     src: string;
     width: number;

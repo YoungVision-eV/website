@@ -11,6 +11,7 @@
     helpers: { isSelected },
   } = createAccordion();
 
+  /** @type {import('@data/donations').DonationMethod[]} **/
   export let possibilities;
 </script>
 
