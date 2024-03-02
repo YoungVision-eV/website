@@ -23,11 +23,9 @@ export async function getNext3Events(): Promise<[Event, Event, Event]> {
   const image2 = await getImage({ src: calendarCoverImage });
   const image3 = await getImage({ src: pastEvent });
 
-  // console.log('process.env', process.env);
-  console.log('npm_lfiecycle_event', process.env.npm_lifecycle_event);
-  console.log('npm_lifecycle_script', process.env.npm_lifecycle_script);
-  console.log('process.env.VERCEL_ENV', process.env.VERCEL_ENV);
-  if (process.env.VERCEL_ENV === 'preview' || process.env.npm_lifecycle_event === 'dev') {
+  console.log('VERCEL_ENV', process.env.VERCEL_ENV);
+  console.log('PLAYWRIGHT_TEST: ', process.env.PLAYWRIGHT_TEST);
+  if (process.env.PLAYWRIGHT_TEST == 'true' || process.env.VERCEL_ENV === 'preview') {
     return [
       {
         title: 'Event 1',

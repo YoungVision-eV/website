@@ -26,22 +26,29 @@ const config: PlaywrightTestConfig = {
   webServer,
   projects: [
     {
+      name: 'global setup',
+      testMatch: /global\.setup\.ts/,
+    },
+    {
       name: 'chromium',
       use: {
         ...devices['Desktop Chrome'],
       },
+      dependencies: ['global setup'],
     },
     {
       name: 'firefox',
       use: {
         ...devices['Desktop Firefox'],
       },
+      dependencies: ['global setup'],
     },
     {
       name: 'Mobile Chrome',
       use: {
         ...devices['Pixel 5'],
       },
+      dependencies: ['global setup'],
     },
   ],
   testDir: 'tests',
