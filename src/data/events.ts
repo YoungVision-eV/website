@@ -23,6 +23,39 @@ export async function getNext3Events(): Promise<[Event, Event, Event]> {
   const image2 = await getImage({ src: calendarCoverImage });
   const image3 = await getImage({ src: pastEvent });
 
+  // console.log('process.env', process.env);
+  console.log('npm_lfiecycle_event', process.env.npm_lifecycle_event);
+  console.log('npm_lifecycle_script', process.env.npm_lifecycle_script);
+  console.log('process.env.VERCEL_ENV', process.env.VERCEL_ENV);
+  if (process.env.VERCEL_ENV === 'preview' || process.env.npm_lifecycle_event === 'dev') {
+    return [
+      {
+        title: 'Event 1',
+        date: new Date(2024, 1, 10),
+        description: 'Sei dabei und gestalte YoungVision mit!',
+        image: {
+          src: image1,
+        },
+      },
+      {
+        title: 'Event 2',
+        date: new Date(2024, 2, 2),
+        description: 'Können wir das schaffen? Yo wir schaffen das!',
+        slug: 'bauwoche-2024',
+        image: {
+          src: image2,
+        },
+      },
+      {
+        title: 'Event 3',
+        date: new Date(2024, 10, 21),
+        description: 'Alle Jahre wieder: Sei dabei, entscheide und gestalte mit!',
+        image: {
+          src: image3,
+        },
+      },
+    ];
+  }
   const next3Events: [Event, Event, Event] = [
     {
       title: 'Mitmach Call',
