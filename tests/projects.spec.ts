@@ -39,6 +39,7 @@ async function expectOnlyMemebersSelected(page: Page) {
 test('Projects page screenshot', async ({ page }) => {
   await forceLoadImages(page);
 
+  console.log('PLAYWRIGHT_TEST: "%s"', process.env.PLAYWRIGHT_TEST);
   await expect(page).toHaveScreenshot({ fullPage: true });
 });
 
