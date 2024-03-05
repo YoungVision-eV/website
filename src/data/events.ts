@@ -23,21 +23,19 @@ export async function getNext3Events(): Promise<[Event, Event, Event]> {
   const image2 = await getImage({ src: calendarCoverImage });
   const image3 = await getImage({ src: pastEvent });
 
-  console.log('VERCEL_ENV', process.env.VERCEL_ENV);
-  console.log('PLAYWRIGHT_TEST: ', process.env.PLAYWRIGHT_TEST);
   if (process.env.PLAYWRIGHT_TEST === 'true' || process.env.VERCEL_ENV === 'preview') {
     return [
       {
-        title: 'Event 1',
-        date: new Date(2024, 1, 10),
+        title: 'Past Event',
+        date: new Date(1999, 6, 10),
         description: 'Sei dabei und gestalte YoungVision mit!',
         image: {
           src: image1,
         },
       },
       {
-        title: 'Event 2',
-        date: new Date(2024, 2, 2),
+        title: 'Future Event 1',
+        date: new Date(2999, 10, 2),
         description: 'Können wir das schaffen? Yo wir schaffen das!',
         slug: 'bauwoche-2024',
         image: {
@@ -45,8 +43,8 @@ export async function getNext3Events(): Promise<[Event, Event, Event]> {
         },
       },
       {
-        title: 'Event 3',
-        date: new Date(2024, 10, 21),
+        title: 'Future Event 2',
+        date: new Date(3024, 0, 28),
         description: 'Alle Jahre wieder: Sei dabei, entscheide und gestalte mit!',
         image: {
           src: image3,
