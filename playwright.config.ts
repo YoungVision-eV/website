@@ -4,7 +4,7 @@ import { devices } from '@playwright/test';
 const webServer = process.env.PLAYWRIGHT_TEST_BASE_URL
   ? undefined
   : {
-      command: 'pnpm run build && pnpm run preview',
+      command: 'PLAYWRIGHT_TEST=true pnpm run build && pnpm run preview',
       port: 4321,
     };
 
@@ -26,29 +26,22 @@ const config: PlaywrightTestConfig = {
   webServer,
   projects: [
     {
-      name: 'global setup',
-      testMatch: /global\.setup\.ts/,
-    },
-    {
       name: 'chromium',
       use: {
         ...devices['Desktop Chrome'],
       },
-      dependencies: ['global setup'],
     },
     {
       name: 'firefox',
       use: {
         ...devices['Desktop Firefox'],
       },
-      dependencies: ['global setup'],
     },
     {
       name: 'Mobile Chrome',
       use: {
         ...devices['Pixel 5'],
       },
-      dependencies: ['global setup'],
     },
   ],
   testDir: 'tests',
