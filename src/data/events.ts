@@ -36,7 +36,7 @@ export async function getNext3Events(): Promise<[Event, Event, Event]> {
       {
         title: 'Future Event 1',
         date: new Date(2999, 10, 2),
-        description: 'This event will alway (until 2999) be in the future.',
+        description: 'This event will always (until the year 2999) be in the future.',
         slug: 'bauwoche-2024',
         image: {
           src: image2,
@@ -45,7 +45,7 @@ export async function getNext3Events(): Promise<[Event, Event, Event]> {
       {
         title: 'Future Event 2',
         date: new Date(3024, 0, 28),
-        description: 'This is test data. Test 1 2 3. Test test. Test test Test test test.',
+        description: 'This is test data. Test 1 2 3. Test test.',
         image: {
           src: image3,
         },
