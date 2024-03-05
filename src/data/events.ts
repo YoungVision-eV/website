@@ -25,7 +25,7 @@ export async function getNext3Events(): Promise<[Event, Event, Event]> {
 
   console.log('VERCEL_ENV', process.env.VERCEL_ENV);
   console.log('PLAYWRIGHT_TEST: ', process.env.PLAYWRIGHT_TEST);
-  if (process.env.PLAYWRIGHT_TEST == 'true' || process.env.VERCEL_ENV === 'preview') {
+  if (process.env.PLAYWRIGHT_TEST === 'true' || process.env.VERCEL_ENV === 'preview') {
     return [
       {
         title: 'Event 1',
