@@ -2,8 +2,8 @@
 import Layout from '@layouts/Layout.astro';
 import { Image } from 'astro:assets';
 
+import BauwochenPlan from '@assets/events/bauwoche-2024/Bauwoche Zeitplan.svg';
 import BauwocheHero from '@assets/events/bauwoche-2024/bauwoche-hero.jpeg';
-import BauwochenPlan from '@assets/events/bauwoche-2024/Bauwoche-Wochenplan.png';
 import JakobUndJonas from '@assets/events/bauwoche-2024/jakob-und-jonas.png';
 import ArrowLeft from '@assets/icons/ArrowLeft.svelte';
 
@@ -154,8 +154,11 @@ import PlattformIcon from '@components/events/bauwoche-2024/PlattformIcon.svelte
       </div>
     </div>
   </div>
+
   <div class="mt-20 hidden lg:block">
-    <Image widths={[800, 1024, 1280, 2000]} src={BauwochenPlan} alt="Wochenplan Bauwoche 2024" />
+    <a href="/Bauwoche Zeitplan.pdf" download="YoungVision Bauwoche 2024 - Wochenplan">
+      <Image src={BauwochenPlan} class="w-full object-cover" alt="Wochenplan Bauwoche 2024" />
+    </a>
   </div>
   <div class="py-24 lg:px-44 lg:py-28 lg:text-xl">
     <div class="flex flex-col items-center lg:flex-row lg:gap-x-20">
