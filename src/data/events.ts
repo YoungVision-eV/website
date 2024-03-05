@@ -23,6 +23,35 @@ export async function getNext3Events(): Promise<[Event, Event, Event]> {
   const image2 = await getImage({ src: calendarCoverImage });
   const image3 = await getImage({ src: pastEvent });
 
+  if (process.env.PLAYWRIGHT_TEST === 'true' || process.env.VERCEL_ENV === 'preview') {
+    return [
+      {
+        title: 'Past Event',
+        date: new Date(1999, 6, 10),
+        description: 'This event covers the test case for past events',
+        image: {
+          src: image1,
+        },
+      },
+      {
+        title: 'Future Event 1',
+        date: new Date(2999, 10, 2),
+        description: 'This event will always (until the year 2999) be in the future.',
+        slug: 'bauwoche-2024',
+        image: {
+          src: image2,
+        },
+      },
+      {
+        title: 'Future Event 2',
+        date: new Date(3024, 0, 28),
+        description: 'This is test data. Test 1 2 3. Test test.',
+        image: {
+          src: image3,
+        },
+      },
+    ];
+  }
   const next3Events: [Event, Event, Event] = [
     {
       title: 'Mitmach Call',
