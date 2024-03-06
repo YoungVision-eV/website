@@ -4,7 +4,7 @@ import { devices } from '@playwright/test';
 const webServer = process.env.PLAYWRIGHT_TEST_BASE_URL
   ? undefined
   : {
-      command: 'PLAYWRIGHT_TEST=true pnpm run build && pnpm run preview',
+      command: 'pnpm run build && pnpm run preview',
       port: 4321,
     };
 
