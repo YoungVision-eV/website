@@ -83,8 +83,8 @@ devDependencies:
     specifier: 0.13.0
     version: 0.13.0
   prettier-plugin-astro-organize-imports:
-    specifier: 0.4.1
-    version: 0.4.1(prettier-plugin-astro@0.13.0)(prettier-plugin-tailwindcss@0.5.11)(prettier@3.2.5)
+    specifier: 0.4.3
+    version: 0.4.3(prettier-plugin-astro@0.13.0)(prettier-plugin-tailwindcss@0.5.11)(prettier@3.2.5)
   prettier-plugin-organize-imports:
     specifier: 3.2.4
     version: 3.2.4(prettier@3.2.5)(typescript@5.3.3)
@@ -4211,8 +4211,8 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier-plugin-astro-organize-imports@0.4.1(prettier-plugin-astro@0.13.0)(prettier-plugin-tailwindcss@0.5.11)(prettier@3.2.5):
-    resolution: {integrity: sha512-+FNWVIg4of3sOSjTuqfYIors40MZEQfBJmlqbXKAQaR5qPgPghr/qWFE6uHJLaynkzGQwDVR6DYSI+Ocu4R9Qw==}
+  /prettier-plugin-astro-organize-imports@0.4.3(prettier-plugin-astro@0.13.0)(prettier-plugin-tailwindcss@0.5.11)(prettier@3.2.5):
+    resolution: {integrity: sha512-TvCeGLGOz/QWjHUz2+XFcm8xj899WemvL1tquQTBsL1q9hbMPkEaxzcPILzd2nNDLE7AUqcYVq4cOm9RjTp+2g==}
     engines: {node: '>=16.0.0', pnpm: '>=8.6.0'}
     peerDependencies:
       prettier: ^3.0
