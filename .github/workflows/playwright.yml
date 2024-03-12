@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-22.04
     if: github.event.deployment_status.state == 'success'
     container:
-      image: mcr.microsoft.com/playwright:v1.41.0-jammy
+      image: mcr.microsoft.com/playwright:v1.42.0-jammy
     permissions:
       checks: write
       contents: read
