@@ -79,6 +79,7 @@ Feel free to check [our documentation](https://docs.astro.build) or jump into ou
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/thegrumpyonion"><img src="https://avatars.githubusercontent.com/u/150242949?v=4?s=100" width="100px;" alt="thegrumpyonion"/><br /><sub><b>thegrumpyonion</b></sub></a><br /><a href="#design-thegrumpyonion" title="Design">🎨</a></td>
       <td align="center" valign="top" width="14.28%"><a href="http://bulik.dev"><img src="https://avatars.githubusercontent.com/u/9407731?v=4?s=100" width="100px;" alt="Jonas"/><br /><sub><b>Jonas</b></sub></a><br /><a href="https://github.com/YoungVision-eV/website/commits?author=MrGreenTea" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Han2-Ro"><img src="https://avatars.githubusercontent.com/u/127860003?v=4?s=100" width="100px;" alt="Hannes"/><br /><sub><b>Hannes</b></sub></a><br /><a href="https://github.com/YoungVision-eV/website/commits?author=Han2-Ro" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
