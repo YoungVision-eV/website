@@ -8,6 +8,23 @@
   "commitConvention": "angular",
   "contributors": [
     {
+      "login": "thegrumpyonion",
+      "name": "thegrumpyonion",
+      "avatar_url": "https://avatars.githubusercontent.com/u/150242949?v=4",
+      "profile": "https://github.com/thegrumpyonion",
+      "contributions": [
+        "design"
+      ]
+    },
+    {
+      "login": "MrGreenTea",
+      "name": "Jonas",
+      "avatar_url": "https://avatars.githubusercontent.com/u/9407731?v=4",
+      "profile": "http://bulik.dev",
+      "contributions": [
+        "code"
+    },
+    {
       "login": "Han2-Ro",
       "name": "Hannes",
       "avatar_url": "https://avatars.githubusercontent.com/u/127860003?v=4",
