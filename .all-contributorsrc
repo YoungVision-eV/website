@@ -1,0 +1,26 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "commitType": "docs",
+  "commitConvention": "angular",
+  "contributors": [
+    {
+      "login": "Han2-Ro",
+      "name": "Hannes",
+      "avatar_url": "https://avatars.githubusercontent.com/u/127860003?v=4",
+      "profile": "https://github.com/Han2-Ro",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "skipCi": true,
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "projectName": "website",
+  "projectOwner": "YoungVision-eV"
+}
