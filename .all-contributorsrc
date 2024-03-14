@@ -1,7 +1,5 @@
 {
-  "files": [
-    "README.md"
-  ],
+  "files": ["README.md"],
   "imageSize": 100,
   "commit": false,
   "commitType": "docs",
@@ -12,26 +10,21 @@
       "name": "thegrumpyonion",
       "avatar_url": "https://avatars.githubusercontent.com/u/150242949?v=4",
       "profile": "https://github.com/thegrumpyonion",
-      "contributions": [
-        "design"
-      ]
+      "contributions": ["design"]
     },
     {
       "login": "MrGreenTea",
       "name": "Jonas",
       "avatar_url": "https://avatars.githubusercontent.com/u/9407731?v=4",
       "profile": "http://bulik.dev",
-      "contributions": [
-        "code"
+      "contributions": ["code"]
     },
     {
       "login": "Han2-Ro",
       "name": "Hannes",
       "avatar_url": "https://avatars.githubusercontent.com/u/127860003?v=4",
       "profile": "https://github.com/Han2-Ro",
-      "contributions": [
-        "code"
-      ]
+      "contributions": ["code"]
     }
   ],
   "contributorsPerLine": 7,
