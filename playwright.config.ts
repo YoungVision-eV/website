@@ -6,7 +6,7 @@ const webServer: PlaywrightTestConfig['webServer'] = process.env.PLAYWRIGHT_TEST
   : {
       command: 'PLAYWRIGHT_TEST=true pnpm run build && pnpm run preview',
       port: 4321,
-      timeout: 60 * 60 * 1000,
+      timeout: 5 * 60 * 1000,
     };
 
 const reporter: ReporterDescription[] = process.env.CI
