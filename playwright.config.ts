@@ -1,11 +1,12 @@
 import type { PlaywrightTestConfig, ReporterDescription } from '@playwright/test';
 import { devices } from '@playwright/test';
 
-const webServer = process.env.PLAYWRIGHT_TEST_BASE_URL
+const webServer: PlaywrightTestConfig['webServer'] = process.env.PLAYWRIGHT_TEST_BASE_URL
   ? undefined
   : {
       command: 'PLAYWRIGHT_TEST=true pnpm run build && pnpm run preview',
       port: 4321,
+      timeout: 60 * 60 * 1000,
     };
 
 const reporter: ReporterDescription[] = process.env.CI
