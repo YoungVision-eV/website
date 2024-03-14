@@ -23,7 +23,7 @@ export async function getNext3Events(): Promise<[Event, Event, Event]> {
   const image2 = await getImage({ src: calendarCoverImage });
   const image3 = await getImage({ src: pastEvent });
 
-  if (process.env.PLAYWRIGHT_TEST === 'true' || process.env.VERCEL_ENV === 'preview') {
+  if (process.env.PLAYWRIGHT_TEST === 'true') {
     return [
       {
         title: 'Past Event',
