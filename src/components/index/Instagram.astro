@@ -3,9 +3,8 @@ import ArrowLeft from '@assets/icons/ArrowLeft.svelte';
 import ArrowRight from '@assets/icons/ArrowRight.svelte';
 
 import { getRecentPhotos } from '@data/instagram';
-// TODO: get from Instagram API
 
-const images = await getRecentPhotos();
+const images = await getRecentPhotos(5);
 ---
 
 <section class="w-full pb-32 pt-12 lg:px-6">
@@ -21,6 +20,7 @@ const images = await getRecentPhotos();
           <a href={image.link} target="_blank" rel="noopener">
             <div class="h-52 w-52 shrink-0 ">
               <img
+                sizes="13rem"
                 class="object-cover"
                 srcset={image.src.srcSet.attribute}
                 {...image.src.attributes}
