@@ -128,7 +128,7 @@ export async function getAllYearlyEvents(): Promise<YVEvent[]> {
         title: 'Event 3',
         day: '24',
         month: 'Mai',
-        short_description: 'Noch ein Test Event, aber nur für Mitglieder !!1!!11!1elf1!!!',
+        short_description: 'Noch ein Test Event, aber nur für Mitglieder !!!1!!11!111elf1',
         image: { src: await getImage({ src: EventImage3 }) },
         for_all: false,
       },

@@ -1,22 +1,9 @@
 import { expect, test, type Page } from '@playwright/test';
+import { forceLoadImages } from './fixtures';
 
 test.beforeEach(async ({ page }) => {
   await page.goto('/events');
 });
-
-// Because we lazy load images but compare them in screenshots
-// we have to first make sure that they are loaded by scrolling them into view
-async function forceLoadImages(page: Page) {
-  await page.getByRole('contentinfo').scrollIntoViewIfNeeded();
-  await page.locator('#event-1').scrollIntoViewIfNeeded();
-  await page.waitForTimeout(500);
-  await page
-    .getByRole('list')
-    .getByRole('heading', { name: 'Silvester' })
-    .or(page.getByRole('list').getByRole('heading', { name: 'Mitgliederversammlung' }))
-    .scrollIntoViewIfNeeded();
-  await page.waitForTimeout(500);
-}
 
 async function expectForAllSelected(page: Page) {
   for (const e of await page.getByRole('list').getByText('Nur Mitglieder').all()) {
