@@ -35,9 +35,9 @@ type InstagramAPINode = {
   };
 };
 
-export async function getRecentPhotos(): Promise<InstagramPost[]> {
+export async function getRecentPhotos(count: number): Promise<InstagramPost[]> {
   if (process.env.PLAYWRIGHT_TEST === 'true') {
-    return [
+    const fakePosts = [
       {
         src: await getPhoto(firstPost),
         alt: 'First Post',
@@ -65,9 +65,13 @@ export async function getRecentPhotos(): Promise<InstagramPost[]> {
         link: 'https://www.instagram.com/youngvision_ev/',
       },
     ];
+    // Just repeat fake posts to get the desired count
+    return Array(count)
+      .fill(null)
+      .map((_, i) => fakePosts[i % fakePosts.length]);
   }
   const { data } = await fetch(
-    'https://www.instagram.com/graphql/query/?query_id=17888483320059182&variables={%22id%22:%223938579639%22,%22first%22:5,%22after%22:null}',
+    `https://www.instagram.com/graphql/query/?query_id=17888483320059182&variables={%22id%22:%223938579639%22,%22first%22:${count},%22after%22:null}`,
     {
       method: 'GET',
       headers: {

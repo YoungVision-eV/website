@@ -4,7 +4,7 @@ import ArrowRight from '@assets/icons/ArrowRight.svelte';
 
 import { getRecentPhotos } from '@data/instagram';
 
-const images = await getRecentPhotos();
+const images = await getRecentPhotos(5);
 ---
 
 <section class="w-full pb-32 pt-12 lg:px-6">
