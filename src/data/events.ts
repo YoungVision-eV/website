@@ -102,6 +102,38 @@ export async function getEventBySlug(slug: string): Promise<YVEvent | undefined>
 }
 
 export async function getAllYearlyEvents(): Promise<YVEvent[]> {
+  if (process.env.PLAYWRIGHT_TEST === 'true') {
+    return [
+      {
+        slug: 'event-1',
+        title: 'Event 1',
+        day: '1',
+        month: 'Januar',
+        short_description: 'Das ist ein Test Event. Komm nicht vorbei, weil es ist nicht real.',
+        image: { src: await getImage({ src: EventImage1 }) },
+        for_all: true,
+      },
+      {
+        slug: 'event-2',
+        title: 'Event 2',
+        day: '31',
+        month: 'Oktober',
+        short_description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium, felis sed luctus tempor',
+        image: { src: await getImage({ src: EventImage2 }) },
+        for_all: true,
+      },
+      {
+        slug: 'event-3',
+        title: 'Event 3',
+        day: '24',
+        month: 'Mai',
+        short_description: 'Noch ein Test Event, aber nur für Mitglieder !!!1!!11!111elf1',
+        image: { src: await getImage({ src: EventImage3 }) },
+        for_all: false,
+      },
+    ];
+  }
   return [
     {
       slug: 'summer-gathering',
