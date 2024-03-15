@@ -8,7 +8,7 @@ import secondPost from '@assets/instagram/second-post.png';
 import thirdPost from '@assets/instagram/third-post.png';
 
 async function getPhoto(src: string | ImageMetadata) {
-  return getImage({ src, widths: [96, 192, 256, 512], inferSize: true });
+  return getImage({ src, width: 208, height: 208, densities: [1, 1.5, 2] });
 }
 
 type InstagramPost = {
