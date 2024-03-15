@@ -105,32 +105,30 @@ export async function getAllYearlyEvents(): Promise<YVEvent[]> {
   if (process.env.PLAYWRIGHT_TEST === 'true') {
     return [
       {
-        slug: 'summer-gathering',
-        title: 'Sommer Gathering',
-        day: '2',
-        month: 'September',
-        short_description:
-          'Unsere jährliche Sommerveranstaltung ist für viele das Highlight des Jahres!',
+        slug: 'event-1',
+        title: 'Event 1',
+        day: '1',
+        month: 'Januar',
+        short_description: 'Das ist ein Test Event. Komm nicht vorbei, weil es ist nicht real.',
         image: { src: await getImage({ src: EventImage1 }) },
         for_all: true,
       },
       {
-        slug: 'silvester',
-        title: 'Silvester',
+        slug: 'event-2',
+        title: 'Event 2',
         day: '31',
-        month: 'Dezember',
+        month: 'Oktober',
         short_description:
-          'Lass uns das vergangene Jahr ausklingen lassen und gemeinsam in das neue Jahr starten!',
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium, felis sed luctus tempor',
         image: { src: await getImage({ src: EventImage2 }) },
         for_all: true,
       },
       {
-        slug: 'mitgliederversammlung',
-        title: 'Mitgliederversammlung',
-        day: '4',
-        month: 'April',
-        short_description:
-          'Werde Mitglied und entscheide gemeinsam über die Zukunft von YoungVision!',
+        slug: 'event-3',
+        title: 'Event 3',
+        day: '24',
+        month: 'Mai',
+        short_description: 'Noch ein Test Event, aber nur für Mitglieder !!1!!11!1elf1!!!',
         image: { src: await getImage({ src: EventImage3 }) },
         for_all: false,
       },
