@@ -102,6 +102,40 @@ export async function getEventBySlug(slug: string): Promise<YVEvent | undefined>
 }
 
 export async function getAllYearlyEvents(): Promise<YVEvent[]> {
+  if (process.env.PLAYWRIGHT_TEST === 'true') {
+    return [
+      {
+        slug: 'summer-gathering',
+        title: 'Sommer Gathering',
+        day: '2',
+        month: 'September',
+        short_description:
+          'Unsere jährliche Sommerveranstaltung ist für viele das Highlight des Jahres!',
+        image: { src: await getImage({ src: EventImage1 }) },
+        for_all: true,
+      },
+      {
+        slug: 'silvester',
+        title: 'Silvester',
+        day: '31',
+        month: 'Dezember',
+        short_description:
+          'Lass uns das vergangene Jahr ausklingen lassen und gemeinsam in das neue Jahr starten!',
+        image: { src: await getImage({ src: EventImage2 }) },
+        for_all: true,
+      },
+      {
+        slug: 'mitgliederversammlung',
+        title: 'Mitgliederversammlung',
+        day: '4',
+        month: 'April',
+        short_description:
+          'Werde Mitglied und entscheide gemeinsam über die Zukunft von YoungVision!',
+        image: { src: await getImage({ src: EventImage3 }) },
+        for_all: false,
+      },
+    ];
+  }
   return [
     {
       slug: 'summer-gathering',
