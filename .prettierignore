@@ -22,3 +22,6 @@ yarn.lock
 *.png
 *.jpg
 *.jpeg
+
+# this is formatted by the bot
+.all-contributorsrc
