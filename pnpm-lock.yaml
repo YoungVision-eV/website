@@ -15,8 +15,8 @@ dependencies:
     specifier: 5.1.0
     version: 5.1.0(astro@4.5.9)(tailwindcss@3.4.1)
   '@melt-ui/svelte':
-    specifier: 0.76.2
-    version: 0.76.2(svelte@4.2.12)
+    specifier: 0.76.3
+    version: 0.76.3(svelte@4.2.12)
   astro:
     specifier: 4.5.9
     version: 4.5.9(@types/node@20.12.5)(typescript@5.4.3)
@@ -36,7 +36,7 @@ dependencies:
 devDependencies:
   '@melt-ui/pp':
     specifier: 0.3.0
-    version: 0.3.0(@melt-ui/svelte@0.76.2)(svelte@4.2.12)
+    version: 0.3.0(@melt-ui/svelte@0.76.3)(svelte@4.2.12)
   '@playwright/test':
     specifier: 1.42.1
     version: 1.42.1
@@ -1231,21 +1231,21 @@ packages:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.4.15
 
-  /@melt-ui/pp@0.3.0(@melt-ui/svelte@0.76.2)(svelte@4.2.12):
+  /@melt-ui/pp@0.3.0(@melt-ui/svelte@0.76.3)(svelte@4.2.12):
     resolution: {integrity: sha512-b07Bdh8l2KcwKVCXOY+SoBw1dk9eWvQfMSi6SoacpRVyVmmfpi0kV4oGt3HYF0tUCB3sEmVicxse50ZzZxEzEA==}
     engines: {pnpm: '>=8.6.3'}
     peerDependencies:
       '@melt-ui/svelte': '>= 0.29.0'
       svelte: ^3.55.0 || ^4.0.0 || ^5.0.0-next.1
     dependencies:
-      '@melt-ui/svelte': 0.76.2(svelte@4.2.12)
+      '@melt-ui/svelte': 0.76.3(svelte@4.2.12)
       estree-walker: 3.0.3
       magic-string: 0.30.8
       svelte: 4.2.12
     dev: true
 
-  /@melt-ui/svelte@0.76.2(svelte@4.2.12):
-    resolution: {integrity: sha512-7SbOa11tXUS95T3fReL+dwDs5FyJtCEqrqG3inRziDws346SYLsxOQ6HmX+4BkIsQh1R8U3XNa+EMmdMt38lMA==}
+  /@melt-ui/svelte@0.76.3(svelte@4.2.12):
+    resolution: {integrity: sha512-fEtwHnOVLH0eNwtr+7pX5JQVtOL2XWVFA0/xrNU0yL6NkEpv++4NUwaaulGZC4nVmVG/gIA1JK2fx5M0u01TlA==}
     peerDependencies:
       svelte: '>=3 <5'
     dependencies:
