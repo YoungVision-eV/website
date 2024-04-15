@@ -12,7 +12,7 @@ export interface Event {
   title: string;
   date: Date;
   description: string;
-  slug?: string;
+  link?: string;
   image: {
     src: Awaited<ReturnType<typeof getImage>>;
   };
@@ -37,7 +37,7 @@ export async function getNext3Events(): Promise<[Event, Event, Event]> {
         title: 'Future Event 1',
         date: new Date(2999, 10, 2),
         description: 'This event will always (until the year 2999) be in the future.',
-        slug: 'bauwoche-2024',
+        link: '/events/bauwoche-2024',
         image: {
           src: image2,
         },
@@ -54,26 +54,27 @@ export async function getNext3Events(): Promise<[Event, Event, Event]> {
   }
   const next3Events: [Event, Event, Event] = [
     {
-      title: 'Mitmach Call',
-      date: new Date(2024, 1, 28),
-      description: 'Sei dabei und gestalte YoungVision mit!',
-      image: {
-        src: image1,
-      },
-    },
-    {
       title: 'Bauwoche in Rosow',
       date: new Date(2024, 3, 1),
       description: 'Können wir das schaffen? Yo wir schaffen das!',
-      slug: 'bauwoche-2024',
+      link: '/events/bauwoche-2024',
       image: {
         src: image2,
       },
     },
     {
-      title: 'Mitgliederversammlung',
-      date: new Date(2024, 3, 4),
-      description: 'Alle Jahre wieder: Sei dabei, entscheide und gestalte mit!',
+      title: 'Forschungsraum: Körper & Sexualität',
+      date: new Date(2024, 4, 17),
+      description: 'Ein Workshop mit Raum zum Austausch über Sexualität und unsere Körper.',
+      link: 'https://pretix.eu/yv/Forschungsraum/',
+      image: {
+        src: image1,
+      },
+    },
+    {
+      title: 'Forschungsraum: Wutkraft',
+      date: new Date(2024, 5, 27),
+      description: 'Lasst uns die Kraft, die in unserer Wut steckt, gemeinsam erforschen.',
       image: {
         src: image3,
       },
