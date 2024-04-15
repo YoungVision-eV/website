@@ -36,7 +36,8 @@ type InstagramAPINode = {
 };
 
 export async function getRecentPhotos(count: number): Promise<InstagramPost[]> {
-  if (process.env.PLAYWRIGHT_TEST === 'true') {
+  // Use fake posts in dev because otherwise we hit instagrams rate limit very quickly
+  if (process.env.NODE_ENV === 'development' || process.env.PLAYWRIGHT_TEST === 'true') {
     const fakePosts = [
       {
         src: await getPhoto(firstPost),

@@ -114,11 +114,11 @@
           <div
             class="z-30 hidden h-full py-2 pr-2 lg:col-span-1 lg:flex lg:flex-col lg:justify-end"
           >
-            {#if index === selectedEvent && event.slug}
+            {#if index === selectedEvent && event.link}
               <a
                 transition:fade={{ duration: ANIMATION_DURATION, easing: cubicOut }}
                 class="italic underline"
-                href="/events/{event.slug}">Infos</a
+                href={event.link}>Infos</a
               >
             {/if}
           </div>
