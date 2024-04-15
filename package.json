@@ -33,7 +33,7 @@
     "@melt-ui/pp": "0.3.0",
     "@playwright/test": "1.42.1",
     "@rgossiaux/svelte-headlessui": "2.0.0",
-    "@types/node": "20.12.5",
+    "@types/node": "20.12.7",
     "@typescript-eslint/eslint-plugin": "7.6.0",
     "@typescript-eslint/parser": "7.5.0",
     "embla-carousel": "8.0.0",
