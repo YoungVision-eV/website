@@ -84,7 +84,7 @@ devDependencies:
     version: 0.13.0
   prettier-plugin-astro-organize-imports:
     specifier: 0.4.3
-    version: 0.4.3(prettier-plugin-astro@0.13.0)(prettier-plugin-tailwindcss@0.5.12)(prettier@3.2.5)
+    version: 0.4.3(prettier-plugin-astro@0.13.0)(prettier-plugin-tailwindcss@0.5.14)(prettier@3.2.5)
   prettier-plugin-organize-imports:
     specifier: 3.2.4
     version: 3.2.4(prettier@3.2.5)(typescript@5.4.3)
@@ -92,8 +92,8 @@ devDependencies:
     specifier: 3.2.2
     version: 3.2.2(prettier@3.2.5)(svelte@4.2.12)
   prettier-plugin-tailwindcss:
-    specifier: 0.5.12
-    version: 0.5.12(prettier-plugin-astro@0.13.0)(prettier-plugin-organize-imports@3.2.4)(prettier-plugin-svelte@3.2.2)(prettier@3.2.5)
+    specifier: 0.5.14
+    version: 0.5.14(prettier-plugin-astro@0.13.0)(prettier-plugin-organize-imports@3.2.4)(prettier-plugin-svelte@3.2.2)(prettier@3.2.5)
   sharp:
     specifier: 0.33.3
     version: 0.33.3
@@ -4448,7 +4448,7 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier-plugin-astro-organize-imports@0.4.3(prettier-plugin-astro@0.13.0)(prettier-plugin-tailwindcss@0.5.12)(prettier@3.2.5):
+  /prettier-plugin-astro-organize-imports@0.4.3(prettier-plugin-astro@0.13.0)(prettier-plugin-tailwindcss@0.5.14)(prettier@3.2.5):
     resolution: {integrity: sha512-TvCeGLGOz/QWjHUz2+XFcm8xj899WemvL1tquQTBsL1q9hbMPkEaxzcPILzd2nNDLE7AUqcYVq4cOm9RjTp+2g==}
     engines: {node: '>=16.0.0', pnpm: '>=8.6.0'}
     peerDependencies:
@@ -4464,7 +4464,7 @@ packages:
       '@astrojs/compiler': 2.7.0
       prettier: 3.2.5
       prettier-plugin-astro: 0.13.0
-      prettier-plugin-tailwindcss: 0.5.12(prettier-plugin-astro@0.13.0)(prettier-plugin-organize-imports@3.2.4)(prettier-plugin-svelte@3.2.2)(prettier@3.2.5)
+      prettier-plugin-tailwindcss: 0.5.14(prettier-plugin-astro@0.13.0)(prettier-plugin-organize-imports@3.2.4)(prettier-plugin-svelte@3.2.2)(prettier@3.2.5)
       typescript: 5.4.3
     dev: true
 
@@ -4503,14 +4503,15 @@ packages:
       svelte: 4.2.12
     dev: true
 
-  /prettier-plugin-tailwindcss@0.5.12(prettier-plugin-astro@0.13.0)(prettier-plugin-organize-imports@3.2.4)(prettier-plugin-svelte@3.2.2)(prettier@3.2.5):
-    resolution: {integrity: sha512-o74kiDBVE73oHW+pdkFSluHBL3cYEvru5YgEqNkBMFF7Cjv+w1vI565lTlfoJT4VLWDe0FMtZ7FkE/7a4pMXSQ==}
+  /prettier-plugin-tailwindcss@0.5.14(prettier-plugin-astro@0.13.0)(prettier-plugin-organize-imports@3.2.4)(prettier-plugin-svelte@3.2.2)(prettier@3.2.5):
+    resolution: {integrity: sha512-Puaz+wPUAhFp8Lo9HuciYKM2Y2XExESjeT+9NQoVFXZsPPnc9VYss2SpxdQ6vbatmt8/4+SN0oe0I1cPDABg9Q==}
     engines: {node: '>=14.21.3'}
     peerDependencies:
       '@ianvs/prettier-plugin-sort-imports': '*'
       '@prettier/plugin-pug': '*'
       '@shopify/prettier-plugin-liquid': '*'
       '@trivago/prettier-plugin-sort-imports': '*'
+      '@zackad/prettier-plugin-twig-melody': '*'
       prettier: ^3.0
       prettier-plugin-astro: '*'
       prettier-plugin-css-order: '*'
@@ -4522,7 +4523,6 @@ packages:
       prettier-plugin-sort-imports: '*'
       prettier-plugin-style-order: '*'
       prettier-plugin-svelte: '*'
-      prettier-plugin-twig-melody: '*'
     peerDependenciesMeta:
       '@ianvs/prettier-plugin-sort-imports':
         optional: true
@@ -4531,6 +4531,8 @@ packages:
       '@shopify/prettier-plugin-liquid':
         optional: true
       '@trivago/prettier-plugin-sort-imports':
+        optional: true
+      '@zackad/prettier-plugin-twig-melody':
         optional: true
       prettier-plugin-astro:
         optional: true
@@ -4551,8 +4553,6 @@ packages:
       prettier-plugin-style-order:
         optional: true
       prettier-plugin-svelte:
-        optional: true
-      prettier-plugin-twig-melody:
         optional: true
     dependencies:
       prettier: 3.2.5
