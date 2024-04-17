@@ -7,6 +7,7 @@ import thirdEventImage from '@assets/events/calendar-third-event.jpeg';
 import EventImage1 from '@assets/events/projects-event-image-1.jpeg';
 import EventImage2 from '@assets/events/projects-event-image-2.jpeg';
 import EventImage3 from '@assets/events/projects-event-image-3.jpeg';
+import { Event as EventCMS } from './payload-types';
 
 export interface Event {
   title: string;
@@ -16,6 +17,22 @@ export interface Event {
   image: {
     src: Awaited<ReturnType<typeof getImage>>;
   };
+}
+
+export async function getAllEvents(): Promise<Event[]> {
+  const image = await getImage({ src: calendarCoverImage });
+  const response = await fetch('http://localhost:3000/api/events');
+  const data = await response.json();
+  const events = data.docs as EventCMS[];
+  return events.map((event) => ({
+    title: event.title,
+    date: new Date(event.date),
+    description: event.shortDescription,
+    link: `/events/${event.slug}`,
+    image: {
+      src: image,
+    },
+  }));
 }
 
 export async function getNext3Events(): Promise<[Event, Event, Event]> {
@@ -52,36 +69,37 @@ export async function getNext3Events(): Promise<[Event, Event, Event]> {
       },
     ];
   }
-  const next3Events: [Event, Event, Event] = [
-    {
-      title: 'Bauwoche in Rosow',
-      date: new Date(2024, 3, 1),
-      description: 'Können wir das schaffen? Yo wir schaffen das!',
-      link: '/events/bauwoche-2024',
-      image: {
-        src: image2,
-      },
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const response = await fetch(
+    `http://localhost:3000/api/events?sort=date&where[date][greater_than]=${today.toISOString()}&limit=3`,
+  );
+  const data = await response.json();
+  let events = data.docs as EventCMS[];
+  if (events.length < 3) {
+    // If there are less than 3 events in the future, we want to fill the remaining slots with past events
+    const pastEventsResponse = await fetch(
+      `http://localhost:3000/api/events?sort=-date&where[date][less_than]=${today.toISOString()}&limit=${
+        3 - events.length
+      }`,
+    );
+    const pastEventsData = await pastEventsResponse.json();
+    const pastEvents = pastEventsData.docs as EventCMS[];
+    events = pastEvents.reverse().concat(events);
+  }
+  const result = events.map((event) => ({
+    title: event.title,
+    date: new Date(event.date),
+    description: event.shortDescription,
+    link: `/events/${event.slug}`,
+    image: {
+      src: image1,
     },
-    {
-      title: 'Forschungsraum: Körper & Sexualität',
-      date: new Date(2024, 4, 17),
-      description: 'Ein Workshop mit Raum zum Austausch über Sexualität und unsere Körper.',
-      link: 'https://pretix.eu/yv/Forschungsraum/',
-      image: {
-        src: image1,
-      },
-    },
-    {
-      title: 'Forschungsraum: Wutkraft',
-      date: new Date(2024, 5, 27),
-      description: 'Lasst uns die Kraft, die in unserer Wut steckt, gemeinsam erforschen.',
-      image: {
-        src: image3,
-      },
-    },
-  ];
-
-  return next3Events;
+  })) as [Event, Event, Event];
+  result[0].image.src = image1;
+  result[1].image.src = image2;
+  result[2].image.src = image3;
+  return result;
 }
 
 export type YVEvent = {
