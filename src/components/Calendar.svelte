@@ -19,7 +19,7 @@
   export let events: [Event, Event, Event];
 </script>
 
-<div class="grid w-full grid-cols-4 lg:grid-cols-9 lg:px-20">
+<div class="mx-auto grid w-full max-w-[80rem] grid-cols-4 lg:grid-cols-9 lg:px-20">
   <div
     class="col-start-1 col-end-5 row-end-2 lg:relative lg:col-end-6 lg:row-start-1 lg:row-end-4 lg:rounded-l-2xl lg:rounded-r-none"
   >

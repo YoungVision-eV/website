@@ -25,7 +25,10 @@
 
 <!-- TODO: add Background -->
 
-<section class={clsx('w-full pb-12 pt-14', className)} data-testid="testimonials">
+<section
+  class={clsx('mx-auto w-full max-w-[80rem] pb-12 pt-14', className)}
+  data-testid="testimonials"
+>
   <h1 class="mx-5 font-serif text-3xl font-bold lg:mx-16">Von YoungVision Leuten</h1>
   <div class="relative mt-3 overflow-hidden lg:mt-16">
     <div
