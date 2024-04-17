@@ -83,6 +83,7 @@ export interface Event {
         id?: string | null;
       }[]
     | null;
+  registrationLink?: string | null;
   slug?: string | null;
   calendarCover: {
     relationTo: 'media';
