@@ -9,8 +9,8 @@ dependencies:
     specifier: 0.5.10
     version: 0.5.10(prettier-plugin-astro@0.13.0)(prettier@3.2.5)(typescript@5.4.5)
   '@astrojs/svelte':
-    specifier: 5.2.0
-    version: 5.2.0(astro@4.5.9)(svelte@4.2.12)(typescript@5.4.5)(vite@5.2.2)
+    specifier: 5.4.0
+    version: 5.4.0(astro@4.5.9)(svelte@4.2.12)(typescript@5.4.5)(vite@5.2.2)
   '@astrojs/tailwind':
     specifier: 5.1.0
     version: 5.1.0(astro@4.5.9)(tailwindcss@3.4.3)
@@ -216,12 +216,12 @@ packages:
       prismjs: 1.29.0
     dev: false
 
-  /@astrojs/svelte@5.2.0(astro@4.5.9)(svelte@4.2.12)(typescript@5.4.5)(vite@5.2.2):
-    resolution: {integrity: sha512-GmwbXks2WMkmAfl0rlPM/2gA1RtmZzjGV2mOceV3g7QNyjIsSYBPKrlEnSFnuR+YMvlAtWdbMFBsb3gtGxnTTg==}
-    engines: {node: '>=18.14.1'}
+  /@astrojs/svelte@5.4.0(astro@4.5.9)(svelte@4.2.12)(typescript@5.4.5)(vite@5.2.2):
+    resolution: {integrity: sha512-D9/CVJ+Fy3fu+FzJ7x+0GnRUhHsJKsU6tW/xQQ1QzrFMABuEoM5U4YKTYtxWkqB4B4jNb7gbA4p9ZtEhYZ3/+w==}
+    engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0}
     peerDependencies:
       astro: ^4.0.0
-      svelte: ^4.0.0 || ^5.0.0-next.56
+      svelte: ^4.0.0 || ^5.0.0-next.90
       typescript: ^5.3.3
     dependencies:
       '@sveltejs/vite-plugin-svelte': 3.0.2(svelte@4.2.12)(vite@5.2.2)
