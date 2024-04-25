@@ -96,7 +96,7 @@
       >
         <button
           aria-labelledby={`title-${event.title}`}
-          class="col-span-4 grid grid-cols-subgrid items-center py-7 text-left lg:col-span-6 lg:py-1"
+          class="relative col-span-4 grid h-full grid-cols-subgrid items-center py-7 text-left lg:col-span-6 lg:py-1"
           on:click={() => (selectedEvent = index)}
           disabled={selectedEvent === index}
         >
@@ -111,9 +111,7 @@
             <h3 class="font-bold lg:text-xl" id={`title-${event.title}`}>{event.title}</h3>
             <p>{event.description}</p>
           </div>
-          <div
-            class="z-30 hidden h-full py-2 pr-2 lg:col-span-1 lg:flex lg:flex-col lg:justify-end"
-          >
+          <div class="absolute bottom-5 right-5 z-30">
             {#if index === selectedEvent && event.link}
               <a
                 transition:fade={{ duration: ANIMATION_DURATION, easing: cubicOut }}
