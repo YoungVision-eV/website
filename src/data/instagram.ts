@@ -71,7 +71,7 @@ export async function getRecentPhotos(count: number): Promise<InstagramPost[]> {
       .fill(null)
       .map((_, i) => fakePosts[i % fakePosts.length]);
   }
-  const { data } = await fetch(
+  const response = await fetch(
     `https://www.instagram.com/graphql/query/?query_id=17888483320059182&variables={%22id%22:%223938579639%22,%22first%22:${count},%22after%22:null}`,
     {
       method: 'GET',
@@ -79,8 +79,13 @@ export async function getRecentPhotos(count: number): Promise<InstagramPost[]> {
         accept: 'application/json',
       },
     },
-  ).then((res) => res.json());
-  const posts = data.user.edge_owner_to_timeline_media.edges as InstagramAPINode[];
+  );
+  console.groupCollapsed('\nInstagram API response');
+  console.debug(response);
+  const data = await response.json();
+  console.debug(data);
+  console.groupEnd();
+  const posts = data.data.user.edge_owner_to_timeline_media.edges as InstagramAPINode[];
 
   return Promise.all(
     posts.map(async ({ node: p }: InstagramAPINode) => ({
