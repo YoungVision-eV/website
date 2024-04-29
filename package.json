@@ -40,7 +40,7 @@
     "embla-carousel-svelte": "8.0.0",
     "eslint": "8.57.0",
     "eslint-config-prettier": "9.1.0",
-    "eslint-plugin-astro": "0.33.1",
+    "eslint-plugin-astro": "1.1.0",
     "eslint-plugin-svelte": "2.38.0",
     "git-format-staged": "3.1.1",
     "husky": "9.0.11",
