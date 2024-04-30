@@ -3,7 +3,7 @@
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
@@ -85,6 +85,7 @@ Feel free to check [our documentation](https://docs.astro.build) or jump into ou
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/thegrumpyonion"><img src="https://avatars.githubusercontent.com/u/150242949?v=4?s=100" width="100px;" alt="thegrumpyonion"/><br /><sub><b>thegrumpyonion</b></sub></a><br /><a href="#design-thegrumpyonion" title="Design">🎨</a></td>
       <td align="center" valign="top" width="14.28%"><a href="http://bulik.dev"><img src="https://avatars.githubusercontent.com/u/9407731?v=4?s=100" width="100px;" alt="Jonas"/><br /><sub><b>Jonas</b></sub></a><br /><a href="https://github.com/YoungVision-eV/website/commits?author=MrGreenTea" title="Code">💻</a> <a href="https://github.com/YoungVision-eV/website/commits?author=MrGreenTea" title="Documentation">📖</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Han2-Ro"><img src="https://avatars.githubusercontent.com/u/127860003?v=4?s=100" width="100px;" alt="Hannes"/><br /><sub><b>Hannes</b></sub></a><br /><a href="https://github.com/YoungVision-eV/website/commits?author=Han2-Ro" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/aprevrah"><img src="https://avatars.githubusercontent.com/u/119614085?v=4?s=100" width="100px;" alt="ap"/><br /><sub><b>ap</b></sub></a><br /><a href="https://github.com/YoungVision-eV/website/commits?author=aprevrah" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
