@@ -1,0 +1,23 @@
+---
+import { getAllEvents } from '@data/events';
+
+const { title, content } = Astro.props;
+
+// The getStaticPaths() is required for static Astro sites.
+// If using SSR, you will not need this function.
+export async function getStaticPaths() {
+  let events = await getAllEvents();
+
+  return events.map((event) => {
+    return {
+      params: { slug: event.slug },
+      props: { title: event.title, content: event.content_html },
+    };
+  });
+}
+---
+
+<article>
+  <h1 set:html={title} />
+  <p set:html={content} />
+</article>

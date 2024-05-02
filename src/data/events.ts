@@ -32,7 +32,9 @@ export async function getAllEvents(): Promise<Event[]> {
     title: event.title,
     date: new Date(event.start),
     description: event.shortDescription,
+    content_html: event.content_html,
     link: `/events/${event.slug}`,
+    slug: `${event.slug}`,
     image: {
       src: image,
     },
