@@ -13,7 +13,9 @@ export interface Event {
   title: string;
   date: Date;
   description: string;
+  content_html?: string;
   link?: string;
+  slug?: string;
   image: {
     src: Awaited<ReturnType<typeof getImage>>;
   };
@@ -28,7 +30,9 @@ export async function getAllEvents(): Promise<Event[]> {
     title: event.title,
     date: new Date(event.date),
     description: event.shortDescription,
+    content_html: event.content_html,
     link: `/events/${event.slug}`,
+    slug: `${event.slug}`,
     image: {
       src: image,
     },
