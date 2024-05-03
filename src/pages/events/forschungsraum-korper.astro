@@ -1,0 +1,209 @@
+---
+import Layout from '@layouts/Layout.astro';
+import { Image } from 'astro:assets';
+
+import HeroImage from '@assets/events/forschungsraum/hero.jpg';
+import Timetable from '@assets/events/forschungsraum/sexualität-körper-Plan.svg';
+import ArrowLeft from '@assets/icons/ArrowLeft.svelte';
+
+import Clara from '@assets/events/forschungsraum/Clara.jpg';
+import Lara from '@assets/events/forschungsraum/Lara.jpg';
+
+import Button from '@components/Button.astro';
+
+import CalendarIcon from '@assets/icons/CalendarIcon.svelte';
+import HandWithMoney from '@assets/icons/HandWithMoney.svelte';
+import LocationPin from '@assets/icons/LocationPin.svelte';
+import People from '@assets/icons/People.svelte';
+
+const title = 'Forschungsraum: Körper & Sexualität';
+// TODO: implement formatting logic if not same month (or year)
+// for example 30.04.24 - 02.05.24 should be '30. April - 02. Mai'
+const dates = {
+  start: new Date(2024, 4, 17),
+  end: new Date(2024, 4, 20),
+};
+const who = 'Junge Menschen (18-32)';
+const cost = '120€ – 170€';
+
+const locationPictures = [
+  {
+    alt: 'Stuff',
+    src: { src: 'https://via.placeholder.com/600x600', format: 'png', width: 300, height: 300 },
+  },
+];
+// Repeat 5 times for testing
+for (let i = 0; i < 5; i++) {
+  locationPictures.push({
+    alt: 'Stuff',
+    src: { src: 'https://via.placeholder.com/600x600', format: 'png', width: 300, height: 300 },
+  });
+}
+
+const team = [
+  {
+    name: 'Lara (24)',
+    role: 'CEO',
+    image: Lara,
+    description:
+      'Ich bin seit fünf Jahren ehrenamtlich in der Sexualaufklärung bei Mit Sicherheit Verliebt e.v. aktiv und liebe die Arbeit im Austausch mit Jugendlichen. Ich möchte ein schambefreites und lockeres umfeld schaffen, in dem menschliche Sexualität diskutiert und zelebriert werden kann 🌞',
+  },
+  {
+    name: 'Clara (23)',
+    role: 'Yogalehrerin und Psychologie-Studentin',
+    description:
+      'Ich freue mich darauf, mit euch gemeinsam einen Ort mit einer ermutigenden Atmosphäre und offenen Gesprächen schaffen',
+    image: Clara,
+  },
+  {
+    name: 'Rebecca',
+    role: 'Manager',
+    image: { src: 'https://via.placeholder.com/600x600', format: 'png', width: 300, height: 300 },
+  },
+  {
+    name: 'May',
+    role: 'Lead of Operation',
+    image: { src: 'https://via.placeholder.com/600x600', format: 'png', width: 300, height: 300 },
+  },
+  {
+    name: 'Sophie',
+    role: 'Developer',
+    image: { src: 'https://via.placeholder.com/600x600', format: 'png', width: 300, height: 300 },
+  },
+  {
+    name: '',
+    role: '',
+    image: { src: 'https://via.placeholder.com/600x600', format: 'png', width: 300, height: 300 },
+  },
+];
+---
+
+<Layout title="YoungVision e.V. - Forschungsraum: Körper & Sexualität">
+  <Image class="h-[27rem] w-full object-cover" src={HeroImage} alt="Gathering 2024" />
+  <div class="pr-4 lg:pr-20">
+    <div class="flex h-12 w-full items-center rounded-br-xl bg-yellow-500 bg-opacity-60 lg:text-xl">
+      <a href="/events" class="p-3">
+        <ArrowLeft />
+        <span class="sr-only">Zur vorherigen Seite</span>
+      </a>
+      Veranstaltungen
+    </div>
+  </div>
+
+  <div class="mx-auto max-w-[80rem] px-4 pt-12 lg:px-20 lg:text-xl">
+    <h1 class="font-serif text-4xl font-bold lg:text-5xl">{title}</h1>
+    <div class="mt-6 lg:mt-14 lg:px-24">
+      <h2 class="font-serif text-2xl font-bold lg:text-4xl">Wichtige Infos</h2>
+      <div
+        class="mt-16 grid grid-cols-2 gap-x-6 gap-y-14 px-4 text-center lg:grid-cols-4 lg:px-0 lg:text-left"
+      >
+        <div class="flex flex-col items-center">
+          <div
+            class="flex h-40 w-40 items-center justify-center rounded-full bg-yellow-700 shadow-xl"
+          >
+            <LocationPin class="h-24 w-24" />
+          </div>
+          <h3 class="mt-8 font-serif text-xl font-bold">Wo</h3>
+          <a class="mt-3 text-center underline" href="https://maps.app.goo.gl/kak1RX8pJwZGnFFD7">
+            <address class="not-italic">Am bhf 4, 166307 Mescherin</address>
+          </a>
+        </div>
+
+        <div class="flex flex-col items-center">
+          <div
+            class="flex h-40 w-40 items-center justify-center rounded-full bg-yellow-700 shadow-xl"
+          >
+            <People class="h-24 w-24" />
+          </div>
+          <h3 class="mt-8 font-serif text-xl font-bold">Wer</h3>
+          <p class="mt-3">{who}</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <div
+            class="flex h-40 w-40 items-center justify-center rounded-full bg-yellow-700 shadow-xl"
+          >
+            <CalendarIcon class="h-24 w-24" />
+          </div>
+          <h3 class="mt-8 font-serif text-xl font-bold">Wann</h3>
+          <p class="mt-3">
+            {dates.start.toLocaleDateString('de', { day: '2-digit' })} - {
+              dates.end.toLocaleDateString('de', { day: '2-digit', month: 'long' })
+            }
+          </p>
+        </div>
+        <div class="flex flex-col items-center">
+          <div
+            class="flex h-40 w-40 items-center justify-center rounded-full bg-yellow-700 shadow-xl"
+          >
+            <HandWithMoney class="h-24 w-24" />
+          </div>
+          <h3 class="mt-8 font-serif text-xl font-bold">Kosten</h3>
+          <p class="mt-3">{cost}</p>
+        </div>
+      </div>
+      <div class="mt-20 lg:mt-28">
+        <h2 class="font-serif text-2xl font-bold lg:text-4xl">
+          Deine Forschungsreise zu Körper & Sexualität
+        </h2>
+        <div class="mt-4 max-w-prose text-justify lg:mt-8">
+          <p>
+            In sämtlichen Gesellschaften und über Epochen hinweg sind Körper sowie Sexualität von
+            Normen und Idealen geprägt. In diesem Forschungsraum wollen wir uns diese Normen und
+            Ideale näher ansehen, sie reflektieren und in den Austausch kommen: <br /><br />➤ Was
+            bedeutet (meine) Sexualität? <br />➤ Wie beeinflussen Pornos und soziale Medien die
+            Beziehung zu uns selbst und anderen?<br />➤ Wie kann ich meinen Körper und meine
+            Sexualität kennenlernen und akzeptieren?<br /><br />Wir haben gemütliche Sharing-Runden,
+            Embodiment-Elemente wie Yoga und Ecstatic Dance sowie Beiträge zu den Themen Consent,
+            Scham und Beziehungen geplant. Es wird viel Raum zum gemeinsamen Austausch und
+            Reflektieren geben. Wir freuen uns auch auf <em>tolle Gesprächsrunden</em>, am
+            Lagerfeuer sitzen, schwimmen gehen und ganz viel tanzen!<br /><br />Der Forschungsraum
+            findet vom 17. bis 20. Mai im idyllischen Rosow statt. Wir wollen einen Safe Space für
+            alle erschaffen, unabhängig von sexueller Orientierung oder Erfahrung. Hauptsache, du
+            bist zwischen 18 und 32 Jahre alt!<br /><br />Wir freuen uns sehr auf dich!
+          </p>
+        </div>
+
+        <Button
+          text="Jetzt Anmelden"
+          color="dark"
+          class="mt-12 uppercase lg:mt-8"
+          href="https://pretix.eu/yv/Forschungsraum"
+        />
+      </div>
+    </div>
+
+    <div class="mx-auto mt-6 max-w-[80rem] pt-12 lg:mt-14 lg:text-xl">
+      <Image src={Timetable} class="w-full object-cover" alt="Wochenplan Bauwoche 2024" />
+    </div>
+    <div class="mx-auto mt-6 max-w-[80rem] px-4 lg:mt-12 lg:px-24">
+      <div>
+        <h2 class="font-serif text-2xl font-bold lg:text-4xl">Begleitung und Referierende</h2>
+        <div class="mt-4 grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-16">
+          {
+            team.map((member) => (
+              <div>
+                <img src={member.image.src} alt="" class="aspect-square rounded-lg object-cover" />
+                <p class="mt-4 text-xl font-bold lg:mt-6 lg:text-2xl">{member.name}</p>
+                <p class="text-sm text-gray-700">{member.role}</p>
+                <p class="mt-4">{member.description}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+      <div class="py-12">
+        <h2 class="font-serif text-2xl font-bold lg:text-4xl">Veranstaltungsort Rosow</h2>
+        <p class="mt-3 lg:text-xl">Der Forschungsraum findet im idyllischen Rosow statt.</p>
+        <div class="mt-4 grid grid-cols-1 lg:mt-8 lg:grid-cols-3">
+          {locationPictures.map((image) => <img src={image.src.src} alt={image.alt} alt="" />)}
+        </div>
+        <Button
+          text="Jetzt Anmelden"
+          color="dark"
+          class="mt-12 uppercase lg:mt-8"
+          href="https://pretix.eu/yv/Forschungsraum"
+        />
+      </div>
+    </div>
+  </div>
+</Layout>
