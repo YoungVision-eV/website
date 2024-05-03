@@ -50,6 +50,7 @@ export async function getNext3Events(): Promise<[Event, Event, Event]> {
         title: 'Past Event',
         date: new Date(1999, 6, 10),
         description: 'This event covers the test case for past events',
+        link: '/events/bauwoche-2024',
         image: {
           src: image1,
         },

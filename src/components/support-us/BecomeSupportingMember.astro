@@ -10,24 +10,26 @@ import Disclosure from './Disclosure.svelte';
 const backgroundImage = await getImage({ src: Background, width: 1920, height: 1080 });
 ---
 
-<section data-testid="supporting-members" class="bg-light-green px-4 py-8 lg:px-20 lg:py-12">
-  <h2 class="font-serif text-2xl font-bold lg:text-4xl">Werde Fördermitglied</h2>
-  <p class="mt-3 font-serif text-xl font-bold lg:mt-2 lg:text-2xl">
-    Deine Chance uns zu unterstützen und mehr über uns zu erfahren!
-  </p>
-  <p class="mt-8 max-w-prose lg:mt-10 lg:text-xl">
-    Du willst junge Menschen auf ihrer Reise zur persönlichen Entwicklung und zur aktiven Gestaltung
-    unserer Gesellschaft begleiten? Erfahre hier, wie du uns unterstützen kannst!
-  </p>
-  <Button
-    href="https://easyverein.com/public/yv/applicationform/7237"
-    class="mt-8 lg:mt-6"
-    color="dark"
-    text="Werde Fördermitglied"
-  />
-  <Disclosure client:load />
+<section data-testid="supporting-members" class="bg-light-green py-8 lg:py-12">
+  <div class="mx-auto max-w-[80rem] px-4 lg:px-20">
+    <h2 class="font-serif text-2xl font-bold lg:text-4xl">Werde Fördermitglied</h2>
+    <p class="mt-3 font-serif text-xl font-bold lg:mt-2 lg:text-2xl">
+      Deine Chance uns zu unterstützen und mehr über uns zu erfahren!
+    </p>
+    <p class="mt-8 max-w-prose lg:mt-10 lg:text-xl">
+      Du willst junge Menschen auf ihrer Reise zur persönlichen Entwicklung und zur aktiven
+      Gestaltung unserer Gesellschaft begleiten? Erfahre hier, wie du uns unterstützen kannst!
+    </p>
+    <Button
+      href="https://easyverein.com/public/yv/applicationform/7237"
+      class="mt-8 lg:mt-6"
+      color="dark"
+      text="Werde Fördermitglied"
+    />
+    <Disclosure client:load />
 
-  <div class="mx-2 mt-2 w-full border-t border-gray-300"></div>
+    <div class="mx-2 mt-2 w-full border-t border-gray-300"></div>
+  </div>
 </section>
 
 <style define:vars={{ backgroundImage: `url(${backgroundImage.src})` }}>

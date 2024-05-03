@@ -29,21 +29,23 @@ const members = [
 ];
 ---
 
-<section class="bg-light-green px-5 py-14 lg:px-20 lg:pb-36 lg:pt-20">
-  <h1 class="font-serif text-3xl font-bold">Das Team</h1>
-  <div class="mt-14 grid grid-cols-2 gap-x-5 gap-y-14 lg:grid-cols-4 lg:gap-x-24">
-    {
-      members.map((member) => (
-        <div class="flex flex-col items-center">
-          <Image
-            src={member.image}
-            alt={member.name}
-            class="aspect-square h-auto w-full rounded-full bg-white object-cover object-center"
-          />
-          <h2 class="mt-6 font-sans font-bold lg:mt-5 lg:text-xl">{member.name}</h2>
-          <p class="lg:mt-3">{member.job}</p>
-        </div>
-      ))
-    }
+<section class="bg-light-green py-14 lg:pb-36 lg:pt-20">
+  <div class="mx-auto max-w-[80rem] px-5 lg:px-20">
+    <h1 class="font-serif text-3xl font-bold">Das Team</h1>
+    <div class="mt-14 grid grid-cols-2 gap-x-5 gap-y-14 lg:grid-cols-4 lg:gap-x-24">
+      {
+        members.map((member) => (
+          <div class="flex flex-col items-center">
+            <Image
+              src={member.image}
+              alt={member.name}
+              class="aspect-square h-auto w-full rounded-full bg-white object-cover object-center"
+            />
+            <h2 class="mt-6 font-sans font-bold lg:mt-5 lg:text-xl">{member.name}</h2>
+            <p class="lg:mt-3">{member.job}</p>
+          </div>
+        ))
+      }
+    </div>
   </div>
 </section>
