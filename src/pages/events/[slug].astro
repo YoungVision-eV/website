@@ -1,5 +1,6 @@
 ---
 import { getAllEvents } from '@data/events';
+import Layout from '@layouts/Layout.astro';
 
 const { title, content } = Astro.props;
 
@@ -17,7 +18,9 @@ export async function getStaticPaths() {
 }
 ---
 
-<article>
-  <h1 set:html={title} />
-  <p set:html={content} />
-</article>
+<Layout title={title}>
+  <article class="prose mx-auto max-w-[80rem] px-5 py-10 lg:prose-xl lg:px-20">
+    <h1 set:html={title} />
+    <p set:html={content} />
+  </article>
+</Layout>
