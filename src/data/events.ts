@@ -7,9 +7,10 @@ import thirdEventImage from '@assets/events/calendar-third-event.jpeg';
 import EventImage1 from '@assets/events/projects-event-image-1.jpeg';
 import EventImage2 from '@assets/events/projects-event-image-2.jpeg';
 import EventImage3 from '@assets/events/projects-event-image-3.jpeg';
+
 import type { GetImageResult } from 'astro';
 import * as qs from 'qs';
-import type { Event as EventCMS } from './payload-types.ts';
+import type { Event as EventCMS } from './payload-types';
 
 export interface Event {
   title: string;
@@ -32,13 +33,13 @@ export async function getAllEvents(): Promise<Event[]> {
     title: event.title,
     date: new Date(event.start),
     description: event.shortDescription,
-    content_html: event.content_html,
+    content_html: event.content_html || undefined,
     link: `/events/${event.slug}`,
     slug: `${event.slug}`,
     image: {
       src: image,
     },
-  }));
+  })) as Event[];
 }
 
 export async function getNext3Events(): Promise<[Event, Event, Event]> {
