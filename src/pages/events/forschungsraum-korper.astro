@@ -139,6 +139,7 @@ const team = [
           </div>
           <h3 class="mt-8 font-serif text-xl font-bold">Kosten</h3>
           <p class="mt-3 text-center">{cost}</p>
+          <p class="text-center text-sm">(inkl. Verpflegung & Unterkunft)</p>
         </div>
       </div>
       <div class="mt-20 lg:mt-28">
@@ -193,7 +194,8 @@ const team = [
       </div>
       <div class="py-12">
         <h2 class="font-serif text-2xl font-bold lg:text-4xl">Veranstaltungsort Rosow</h2>
-        <p class="mt-3 lg:text-xl">Der Forschungsraum findet im idyllischen Rosow statt.</p>
+        <p class="mt-3">Der Forschungsraum findet im idyllischen Rosow statt.</p>
+        <p>Vegane Verpflegung und Unterkunft sind wie immer inklusive.</p>
         <div class="mt-4 grid grid-cols-1 lg:mt-8 lg:grid-cols-3">
           {locationPictures.map((image) => <img src={image.src.src} alt={image.alt} alt="" />)}
         </div>
