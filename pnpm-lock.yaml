@@ -35,8 +35,8 @@ dependencies:
 
 devDependencies:
   '@melt-ui/pp':
-    specifier: 0.3.0
-    version: 0.3.0(@melt-ui/svelte@0.79.0)(svelte@4.2.12)
+    specifier: 0.3.2
+    version: 0.3.2(@melt-ui/svelte@0.79.0)(svelte@4.2.12)
   '@playwright/test':
     specifier: 1.42.1
     version: 1.42.1
@@ -1231,9 +1231,8 @@ packages:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.4.15
 
-  /@melt-ui/pp@0.3.0(@melt-ui/svelte@0.79.0)(svelte@4.2.12):
-    resolution: {integrity: sha512-b07Bdh8l2KcwKVCXOY+SoBw1dk9eWvQfMSi6SoacpRVyVmmfpi0kV4oGt3HYF0tUCB3sEmVicxse50ZzZxEzEA==}
-    engines: {pnpm: '>=8.6.3'}
+  /@melt-ui/pp@0.3.2(@melt-ui/svelte@0.79.0)(svelte@4.2.12):
+    resolution: {integrity: sha512-xKkPvaIAFinklLXcQOpwZ8YSpqAFxykjWf8Y/fSJQwsixV/0rcFs07hJ49hJjPy5vItvw5Qa0uOjzFUbXzBypQ==}
     peerDependencies:
       '@melt-ui/svelte': '>= 0.29.0'
       svelte: ^3.55.0 || ^4.0.0 || ^5.0.0-next.1
