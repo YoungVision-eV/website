@@ -8,6 +8,8 @@ import ArrowLeft from '@assets/icons/ArrowLeft.svelte';
 
 import Clara from '@assets/events/forschungsraum/Clara.jpg';
 import Lara from '@assets/events/forschungsraum/Lara.jpg';
+import May from '@assets/events/forschungsraum/May.jpg';
+import Sophie from '@assets/events/forschungsraum/Sophie.jpg';
 
 import Button from '@components/Button.astro';
 
@@ -43,37 +45,31 @@ for (let i = 0; i < 5; i++) {
 const team = [
   {
     name: 'Lara (24)',
-    role: 'CEO',
+    role: 'ehrenamtlich in der Sexualaufklärung aktiv',
     image: Lara,
     description:
-      'Ich bin seit fünf Jahren ehrenamtlich in der Sexualaufklärung bei Mit Sicherheit Verliebt e.v. aktiv und liebe die Arbeit im Austausch mit Jugendlichen. Ich möchte ein schambefreites und lockeres umfeld schaffen, in dem menschliche Sexualität diskutiert und zelebriert werden kann 🌞',
+      'Ich bin seit fünf Jahren ehrenamtlich in der Sexualaufklärung bei Mit Sicherheit Verliebt e.v. aktiv und liebe die Arbeit im Austausch mit Jugendlichen. Ich möchte ein schambefreites und lockeres Umfeld schaffen, in dem menschliche Sexualität diskutiert und zelebriert werden kann 🌞',
   },
   {
     name: 'Clara (23)',
     role: 'Yogalehrerin und Psychologie-Studentin',
     description:
-      'Ich freue mich darauf, mit euch gemeinsam einen Ort mit einer ermutigenden Atmosphäre und offenen Gesprächen schaffen',
+      'Ich freue mich darauf, mit euch gemeinsam einen Ort mit einer ermutigenden Atmosphäre und offenen Gesprächen zu schaffen.',
     image: Clara,
   },
   {
-    name: 'Rebecca',
-    role: 'Manager',
-    image: { src: 'https://via.placeholder.com/600x600', format: 'png', width: 300, height: 300 },
-  },
-  {
     name: 'May',
-    role: 'Lead of Operation',
-    image: { src: 'https://via.placeholder.com/600x600', format: 'png', width: 300, height: 300 },
+    role: 'freiberuflich in der Sexualpädagogik tätig',
+    description:
+      'Ich möchte willkommende Räume kreieren, die sich mutig anfühlen. Ich möchte Menschen bewegen, bei sich selbst einzukehren um  sich dann frei mit dem zu zeigen, was da ist.',
+    image: May,
   },
   {
     name: 'Sophie',
-    role: 'Developer',
-    image: { src: 'https://via.placeholder.com/600x600', format: 'png', width: 300, height: 300 },
-  },
-  {
-    name: '',
-    role: '',
-    image: { src: 'https://via.placeholder.com/600x600', format: 'png', width: 300, height: 300 },
+    role: 'angehende Sexualpädagogin',
+    description:
+      'In den Workshops die ich für euch gestalten werde, möchte ich einen Raum schaffen, in dem wir rücksichtsvoll, rege und mit einem kritischen Blick in den Austausch kommen.',
+    image: Sophie,
   },
 ];
 ---
@@ -179,14 +175,16 @@ const team = [
     <div class="mx-auto mt-6 max-w-[80rem] px-4 lg:mt-12 lg:px-24">
       <div>
         <h2 class="font-serif text-2xl font-bold lg:text-4xl">Begleitung und Referierende</h2>
-        <div class="mt-4 grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-16">
+        <div class="-mt-4 grid grid-cols-1 gap-x-6 lg:-mt-6 lg:grid-cols-2 lg:gap-x-12">
           {
             team.map((member) => (
-              <div>
+              <div class="row-span-3 mt-8 grid grid-rows-subgrid lg:mt-16">
                 <img src={member.image.src} alt="" class="aspect-square rounded-lg object-cover" />
-                <p class="mt-4 text-xl font-bold lg:mt-6 lg:text-2xl">{member.name}</p>
-                <p class="text-sm text-gray-700">{member.role}</p>
-                <p class="mt-4">{member.description}</p>
+                <div class="mt-2 lg:mt-4">
+                  <p class="text-xl font-bold lg:text-2xl">{member.name}</p>
+                  <p class="text-sm text-gray-700">{member.role}</p>
+                </div>
+                <p class="mt-4 text-justify lg:mt-6">{member.description}</p>
               </div>
             ))
           }
