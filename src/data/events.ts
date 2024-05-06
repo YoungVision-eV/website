@@ -67,7 +67,7 @@ export async function getNext3Events(): Promise<[Event, Event, Event]> {
       title: 'Forschungsraum: Körper & Sexualität',
       date: new Date(2024, 4, 17),
       description: 'Ein Workshop mit Raum zum Austausch über Sexualität und unsere Körper.',
-      link: 'https://pretix.eu/yv/Forschungsraum/',
+      link: '/events/forschungsraum-korper',
       image: {
         src: image1,
       },
