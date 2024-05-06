@@ -11,6 +11,13 @@ import Lara from '@assets/events/forschungsraum/Lara.jpg';
 import May from '@assets/events/forschungsraum/May.jpg';
 import Sophie from '@assets/events/forschungsraum/Sophie.jpg';
 
+import Rosow1 from '@assets/events/forschungsraum/rosow_01.jpg';
+import Rosow2 from '@assets/events/forschungsraum/rosow_02.jpg';
+import Rosow3 from '@assets/events/forschungsraum/rosow_03.jpg';
+import Rosow4 from '@assets/events/forschungsraum/rosow_04.jpg';
+import Rosow5 from '@assets/events/forschungsraum/rosow_05.jpg';
+import Rosow6 from '@assets/events/forschungsraum/rosow_06.jpg';
+
 import Button from '@components/Button.astro';
 
 import CalendarIcon from '@assets/icons/CalendarIcon.svelte';
@@ -30,17 +37,21 @@ const cost = '120€ – 170€';
 
 const locationPictures = [
   {
-    alt: 'Stuff',
-    src: { src: 'https://via.placeholder.com/600x600', format: 'png', width: 300, height: 300 },
+    src: Rosow1,
+    alt: 'Ein 2-stöckiges rotes Backsteinhaus mit Garten und Windrädern am Horizont.',
+  },
+  {
+    src: Rosow2,
+    alt: 'Die Sonne scheint von hinten durch ein Baumhaus. Im rechten Vordergrund steht ein lila blühender Fliederbusch.',
+  },
+  { src: Rosow3, alt: 'Ein blühender Apfelbaum steht im Garten vor einem roten Backsteinhaus.' },
+  { src: Rosow4, alt: 'Die Sonne geht hinter Windrädern unter, mit Blick über ein Getreidefeld.' },
+  { src: Rosow5, alt: 'Zelte stehen zwischen Büschen und Bäumen im Garten.' },
+  {
+    src: Rosow6,
+    alt: 'Menschen sitzen und stehen um ein Lagerfeuer. Oben hängt eine Discokugel, die blau angeleuchtet wird.',
   },
 ];
-// Repeat 5 times for testing
-for (let i = 0; i < 5; i++) {
-  locationPictures.push({
-    alt: 'Stuff',
-    src: { src: 'https://via.placeholder.com/600x600', format: 'png', width: 300, height: 300 },
-  });
-}
 
 const team = [
   {
@@ -54,7 +65,7 @@ const team = [
     name: 'Clara (23)',
     role: 'Yogalehrerin und Psychologie-Studentin',
     description:
-      'Ich freue mich darauf, mit euch gemeinsam einen Ort mit einer ermutigenden Atmosphäre und offenen Gesprächen zu schaffen.',
+      'Ich freue mich darauf, mit eu.ch gemeinsam einen Ort mit einer ermutigenden Atmosphäre und offenen Gesprächen zu schaffen.',
     image: Clara,
   },
   {
@@ -75,7 +86,13 @@ const team = [
 ---
 
 <Layout title="YoungVision e.V. - Forschungsraum: Körper & Sexualität">
-  <Image class="h-[27rem] w-full object-cover" src={HeroImage} alt="Gathering 2024" />
+  <Image
+    class="h-[27rem] w-full object-cover"
+    src={HeroImage}
+    alt="Gathering 2024"
+    widths={[540, 720, 1024, 1200, 1440, 1920, 2560, 3840]}
+    sizes="100vw"
+  />
   <div class="pr-4 lg:pr-20">
     <div class="flex h-12 w-full items-center rounded-br-xl bg-yellow-500 bg-opacity-60 lg:text-xl">
       <a href="/events" class="p-3">
@@ -179,7 +196,13 @@ const team = [
           {
             team.map((member) => (
               <div class="row-span-3 mt-8 grid grid-rows-subgrid lg:mt-16">
-                <img src={member.image.src} alt="" class="aspect-square rounded-lg object-cover" />
+                <Image
+                  src={member.image}
+                  alt=""
+                  class="aspect-square rounded-lg object-cover"
+                  sizes="(max-width: 1024px) 100vw, 440px"
+                  widths={[360, 440, 720, 880, 1024]}
+                />
                 <div class="mt-2 lg:mt-4">
                   <p class="text-xl font-bold lg:text-2xl">{member.name}</p>
                   <p class="text-sm text-gray-700">{member.role}</p>
@@ -195,7 +218,18 @@ const team = [
         <p class="mt-3">Der Forschungsraum findet im idyllischen Rosow statt.</p>
         <p>Vegane Verpflegung und Unterkunft sind wie immer inklusive.</p>
         <div class="mt-4 grid grid-cols-1 lg:mt-8 lg:grid-cols-3">
-          {locationPictures.map((image) => <img src={image.src.src} alt={image.alt} alt="" />)}
+          {
+            locationPictures.map((image) => (
+              <Image
+                src={image.src}
+                alt={image.alt}
+                widths={[310, 400, 540, 720, 1024]}
+                sizes="(max-width: 1024px) 100vw, 310px"
+                class="aspect-square w-full object-cover"
+                alt=""
+              />
+            ))
+          }
         </div>
         <Button
           text="Jetzt Anmelden"
