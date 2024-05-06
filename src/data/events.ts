@@ -74,7 +74,7 @@ export async function getNext3Events(): Promise<[Event, Event, Event]> {
     {
       title: 'Sommer Gathering',
       date: new Date(2024, 8, 2),
-      description: 'Zusammen werden wir erkunden, was Community für uns sein kann,
+      description: 'Zusammen werden wir erkunden, was Community für uns sein kann',
       image: {
         src: image2,
       },
