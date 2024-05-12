@@ -55,15 +55,6 @@ export async function getNext3Events(): Promise<[Event, Event, Event]> {
   }
   const next3Events: [Event, Event, Event] = [
     {
-      title: 'Bauwoche in Rosow',
-      date: new Date(2024, 3, 1),
-      description: 'Können wir das schaffen? Yo wir schaffen das!',
-      link: '/events/bauwoche-2024',
-      image: {
-        src: image2,
-      },
-    },
-    {
       title: 'Forschungsraum: Körper & Sexualität',
       date: new Date(2024, 4, 17),
       description: 'Ein Workshop mit Raum zum Austausch über Sexualität und unsere Körper.',
@@ -78,6 +69,14 @@ export async function getNext3Events(): Promise<[Event, Event, Event]> {
       description: 'Lasst uns die Kraft, die in unserer Wut steckt, gemeinsam erforschen.',
       image: {
         src: image3,
+      },
+    },
+    {
+      title: 'Sommer Gathering',
+      date: new Date(2024, 8, 2),
+      description: 'Zusammen werden wir erkunden, was Community für uns sein kann',
+      image: {
+        src: image2,
       },
     },
   ];
