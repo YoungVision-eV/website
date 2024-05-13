@@ -83,8 +83,8 @@ devDependencies:
     specifier: 0.13.0
     version: 0.13.0
   prettier-plugin-astro-organize-imports:
-    specifier: 0.4.3
-    version: 0.4.3(prettier-plugin-astro@0.13.0)(prettier-plugin-tailwindcss@0.5.14)(prettier@3.2.5)
+    specifier: 0.4.7
+    version: 0.4.7(prettier-plugin-astro@0.13.0)(prettier-plugin-tailwindcss@0.5.14)(prettier@3.2.5)
   prettier-plugin-organize-imports:
     specifier: 3.2.4
     version: 3.2.4(prettier@3.2.5)(typescript@5.4.5)
@@ -145,6 +145,10 @@ packages:
 
   /@astrojs/compiler@2.7.0:
     resolution: {integrity: sha512-XpC8MAaWjD1ff6/IfkRq/5k1EFj6zhCNqXRd5J43SVJEBj/Bsmizkm8N0xOYscGcDFQkRgEw6/eKnI5x/1l6aA==}
+
+  /@astrojs/compiler@2.8.0:
+    resolution: {integrity: sha512-yrpD1WRGqsJwANaDIdtHo+YVjvIOFAjC83lu5qENIgrafwZcJgSXDuwVMXOgok4tFzpeKLsFQ6c3FoUdloLWBQ==}
+    dev: true
 
   /@astrojs/internal-helpers@0.3.0:
     resolution: {integrity: sha512-tGmHvrhpzuz0JBHaJX8GywN9g4rldVNHtkoVDC3m/DdzBO70jGoVuc0uuNVglRYnsdwkbG0K02Iw3nOOR3/Y4g==}
@@ -4497,9 +4501,8 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier-plugin-astro-organize-imports@0.4.3(prettier-plugin-astro@0.13.0)(prettier-plugin-tailwindcss@0.5.14)(prettier@3.2.5):
-    resolution: {integrity: sha512-TvCeGLGOz/QWjHUz2+XFcm8xj899WemvL1tquQTBsL1q9hbMPkEaxzcPILzd2nNDLE7AUqcYVq4cOm9RjTp+2g==}
-    engines: {node: '>=16.0.0', pnpm: '>=8.6.0'}
+  /prettier-plugin-astro-organize-imports@0.4.7(prettier-plugin-astro@0.13.0)(prettier-plugin-tailwindcss@0.5.14)(prettier@3.2.5):
+    resolution: {integrity: sha512-ZSxUj6l3cEMGKtB0xh69QJfhhYtV2Sl/Ig2oHqA8cQKJGVd2FRdOu1Iq6Qy6OzklockhHxVS01EPRjSlg9HjHw==}
     peerDependencies:
       prettier: ^3.0
       prettier-plugin-astro: '*'
@@ -4510,7 +4513,7 @@ packages:
       prettier-plugin-tailwindcss:
         optional: true
     dependencies:
-      '@astrojs/compiler': 2.7.0
+      '@astrojs/compiler': 2.8.0
       prettier: 3.2.5
       prettier-plugin-astro: 0.13.0
       prettier-plugin-tailwindcss: 0.5.14(prettier-plugin-astro@0.13.0)(prettier-plugin-organize-imports@3.2.4)(prettier-plugin-svelte@3.2.3)(prettier@3.2.5)
