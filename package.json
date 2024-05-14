@@ -34,7 +34,7 @@
     "@playwright/test": "1.42.1",
     "@rgossiaux/svelte-headlessui": "2.0.0",
     "@types/node": "20.12.11",
-    "@typescript-eslint/eslint-plugin": "7.7.1",
+    "@typescript-eslint/eslint-plugin": "7.9.0",
     "@typescript-eslint/parser": "7.8.0",
     "embla-carousel": "8.0.4",
     "embla-carousel-svelte": "8.0.0",
