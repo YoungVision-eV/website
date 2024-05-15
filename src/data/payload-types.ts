@@ -59,6 +59,10 @@ export interface Event {
   } | null;
   content_html?: string | null;
   slug: string;
+  calendarCover?: {
+    relationTo: 'media';
+    value: string | Media;
+  } | null;
   heroImage?: {
     relationTo: 'media';
     value: string | Media;

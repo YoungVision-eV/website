@@ -110,12 +110,12 @@ async function getEventImage(event: EventCMS): Promise<GetImageResult> {
   if (!event.heroImage) {
     //fallback image
     return await getImage({ src: calendarCoverImage, width: 400, height: 400 });
-  } else if (typeof event.heroImage.value === 'string') {
+  } else if (typeof event.calendarCover.value === 'string') {
     return await getImage({ src: calendarCoverImage, width: 400, height: 400 });
   } else {
-    console.log('event.heroImage.value', event.heroImage.value);
+    console.log('event.heroImage.value', event.calendarCover.value);
     return await getImage({
-      src: `http://localhost:3000${event.heroImage.value.url}`,
+      src: `http://localhost:3000${event.calendarCover.value.url}`,
       width: 400,
       height: 400,
     });
