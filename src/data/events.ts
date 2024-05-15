@@ -7,7 +7,8 @@ import thirdEventImage from '@assets/events/calendar-third-event.jpeg';
 import EventImage1 from '@assets/events/projects-event-image-1.jpeg';
 import EventImage2 from '@assets/events/projects-event-image-2.jpeg';
 import EventImage3 from '@assets/events/projects-event-image-3.jpeg';
-import type { Event as EventCMS } from './payload-types';
+import type { GetImageResult } from 'astro';
+import type { Event as EventCMS } from './payload-types.ts';
 
 export interface Event {
   title: string;
@@ -92,19 +93,33 @@ export async function getNext3Events(): Promise<[Event, Event, Event]> {
     const pastEvents = pastEventsData.docs as EventCMS[];
     events = pastEvents.reverse().concat(events);
   }
-  const result = events.map((event) => ({
+  const promises = events.map(async (event) => ({
     title: event.title,
     date: new Date(event.date),
     description: event.shortDescription,
     link: `/events/${event.slug}`,
     image: {
-      src: image1,
+      src: await getEventImage(event),
     },
-  })) as [Event, Event, Event];
-  result[0].image.src = image1;
-  result[1].image.src = image2;
-  result[2].image.src = image3;
+  })) as [Promise<Event>, Promise<Event>, Promise<Event>];
+  const result = await Promise.all(promises);
   return result;
+}
+
+async function getEventImage(event: EventCMS): Promise<GetImageResult> {
+  if (!event.heroImage) {
+    //fallback image
+    return await getImage({ src: calendarCoverImage, width: 400, height: 400 });
+  } else if (typeof event.heroImage.value === 'string') {
+    return await getImage({ src: calendarCoverImage, width: 400, height: 400 });
+  } else {
+    console.log('event.heroImage.value', event.heroImage.value);
+    return await getImage({
+      src: `http://localhost:3000${event.heroImage.value.url}`,
+      width: 400,
+      height: 400,
+    });
+  }
 }
 
 export type YVEvent = {
