@@ -124,14 +124,17 @@ export async function getNext3Events(): Promise<[Event, Event, Event]> {
 }
 
 async function getEventImage(event: EventCMS): Promise<GetImageResult> {
-  if (typeof event.calendarCover.value === 'string') {
+  if (!event.heroImage) {
+    //fallback image
+    return await getImage({ src: calendarCoverImage, width: 400, height: 400 });
+  } else if (typeof event.heroImage.value === 'string') {
     return await getImage({ src: calendarCoverImage, width: 400, height: 400 });
   } else {
-    console.log('event.calendarCover.value', event.calendarCover.value);
+    console.log('event.heroImage.value', event.heroImage.value);
     return await getImage({
-      src: `${process.env.CMS_URL}${event.calendarCover.value.url}`,
-      width: event.calendarCover.value.width,
-      height: event.calendarCover.value.height,
+      src: `http://localhost:3000${event.heroImage.value.url}`,
+      width: 400,
+      height: 400,
     });
   }
 }
