@@ -24,7 +24,7 @@ export interface Event {
 
 export async function getAllEvents(): Promise<Event[]> {
   const image = await getImage({ src: calendarCoverImage });
-  const response = await fetch('${process.env.CMS_URL}/api/events');
+  const response = await fetch(`${process.env.CMS_URL}/api/events`);
   const data = await response.json();
   const events = data.docs as EventCMS[];
   return events.map((event) => ({
@@ -80,9 +80,7 @@ export async function getNext3Events(): Promise<[Event, Event, Event]> {
   const response = await fetch(
     `${process.env.CMS_URL}/api/events?sort=date&where[start][greater_than]=${today.toISOString()}&limit=3`,
   );
-  console.log('response', response);
   const data = await response.json();
-  console.log('data', data);
   let events = data.docs as EventCMS[];
   console.log('events', events);
   if (events.length < 3) {
