@@ -26,7 +26,7 @@ export interface Event {
 
 export async function getAllEvents(): Promise<Event[]> {
   const image = await getImage({ src: calendarCoverImage });
-  const response = await fetch('${process.env.CMS_URL}/api/events');
+  const response = await fetch(`${process.env.CMS_URL}/api/events`);
   const data = await response.json();
   const events = data.docs as EventCMS[];
   return events.map((event) => ({
