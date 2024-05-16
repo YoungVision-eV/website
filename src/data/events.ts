@@ -90,17 +90,14 @@ export async function getNext3Events(): Promise<[Event, Event, Event]> {
 }
 
 async function getEventImage(event: EventCMS): Promise<GetImageResult> {
-  if (!event.heroImage) {
-    //fallback image
-    return await getImage({ src: calendarCoverImage, width: 400, height: 400 });
-  } else if (typeof event.calendarCover.value === 'string') {
+  if (typeof event.calendarCover.value === 'string') {
     return await getImage({ src: calendarCoverImage, width: 400, height: 400 });
   } else {
     console.log('event.heroImage.value', event.calendarCover.value);
     return await getImage({
       src: `${process.env.CMS_URL}${event.calendarCover.value.url}`,
-      width: 400,
-      height: 400,
+      width: event.calendarCover.value.width,
+      height: event.calendarCover.value.height,
     });
   }
 }

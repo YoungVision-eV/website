@@ -83,15 +83,15 @@ export interface Event {
         id?: string | null;
       }[]
     | null;
-  slug: string;
+  slug?: string | null;
   calendarCover: {
     relationTo: 'media';
     value: string | Media;
   };
-  heroImage: {
+  heroImage?: {
     relationTo: 'media';
     value: string | Media;
-  };
+  } | null;
   updatedAt: string;
   createdAt: string;
 }
