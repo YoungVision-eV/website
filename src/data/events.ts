@@ -22,24 +22,6 @@ export interface Event {
   };
 }
 
-export async function getAllEvents(): Promise<Event[]> {
-  const image = await getImage({ src: calendarCoverImage });
-  const response = await fetch(`${process.env.CMS_URL}/api/events`);
-  const data = await response.json();
-  const events = data.docs as EventCMS[];
-  return events.map((event) => ({
-    title: event.title,
-    date: new Date(event.start),
-    description: event.shortDescription,
-    content_html: event.content_html || undefined,
-    link: `/events/${event.slug}`,
-    slug: `${event.slug}`,
-    image: {
-      src: image,
-    },
-  })) as Event[];
-}
-
 export async function getNext3Events(): Promise<[Event, Event, Event]> {
   const image1 = await getImage({ src: thirdEventImage });
   const image2 = await getImage({ src: calendarCoverImage });

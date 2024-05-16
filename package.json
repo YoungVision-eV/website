@@ -5,8 +5,8 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "CMS_URL='http://localhost:3000' astro dev",
-    "start": "CMS_URL='http://localhost:3000' astro dev",
-    "build": "astro check && CMS_URL='http://localhost:3000' astro build",
+    "start": "astro dev",
+    "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "lint": "pnpm run /^lint:.*/",
