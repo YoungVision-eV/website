@@ -4,9 +4,9 @@
   "private": true,
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro check && astro build",
+    "dev": "CMS_URL='http://localhost:3000' astro dev",
+    "start": "CMS_URL='http://localhost:3000' astro dev",
+    "build": "astro check && CMS_URL='http://localhost:3000' astro build",
     "preview": "astro preview",
     "astro": "astro",
     "lint": "pnpm run /^lint:.*/",
