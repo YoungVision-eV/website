@@ -24,7 +24,7 @@ export interface Event {
 
 export async function getAllEvents(): Promise<Event[]> {
   const image = await getImage({ src: calendarCoverImage });
-  const response = await fetch('http://localhost:3000/api/events');
+  const response = await fetch('${process.env.CMS_URL}/api/events');
   const data = await response.json();
   const events = data.docs as EventCMS[];
   return events.map((event) => ({
@@ -78,7 +78,7 @@ export async function getNext3Events(): Promise<[Event, Event, Event]> {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
   const response = await fetch(
-    `http://localhost:3000/api/events?sort=date&where[start][greater_than]=${today.toISOString()}&limit=3`,
+    `${process.env.CMS_URL}/api/events?sort=date&where[start][greater_than]=${today.toISOString()}&limit=3`,
   );
   console.log('response', response);
   const data = await response.json();
@@ -88,7 +88,7 @@ export async function getNext3Events(): Promise<[Event, Event, Event]> {
   if (events.length < 3) {
     // If there are less than 3 events in the future, we want to fill the remaining slots with past events
     const pastEventsResponse = await fetch(
-      `http://localhost:3000/api/events?sort=-date&where[start][less_than]=${today.toISOString()}&limit=${
+      `${process.env.CMS_URL}/api/events?sort=-date&where[start][less_than]=${today.toISOString()}&limit=${
         3 - events.length
       }`,
     );
@@ -118,7 +118,7 @@ async function getEventImage(event: EventCMS): Promise<GetImageResult> {
   } else {
     console.log('event.heroImage.value', event.calendarCover.value);
     return await getImage({
-      src: `http://localhost:3000${event.calendarCover.value.url}`,
+      src: `${process.env.CMS_URL}${event.calendarCover.value.url}`,
       width: 400,
       height: 400,
     });
