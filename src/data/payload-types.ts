@@ -40,8 +40,21 @@ export interface User {
 export interface Event {
   id: string;
   title: string;
-  date: string;
+  start: string;
+  end: string;
+  timetable?: {
+    relationTo: 'media';
+    value: string | Media;
+  } | null;
   shortDescription: string;
+  address: {
+    street: string;
+    zip: string;
+    city: string;
+  };
+  audience: string;
+  cost: string;
+  contentTitle: string;
   content?: {
     root: {
       type: string;
@@ -58,15 +71,27 @@ export interface Event {
     [k: string]: unknown;
   } | null;
   content_html?: string | null;
+  team?:
+    | {
+        name: string;
+        image: {
+          relationTo: 'media';
+          value: string | Media;
+        };
+        job: string;
+        bio: string;
+        id?: string | null;
+      }[]
+    | null;
   slug: string;
-  calendarCover?: {
+  calendarCover: {
     relationTo: 'media';
     value: string | Media;
-  } | null;
-  heroImage?: {
+  };
+  heroImage: {
     relationTo: 'media';
     value: string | Media;
-  } | null;
+  };
   updatedAt: string;
   createdAt: string;
 }

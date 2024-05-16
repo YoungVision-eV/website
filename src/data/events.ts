@@ -29,7 +29,7 @@ export async function getAllEvents(): Promise<Event[]> {
   const events = data.docs as EventCMS[];
   return events.map((event) => ({
     title: event.title,
-    date: new Date(event.date),
+    date: new Date(event.start),
     description: event.shortDescription,
     content_html: event.content_html || undefined,
     link: `/events/${event.slug}`,
@@ -78,14 +78,17 @@ export async function getNext3Events(): Promise<[Event, Event, Event]> {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
   const response = await fetch(
-    `http://localhost:3000/api/events?sort=date&where[date][greater_than]=${today.toISOString()}&limit=3`,
+    `http://localhost:3000/api/events?sort=date&where[start][greater_than]=${today.toISOString()}&limit=3`,
   );
+  console.log('response', response);
   const data = await response.json();
+  console.log('data', data);
   let events = data.docs as EventCMS[];
+  console.log('events', events);
   if (events.length < 3) {
     // If there are less than 3 events in the future, we want to fill the remaining slots with past events
     const pastEventsResponse = await fetch(
-      `http://localhost:3000/api/events?sort=-date&where[date][less_than]=${today.toISOString()}&limit=${
+      `http://localhost:3000/api/events?sort=-date&where[start][less_than]=${today.toISOString()}&limit=${
         3 - events.length
       }`,
     );
@@ -95,7 +98,7 @@ export async function getNext3Events(): Promise<[Event, Event, Event]> {
   }
   const promises = events.map(async (event) => ({
     title: event.title,
-    date: new Date(event.date),
+    date: new Date(event.start),
     description: event.shortDescription,
     link: `/events/${event.slug}`,
     image: {
