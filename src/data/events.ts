@@ -108,7 +108,7 @@ async function getEventImage(event: EventCMS): Promise<GetImageResult> {
   if (typeof event.calendarCover.value === 'string') {
     return await getImage({ src: calendarCoverImage, width: 400, height: 400 });
   } else {
-    console.log('event.heroImage.value', event.calendarCover.value);
+    console.log('event.calendarCover.value', event.calendarCover.value);
     return await getImage({
       src: `${process.env.CMS_URL}${event.calendarCover.value.url}`,
       width: event.calendarCover.value.width,
