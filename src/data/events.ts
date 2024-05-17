@@ -8,6 +8,7 @@ import EventImage1 from '@assets/events/projects-event-image-1.jpeg';
 import EventImage2 from '@assets/events/projects-event-image-2.jpeg';
 import EventImage3 from '@assets/events/projects-event-image-3.jpeg';
 import type { GetImageResult } from 'astro';
+import * as qs from 'qs';
 import type { Event as EventCMS } from './payload-types.ts';
 
 export interface Event {
@@ -59,18 +60,32 @@ export async function getNext3Events(): Promise<[Event, Event, Event]> {
   }
   const today = new Date();
   today.setHours(0, 0, 0, 0);
-  const response = await fetch(
-    `${process.env.CMS_URL}/api/events?sort=date&where[start][greater_than]=${today.toISOString()}&limit=3`,
-  );
+  const request = {
+    sort: 'date',
+    where: {
+      start: {
+        greater_than: today.toISOString(),
+      },
+    },
+    limit: 3,
+  };
+  const response = await fetch(`${process.env.CMS_URL}/api/events?${qs.stringify(request)}`);
   const data = await response.json();
   let events = data.docs as EventCMS[];
   console.log('events', events);
   if (events.length < 3) {
     // If there are less than 3 events in the future, we want to fill the remaining slots with past events
+    const request2 = {
+      sort: '-date',
+      where: {
+        start: {
+          less_than: today.toISOString(),
+        },
+      },
+      limit: 3 - events.length,
+    };
     const pastEventsResponse = await fetch(
-      `${process.env.CMS_URL}/api/events?sort=-date&where[start][less_than]=${today.toISOString()}&limit=${
-        3 - events.length
-      }`,
+      `${process.env.CMS_URL}/api/events?${qs.stringify(request2)}`,
     );
     const pastEventsData = await pastEventsResponse.json();
     const pastEvents = pastEventsData.docs as EventCMS[];
@@ -80,7 +95,7 @@ export async function getNext3Events(): Promise<[Event, Event, Event]> {
     title: event.title,
     date: new Date(event.start),
     description: event.shortDescription,
-    link: `/events/${event.slug}`,
+    link: event.slug ? `/events/${event.slug}` : null,
     image: {
       src: await getEventImage(event),
     },
