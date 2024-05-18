@@ -4,7 +4,7 @@
   import { fade, blur } from 'svelte/transition';
   import { cubicOut } from 'svelte/easing';
   import { tweened } from 'svelte/motion';
-  import type { Event } from '@data/events';
+  import type { EventCalendarEntry } from '@data/events';
 
   // TODO: should this be the event itself instead of the index?
   // Perhaps we should also just use embla
@@ -16,7 +16,7 @@
   $: location.set(selectedEvent);
   $: currentEvent = events[selectedEvent];
 
-  export let events: [Event, Event, Event];
+  export let events: [EventCalendarEntry, EventCalendarEntry, EventCalendarEntry];
 </script>
 
 <div class="mx-auto grid w-full max-w-[80rem] grid-cols-4 lg:grid-cols-9 lg:px-20">

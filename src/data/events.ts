@@ -12,37 +12,50 @@ import type { GetImageResult } from 'astro';
 import * as qs from 'qs';
 import type { Event as EventCMS } from './payload-types';
 
-export interface Event {
+export interface EventCalendarEntry {
   title: string;
   date: Date;
   description: string;
-  content_html?: string;
   link?: string;
-  slug?: string;
   image: {
     src: Awaited<ReturnType<typeof getImage>>;
   };
 }
 
-export async function getAllEvents(): Promise<Event[]> {
+export interface EventPage {
+  title: string;
+  start: Date;
+  end: Date;
+  slug: string;
+  content_html: string;
+  heroImage?: {
+    src: Awaited<ReturnType<typeof getImage>>;
+  };
+}
+
+export async function getAllEvents(): Promise<EventPage[]> {
   const image = await getImage({ src: calendarCoverImage });
   const response = await fetch(`${process.env.CMS_URL}/api/events`);
   const data = await response.json();
   const events = data.docs as EventCMS[];
-  return events.map((event) => ({
+  const eventsWithSlug = events.filter((event) => event.slug);
+  const promises = events.map(async (event) => ({
     title: event.title,
-    date: new Date(event.start),
-    description: event.shortDescription,
+    start: new Date(event.start),
+    end: new Date(event.end),
     content_html: event.content_html || undefined,
-    link: `/events/${event.slug}`,
-    slug: `${event.slug}`,
-    image: {
-      src: image,
+    slug: `&{event.slug}`,
+    heroImage: {
+      src: await getEventImage(event),
     },
-  })) as Event[];
+  })) as Promise<EventPage>[];
+  const result = await Promise.all(promises);
+  return result;
 }
 
-export async function getNext3Events(): Promise<[Event, Event, Event]> {
+export async function getNext3Events(): Promise<
+  [EventCalendarEntry, EventCalendarEntry, EventCalendarEntry]
+> {
   const image1 = await getImage({ src: thirdEventImage });
   const image2 = await getImage({ src: calendarCoverImage });
   const image3 = await getImage({ src: pastEvent });
@@ -118,7 +131,7 @@ export async function getNext3Events(): Promise<[Event, Event, Event]> {
     image: {
       src: await getEventImage(event),
     },
-  })) as [Promise<Event>, Promise<Event>, Promise<Event>];
+  })) as [Promise<EventCalendarEntry>, Promise<EventCalendarEntry>, Promise<EventCalendarEntry>];
   const result = await Promise.all(promises);
   return result;
 }
