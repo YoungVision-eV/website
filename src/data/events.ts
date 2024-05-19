@@ -39,12 +39,12 @@ export async function getAllEvents(): Promise<EventPage[]> {
   const data = await response.json();
   const events = data.docs as EventCMS[];
   const eventsWithSlug = events.filter((event) => event.slug);
-  const promises = events.map(async (event) => ({
+  const promises = eventsWithSlug.map(async (event) => ({
     title: event.title,
     start: new Date(event.start),
     end: new Date(event.end),
     content_html: event.content_html || undefined,
-    slug: `&{event.slug}`,
+    slug: `${event.slug}`,
     heroImage: {
       src: await getEventImage(event),
     },
