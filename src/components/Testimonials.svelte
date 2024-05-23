@@ -29,7 +29,7 @@
   class={clsx('mx-auto w-full max-w-[80rem] pb-12 pt-14', className)}
   data-testid="testimonials"
 >
-  <h1 class="mx-5 font-serif text-3xl font-bold lg:mx-16">Von YoungVision Leuten</h1>
+  <h2 class="mx-5 font-serif text-3xl font-bold lg:mx-16">Von YoungVision Leuten</h2>
   <div class="relative mt-3 overflow-hidden lg:mt-16">
     <div
       class="embla__viewport px-5 lg:px-32"
