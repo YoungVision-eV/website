@@ -10,7 +10,7 @@ import EventImage3 from '@assets/events/projects-event-image-3.jpeg';
 
 import type { GetImageResult } from 'astro';
 import * as qs from 'qs';
-import type { Event as EventCMS } from './payload-types';
+import type { Event as EventCMS, Media } from './payload-types.ts';
 
 export interface EventCalendarEntry {
   title: string;
@@ -46,7 +46,7 @@ export async function getAllEvents(): Promise<EventPage[]> {
     content_html: event.content_html || undefined,
     slug: `${event.slug}`,
     heroImage: {
-      src: await getEventImage(event),
+      src: await getEventImage(event.heroImage?.value),
     },
   })) as Promise<EventPage>[];
   const result = await Promise.all(promises);
@@ -56,11 +56,10 @@ export async function getAllEvents(): Promise<EventPage[]> {
 export async function getNext3Events(): Promise<
   [EventCalendarEntry, EventCalendarEntry, EventCalendarEntry]
 > {
-  const image1 = await getImage({ src: thirdEventImage });
-  const image2 = await getImage({ src: calendarCoverImage });
-  const image3 = await getImage({ src: pastEvent });
-
   if (process.env.PLAYWRIGHT_TEST === 'true') {
+    const image1 = await getImage({ src: thirdEventImage });
+    const image2 = await getImage({ src: calendarCoverImage });
+    const image3 = await getImage({ src: pastEvent });
     return [
       {
         title: 'Past Event',
@@ -129,25 +128,22 @@ export async function getNext3Events(): Promise<
     description: event.shortDescription,
     link: event.slug ? `/events/${event.slug}` : null,
     image: {
-      src: await getEventImage(event),
+      src: await getEventImage(event.calendarCover.value),
     },
   })) as [Promise<EventCalendarEntry>, Promise<EventCalendarEntry>, Promise<EventCalendarEntry>];
   const result = await Promise.all(promises);
   return result;
 }
 
-async function getEventImage(event: EventCMS): Promise<GetImageResult> {
-  if (!event.heroImage) {
-    //fallback image
-    return await getImage({ src: calendarCoverImage, width: 400, height: 400 });
-  } else if (typeof event.calendarCover.value === 'string') {
+async function getEventImage(image: string | Media | undefined): Promise<GetImageResult> {
+  if (typeof image === 'string') {
     return await getImage({ src: calendarCoverImage, width: 400, height: 400 });
   } else {
-    console.log('event.heroImage.value', event.calendarCover.value);
+    console.log('event.calendarCover.value', image);
     return await getImage({
-      src: `${process.env.CMS_URL}${event.calendarCover.value.url}`,
-      width: 400,
-      height: 400,
+      src: `${process.env.CMS_URL}${image.url}`,
+      width: image.width,
+      height: image.height,
     });
   }
 }
