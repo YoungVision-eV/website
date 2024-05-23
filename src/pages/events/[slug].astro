@@ -1,5 +1,5 @@
 ---
-import { getAllEvents } from '@data/events';
+import { getAllEvents, getEventImage } from '@data/events';
 import Layout from '@layouts/Layout.astro';
 import { Image } from 'astro:assets';
 
@@ -18,7 +18,6 @@ export async function getStaticPaths() {
   });
 }
 
-import Timetable from '@assets/events/forschungsraum/sexualität-körper-Plan.svg';
 import ArrowLeft from '@assets/icons/ArrowLeft.svelte';
 
 import Clara from '@assets/events/forschungsraum/Clara.jpg';
@@ -40,15 +39,8 @@ import HandWithMoney from '@assets/icons/HandWithMoney.svelte';
 import LocationPin from '@assets/icons/LocationPin.svelte';
 import People from '@assets/icons/People.svelte';
 
-const title = 'Forschungsraum: Körper & Sexualität';
 // TODO: implement formatting logic if not same month (or year)
 // for example 30.04.24 - 02.05.24 should be '30. April - 02. Mai'
-const dates = {
-  start: new Date(2024, 4, 17),
-  end: new Date(2024, 4, 20),
-};
-const who = '18 – 32 Jahre';
-const cost = '120€ – 170€';
 
 const locationPictures = [
   {
@@ -104,7 +96,7 @@ const team = [
   <img
     class="h-[27rem] w-full object-cover"
     src={event.heroImage?.src.src}
-    alt="Gathering 2024"
+    alt={event.heroImage?.alt}
     sizes="100vw"
   />
   <div class="pr-4 lg:pr-20">
@@ -118,7 +110,7 @@ const team = [
   </div>
 
   <div class="mx-auto max-w-[80rem] px-4 pt-12 lg:px-20 lg:text-xl">
-    <h1 class="font-serif text-4xl font-bold lg:text-5xl">{title}</h1>
+    <h1 class="font-serif text-4xl font-bold lg:text-5xl">{event.title}</h1>
     <div class="mt-6 lg:mt-14 lg:px-24">
       <h2 class="font-serif text-2xl font-bold lg:text-4xl">Wichtige Infos</h2>
       <div
@@ -132,7 +124,11 @@ const team = [
           </div>
           <h3 class="mt-8 font-serif text-xl font-bold">Wo</h3>
           <a class="mt-3 text-center underline" href="https://maps.app.goo.gl/kak1RX8pJwZGnFFD7">
-            <address class="not-italic">Am bhf 4, 166307 Mescherin</address>
+            <address class="not-italic">
+              {event.address.street}
+              {event.address.city}
+              {event.address.zip}
+            </address>
           </a>
         </div>
 
@@ -143,7 +139,7 @@ const team = [
             <People class="h-24 w-24" />
           </div>
           <h3 class="mt-8 font-serif text-xl font-bold">Wer</h3>
-          <p class="mt-3 text-center">{who}</p>
+          <p class="mt-3 text-center">{event.audience}</p>
         </div>
         <div class="flex flex-col items-center">
           <div
@@ -153,8 +149,8 @@ const team = [
           </div>
           <h3 class="mt-8 font-serif text-xl font-bold">Wann</h3>
           <p class="mt-3 text-center">
-            {dates.start.toLocaleDateString('de', { day: '2-digit' })} - {
-              dates.end.toLocaleDateString('de', { day: '2-digit', month: 'long' })
+            {event.start.toLocaleDateString('de', { day: '2-digit' })} - {
+              event.end.toLocaleDateString('de', { day: '2-digit', month: 'long' })
             }
           </p>
         </div>
@@ -165,7 +161,7 @@ const team = [
             <HandWithMoney class="h-24 w-24" />
           </div>
           <h3 class="mt-8 font-serif text-xl font-bold">Kosten</h3>
-          <p class="mt-3 text-center">{cost}</p>
+          <p class="mt-3 text-center">{event.cost}</p>
           <p class="text-center text-sm">(inkl. Verpflegung & Unterkunft)</p>
         </div>
       </div>
@@ -174,54 +170,39 @@ const team = [
           Deine Forschungsreise zu Körper & Sexualität
         </h2>
         <div class="mt-4 max-w-prose text-justify lg:mt-8">
-          <p>
-            In sämtlichen Gesellschaften und über Epochen hinweg sind Körper sowie Sexualität von
-            Normen und Idealen geprägt. In diesem Forschungsraum wollen wir uns diese Normen und
-            Ideale näher ansehen, sie reflektieren und in den Austausch kommen: <br /><br />➤ Was
-            bedeutet (meine) Sexualität? <br />➤ Wie beeinflussen Pornos und soziale Medien die
-            Beziehung zu uns selbst und anderen?<br />➤ Wie kann ich meinen Körper und meine
-            Sexualität kennenlernen und akzeptieren?<br /><br />Wir haben gemütliche Sharing-Runden,
-            Embodiment-Elemente wie Yoga und Ecstatic Dance sowie Beiträge zu den Themen Consent,
-            Scham und Beziehungen geplant. Es wird viel Raum zum gemeinsamen Austausch und
-            Reflektieren geben. Wir freuen uns auch auf <em>tolle Gesprächsrunden</em>, am
-            Lagerfeuer sitzen, schwimmen gehen und ganz viel tanzen!<br /><br />Der Forschungsraum
-            findet vom 17. bis 20. Mai im idyllischen Rosow statt. Wir wollen einen Safe Space für
-            alle erschaffen, unabhängig von sexueller Orientierung oder Erfahrung. Hauptsache, du
-            bist zwischen 18 und 32 Jahre alt!<br /><br />Wir freuen uns sehr auf dich!
-          </p>
+          <p set:html={event.content_html} />
         </div>
 
         <Button
           text="Jetzt Anmelden"
           color="dark"
           class="mt-12 uppercase lg:mt-8"
-          href="https://pretix.eu/yv/Forschungsraum"
+          href={event.registrationLink}
         />
       </div>
     </div>
 
     <div class="mx-auto mt-6 max-w-[80rem] pt-12 lg:mt-14 lg:text-xl">
-      <Image src={Timetable} class="w-full object-cover" alt="Wochenplan Bauwoche 2024" />
+      <img src={event.timetable.src.src} class="w-full object-cover" alt={event.timetable.alt} />
     </div>
     <div class="mx-auto mt-6 max-w-[80rem] px-4 lg:mt-12 lg:px-24">
       <div>
         <h2 class="font-serif text-2xl font-bold lg:text-4xl">Begleitung und Referierende</h2>
         <div class="-mt-4 grid grid-cols-1 gap-x-6 lg:-mt-6 lg:grid-cols-2 lg:gap-x-12">
           {
-            team.map((member) => (
+            event.team?.map(async (member) => (
               <div class="row-span-3 mt-8 grid grid-rows-subgrid lg:mt-16">
-                <Image
-                  src={member.image}
+                <img
+                  src={(await getEventImage(member.image.value)).src.src}
                   alt=""
                   class="aspect-square rounded-lg object-cover"
                   sizes="(max-width: 1024px) 100vw, 440px"
-                  widths={[360, 440, 720, 880, 1024]}
                 />
                 <div class="mt-2 lg:mt-4">
                   <p class="text-xl font-bold lg:text-2xl">{member.name}</p>
-                  <p class="text-sm text-gray-700">{member.role}</p>
+                  <p class="text-sm text-gray-700">{member.job}</p>
                 </div>
-                <p class="mt-4 text-justify lg:mt-6">{member.description}</p>
+                <p class="mt-4 text-justify lg:mt-6">{member.bio}</p>
               </div>
             ))
           }
@@ -249,7 +230,7 @@ const team = [
           text="Jetzt Anmelden"
           color="dark"
           class="mt-12 uppercase lg:mt-8"
-          href="https://pretix.eu/yv/Forschungsraum"
+          href={event.registrationLink}
         />
       </div>
     </div>

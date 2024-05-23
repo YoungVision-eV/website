@@ -10,16 +10,14 @@ import EventImage3 from '@assets/events/projects-event-image-3.jpeg';
 
 import type { GetImageResult } from 'astro';
 import * as qs from 'qs';
-import type { Event as EventCMS, Media } from './payload-types.ts';
+import type { Address, Event as EventCMS, Media, Team } from './payload-types.ts';
 
 export interface EventCalendarEntry {
   title: string;
   date: Date;
   description: string;
   link?: string;
-  image: {
-    src: Awaited<ReturnType<typeof getImage>>;
-  };
+  image: YVImage;
 }
 
 export interface EventPage {
@@ -28,13 +26,21 @@ export interface EventPage {
   end: Date;
   slug: string;
   content_html: string;
-  heroImage?: {
-    src: Awaited<ReturnType<typeof getImage>>;
-  };
+  heroImage?: YVImage;
+  address: Address;
+  audience: string;
+  cost: string;
+  team: Team;
+  registrationLink: string;
+  timetable: YVImage;
 }
 
+export type YVImage = {
+  src: GetImageResult;
+  alt: string;
+};
+
 export async function getAllEvents(): Promise<EventPage[]> {
-  const image = await getImage({ src: calendarCoverImage });
   const response = await fetch(`${process.env.CMS_URL}/api/events`);
   const data = await response.json();
   const events = data.docs as EventCMS[];
@@ -45,9 +51,13 @@ export async function getAllEvents(): Promise<EventPage[]> {
     end: new Date(event.end),
     content_html: event.content_html || undefined,
     slug: `${event.slug}`,
-    heroImage: {
-      src: await getEventImage(event.heroImage?.value),
-    },
+    heroImage: await getEventImage(event.heroImage?.value),
+    address: event.address,
+    audience: event.audience,
+    cost: event.cost,
+    team: event.team,
+    registrationLink: event.registrationLink || undefined,
+    timetable: await getEventImage(event.timetable?.value),
   })) as Promise<EventPage>[];
   const result = await Promise.all(promises);
   return result;
@@ -68,6 +78,7 @@ export async function getNext3Events(): Promise<
         link: '/events/bauwoche-2024',
         image: {
           src: image1,
+          alt: '',
         },
       },
       {
@@ -77,6 +88,7 @@ export async function getNext3Events(): Promise<
         link: '/events/bauwoche-2024',
         image: {
           src: image2,
+          alt: '',
         },
       },
       {
@@ -85,6 +97,7 @@ export async function getNext3Events(): Promise<
         description: 'This is test data. Test 1 2 3. Test test.',
         image: {
           src: image3,
+          alt: '',
         },
       },
     ];
@@ -127,24 +140,28 @@ export async function getNext3Events(): Promise<
     date: new Date(event.start),
     description: event.shortDescription,
     link: event.slug ? `/events/${event.slug}` : null,
-    image: {
-      src: await getEventImage(event.calendarCover.value),
-    },
+    image: await getEventImage(event.calendarCover.value),
   })) as [Promise<EventCalendarEntry>, Promise<EventCalendarEntry>, Promise<EventCalendarEntry>];
   const result = await Promise.all(promises);
   return result;
 }
 
-async function getEventImage(image: string | Media | undefined): Promise<GetImageResult> {
-  if (typeof image === 'string') {
-    return await getImage({ src: calendarCoverImage, width: 400, height: 400 });
+export async function getEventImage(image: string | Media | undefined): Promise<YVImage> {
+  if (!image || typeof image === 'string') {
+    return {
+      src: await getImage({ src: calendarCoverImage, width: 2200, height: 2200 }),
+      alt: 'Leute sitzen am Tisch',
+    };
   } else {
     console.log('event.calendarCover.value', image);
-    return await getImage({
-      src: `${process.env.CMS_URL}${image.url}`,
-      width: image.width,
-      height: image.height,
-    });
+    return {
+      src: await getImage({
+        src: `${process.env.CMS_URL}${image.url}`,
+        width: image.width,
+        height: image.height,
+      }),
+      alt: image.altText,
+    };
   }
 }
 
