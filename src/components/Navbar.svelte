@@ -12,6 +12,13 @@
 
   export let currentPage = '';
 
+  const shouldHighlight = (page) => {
+    if (page.url === '/') {
+      return currentPage === page.url;
+    }
+    return currentPage.startsWith(page.url);
+  };
+
   let menuOpen = false;
 
   const openMenu = () => {
@@ -59,9 +66,9 @@
         <a
           href={page.url}
           class={clsx('text-sm leading-6 text-black hover:underline ', {
-            'font-semibold': currentPage === page.url,
+            'font-semibold': shouldHighlight(page),
           })}
-          aria-current={currentPage === page.url ? 'page' : undefined}>{page.name}</a
+          aria-current={shouldHighlight(page) ? 'page' : undefined}>{page.name}</a
         >
       {/each}
     </div>
@@ -101,10 +108,10 @@
               {#each pages as page}
                 <a
                   href={page.url}
-                  aria-current={currentPage === page.url ? 'page' : undefined}
+                  aria-current={shouldHighlight(page) ? 'page' : undefined}
                   on:click={closeMenu}
                   class={clsx('-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-black', {
-                    'font-semibold': currentPage === page.url,
+                    'font-semibold': shouldHighlight(page),
                   })}>{page.name}</a
                 >
               {/each}
