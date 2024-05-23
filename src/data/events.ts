@@ -7,12 +7,17 @@ import thirdEventImage from '@assets/events/calendar-third-event.jpeg';
 import EventImage1 from '@assets/events/projects-event-image-1.jpeg';
 import EventImage2 from '@assets/events/projects-event-image-2.jpeg';
 import EventImage3 from '@assets/events/projects-event-image-3.jpeg';
+import type { GetImageResult } from 'astro';
+import * as qs from 'qs';
+import type { Event as EventCMS } from './payload-types.ts';
 
 export interface Event {
   title: string;
   date: Date;
   description: string;
+  content_html?: string;
   link?: string;
+  slug?: string;
   image: {
     src: Awaited<ReturnType<typeof getImage>>;
   };
@@ -53,35 +58,63 @@ export async function getNext3Events(): Promise<[Event, Event, Event]> {
       },
     ];
   }
-  const next3Events: [Event, Event, Event] = [
-    {
-      title: 'Forschungsraum: Körper & Sexualität',
-      date: new Date(2024, 4, 17),
-      description: 'Ein Workshop mit Raum zum Austausch über Sexualität und unsere Körper.',
-      link: '/events/forschungsraum-korper',
-      image: {
-        src: image1,
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const request = {
+    sort: 'date',
+    where: {
+      start: {
+        greater_than: today.toISOString(),
       },
     },
-    {
-      title: 'Forschungsraum: Wutkraft',
-      date: new Date(2024, 5, 27),
-      description: 'Lasst uns die Kraft, die in unserer Wut steckt, gemeinsam erforschen.',
-      image: {
-        src: image3,
+    limit: 3,
+  };
+  const response = await fetch(`${process.env.CMS_URL}/api/events?${qs.stringify(request)}`);
+  const data = await response.json();
+  let events = data.docs as EventCMS[];
+  console.log('events', events);
+  if (events.length < 3) {
+    // If there are less than 3 events in the future, we want to fill the remaining slots with past events
+    const request2 = {
+      sort: '-date',
+      where: {
+        start: {
+          less_than: today.toISOString(),
+        },
       },
+      limit: 3 - events.length,
+    };
+    const pastEventsResponse = await fetch(
+      `${process.env.CMS_URL}/api/events?${qs.stringify(request2)}`,
+    );
+    const pastEventsData = await pastEventsResponse.json();
+    const pastEvents = pastEventsData.docs as EventCMS[];
+    events = pastEvents.reverse().concat(events);
+  }
+  const promises = events.map(async (event) => ({
+    title: event.title,
+    date: new Date(event.start),
+    description: event.shortDescription,
+    link: event.slug ? `/events/${event.slug}` : null,
+    image: {
+      src: await getEventImage(event),
     },
-    {
-      title: 'Sommer Gathering',
-      date: new Date(2024, 8, 2),
-      description: 'Zusammen werden wir erkunden, was Community für uns sein kann',
-      image: {
-        src: image2,
-      },
-    },
-  ];
+  })) as [Promise<Event>, Promise<Event>, Promise<Event>];
+  const result = await Promise.all(promises);
+  return result;
+}
 
-  return next3Events;
+async function getEventImage(event: EventCMS): Promise<GetImageResult> {
+  if (typeof event.calendarCover.value === 'string') {
+    return await getImage({ src: calendarCoverImage, width: 400, height: 400 });
+  } else {
+    console.log('event.calendarCover.value', event.calendarCover.value);
+    return await getImage({
+      src: `${process.env.CMS_URL}${event.calendarCover.value.url}`,
+      width: event.calendarCover.value.width,
+      height: event.calendarCover.value.height,
+    });
+  }
 }
 
 export type YVEvent = {
