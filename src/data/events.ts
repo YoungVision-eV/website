@@ -9,7 +9,7 @@ import EventImage2 from '@assets/events/projects-event-image-2.jpeg';
 import EventImage3 from '@assets/events/projects-event-image-3.jpeg';
 
 import type { GetImageResult } from 'astro';
-import * as qs from 'qs';
+import qs from 'qs';
 import type { Address, Event as EventCMS, Media, Team } from './payload-types.ts';
 
 export interface EventCalendarEntry {
@@ -32,7 +32,7 @@ export interface EventPage {
   cost: string;
   team: Team;
   registrationLink: string;
-  timetable: YVImage;
+  timetable?: YVImage;
 }
 
 export type YVImage = {
@@ -41,6 +41,30 @@ export type YVImage = {
 };
 
 export async function getAllEvents(): Promise<EventPage[]> {
+  if (process.env.PLAYWRIGHT_TEST === 'true') {
+    return [
+      {
+        title: 'Event 1',
+        start: new Date(),
+        end: new Date(),
+        slug: 'event-1',
+        content_html: 'Some content',
+        heroImage: {
+          src: await getImage({ src: calendarCoverImage, width: 2200, height: 2200 }),
+          alt: 'Leute sitzen am Tisch',
+        },
+        address: {
+          street: 'Musterstraße 1',
+          zip: '12345',
+          city: 'Musterstadt',
+        },
+        audience: 'Alle',
+        cost: 'Kostenlos',
+        team: [],
+        registrationLink: 'https://example.com',
+      },
+    ];
+  }
   const response = await fetch(`${process.env.CMS_URL}/api/events`);
   const data = await response.json();
   const events = data.docs as EventCMS[];
