@@ -70,17 +70,10 @@ export async function getAllEvents(): Promise<EventPage[]> {
   const events = data.docs as EventCMS[];
   const eventsWithSlug = events.filter((event) => event.slug);
   const promises = eventsWithSlug.map(async (event) => ({
-    title: event.title,
+    ...event,
     start: new Date(event.start),
     end: new Date(event.end),
-    content_html: event.content_html || undefined,
-    slug: `${event.slug}`,
     heroImage: await getEventImage(event.heroImage?.value),
-    address: event.address,
-    audience: event.audience,
-    cost: event.cost,
-    team: event.team,
-    registrationLink: event.registrationLink || undefined,
     timetable: await getEventImage(event.timetable?.value),
   })) as Promise<EventPage>[];
   const result = await Promise.all(promises);
