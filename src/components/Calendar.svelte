@@ -90,13 +90,13 @@
         role="tab"
         aria-selected={index === selectedEvent}
         class={clsx(
-          'col-span-4 grid grid-cols-subgrid bg-yellow-700 transition-colors lg:col-span-6 lg:bg-yellow-500 lg:bg-opacity-60',
+          'col-span-4 grid grid-cols-subgrid bg-yellow-700 transition-colors lg:col-span-5 lg:bg-yellow-500 lg:bg-opacity-60',
           index === 0 ? 'rounded-t-2xl lg:rounded-tl-none' : '',
         )}
       >
         <button
           aria-labelledby={`title-${event.title}`}
-          class="relative col-span-4 grid h-full grid-cols-subgrid items-center py-7 text-left lg:col-span-6 lg:py-1"
+          class="relative col-span-4 grid h-full grid-cols-subgrid items-center py-7 text-left lg:col-span-5 lg:py-1"
           on:click={() => (selectedEvent = index)}
           disabled={selectedEvent === index}
         >
@@ -125,11 +125,3 @@
     {/each}
   </ul>
 </div>
-
-<style>
-  @media (min-width: 1024px) {
-    #calendar {
-      grid-template-columns: repeat(5, minmax(0, 1fr)) 4rem;
-    }
-  }
-</style>
