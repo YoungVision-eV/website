@@ -26,7 +26,7 @@ export interface EventPage {
   end: Date;
   slug: string;
   content_html: string;
-  heroImage?: YVImage;
+  heroImage: YVImage;
   address: Address;
   audience: string;
   cost: string;
@@ -170,8 +170,12 @@ export async function getNext3Events(): Promise<
 }
 
 export async function getEventImage(image: string | Media | undefined): Promise<YVImage | null> {
-  if (!image || typeof image === 'string') {
+  if (!image) {
     return null;
+  } else if (typeof image === 'string') {
+    throw new Error(
+      'Image is a string, but should be a Media object. (Maybe wrong depth in the query?)',
+    );
   } else {
     console.log('event.calendarCover.value', image);
     return {
