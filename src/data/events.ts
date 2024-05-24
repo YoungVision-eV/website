@@ -169,12 +169,9 @@ export async function getNext3Events(): Promise<
   return result;
 }
 
-export async function getEventImage(image: string | Media | undefined): Promise<YVImage> {
+export async function getEventImage(image: string | Media | undefined): Promise<YVImage | null> {
   if (!image || typeof image === 'string') {
-    return {
-      src: await getImage({ src: calendarCoverImage, width: 2200, height: 2200 }),
-      alt: 'Leute sitzen am Tisch',
-    };
+    return null;
   } else {
     console.log('event.calendarCover.value', image);
     return {
