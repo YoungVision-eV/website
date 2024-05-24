@@ -10,7 +10,7 @@ import EventImage3 from '@assets/events/projects-event-image-3.jpeg';
 
 import type { GetImageResult } from 'astro';
 import qs from 'qs';
-import type { Address, Event as EventCMS, Media, Team } from './payload-types.ts';
+import type { Address, Event as EventCMS, Media } from './payload-types.ts';
 
 export interface EventCalendarEntry {
   title: string;
@@ -30,7 +30,7 @@ export interface EventPage {
   address: Address;
   audience: string;
   cost: string;
-  team: Team;
+  team: { name: string; job: string; bio: string; image: YVImage }[];
   registrationLink: string;
   timetable?: YVImage;
 }
@@ -73,6 +73,12 @@ export async function getAllEvents(): Promise<EventPage[]> {
     ...event,
     start: new Date(event.start),
     end: new Date(event.end),
+    team: await Promise.all(
+      event.team?.map(async (t) => ({
+        ...t,
+        image: await getEventImage(t.image?.value),
+      })) || [],
+    ),
     heroImage: await getEventImage(event.heroImage?.value),
     timetable: await getEventImage(event.timetable?.value),
   })) as Promise<EventPage>[];

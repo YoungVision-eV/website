@@ -1,5 +1,5 @@
 ---
-import { getAllEvents, getEventImage, type EventPage } from '@data/events';
+import { getAllEvents, type EventPage } from '@data/events';
 import Layout from '@layouts/Layout.astro';
 import { Image } from 'astro:assets';
 
@@ -157,14 +157,14 @@ const locationPictures = [
     }
     <div class="mx-auto mt-6 max-w-[80rem] px-4 lg:mt-12 lg:px-24">
       {
-        event.team?.length && (
+        event.team?.length != 0 && (
           <div>
             <h2 class="font-serif text-2xl font-bold lg:text-4xl">Begleitung und Referierende</h2>
             <div class="-mt-4 grid grid-cols-1 gap-x-6 lg:-mt-6 lg:grid-cols-2 lg:gap-x-12">
               {event.team?.map(async (member) => (
                 <div class="row-span-3 mt-8 grid grid-rows-subgrid lg:mt-16">
                   <img
-                    src={(await getEventImage(member.image.value)).src.src}
+                    src={member.image.src.src}
                     alt=""
                     class="aspect-square rounded-lg object-cover"
                     sizes="(max-width: 1024px) 100vw, 440px"
