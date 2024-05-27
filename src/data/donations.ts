@@ -1,5 +1,7 @@
 import { getImage } from 'astro:assets';
 
+import type { GetImageResult } from 'astro';
+
 import ExpertiseImage from '@assets/support-us/Expertise-spenden.jpeg';
 import GeldspendenImage from '@assets/support-us/Geld-spenden.jpeg';
 import PartnerImage from '@assets/support-us/Partner-werden.jpeg';
@@ -20,7 +22,7 @@ export type DonationMethod = {
     width: number;
     height: number;
   };
-  image: Awaited<ReturnType<typeof getImage>>;
+  image: GetImageResult;
 };
 
 async function optimizeImage(src: ImageMetadata) {

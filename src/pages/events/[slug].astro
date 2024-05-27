@@ -1,0 +1,214 @@
+---
+import { getAllEvents, type EventPage } from '@data/events';
+import Layout from '@layouts/Layout.astro';
+import { Image } from 'astro:assets';
+
+const { event }: { event: EventPage } = Astro.props;
+
+export async function getStaticPaths() {
+  let events = await getAllEvents();
+
+  return events.map((event) => {
+    return {
+      params: { slug: event.slug },
+      props: { event },
+    };
+  });
+}
+
+import ArrowLeft from '@assets/icons/ArrowLeft.svelte';
+
+import Rosow1 from '@assets/events/forschungsraum/rosow_01.jpg';
+import Rosow2 from '@assets/events/forschungsraum/rosow_02.jpg';
+import Rosow3 from '@assets/events/forschungsraum/rosow_03.jpg';
+import Rosow4 from '@assets/events/forschungsraum/rosow_04.jpg';
+import Rosow5 from '@assets/events/forschungsraum/rosow_05.jpg';
+import Rosow6 from '@assets/events/forschungsraum/rosow_06.jpg';
+
+import Button from '@components/Button.astro';
+
+import CalendarIcon from '@assets/icons/CalendarIcon.svelte';
+import HandWithMoney from '@assets/icons/HandWithMoney.svelte';
+import LocationPin from '@assets/icons/LocationPin.svelte';
+import People from '@assets/icons/People.svelte';
+
+// TODO: implement formatting logic if not same month (or year)
+// for example 30.04.24 - 02.05.24 should be '30. April - 02. Mai'
+
+const locationPictures = [
+  {
+    src: Rosow1,
+    alt: 'Ein 2-stöckiges rotes Backsteinhaus mit Garten und Windrädern am Horizont.',
+  },
+  {
+    src: Rosow2,
+    alt: 'Die Sonne scheint von hinten durch ein Baumhaus. Im rechten Vordergrund steht ein lila blühender Fliederbusch.',
+  },
+  { src: Rosow3, alt: 'Ein blühender Apfelbaum steht im Garten vor einem roten Backsteinhaus.' },
+  { src: Rosow4, alt: 'Die Sonne geht hinter Windrädern unter, mit Blick über ein Getreidefeld.' },
+  { src: Rosow5, alt: 'Zelte stehen zwischen Büschen und Bäumen im Garten.' },
+  {
+    src: Rosow6,
+    alt: 'Menschen sitzen und stehen um ein Lagerfeuer. Oben hängt eine Discokugel, die blau angeleuchtet wird.',
+  },
+];
+---
+
+<Layout title={event.title}>
+  <img
+    class="h-[27rem] w-full object-cover"
+    src={event.heroImage.src.src}
+    alt={event.heroImage.alt}
+    sizes="100vw"
+  />
+  <div class="pr-4 lg:pr-20">
+    <div class="flex h-12 w-full items-center rounded-br-xl bg-yellow-500 bg-opacity-60 lg:text-xl">
+      <a href="/events" class="p-3">
+        <ArrowLeft />
+        <span class="sr-only">Zur vorherigen Seite</span>
+      </a>
+      Veranstaltungen
+    </div>
+  </div>
+
+  <div class="mx-auto max-w-[80rem] px-4 pt-12 lg:px-20 lg:text-xl">
+    <h1 class="font-serif text-4xl font-bold lg:text-5xl">{event.title}</h1>
+    <div class="mt-6 lg:mt-14 lg:px-24">
+      <h2 class="font-serif text-2xl font-bold lg:text-4xl">Wichtige Infos</h2>
+      <div
+        class="mt-16 grid grid-cols-2 gap-x-6 gap-y-14 px-4 text-center lg:grid-cols-4 lg:px-0 lg:text-left"
+      >
+        <div class="flex flex-col items-center">
+          <div
+            class="flex h-40 w-40 items-center justify-center rounded-full bg-yellow-700 shadow-xl"
+          >
+            <LocationPin class="h-24 w-24" />
+          </div>
+          <h3 class="mt-8 font-serif text-xl font-bold">Wo</h3>
+          <!-- TODO: Add link from CMS -->
+          <a class="mt-3 text-center underline" href="https://maps.app.goo.gl/kak1RX8pJwZGnFFD7">
+            <address class="not-italic">
+              {event.address.street}<br />
+              {event.address.zip}
+              {event.address.city}
+            </address>
+          </a>
+        </div>
+
+        <div class="flex flex-col items-center">
+          <div
+            class="flex h-40 w-40 items-center justify-center rounded-full bg-yellow-700 shadow-xl"
+          >
+            <People class="h-24 w-24" />
+          </div>
+          <h3 class="mt-8 font-serif text-xl font-bold">Wer</h3>
+          <p class="mt-3 text-center">{event.audience}</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <div
+            class="flex h-40 w-40 items-center justify-center rounded-full bg-yellow-700 shadow-xl"
+          >
+            <CalendarIcon class="h-24 w-24" />
+          </div>
+          <h3 class="mt-8 font-serif text-xl font-bold">Wann</h3>
+          <p class="mt-3 text-center">
+            {event.start.toLocaleDateString('de', { day: '2-digit' })} - {
+              event.end.toLocaleDateString('de', { day: '2-digit', month: 'long' })
+            }
+          </p>
+        </div>
+        <div class="flex flex-col items-center">
+          <div
+            class="flex h-40 w-40 items-center justify-center rounded-full bg-yellow-700 shadow-xl"
+          >
+            <HandWithMoney class="h-24 w-24" />
+          </div>
+          <h3 class="mt-8 font-serif text-xl font-bold">Kosten</h3>
+          <p class="mt-3 text-center">{event.cost}</p>
+          <p class="text-center text-sm">(inkl. Verpflegung & Unterkunft)</p>
+        </div>
+      </div>
+      <div class="mt-20 lg:mt-28">
+        <h2 class="font-serif text-2xl font-bold lg:text-4xl">
+          {event.contentTitle}
+        </h2>
+        <div
+          class="prose prose-neutral mt-4 max-w-prose text-justify leading-7 lg:prose-xl lg:mt-8"
+        >
+          <p set:html={event.content_html} />
+        </div>
+
+        <Button
+          text="Jetzt Anmelden"
+          color="dark"
+          class="mt-12 uppercase lg:mt-8"
+          href={event.registrationLink}
+        />
+      </div>
+    </div>
+
+    {
+      event.timetable && (
+        <div class="mx-auto mt-6 max-w-[80rem] pt-12 lg:mt-14 lg:text-xl">
+          <img
+            src={event.timetable.src.src}
+            class="w-full object-cover"
+            alt={event.timetable.alt}
+          />
+        </div>
+      )
+    }
+    <div class="mx-auto mt-6 max-w-[80rem] px-4 lg:mt-12 lg:px-24">
+      {
+        event.team?.length != 0 && (
+          <div>
+            <h2 class="font-serif text-2xl font-bold lg:text-4xl">Begleitung und Referierende</h2>
+            <div class="-mt-4 grid grid-cols-1 gap-x-6 lg:-mt-6 lg:grid-cols-2 lg:gap-x-12">
+              {event.team?.map(async (member) => (
+                <div class="row-span-3 mt-8 grid grid-rows-subgrid lg:mt-16">
+                  <img
+                    src={member.image.src.src}
+                    alt=""
+                    class="aspect-square rounded-lg object-cover"
+                    sizes="(max-width: 1024px) 100vw, 440px"
+                  />
+                  <div class="mt-2 lg:mt-4">
+                    <p class="text-xl font-bold lg:text-2xl">{member.name}</p>
+                    <p class="text-sm text-gray-700">{member.job}</p>
+                  </div>
+                  <p class="mt-4 text-justify lg:mt-6">{member.bio}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )
+      }
+      <!-- TODO: Allow different locations than Rosow -->
+      <div class="py-12">
+        <h2 class="font-serif text-2xl font-bold lg:text-4xl">Veranstaltungsort Rosow</h2>
+        <p class="mt-3">Der Forschungsraum findet im idyllischen Rosow statt.</p>
+        <p>Vegane Verpflegung und Unterkunft sind wie immer inklusive.</p>
+        <div class="mt-4 grid grid-cols-1 lg:mt-8 lg:grid-cols-3">
+          {
+            locationPictures.map((image) => (
+              <Image
+                src={image.src}
+                alt={image.alt}
+                widths={[310, 400, 540, 720, 1024]}
+                sizes="(max-width: 1024px) 100vw, 310px"
+                class="aspect-square w-full object-cover"
+                alt=""
+              />
+            ))
+          }
+        </div>
+        <Button
+          text="Jetzt Anmelden"
+          color="dark"
+          class="mt-12 uppercase lg:mt-8"
+          href={event.registrationLink}
+        />
+      </div>
+    </div>
+  </div>
+</Layout>

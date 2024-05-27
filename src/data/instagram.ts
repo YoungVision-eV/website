@@ -1,4 +1,4 @@
-import type { ImageMetadata } from 'astro';
+import type { GetImageResult, ImageMetadata } from 'astro';
 import { getImage } from 'astro:assets';
 
 import fifthPost from '@assets/instagram/fifth-post.png';
@@ -12,7 +12,7 @@ async function getPhoto(src: string | ImageMetadata) {
 }
 
 type InstagramPost = {
-  src: Awaited<ReturnType<typeof getImage>>;
+  src: GetImageResult;
   alt: string;
   link: string;
 };
