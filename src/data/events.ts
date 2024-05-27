@@ -25,6 +25,7 @@ export interface EventPage {
   start: Date;
   end: Date;
   slug: string;
+  contentTitle: string;
   content_html: string;
   heroImage: YVImage;
   address: EventCMS['address'];
@@ -48,6 +49,7 @@ export async function getAllEvents(): Promise<EventPage[]> {
         start: new Date(),
         end: new Date(),
         slug: 'event-1',
+        contentTitle: 'Dein Event 1',
         content_html: 'Some content',
         heroImage: {
           src: await getImage({ src: calendarCoverImage, width: 2200, height: 2200 }),
