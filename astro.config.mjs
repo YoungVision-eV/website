@@ -13,6 +13,10 @@ export default defineConfig({
         protocol: 'https',
         hostname: '**.cdninstagram.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'payload.youngvision.work',
+      },
     ],
   },
   integrations: [svelte(), tailwind()],

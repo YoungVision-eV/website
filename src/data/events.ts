@@ -37,7 +37,7 @@ export interface EventPage {
 }
 
 export type YVImage = {
-  src: GetImageResult;
+  src: ImageMetadata;
   alt: string;
 };
 
@@ -52,7 +52,7 @@ export async function getAllEvents(): Promise<EventPage[]> {
         contentTitle: 'Dein Event 1',
         content_html: 'Some content',
         heroImage: {
-          src: await getImage({ src: calendarCoverImage, width: 2200, height: 2200 }),
+          src: calendarCoverImage,
           alt: 'Leute sitzen am Tisch',
         },
         address: {
@@ -92,9 +92,6 @@ export async function getNext3Events(): Promise<
   [EventCalendarEntry, EventCalendarEntry, EventCalendarEntry]
 > {
   if (process.env.PLAYWRIGHT_TEST === 'true') {
-    const image1 = await getImage({ src: thirdEventImage });
-    const image2 = await getImage({ src: calendarCoverImage });
-    const image3 = await getImage({ src: pastEvent });
     return [
       {
         title: 'Past Event',
@@ -102,7 +99,7 @@ export async function getNext3Events(): Promise<
         description: 'This event covers the test case for past events',
         link: '/events/bauwoche-2024',
         image: {
-          src: image1,
+          src: thirdEventImage,
           alt: '',
         },
       },
@@ -112,7 +109,7 @@ export async function getNext3Events(): Promise<
         description: 'This event will always (until the year 2999) be in the future.',
         link: '/events/bauwoche-2024',
         image: {
-          src: image2,
+          src: calendarCoverImage,
           alt: '',
         },
       },
@@ -121,7 +118,7 @@ export async function getNext3Events(): Promise<
         date: new Date(3024, 0, 28),
         description: 'This is test data. Test 1 2 3. Test test.',
         image: {
-          src: image3,
+          src: pastEvent,
           alt: '',
         },
       },
@@ -181,11 +178,12 @@ export async function getEventImage(image: string | Media | undefined): Promise<
   } else {
     console.log('event.calendarCover.value', image);
     return {
-      src: await getImage({
+      src: {
         src: `${process.env.CMS_URL}${image.url}`,
-        width: image.width,
-        height: image.height,
-      }),
+        width: image.width!,
+        height: image.height!,
+        format: image.mimeType!.split('/')[1] as ImageMetadata['format'],
+      },
       alt: image.altText,
     };
   }
