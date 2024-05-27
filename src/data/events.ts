@@ -10,7 +10,7 @@ import EventImage1 from '@assets/events/projects-event-image-1.jpeg';
 import EventImage2 from '@assets/events/projects-event-image-2.jpeg';
 import EventImage3 from '@assets/events/projects-event-image-3.jpeg';
 import qs from 'qs';
-import type { Address, Event as EventCMS, Media } from './payload-types.ts';
+import type { Event as EventCMS, Media } from './payload-types.ts';
 
 export interface EventCalendarEntry {
   title: string;
@@ -27,7 +27,7 @@ export interface EventPage {
   slug: string;
   content_html: string;
   heroImage: YVImage;
-  address: Address;
+  address: EventCMS['address'];
   audience: string;
   cost: string;
   team: { name: string; job: string; bio: string; image: YVImage }[];
