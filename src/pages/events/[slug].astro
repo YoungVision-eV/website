@@ -171,7 +171,7 @@ const locationPictures = [
                 <div class="row-span-3 mt-8 lg:mt-16 lg:grid lg:grid-rows-subgrid">
                   <Image
                     src={member.image.src}
-                    alt=""
+                    alt={member.image.alt}
                     class="aspect-square rounded-lg object-cover object-center"
                     sizes="(max-width: 1024px) 100vw, 40rem"
                     widths={[360, 440, 540, 720, 1024]}
@@ -201,7 +201,6 @@ const locationPictures = [
                 widths={[310, 400, 540, 720, 1024]}
                 sizes="(max-width: 1024px) 100vw, 310px"
                 class="aspect-square w-full object-cover"
-                alt=""
               />
             ))
           }
