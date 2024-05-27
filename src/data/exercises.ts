@@ -1,4 +1,4 @@
-import type { ImageMetadata } from 'astro';
+import type { GetImageResult, ImageMetadata } from 'astro';
 import { getImage } from 'astro:assets';
 
 import KuschelnImage from '@assets/about-us/Kuscheln.jpeg';
@@ -10,7 +10,7 @@ import TriadenImage from '@assets/about-us/Triaden.jpeg';
 export type Exercise = {
   title: string;
   description: string;
-  image: Awaited<ReturnType<typeof getImage>>;
+  image: GetImageResult;
 };
 
 async function optimizeImage(src: ImageMetadata) {

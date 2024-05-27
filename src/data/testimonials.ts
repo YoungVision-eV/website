@@ -2,14 +2,14 @@ import { getImage } from 'astro:assets';
 
 import AndreaPortrait from '@assets/testimonials/Portrait-Andrea.jpg';
 import LenaPortrait from '@assets/testimonials/Portrait-Lena.jpeg';
-import type { ImageMetadata } from 'astro';
+import type { GetImageResult, ImageMetadata } from 'astro';
 
 export type Testimonial = {
   name: string;
   age: number;
   text: string;
   image: {
-    src: Awaited<ReturnType<typeof getImage>>;
+    src: GetImageResult;
   };
 };
 

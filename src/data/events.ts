@@ -1,5 +1,7 @@
 import { getImage } from 'astro:assets';
 
+import type { GetImageResult } from 'astro';
+
 import calendarCoverImage from '@assets/events/calendar-cover.jpeg';
 import pastEvent from '@assets/events/calendar-past-event.jpeg';
 import thirdEventImage from '@assets/events/calendar-third-event.jpeg';
@@ -7,8 +9,6 @@ import thirdEventImage from '@assets/events/calendar-third-event.jpeg';
 import EventImage1 from '@assets/events/projects-event-image-1.jpeg';
 import EventImage2 from '@assets/events/projects-event-image-2.jpeg';
 import EventImage3 from '@assets/events/projects-event-image-3.jpeg';
-
-import type { GetImageResult } from 'astro';
 import qs from 'qs';
 import type { Address, Event as EventCMS, Media } from './payload-types.ts';
 
@@ -196,7 +196,7 @@ export type YVEvent = {
   month: string;
   short_description: string;
   image: {
-    src: Awaited<ReturnType<typeof getImage>>;
+    src: GetImageResult;
   };
   for_all: boolean;
   future?: string;
