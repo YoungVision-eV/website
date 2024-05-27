@@ -177,12 +177,14 @@ export async function getEventImage(image: string | Media | undefined): Promise<
     );
   } else {
     console.log('event.calendarCover.value', image);
+    // mimetype looks like image/svg+xml sometimes, so we only want the svg part
+    const format = image.mimeType!.split('/')[1].split('+')[0] as ImageMetadata['format'];
     return {
       src: {
         src: `${process.env.CMS_URL}${image.url}`,
         width: image.width!,
         height: image.height!,
-        format: image.mimeType!.split('/')[1] as ImageMetadata['format'],
+        format,
       },
       alt: image.altText,
     };
