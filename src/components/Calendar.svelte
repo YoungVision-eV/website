@@ -1,14 +1,14 @@
 <script lang="ts">
   import clsx from 'clsx';
 
-  import { blur } from 'svelte/transition';
+  import { fade, blur } from 'svelte/transition';
   import { cubicOut } from 'svelte/easing';
   import { tweened } from 'svelte/motion';
   import type { EventCalendarEntry } from '@data/events';
 
   // TODO: should this be the event itself instead of the index?
   // Perhaps we should also just use embla
-  let selectedEvent = 1;
+  let selectedEvent = 0;
 
   const ANIMATION_DURATION = 300;
 
@@ -112,11 +112,10 @@
             <p>{event.description}</p>
           </div>
           <div class="absolute bottom-5 right-5 z-30">
-            {#if event.link}
+            {#if index === selectedEvent && event.link}
               <a
-                class="italic"
-                class:font-bold={index === selectedEvent}
-                class:text-gray-500={index !== selectedEvent}
+                transition:fade={{ duration: ANIMATION_DURATION, easing: cubicOut }}
+                class="italic underline"
                 href={event.link}>Infos</a
               >
             {/if}
