@@ -168,7 +168,7 @@ const locationPictures = [
             <h2 class="font-serif text-2xl font-bold lg:text-4xl">Begleitung und Referierende</h2>
             <div class="-mt-4 grid grid-cols-1 gap-x-6 lg:-mt-6 lg:grid-cols-2 lg:gap-x-12">
               {event.team?.map(async (member) => (
-                <div class="row-span-3 mt-8 lg:mt-16 lg:grid lg:grid-rows-subgrid">
+                <div class="row-span-3 mt-8 lg:mt-16">
                   <Image
                     src={member.image.src}
                     alt={member.image.alt}
