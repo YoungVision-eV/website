@@ -19,7 +19,7 @@ dependencies:
     version: 0.79.1(svelte@4.2.12)
   astro:
     specifier: 4.5.9
-    version: 4.5.9(@types/node@20.12.12)(typescript@5.4.5)
+    version: 4.5.9(@types/node@20.14.0)(typescript@5.4.5)
   clsx:
     specifier: 2.1.1
     version: 2.1.1
@@ -50,8 +50,8 @@ devDependencies:
     specifier: ^0.5.13
     version: 0.5.13(tailwindcss@3.4.3)
   '@types/node':
-    specifier: 20.12.12
-    version: 20.12.12
+    specifier: 20.14.0
+    version: 20.14.0
   '@types/qs':
     specifier: ^6.9.15
     version: 6.9.15
@@ -228,7 +228,7 @@ packages:
       typescript: ^5.3.3
     dependencies:
       '@sveltejs/vite-plugin-svelte': 3.1.0(svelte@4.2.12)(vite@5.2.11)
-      astro: 4.5.9(@types/node@20.12.12)(typescript@5.4.5)
+      astro: 4.5.9(@types/node@20.14.0)(typescript@5.4.5)
       svelte: 4.2.12
       svelte2tsx: 0.6.27(svelte@4.2.12)(typescript@5.4.5)
       typescript: 5.4.5
@@ -243,7 +243,7 @@ packages:
       astro: ^3.0.0 || ^4.0.0
       tailwindcss: ^3.0.24
     dependencies:
-      astro: 4.5.9(@types/node@20.12.12)(typescript@5.4.5)
+      astro: 4.5.9(@types/node@20.14.0)(typescript@5.4.5)
       autoprefixer: 10.4.19(postcss@8.4.38)
       postcss: 8.4.38
       postcss-load-config: 4.0.2(postcss@8.4.38)
@@ -1476,7 +1476,7 @@ packages:
       '@sveltejs/vite-plugin-svelte': 3.1.0(svelte@4.2.12)(vite@5.2.11)
       debug: 4.3.4
       svelte: 4.2.12
-      vite: 5.2.11(@types/node@20.12.12)
+      vite: 5.2.11(@types/node@20.14.0)
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -1495,7 +1495,7 @@ packages:
       magic-string: 0.30.10
       svelte: 4.2.12
       svelte-hmr: 0.16.0(svelte@4.2.12)
-      vite: 5.2.11(@types/node@20.12.12)
+      vite: 5.2.11(@types/node@20.14.0)
       vitefu: 0.2.5(vite@5.2.11)
     transitivePeerDependencies:
       - supports-color
@@ -1582,8 +1582,8 @@ packages:
       '@types/unist': 2.0.10
     dev: false
 
-  /@types/node@20.12.12:
-    resolution: {integrity: sha512-eWLDGF/FOSPtAvEqeRAQ4C8LSA7M1I7i0ky1I8U7kD1J5ITyW3AsRhQrKVoWf5pFKZ2kILsEGJhsI9r93PYnOw==}
+  /@types/node@20.14.0:
+    resolution: {integrity: sha512-5cHBxFGJx6L4s56Bubp4fglrEpmyJypsqI6RgzMfBHWUJQGWAAi8cWcgetEbZXHYXo9C2Fa4EEds/uSyS4cxmA==}
     dependencies:
       undici-types: 5.26.5
 
@@ -1965,7 +1965,7 @@ packages:
       - typescript
     dev: true
 
-  /astro@4.5.9(@types/node@20.12.12)(typescript@5.4.5):
+  /astro@4.5.9(@types/node@20.14.0)(typescript@5.4.5):
     resolution: {integrity: sha512-GheU72Goz7dYQNKaqTxB2H49cNvHfahGSbNkTvMXk+gyHf/g633qadqlO2ZQbTUacoUWmDzvS5fhMZt2/w4naQ==}
     engines: {node: '>=18.14.1', npm: '>=6.14.0'}
     hasBin: true
@@ -2026,7 +2026,7 @@ packages:
       tsconfck: 3.0.3(typescript@5.4.5)
       unist-util-visit: 5.0.0
       vfile: 6.0.1
-      vite: 5.2.11(@types/node@20.12.12)
+      vite: 5.2.11(@types/node@20.14.0)
       vitefu: 0.2.5(vite@5.2.11)
       which-pm: 2.2.0
       yargs-parser: 21.1.1
@@ -5723,7 +5723,7 @@ packages:
       vfile-message: 4.0.2
     dev: false
 
-  /vite@5.2.11(@types/node@20.12.12):
+  /vite@5.2.11(@types/node@20.14.0):
     resolution: {integrity: sha512-HndV31LWW05i1BLPMUCE1B9E9GFbOu1MbenhS58FuK6owSO5qHm7GiCotrNY1YE5rMeQSFBGmT5ZaLEjFizgiQ==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -5751,7 +5751,7 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': 20.12.12
+      '@types/node': 20.14.0
       esbuild: 0.20.2
       postcss: 8.4.38
       rollup: 4.17.2
@@ -5767,7 +5767,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 5.2.11(@types/node@20.12.12)
+      vite: 5.2.11(@types/node@20.14.0)
     dev: false
 
   /volar-service-css@0.0.45(@volar/language-service@2.2.4):
