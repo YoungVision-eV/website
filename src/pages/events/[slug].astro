@@ -55,11 +55,12 @@ const locationPictures = [
 ---
 
 <Layout title={event.title}>
-  <img
+  <Image
     class="h-[27rem] w-full object-cover"
-    src={event.heroImage.src.src}
+    src={event.heroImage.src}
     alt={event.heroImage.alt}
     sizes="100vw"
+    widths={[360, 540, 720, 960, 1200, 1920]}
   />
   <div class="pr-4 lg:pr-20">
     <div class="flex h-12 w-full items-center rounded-br-xl bg-yellow-500 bg-opacity-60 lg:text-xl">
@@ -150,10 +151,12 @@ const locationPictures = [
     {
       event.timetable && (
         <div class="mx-auto mt-6 max-w-[80rem] pt-12 lg:mt-14 lg:text-xl">
-          <img
-            src={event.timetable.src.src}
+          <Image
+            src={event.timetable.src}
             class="w-full object-cover"
             alt={event.timetable.alt}
+            sizes="100vw"
+            widths={[360, 540, 720, 960, 1200, 1920]}
           />
         </div>
       )
@@ -165,12 +168,13 @@ const locationPictures = [
             <h2 class="font-serif text-2xl font-bold lg:text-4xl">Begleitung und Referierende</h2>
             <div class="-mt-4 grid grid-cols-1 gap-x-6 lg:-mt-6 lg:grid-cols-2 lg:gap-x-12">
               {event.team?.map(async (member) => (
-                <div class="row-span-3 mt-8 grid grid-rows-subgrid lg:mt-16">
-                  <img
-                    src={member.image.src.src}
-                    alt=""
-                    class="aspect-square rounded-lg object-cover"
-                    sizes="(max-width: 1024px) 100vw, 440px"
+                <div class="row-span-3 mt-8 lg:mt-16">
+                  <Image
+                    src={member.image.src}
+                    alt={member.image.alt}
+                    class="aspect-square rounded-lg object-cover object-center"
+                    sizes="(max-width: 1024px) 100vw, 40rem"
+                    widths={[360, 440, 540, 720, 1024]}
                   />
                   <div class="mt-2 lg:mt-4">
                     <p class="text-xl font-bold lg:text-2xl">{member.name}</p>
@@ -197,7 +201,6 @@ const locationPictures = [
                 widths={[310, 400, 540, 720, 1024]}
                 sizes="(max-width: 1024px) 100vw, 310px"
                 class="aspect-square w-full object-cover"
-                alt=""
               />
             ))
           }
