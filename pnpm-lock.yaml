@@ -98,11 +98,11 @@ devDependencies:
     specifier: 3.2.4
     version: 3.2.4(prettier@3.3.1)(typescript@5.4.5)
   prettier-plugin-svelte:
-    specifier: 3.2.3
-    version: 3.2.3(prettier@3.3.1)(svelte@4.2.12)
+    specifier: 3.2.4
+    version: 3.2.4(prettier@3.3.1)(svelte@4.2.12)
   prettier-plugin-tailwindcss:
     specifier: 0.5.14
-    version: 0.5.14(prettier-plugin-astro@0.13.0)(prettier-plugin-organize-imports@3.2.4)(prettier-plugin-svelte@3.2.3)(prettier@3.3.1)
+    version: 0.5.14(prettier-plugin-astro@0.13.0)(prettier-plugin-organize-imports@3.2.4)(prettier-plugin-svelte@3.2.4)(prettier@3.3.1)
   sharp:
     specifier: 0.33.3
     version: 0.33.3
@@ -4386,7 +4386,7 @@ packages:
       '@astrojs/compiler': 2.8.0
       prettier: 3.3.1
       prettier-plugin-astro: 0.13.0
-      prettier-plugin-tailwindcss: 0.5.14(prettier-plugin-astro@0.13.0)(prettier-plugin-organize-imports@3.2.4)(prettier-plugin-svelte@3.2.3)(prettier@3.3.1)
+      prettier-plugin-tailwindcss: 0.5.14(prettier-plugin-astro@0.13.0)(prettier-plugin-organize-imports@3.2.4)(prettier-plugin-svelte@3.2.4)(prettier@3.3.1)
       typescript: 5.4.5
     dev: true
 
@@ -4415,8 +4415,8 @@ packages:
       typescript: 5.4.5
     dev: true
 
-  /prettier-plugin-svelte@3.2.3(prettier@3.3.1)(svelte@4.2.12):
-    resolution: {integrity: sha512-wJq8RunyFlWco6U0WJV5wNCM7zpBFakS76UBSbmzMGpncpK98NZABaE+s7n8/APDCEVNHXC5Mpq+MLebQtsRlg==}
+  /prettier-plugin-svelte@3.2.4(prettier@3.3.1)(svelte@4.2.12):
+    resolution: {integrity: sha512-tZv+ADfeOWFNQkXkRh6zUXE16w3Vla8x2Ug0B/EnSmjR4EnwdwZbGgL/liSwR1kcEALU5mAAyua98HBxheCxgg==}
     peerDependencies:
       prettier: ^3.0.0
       svelte: ^3.2.0 || ^4.0.0-next.0 || ^5.0.0-next.0
@@ -4425,7 +4425,7 @@ packages:
       svelte: 4.2.12
     dev: true
 
-  /prettier-plugin-tailwindcss@0.5.14(prettier-plugin-astro@0.13.0)(prettier-plugin-organize-imports@3.2.4)(prettier-plugin-svelte@3.2.3)(prettier@3.3.1):
+  /prettier-plugin-tailwindcss@0.5.14(prettier-plugin-astro@0.13.0)(prettier-plugin-organize-imports@3.2.4)(prettier-plugin-svelte@3.2.4)(prettier@3.3.1):
     resolution: {integrity: sha512-Puaz+wPUAhFp8Lo9HuciYKM2Y2XExESjeT+9NQoVFXZsPPnc9VYss2SpxdQ6vbatmt8/4+SN0oe0I1cPDABg9Q==}
     engines: {node: '>=14.21.3'}
     peerDependencies:
@@ -4480,7 +4480,7 @@ packages:
       prettier: 3.3.1
       prettier-plugin-astro: 0.13.0
       prettier-plugin-organize-imports: 3.2.4(prettier@3.3.1)(typescript@5.4.5)
-      prettier-plugin-svelte: 3.2.3(prettier@3.3.1)(svelte@4.2.12)
+      prettier-plugin-svelte: 3.2.4(prettier@3.3.1)(svelte@4.2.12)
     dev: true
 
   /prettier@3.3.1:
