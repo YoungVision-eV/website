@@ -17,7 +17,7 @@ export interface EventCalendarEntry {
   date: Date;
   description: string;
   link?: string;
-  image: YVImage;
+  image: ImageWithAlt;
 }
 
 export interface EventPage {
@@ -27,16 +27,16 @@ export interface EventPage {
   slug: string;
   contentTitle: string;
   content_html: string;
-  heroImage: YVImage;
+  heroImage: ImageWithAlt;
   address: EventCMS['address'];
   audience: string;
   cost: string;
-  team: { name: string; job: string; bio: string; image: YVImage }[];
+  team: { name: string; job: string; bio: string; image: ImageWithAlt }[];
   registrationLink: string;
-  timetable?: YVImage;
+  timetable?: ImageWithAlt;
 }
 
-export type YVImage = {
+export type ImageWithAlt = {
   src: ImageMetadata;
   alt: string;
 };
@@ -168,7 +168,9 @@ export async function getNext3Events(): Promise<
   return result;
 }
 
-export async function getEventImage(image: string | Media | undefined): Promise<YVImage | null> {
+export async function getEventImage(
+  image: string | Media | undefined,
+): Promise<ImageWithAlt | null> {
   if (!image) {
     return null;
   } else if (typeof image === 'string') {
