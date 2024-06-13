@@ -5,3 +5,9 @@ test('Bauwoche 2024 screenshot', async ({ page }) => {
   await page.getByRole('contentinfo').scrollIntoViewIfNeeded();
   await expect(page).toHaveScreenshot({ fullPage: true });
 });
+
+test('Event Page screenshot', async ({ page }) => {
+  await page.goto('/events/event-1');
+  await page.getByRole('contentinfo').scrollIntoViewIfNeeded();
+  await expect(page).toHaveScreenshot({ fullPage: true });
+});
