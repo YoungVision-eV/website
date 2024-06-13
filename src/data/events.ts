@@ -62,7 +62,22 @@ export async function getAllEvents(): Promise<EventPage[]> {
         },
         audience: 'Alle',
         cost: 'Kostenlos',
-        team: [],
+        team: [
+          {
+            name: 'Erika Mustermann',
+            job: 'Some job',
+            bio: 'Thats my life',
+            image: {
+              src: {
+                src: 'https://placehold.co/500',
+                width: 500,
+                height: 500,
+                format: 'svg',
+              },
+              alt: 'Portait von Erika Mustermann',
+            },
+          },
+        ],
         registrationLink: 'https://example.com',
       },
     ];
