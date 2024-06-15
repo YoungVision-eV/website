@@ -27,8 +27,8 @@ importers:
         specifier: 2.1.1
         version: 2.1.1
       qs:
-        specifier: ^6.12.1
-        version: 6.12.2
+        specifier: 6.12.1
+        version: 6.12.1
       svelte:
         specifier: 4.2.18
         version: 4.2.18
@@ -55,13 +55,13 @@ importers:
         specifier: 2.0.0
         version: 2.0.0(svelte@4.2.18)
       '@tailwindcss/typography':
-        specifier: ^0.5.13
+        specifier: 0.5.13
         version: 0.5.13(tailwindcss@3.4.4)
       '@types/node':
         specifier: 20.14.9
         version: 20.14.9
       '@types/qs':
-        specifier: ^6.9.15
+        specifier: 6.9.15
         version: 6.9.15
       '@typescript-eslint/eslint-plugin':
         specifier: 7.15.0
@@ -97,8 +97,8 @@ importers:
         specifier: 9.0.11
         version: 9.0.11
       knip:
-        specifier: ^5.19.0
-        version: 5.20.0(@types/node@20.14.9)(typescript@5.5.3)
+        specifier: 5.19.0
+        version: 5.19.0(@types/node@20.14.9)(typescript@5.5.3)
       prettier:
         specifier: 3.3.2
         version: 3.3.2
@@ -1873,8 +1873,8 @@ packages:
     resolution: {integrity: sha512-o+NO+8WrRiQEE4/7nwRJhN1HWpVmJm511pBHUxPLtp0BUISzlBplORYSmTclCnJvQq2tKu/sgl3xVpkc7ZWuQQ==}
     engines: {node: '>=6'}
 
-  knip@5.20.0:
-    resolution: {integrity: sha512-pQ8fJ6Be7dVsKIqEW06g8TOjiTW9knQPkN0hg2fQTY/Jw16L3EmngAx6cg+5pVLpyxo2wVChCUAn93/ATcatIA==}
+  knip@5.19.0:
+    resolution: {integrity: sha512-UGt7i9y+xvA1+Q6ssB3rqqMNKtpWvvjBcgRn25NEywDFECMkbOKK7A30Qlke04YKENIl8y2yaKp46P1INBv6Cg==}
     engines: {node: '>=18.6.0'}
     hasBin: true
     peerDependencies:
@@ -2527,8 +2527,8 @@ packages:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
     engines: {node: '>=6'}
 
-  qs@6.12.2:
-    resolution: {integrity: sha512-x+NLUpx9SYrcwXtX7ob1gnkSems4i/mGZX5SlYxwIau6RrUSODO89TR/XDGGpn5RPWSYIB+aSfuSlV5+CmbTBg==}
+  qs@6.12.1:
+    resolution: {integrity: sha512-zWmv4RSuB9r2mYQw3zxQuHWeU+42aKi1wWig/j4ele4ygELZ7PEO6MM7rim9oAQH2A5MWfsAVf/jPvTPgCbvUQ==}
     engines: {node: '>=0.6'}
 
   queue-microtask@1.2.3:
@@ -2866,10 +2866,6 @@ packages:
     peerDependenciesMeta:
       typescript:
         optional: true
-
-  tsconfig-paths@4.2.0:
-    resolution: {integrity: sha512-NoZ4roiN7LnbKn9QqE1amc9DJfzvZXxF4xDavcOWt1BPkdx+m+0gJuPM+S0vCe7zTJMYUP0R8pO2XMr+Y8oLIg==}
-    engines: {node: '>=6'}
 
   tslib@2.6.2:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
@@ -4572,7 +4568,7 @@ snapshots:
       eslint-compat-utils: 0.5.1(eslint@8.57.0)
       globals: 15.8.0
       postcss: 8.4.38
-      postcss-selector-parser: 6.0.16
+      postcss-selector-parser: 6.1.0
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -5100,7 +5096,7 @@ snapshots:
 
   kleur@4.1.5: {}
 
-  knip@5.20.0(@types/node@20.14.9)(typescript@5.5.3):
+  knip@5.19.0(@types/node@20.14.9)(typescript@5.5.3):
     dependencies:
       '@ericcornelissen/bash-parser': 0.5.3
       '@nodelib/fs.walk': 2.0.0
@@ -5119,7 +5115,6 @@ snapshots:
       smol-toml: 1.2.1
       strip-json-comments: 5.0.1
       summary: 2.1.0
-      tsconfig-paths: 4.2.0
       typescript: 5.5.3
       zod: 3.23.8
       zod-validation-error: 3.3.0(zod@3.23.8)
@@ -5845,7 +5840,7 @@ snapshots:
 
   punycode@2.3.1: {}
 
-  qs@6.12.2:
+  qs@6.12.1:
     dependencies:
       side-channel: 1.0.6
 
@@ -6283,12 +6278,6 @@ snapshots:
   tsconfck@3.1.1(typescript@5.5.3):
     optionalDependencies:
       typescript: 5.5.3
-
-  tsconfig-paths@4.2.0:
-    dependencies:
-      json5: 2.2.3
-      minimist: 1.2.8
-      strip-bom: 3.0.0
 
   tslib@2.6.2: {}
 
