@@ -3,7 +3,7 @@
   "extends": ["config:recommended"],
   "packageRules": [
     {
-      "matchPackageNames": ["playwright"],
+      "matchPackagePatterns": ["playwright"],
       "groupName": "Playwright"
     }
   ]
