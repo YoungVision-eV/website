@@ -69,6 +69,9 @@ importers:
       '@typescript-eslint/parser':
         specifier: 7.15.0
         version: 7.15.0(eslint@8.57.0)(typescript@5.5.3)
+      astro-eslint-parser:
+        specifier: 1.0.2
+        version: 1.0.2(typescript@5.5.3)
       embla-carousel:
         specifier: 8.1.6
         version: 8.1.6
@@ -120,6 +123,9 @@ importers:
       sharp:
         specifier: 0.33.4
         version: 0.33.4
+      svelte-eslint-parser:
+        specifier: 0.37.0
+        version: 0.37.0(svelte@4.2.18)
       svelte-markdown:
         specifier: 0.4.1
         version: 0.4.1(svelte@4.2.18)
@@ -2768,6 +2774,15 @@ packages:
   supports-preserve-symlinks-flag@1.0.0:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
+
+  svelte-eslint-parser@0.37.0:
+    resolution: {integrity: sha512-AXd5ar7dcOK+H86JomxcSaWevhs2J7o/xOwg+kDQu98uuATpm+tE5Twp7u8UQCdbWKB34Idu/CZyHmTOxfSQMw==}
+    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    peerDependencies:
+      svelte: ^3.37.0 || ^4.0.0 || ^5.0.0-next.115
+    peerDependenciesMeta:
+      svelte:
+        optional: true
 
   svelte-eslint-parser@0.39.2:
     resolution: {integrity: sha512-87UwLuWTtDIuzWOhOi1zBL5wYVd07M5BK1qZ57YmXJB5/UmjUNJqGy3XSOhPqjckY1dATNV9y+mx+nI0WH6HPA==}
@@ -6155,6 +6170,16 @@ snapshots:
       has-flag: 4.0.0
 
   supports-preserve-symlinks-flag@1.0.0: {}
+
+  svelte-eslint-parser@0.37.0(svelte@4.2.18):
+    dependencies:
+      eslint-scope: 7.2.2
+      eslint-visitor-keys: 3.4.3
+      espree: 9.6.1
+      postcss: 8.4.38
+      postcss-scss: 4.0.9(postcss@8.4.38)
+    optionalDependencies:
+      svelte: 4.2.18
 
   svelte-eslint-parser@0.39.2(svelte@4.2.18):
     dependencies:
