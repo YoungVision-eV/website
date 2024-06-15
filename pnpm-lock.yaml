@@ -62,8 +62,8 @@ devDependencies:
     specifier: 7.10.0
     version: 7.10.0(eslint@8.57.0)(typescript@5.4.5)
   embla-carousel:
-    specifier: 8.0.4
-    version: 8.0.4
+    specifier: 8.1.5
+    version: 8.1.5
   embla-carousel-svelte:
     specifier: 8.1.5
     version: 8.1.5(svelte@4.2.18)
@@ -2440,10 +2440,6 @@ packages:
       embla-carousel: 8.1.5
       embla-carousel-reactive-utils: 8.1.5(embla-carousel@8.1.5)
       svelte: 4.2.18
-    dev: true
-
-  /embla-carousel@8.0.4:
-    resolution: {integrity: sha512-INndmilrV9KY4Wnb4F2tI55DuQnFjf3GPOaPDT2LGYiKhIWVNUhv1nz/RI7CZ6WoIZ8MYHP4t6Qm/cqpcGHknA==}
     dev: true
 
   /embla-carousel@8.1.5:
