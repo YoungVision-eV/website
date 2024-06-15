@@ -53,6 +53,7 @@
     "husky": "9.0.11",
     "prettier": "3.3.2",
     "prettier-plugin-astro": "0.14.0",
+    "knip": "^5.19.0",
     "prettier-plugin-astro-organize-imports": "0.4.9",
     "prettier-plugin-organize-imports": "4.0.0",
     "prettier-plugin-svelte": "3.2.5",
