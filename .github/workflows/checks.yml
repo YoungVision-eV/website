@@ -22,7 +22,7 @@ jobs:
         run: echo "::add-matcher::.github/workflows/eslint-matcher.json"
       - name: Install Node Dependencies
         run: pnpm install
-      - name: Check with prettier
+      - name: Run all lints
         run: pnpm run lint
 
   test:
