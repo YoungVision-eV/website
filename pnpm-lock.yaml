@@ -13,10 +13,10 @@ importers:
         version: 0.7.0(prettier-plugin-astro@0.14.0)(prettier@3.3.2)(typescript@5.4.5)
       '@astrojs/svelte':
         specifier: 5.5.0
-        version: 5.5.0(astro@4.10.2)(svelte@4.2.18)(typescript@5.4.5)(vite@5.3.1)
+        version: 5.5.0(astro@4.10.2(@types/node@20.14.2)(typescript@5.4.5))(svelte@4.2.18)(typescript@5.4.5)(vite@5.3.1(@types/node@20.14.2))
       '@astrojs/tailwind':
         specifier: 5.1.0
-        version: 5.1.0(astro@4.10.2)(tailwindcss@3.4.4)
+        version: 5.1.0(astro@4.10.2(@types/node@20.14.2)(typescript@5.4.5))(tailwindcss@3.4.4)
       '@melt-ui/svelte':
         specifier: 0.81.0
         version: 0.81.0(svelte@4.2.18)
@@ -41,7 +41,7 @@ importers:
     devDependencies:
       '@melt-ui/pp':
         specifier: 0.3.2
-        version: 0.3.2(@melt-ui/svelte@0.81.0)(svelte@4.2.18)
+        version: 0.3.2(@melt-ui/svelte@0.81.0(svelte@4.2.18))(svelte@4.2.18)
       '@playwright/test':
         specifier: 1.44.1
         version: 1.44.1
@@ -59,7 +59,7 @@ importers:
         version: 6.9.15
       '@typescript-eslint/eslint-plugin':
         specifier: 7.13.0
-        version: 7.13.0(@typescript-eslint/parser@7.13.0)(eslint@9.5.0)(typescript@5.4.5)
+        version: 7.13.0(@typescript-eslint/parser@7.13.0(eslint@9.5.0)(typescript@5.4.5))(eslint@9.5.0)(typescript@5.4.5)
       '@typescript-eslint/parser':
         specifier: 7.13.0
         version: 7.13.0(eslint@9.5.0)(typescript@5.4.5)
@@ -79,8 +79,8 @@ importers:
         specifier: 1.2.2
         version: 1.2.2(eslint@9.5.0)(typescript@5.4.5)
       eslint-plugin-svelte:
-        specifier: 2.39.4
-        version: 2.39.4(eslint@9.5.0)(svelte@4.2.18)
+        specifier: 2.39.5
+        version: 2.39.5(eslint@9.5.0)(svelte@4.2.18)
       git-format-staged:
         specifier: 3.1.1
         version: 3.1.1
@@ -95,7 +95,7 @@ importers:
         version: 0.14.0
       prettier-plugin-astro-organize-imports:
         specifier: 0.4.8
-        version: 0.4.8(prettier-plugin-astro@0.14.0)(prettier-plugin-tailwindcss@0.6.4)(prettier@3.3.2)
+        version: 0.4.8(prettier-plugin-astro@0.14.0)(prettier-plugin-tailwindcss@0.6.4(prettier-plugin-astro@0.14.0)(prettier-plugin-organize-imports@3.2.4(prettier@3.3.2)(typescript@5.4.5))(prettier-plugin-svelte@3.2.4(prettier@3.3.2)(svelte@4.2.18))(prettier@3.3.2))(prettier@3.3.2)
       prettier-plugin-organize-imports:
         specifier: 3.2.4
         version: 3.2.4(prettier@3.3.2)(typescript@5.4.5)
@@ -104,7 +104,7 @@ importers:
         version: 3.2.4(prettier@3.3.2)(svelte@4.2.18)
       prettier-plugin-tailwindcss:
         specifier: 0.6.4
-        version: 0.6.4(prettier-plugin-astro@0.14.0)(prettier-plugin-organize-imports@3.2.4)(prettier-plugin-svelte@3.2.4)(prettier@3.3.2)
+        version: 0.6.4(prettier-plugin-astro@0.14.0)(prettier-plugin-organize-imports@3.2.4(prettier@3.3.2)(typescript@5.4.5))(prettier-plugin-svelte@3.2.4(prettier@3.3.2)(svelte@4.2.18))(prettier@3.3.2)
       sharp:
         specifier: 0.33.4
         version: 0.33.4
@@ -1347,8 +1347,8 @@ packages:
     peerDependencies:
       eslint: '>=8.57.0'
 
-  eslint-plugin-svelte@2.39.4:
-    resolution: {integrity: sha512-MAuMNCOQAfCNaOlJfzC/ZnhQi2YwKdQvjYTFs99QIMWTMhN8nIatwQf8X50kCoSfQb7Q8dadGu8QUOOMoCCMTA==}
+  eslint-plugin-svelte@2.39.5:
+    resolution: {integrity: sha512-OfY6r4437ZkmLf/rLoI2dG+3e5XY5oI1z2KD3wsK9Qb635YlDhyws59y6Brx+dOxiQIiMCFgB/DmUeXajqwpQg==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^7.0.0 || ^8.0.0-0 || ^9.0.0-0
@@ -3021,8 +3021,6 @@ snapshots:
       '@volar/language-service': 2.2.4
       '@volar/typescript': 2.2.4
       fast-glob: 3.3.2
-      prettier: 3.3.2
-      prettier-plugin-astro: 0.14.0
       volar-service-css: 0.0.45(@volar/language-service@2.2.4)
       volar-service-emmet: 0.0.45(@volar/language-service@2.2.4)
       volar-service-html: 0.0.45(@volar/language-service@2.2.4)
@@ -3031,6 +3029,9 @@ snapshots:
       volar-service-typescript-twoslash-queries: 0.0.45(@volar/language-service@2.2.4)
       vscode-html-languageservice: 5.2.0
       vscode-uri: 3.0.8
+    optionalDependencies:
+      prettier: 3.3.2
+      prettier-plugin-astro: 0.14.0
     transitivePeerDependencies:
       - typescript
 
@@ -3061,9 +3062,9 @@ snapshots:
     dependencies:
       prismjs: 1.29.0
 
-  '@astrojs/svelte@5.5.0(astro@4.10.2)(svelte@4.2.18)(typescript@5.4.5)(vite@5.3.1)':
+  '@astrojs/svelte@5.5.0(astro@4.10.2(@types/node@20.14.2)(typescript@5.4.5))(svelte@4.2.18)(typescript@5.4.5)(vite@5.3.1(@types/node@20.14.2))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 3.1.1(svelte@4.2.18)(vite@5.3.1)
+      '@sveltejs/vite-plugin-svelte': 3.1.1(svelte@4.2.18)(vite@5.3.1(@types/node@20.14.2))
       astro: 4.10.2(@types/node@20.14.2)(typescript@5.4.5)
       svelte: 4.2.18
       svelte2tsx: 0.7.9(svelte@4.2.18)(typescript@5.4.5)
@@ -3072,7 +3073,7 @@ snapshots:
       - supports-color
       - vite
 
-  '@astrojs/tailwind@5.1.0(astro@4.10.2)(tailwindcss@3.4.4)':
+  '@astrojs/tailwind@5.1.0(astro@4.10.2(@types/node@20.14.2)(typescript@5.4.5))(tailwindcss@3.4.4)':
     dependencies:
       astro: 4.10.2(@types/node@20.14.2)(typescript@5.4.5)
       autoprefixer: 10.4.19(postcss@8.4.38)
@@ -3506,7 +3507,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.4.15
 
-  '@melt-ui/pp@0.3.2(@melt-ui/svelte@0.81.0)(svelte@4.2.18)':
+  '@melt-ui/pp@0.3.2(@melt-ui/svelte@0.81.0(svelte@4.2.18))(svelte@4.2.18)':
     dependencies:
       '@melt-ui/svelte': 0.81.0(svelte@4.2.18)
       estree-walker: 3.0.3
@@ -3598,18 +3599,18 @@ snapshots:
 
   '@shikijs/core@1.6.5': {}
 
-  '@sveltejs/vite-plugin-svelte-inspector@2.1.0(@sveltejs/vite-plugin-svelte@3.1.1)(svelte@4.2.18)(vite@5.3.1)':
+  '@sveltejs/vite-plugin-svelte-inspector@2.1.0(@sveltejs/vite-plugin-svelte@3.1.1(svelte@4.2.18)(vite@5.3.1(@types/node@20.14.2)))(svelte@4.2.18)(vite@5.3.1(@types/node@20.14.2))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 3.1.1(svelte@4.2.18)(vite@5.3.1)
+      '@sveltejs/vite-plugin-svelte': 3.1.1(svelte@4.2.18)(vite@5.3.1(@types/node@20.14.2))
       debug: 4.3.4
       svelte: 4.2.18
       vite: 5.3.1(@types/node@20.14.2)
     transitivePeerDependencies:
       - supports-color
 
-  '@sveltejs/vite-plugin-svelte@3.1.1(svelte@4.2.18)(vite@5.3.1)':
+  '@sveltejs/vite-plugin-svelte@3.1.1(svelte@4.2.18)(vite@5.3.1(@types/node@20.14.2))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte-inspector': 2.1.0(@sveltejs/vite-plugin-svelte@3.1.1)(svelte@4.2.18)(vite@5.3.1)
+      '@sveltejs/vite-plugin-svelte-inspector': 2.1.0(@sveltejs/vite-plugin-svelte@3.1.1(svelte@4.2.18)(vite@5.3.1(@types/node@20.14.2)))(svelte@4.2.18)(vite@5.3.1(@types/node@20.14.2))
       debug: 4.3.4
       deepmerge: 4.3.1
       kleur: 4.1.5
@@ -3617,7 +3618,7 @@ snapshots:
       svelte: 4.2.18
       svelte-hmr: 0.16.0(svelte@4.2.18)
       vite: 5.3.1(@types/node@20.14.2)
-      vitefu: 0.2.5(vite@5.3.1)
+      vitefu: 0.2.5(vite@5.3.1(@types/node@20.14.2))
     transitivePeerDependencies:
       - supports-color
 
@@ -3688,7 +3689,7 @@ snapshots:
 
   '@types/unist@3.0.2': {}
 
-  '@typescript-eslint/eslint-plugin@7.13.0(@typescript-eslint/parser@7.13.0)(eslint@9.5.0)(typescript@5.4.5)':
+  '@typescript-eslint/eslint-plugin@7.13.0(@typescript-eslint/parser@7.13.0(eslint@9.5.0)(typescript@5.4.5))(eslint@9.5.0)(typescript@5.4.5)':
     dependencies:
       '@eslint-community/regexpp': 4.10.0
       '@typescript-eslint/parser': 7.13.0(eslint@9.5.0)(typescript@5.4.5)
@@ -3701,6 +3702,7 @@ snapshots:
       ignore: 5.3.1
       natural-compare: 1.4.0
       ts-api-utils: 1.3.0(typescript@5.4.5)
+    optionalDependencies:
       typescript: 5.4.5
     transitivePeerDependencies:
       - supports-color
@@ -3713,6 +3715,7 @@ snapshots:
       '@typescript-eslint/visitor-keys': 7.13.0
       debug: 4.3.4
       eslint: 9.5.0
+    optionalDependencies:
       typescript: 5.4.5
     transitivePeerDependencies:
       - supports-color
@@ -3734,6 +3737,7 @@ snapshots:
       debug: 4.3.4
       eslint: 9.5.0
       ts-api-utils: 1.3.0(typescript@5.4.5)
+    optionalDependencies:
       typescript: 5.4.5
     transitivePeerDependencies:
       - supports-color
@@ -3752,6 +3756,7 @@ snapshots:
       minimatch: 9.0.4
       semver: 7.6.2
       ts-api-utils: 1.3.0(typescript@5.4.5)
+    optionalDependencies:
       typescript: 5.4.5
     transitivePeerDependencies:
       - supports-color
@@ -3766,6 +3771,7 @@ snapshots:
       minimatch: 9.0.4
       semver: 7.6.2
       ts-api-utils: 1.3.0(typescript@5.4.5)
+    optionalDependencies:
       typescript: 5.4.5
     transitivePeerDependencies:
       - supports-color
@@ -3986,7 +3992,7 @@ snapshots:
       unist-util-visit: 5.0.0
       vfile: 6.0.1
       vite: 5.3.1(@types/node@20.14.2)
-      vitefu: 0.2.5(vite@5.3.1)
+      vitefu: 0.2.5(vite@5.3.1(@types/node@20.14.2))
       which-pm: 2.2.0
       yargs-parser: 21.1.1
       zod: 3.23.8
@@ -4334,7 +4340,7 @@ snapshots:
       - supports-color
       - typescript
 
-  eslint-plugin-svelte@2.39.4(eslint@9.5.0)(svelte@4.2.18):
+  eslint-plugin-svelte@2.39.5(eslint@9.5.0)(svelte@4.2.18):
     dependencies:
       '@eslint-community/eslint-utils': 4.4.0(eslint@9.5.0)
       '@jridgewell/sourcemap-codec': 1.4.15
@@ -4347,8 +4353,9 @@ snapshots:
       postcss-safe-parser: 6.0.0(postcss@8.4.38)
       postcss-selector-parser: 6.1.0
       semver: 7.6.2
-      svelte: 4.2.18
       svelte-eslint-parser: 0.38.0(svelte@4.2.18)
+    optionalDependencies:
+      svelte: 4.2.18
     transitivePeerDependencies:
       - ts-node
 
@@ -5386,19 +5393,21 @@ snapshots:
   postcss-load-config@3.1.4(postcss@8.4.38):
     dependencies:
       lilconfig: 2.1.0
-      postcss: 8.4.38
       yaml: 1.10.2
+    optionalDependencies:
+      postcss: 8.4.38
 
   postcss-load-config@4.0.2(postcss@8.4.38):
     dependencies:
       lilconfig: 3.1.1
-      postcss: 8.4.38
       yaml: 2.4.2
+    optionalDependencies:
+      postcss: 8.4.38
 
   postcss-nested@6.0.1(postcss@8.4.38):
     dependencies:
       postcss: 8.4.38
-      postcss-selector-parser: 6.0.16
+      postcss-selector-parser: 6.1.0
 
   postcss-safe-parser@6.0.0(postcss@8.4.38):
     dependencies:
@@ -5440,13 +5449,14 @@ snapshots:
 
   prelude-ls@1.2.1: {}
 
-  prettier-plugin-astro-organize-imports@0.4.8(prettier-plugin-astro@0.14.0)(prettier-plugin-tailwindcss@0.6.4)(prettier@3.3.2):
+  prettier-plugin-astro-organize-imports@0.4.8(prettier-plugin-astro@0.14.0)(prettier-plugin-tailwindcss@0.6.4(prettier-plugin-astro@0.14.0)(prettier-plugin-organize-imports@3.2.4(prettier@3.3.2)(typescript@5.4.5))(prettier-plugin-svelte@3.2.4(prettier@3.3.2)(svelte@4.2.18))(prettier@3.3.2))(prettier@3.3.2):
     dependencies:
       '@astrojs/compiler': 2.8.0
       prettier: 3.3.2
-      prettier-plugin-astro: 0.14.0
-      prettier-plugin-tailwindcss: 0.6.4(prettier-plugin-astro@0.14.0)(prettier-plugin-organize-imports@3.2.4)(prettier-plugin-svelte@3.2.4)(prettier@3.3.2)
       typescript: 5.4.5
+    optionalDependencies:
+      prettier-plugin-astro: 0.14.0
+      prettier-plugin-tailwindcss: 0.6.4(prettier-plugin-astro@0.14.0)(prettier-plugin-organize-imports@3.2.4(prettier@3.3.2)(typescript@5.4.5))(prettier-plugin-svelte@3.2.4(prettier@3.3.2)(svelte@4.2.18))(prettier@3.3.2)
 
   prettier-plugin-astro@0.14.0:
     dependencies:
@@ -5464,9 +5474,10 @@ snapshots:
       prettier: 3.3.2
       svelte: 4.2.18
 
-  prettier-plugin-tailwindcss@0.6.4(prettier-plugin-astro@0.14.0)(prettier-plugin-organize-imports@3.2.4)(prettier-plugin-svelte@3.2.4)(prettier@3.3.2):
+  prettier-plugin-tailwindcss@0.6.4(prettier-plugin-astro@0.14.0)(prettier-plugin-organize-imports@3.2.4(prettier@3.3.2)(typescript@5.4.5))(prettier-plugin-svelte@3.2.4(prettier@3.3.2)(svelte@4.2.18))(prettier@3.3.2):
     dependencies:
       prettier: 3.3.2
+    optionalDependencies:
       prettier-plugin-astro: 0.14.0
       prettier-plugin-organize-imports: 3.2.4(prettier@3.3.2)(typescript@5.4.5)
       prettier-plugin-svelte: 3.2.4(prettier@3.3.2)(svelte@4.2.18)
@@ -5792,6 +5803,7 @@ snapshots:
       espree: 9.6.1
       postcss: 8.4.38
       postcss-scss: 4.0.9(postcss@8.4.38)
+    optionalDependencies:
       svelte: 4.2.18
 
   svelte-hmr@0.16.0(svelte@4.2.18):
@@ -5894,7 +5906,7 @@ snapshots:
   ts-interface-checker@0.1.13: {}
 
   tsconfck@3.1.0(typescript@5.4.5):
-    dependencies:
+    optionalDependencies:
       typescript: 5.4.5
 
   tslib@2.6.2: {}
@@ -6040,56 +6052,61 @@ snapshots:
 
   vite@5.3.1(@types/node@20.14.2):
     dependencies:
-      '@types/node': 20.14.2
       esbuild: 0.21.5
       postcss: 8.4.38
       rollup: 4.17.2
     optionalDependencies:
+      '@types/node': 20.14.2
       fsevents: 2.3.3
 
-  vitefu@0.2.5(vite@5.3.1):
-    dependencies:
+  vitefu@0.2.5(vite@5.3.1(@types/node@20.14.2)):
+    optionalDependencies:
       vite: 5.3.1(@types/node@20.14.2)
 
   volar-service-css@0.0.45(@volar/language-service@2.2.4):
     dependencies:
-      '@volar/language-service': 2.2.4
       vscode-css-languageservice: 6.2.14
       vscode-languageserver-textdocument: 1.0.11
       vscode-uri: 3.0.8
+    optionalDependencies:
+      '@volar/language-service': 2.2.4
 
   volar-service-emmet@0.0.45(@volar/language-service@2.2.4):
     dependencies:
       '@emmetio/css-parser': 0.4.0
       '@emmetio/html-matcher': 1.3.0
-      '@volar/language-service': 2.2.4
       '@vscode/emmet-helper': 2.9.3
+    optionalDependencies:
+      '@volar/language-service': 2.2.4
 
   volar-service-html@0.0.45(@volar/language-service@2.2.4):
     dependencies:
-      '@volar/language-service': 2.2.4
       vscode-html-languageservice: '@johnsoncodehk/vscode-html-languageservice@5.2.0-34a5462'
       vscode-languageserver-textdocument: 1.0.11
       vscode-uri: 3.0.8
+    optionalDependencies:
+      '@volar/language-service': 2.2.4
 
   volar-service-prettier@0.0.45(@volar/language-service@2.2.4)(prettier@3.3.2):
     dependencies:
+      vscode-uri: 3.0.8
+    optionalDependencies:
       '@volar/language-service': 2.2.4
       prettier: 3.3.2
-      vscode-uri: 3.0.8
 
   volar-service-typescript-twoslash-queries@0.0.45(@volar/language-service@2.2.4):
-    dependencies:
+    optionalDependencies:
       '@volar/language-service': 2.2.4
 
   volar-service-typescript@0.0.45(@volar/language-service@2.2.4):
     dependencies:
-      '@volar/language-service': 2.2.4
       path-browserify: 1.0.1
       semver: 7.6.2
       typescript-auto-import-cache: 0.3.2
       vscode-languageserver-textdocument: 1.0.11
       vscode-nls: 5.2.0
+    optionalDependencies:
+      '@volar/language-service': 2.2.4
 
   vscode-css-languageservice@6.2.14:
     dependencies:
