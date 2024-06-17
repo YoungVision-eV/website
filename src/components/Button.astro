@@ -8,7 +8,7 @@ interface Props {
   color?: 'dark' | 'bright';
 }
 
-const { href, text, download, class: className = '', color = 'dark' } = Astro.props;
+const { href, text, download, class: className = '', color = 'dark' }: Props = Astro.props;
 ---
 
 <a
