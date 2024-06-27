@@ -142,7 +142,7 @@ export async function getNext3Events(): Promise<
   const today = new Date();
   today.setHours(0, 0, 0, 0);
   const request = {
-    sort: 'date',
+    sort: 'start',
     where: {
       start: {
         greater_than: today.toISOString(),
