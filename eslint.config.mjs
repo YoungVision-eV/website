@@ -79,7 +79,7 @@ export default [
 
       parserOptions: {
         project: true,
-        tsconfigRootDir: '/var/home/jonas/Development/youngvision/website',
+        tsconfigRootDir: __dirname,
       },
     },
 
