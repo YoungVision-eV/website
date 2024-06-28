@@ -31,6 +31,8 @@
     "typescript": "5.5.2"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "3.1.0",
+    "@eslint/js": "9.5.0",
     "@melt-ui/pp": "0.3.2",
     "@playwright/test": "1.45.0",
     "@rgossiaux/svelte-headlessui": "2.0.0",
@@ -41,11 +43,12 @@
     "@typescript-eslint/parser": "7.14.1",
     "embla-carousel": "8.1.5",
     "embla-carousel-svelte": "8.1.5",
-    "eslint": "9.5.0",
+    "eslint": "8.57.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-astro": "1.2.2",
     "eslint-plugin-svelte": "2.41.0",
     "git-format-staged": "3.1.1",
+    "globals": "15.5.0",
     "husky": "9.0.11",
     "prettier": "3.3.2",
     "prettier-plugin-astro": "0.14.0",
