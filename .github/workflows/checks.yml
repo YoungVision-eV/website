@@ -8,7 +8,7 @@ on:
       - main
 
 jobs:
-  prettier:
+  lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -18,17 +18,21 @@ jobs:
         with:
           node-version: 18
           cache: 'pnpm'
+      - name: 'Add custom eslint matcher' # see https://github.com/actions/setup-node/issues/403
+        run: echo "::add-matcher::.github/workflows/eslint-matcher.json"
       - name: Install Node Dependencies
         run: pnpm install
-      - name: Check with prettier
-        run: pnpm run lint:prettier
+      - name: Run all lints
+        run: pnpm run lint
 
-  eslint:
-    runs-on: ubuntu-latest
+  test:
+    timeout-minutes: 60
+    runs-on: ubuntu-22.04
+    container:
+      image: mcr.microsoft.com/playwright:v1.45.0-jammy
     permissions:
-      contents: read
       checks: write
-      pull-requests: read
+      contents: read
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
@@ -37,21 +41,19 @@ jobs:
         with:
           node-version: 18
           cache: 'pnpm'
-      - name: Install Node Dependencies
+      - name: Install dependencies
         run: pnpm install
-      - name: Save Code Linting Report JSON
-        run: pnpm run lint:eslint --output-file eslint_report.json --format json
-        continue-on-error: ${{ github.actor != 'dependabot[bot]' }} # as dependabot does not allow annotations, still fail
-      - name: Annotate Code Linting Results
-        uses: ataylorme/eslint-annotate-action@v3
-        if: ${{ github.actor != 'dependabot[bot]' }} # dependabot doesn't have permissions
-        with:
-          fail-on-warning: true
-          markdown-report-on-step-summary: true
-          report-json: 'eslint_report.json'
+      - name: Run Playwright tests
+        run: HOME='/root' pnpm run test
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: eslint_report
-          path: eslint_report.json
-          retention-days: 7
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-results
+          path: playwright-results.xml
+          retention-days: 30
