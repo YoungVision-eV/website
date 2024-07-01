@@ -14,6 +14,7 @@
     "lint:prettier": "prettier --check .",
     "lint:eslint": "eslint .",
     "lint:astro": "astro check",
+    "lint:knip": "knip",
     "format": "prettier --write .",
     "test": "playwright test",
     "test:ui": "pnpm run test --ui-host localhost --ui-port 33333",
