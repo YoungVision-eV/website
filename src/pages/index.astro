@@ -9,7 +9,6 @@ import Hero from '@components/index/Hero.astro';
 import ReadMore from '@components/index/ReadMore.astro';
 
 import Testimonials from '@components/Testimonials.svelte';
-import Instagram from '@components/index/Instagram.astro';
 
 import { getTestimonials } from '@data/testimonials';
 
@@ -25,7 +24,6 @@ const InstagramBackgroundUrl = await getImage({ src: InstagramBackground });
 
   <div id="testimonials-and-instagram">
     <Testimonials client:visible {testimonials} />
-    <Instagram />
   </div>
 </Layout>
 
