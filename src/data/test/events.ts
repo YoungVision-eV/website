@@ -9,8 +9,8 @@ import thirdEventImage from '@assets/events/calendar-third-event.jpeg';
 import EventImage1 from '@assets/events/projects-event-image-1.jpeg';
 import EventImage2 from '@assets/events/projects-event-image-2.jpeg';
 import EventImage3 from '@assets/events/projects-event-image-3.jpeg';
-import type { DataGetter, EventCalendarEntry, EventPage, ImageWithAlt } from './index.ts';
-import type { Media } from './payload-types.ts';
+import type { DataGetter, EventCalendarEntry, EventPage, ImageWithAlt } from '../index.ts';
+import type { Media } from '../payload-types.ts';
 
 const testGetter: DataGetter = {
   getAllEvents,
