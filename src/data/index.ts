@@ -33,11 +33,6 @@ export type RemoteImage = {
   alt: string;
 };
 
-export type ImageWithAlt = {
-  src: ImageMetadata;
-  alt: string;
-};
-
 export interface DataGetter {
   getAllEvents: () => Promise<EventPage[]>;
   getNext3Events: () => Promise<[EventCalendarEntry, EventCalendarEntry, EventCalendarEntry]>;
