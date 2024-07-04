@@ -26,7 +26,7 @@ jobs:
           PLAYWRIGHT_TEST: 'true'
 
       - name: Start server (in background)
-        run: pnpm run preview --host &
+        run: pnpm run preview --host 172.17.0.1 &
 
       - name: Lost Pixel
         uses: lost-pixel/lost-pixel@v3.16.0
