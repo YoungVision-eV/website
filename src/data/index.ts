@@ -1,4 +1,7 @@
+import type { GetImageResult } from 'astro';
 import type { Event as EventCMS } from './payload-types.ts';
+import { realEventData } from './real/events.ts';
+import { testEventData } from './test/events.ts';
 
 export interface EventCalendarEntry {
   title: string;
@@ -29,7 +32,24 @@ export type ImageWithAlt = {
   alt: string;
 };
 
-export interface DataGetter {
-  getAllEvents: () => Promise<EventPage[]>;
-  getNext3Events: () => Promise<[EventCalendarEntry, EventCalendarEntry, EventCalendarEntry]>;
+export type YearlyEvent = {
+  slug: string; // I think this slug is used nowhere
+  title: string;
+  day: string;
+  month: string;
+  short_description: string;
+  //TODO: this should probably also be an ImageWithAlt
+  image: {
+    src: GetImageResult;
+  };
+  for_all: boolean;
+  future?: string;
+};
+
+export interface EventData {
+  getAllPages: () => Promise<EventPage[]>;
+  get3CalendarEntries: () => Promise<[EventCalendarEntry, EventCalendarEntry, EventCalendarEntry]>;
+  getAllYearlyEvents: () => Promise<YearlyEvent[]>;
 }
+
+export const eventData = process.env.PLAYWRIGHT_TEST === 'true' ? testEventData : realEventData;

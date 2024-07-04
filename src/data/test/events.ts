@@ -9,14 +9,15 @@ import thirdEventImage from '@assets/events/calendar-third-event.jpeg';
 import EventImage1 from '@assets/events/projects-event-image-1.jpeg';
 import EventImage2 from '@assets/events/projects-event-image-2.jpeg';
 import EventImage3 from '@assets/events/projects-event-image-3.jpeg';
-import type { DataGetter, EventCalendarEntry, EventPage } from '../index.ts';
+import type { EventCalendarEntry, EventData, EventPage } from '../index.ts';
 
-const testGetter: DataGetter = {
-  getAllEvents,
-  getNext3Events,
+export const testEventData: EventData = {
+  getAllPages,
+  get3CalendarEntries,
+  getAllYearlyEvents,
 };
 
-export async function getAllEvents(): Promise<EventPage[]> {
+export async function getAllPages(): Promise<EventPage[]> {
   return [
     {
       title: 'Event 1',
@@ -57,7 +58,7 @@ export async function getAllEvents(): Promise<EventPage[]> {
   ];
 }
 
-export async function getNext3Events(): Promise<
+export async function get3CalendarEntries(): Promise<
   [EventCalendarEntry, EventCalendarEntry, EventCalendarEntry]
 > {
   return [
@@ -105,11 +106,6 @@ export type YVEvent = {
   for_all: boolean;
   future?: string;
 };
-
-export async function getEventBySlug(slug: string): Promise<YVEvent | undefined> {
-  const allEvents = await getAllYearlyEvents();
-  return allEvents.find((e) => e.slug === slug);
-}
 
 export async function getAllYearlyEvents(): Promise<YVEvent[]> {
   return [
