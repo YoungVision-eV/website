@@ -1,22 +1,8 @@
 ---
+import ArrowLeft from '@assets/icons/ArrowLeft.svelte';
 import { type EventPage } from '@data/index';
 import Layout from '@layouts/Layout.astro';
 import { Image } from 'astro:assets';
-
-const { event }: { event: EventPage } = Astro.props;
-
-export async function getStaticPaths() {
-  let events = await realGetter.getAllEvents();
-
-  return events.map((event) => {
-    return {
-      params: { slug: event.slug },
-      props: { event },
-    };
-  });
-}
-
-import ArrowLeft from '@assets/icons/ArrowLeft.svelte';
 
 import Rosow1 from '@assets/events/forschungsraum/rosow_01.jpg';
 import Rosow2 from '@assets/events/forschungsraum/rosow_02.jpg';
@@ -35,6 +21,19 @@ import { realGetter } from '@data/events';
 
 // TODO: implement formatting logic if not same month (or year)
 // for example 30.04.24 - 02.05.24 should be '30. April - 02. Mai'
+
+const { event }: { event: EventPage } = Astro.props;
+
+export async function getStaticPaths() {
+  let events = await realGetter.getAllEvents();
+
+  return events.map((event) => {
+    return {
+      params: { slug: event.slug },
+      props: { event },
+    };
+  });
+}
 
 const locationPictures = [
   {
