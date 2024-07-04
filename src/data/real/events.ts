@@ -1,17 +1,22 @@
 import { getImage } from 'astro:assets';
 
-import type { GetImageResult } from 'astro';
-
 import EventImage1 from '@assets/events/projects-event-image-1.jpeg';
 import EventImage2 from '@assets/events/projects-event-image-2.jpeg';
 import EventImage3 from '@assets/events/projects-event-image-3.jpeg';
 import qs from 'qs';
-import type { DataGetter, EventCalendarEntry, EventPage, RemoteImage } from '../index.ts';
+import type {
+  EventCalendarEntry,
+  EventData,
+  EventPage,
+  RemoteImage,
+  YearlyEvent,
+} from '../index.ts';
 import type { Event as EventCMS, Media } from '../payload-types.ts';
 
-export const realGetter: DataGetter = {
-  getAllEvents,
-  getNext3Events,
+export const realEventData: EventData = {
+  getAllPages,
+  get3CalendarEntries,
+  getAllYearlyEvents,
 };
 
 type EventRequest = {
@@ -25,7 +30,7 @@ type EventRequest = {
   limit?: number;
 };
 
-export async function getAllEvents(): Promise<EventPage[]> {
+export async function getAllPages(): Promise<EventPage[]> {
   const response = await fetch(`${process.env.CMS_URL}/api/events`);
   const data = await response.json();
   const events = data.docs as EventCMS[];
@@ -48,7 +53,7 @@ export async function getAllEvents(): Promise<EventPage[]> {
   return result;
 }
 
-export async function getNext3Events(): Promise<
+export async function get3CalendarEntries(): Promise<
   [EventCalendarEntry, EventCalendarEntry, EventCalendarEntry]
 > {
   const today = new Date();
@@ -122,25 +127,7 @@ export async function getEventImage(
   }
 }
 
-export type YVEvent = {
-  slug: string; // I think this slug is used nowhere
-  title: string;
-  day: string;
-  month: string;
-  short_description: string;
-  image: {
-    src: GetImageResult;
-  };
-  for_all: boolean;
-  future?: string;
-};
-
-export async function getEventBySlug(slug: string): Promise<YVEvent | undefined> {
-  const allEvents = await getAllYearlyEvents();
-  return allEvents.find((e) => e.slug === slug);
-}
-
-export async function getAllYearlyEvents(): Promise<YVEvent[]> {
+export async function getAllYearlyEvents(): Promise<YearlyEvent[]> {
   return [
     {
       slug: 'summer-gathering',

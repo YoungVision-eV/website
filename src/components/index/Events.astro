@@ -1,8 +1,8 @@
 ---
 import Button from '@components/Button.astro';
 import Calendar from '@components/Calendar.svelte';
-import { getNext3Events } from '@data/real/events';
-const events = await getNext3Events();
+import { eventData } from '@data/index';
+const events = await eventData.get3CalendarEntries();
 ---
 
 <section class="w-full bg-cover pt-16 lg:pb-10">
