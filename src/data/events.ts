@@ -2,86 +2,19 @@ import { getImage } from 'astro:assets';
 
 import type { GetImageResult } from 'astro';
 
-import calendarCoverImage from '@assets/events/calendar-cover.jpeg';
-import pastEvent from '@assets/events/calendar-past-event.jpeg';
-import thirdEventImage from '@assets/events/calendar-third-event.jpeg';
-
 import EventImage1 from '@assets/events/projects-event-image-1.jpeg';
 import EventImage2 from '@assets/events/projects-event-image-2.jpeg';
 import EventImage3 from '@assets/events/projects-event-image-3.jpeg';
 import qs from 'qs';
+import type { DataGetter, EventCalendarEntry, EventPage, ImageWithAlt } from './index.ts';
 import type { Event as EventCMS, Media } from './payload-types.ts';
 
-export interface EventCalendarEntry {
-  title: string;
-  date: Date;
-  description: string;
-  link?: string;
-  image: ImageWithAlt;
-}
-
-export interface EventPage {
-  title: string;
-  start: Date;
-  end: Date;
-  slug: string;
-  contentTitle: string;
-  content_html: string;
-  heroImage: ImageWithAlt;
-  address: EventCMS['address'];
-  audience: string;
-  cost: string;
-  team: { name: string; job: string; bio: string; image: ImageWithAlt }[];
-  registrationLink: string;
-  timetable?: ImageWithAlt;
-}
-
-export type ImageWithAlt = {
-  src: ImageMetadata;
-  alt: string;
+export const realGetter: DataGetter = {
+  getAllEvents,
+  getNext3Events,
 };
 
 export async function getAllEvents(): Promise<EventPage[]> {
-  if (process.env.PLAYWRIGHT_TEST === 'true') {
-    return [
-      {
-        title: 'Event 1',
-        start: new Date(),
-        end: new Date(),
-        slug: 'event-1',
-        contentTitle: 'Dein Event 1',
-        content_html: 'Some content',
-        heroImage: {
-          src: calendarCoverImage,
-          alt: 'Leute sitzen am Tisch',
-        },
-        address: {
-          street: 'Musterstraße 1',
-          zip: '12345',
-          city: 'Musterstadt',
-        },
-        audience: 'Alle',
-        cost: 'Kostenlos',
-        team: [
-          {
-            name: 'Erika Mustermann',
-            job: 'Some job',
-            bio: 'Thats my life',
-            image: {
-              src: {
-                src: 'https://placehold.co/500',
-                width: 500,
-                height: 500,
-                format: 'svg',
-              },
-              alt: 'Portait von Erika Mustermann',
-            },
-          },
-        ],
-        registrationLink: 'https://example.com',
-      },
-    ];
-  }
   const response = await fetch(`${process.env.CMS_URL}/api/events`);
   const data = await response.json();
   const events = data.docs as EventCMS[];
@@ -106,39 +39,6 @@ export async function getAllEvents(): Promise<EventPage[]> {
 export async function getNext3Events(): Promise<
   [EventCalendarEntry, EventCalendarEntry, EventCalendarEntry]
 > {
-  if (process.env.PLAYWRIGHT_TEST === 'true') {
-    return [
-      {
-        title: 'Past Event',
-        date: new Date(1999, 6, 10),
-        description: 'This event covers the test case for past events',
-        link: '/events/bauwoche-2024',
-        image: {
-          src: thirdEventImage,
-          alt: '',
-        },
-      },
-      {
-        title: 'Future Event 1',
-        date: new Date(2999, 10, 2),
-        description: 'This event will always (until the year 2999) be in the future.',
-        link: '/events/bauwoche-2024',
-        image: {
-          src: calendarCoverImage,
-          alt: '',
-        },
-      },
-      {
-        title: 'Future Event 2',
-        date: new Date(3024, 0, 28),
-        description: 'This is test data. Test 1 2 3. Test test.',
-        image: {
-          src: pastEvent,
-          alt: '',
-        },
-      },
-    ];
-  }
   const today = new Date();
   today.setHours(0, 0, 0, 0);
   const request = {
@@ -183,9 +83,7 @@ export async function getNext3Events(): Promise<
   return result;
 }
 
-export async function getEventImage(
-  image: string | Media | undefined,
-): Promise<ImageWithAlt | null> {
+async function getEventImage(image: string | Media | undefined): Promise<ImageWithAlt | null> {
   if (!image) {
     return null;
   } else if (typeof image === 'string') {
@@ -209,7 +107,7 @@ export async function getEventImage(
 }
 
 export type YVEvent = {
-  slug: string;
+  slug: string; // I think this slug is used nowhere
   title: string;
   day: string;
   month: string;
@@ -227,38 +125,6 @@ export async function getEventBySlug(slug: string): Promise<YVEvent | undefined>
 }
 
 export async function getAllYearlyEvents(): Promise<YVEvent[]> {
-  if (process.env.PLAYWRIGHT_TEST === 'true') {
-    return [
-      {
-        slug: 'event-1',
-        title: 'Event 1',
-        day: '1',
-        month: 'Januar',
-        short_description: 'Das ist ein Test Event. Komm nicht vorbei, weil es ist nicht real.',
-        image: { src: await getImage({ src: EventImage1 }) },
-        for_all: true,
-      },
-      {
-        slug: 'event-2',
-        title: 'Event 2',
-        day: '31',
-        month: 'Oktober',
-        short_description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium, felis sed luctus tempor',
-        image: { src: await getImage({ src: EventImage2 }) },
-        for_all: true,
-      },
-      {
-        slug: 'event-3',
-        title: 'Event 3',
-        day: '24',
-        month: 'Mai',
-        short_description: 'Noch ein Test Event, aber nur für Mitglieder !!!1!!11!111elf1',
-        image: { src: await getImage({ src: EventImage3 }) },
-        for_all: false,
-      },
-    ];
-  }
   return [
     {
       slug: 'summer-gathering',
