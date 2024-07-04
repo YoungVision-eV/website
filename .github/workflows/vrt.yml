@@ -22,6 +22,8 @@ jobs:
 
       - name: Build app
         run: pnpm run build
+        env:
+          PLAYWRIGHT_TEST: "true"
 
       - name: Start server (in background)
         run: pnpm run preview &
