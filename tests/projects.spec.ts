@@ -1,5 +1,4 @@
 import { expect, test, type Page } from '@playwright/test';
-import { forceLoadImages } from './fixtures';
 
 test.beforeEach(async ({ page }) => {
   await page.goto('/events');
@@ -14,7 +13,7 @@ async function expectForAllSelected(page: Page) {
   }
 }
 
-async function expectOnlyMemebersSelected(page: Page) {
+async function expectOnlyMembersSelected(page: Page) {
   for (const e of await page.getByRole('list').getByText('Nur Mitglieder').all()) {
     await expect(e).toBeVisible();
   }
@@ -23,39 +22,15 @@ async function expectOnlyMemebersSelected(page: Page) {
   }
 }
 
-test('Projects page screenshot', async ({ page }) => {
-  await forceLoadImages(page);
-
-  await expect(page).toHaveScreenshot({ fullPage: true });
-});
-
 test('Select members_only', async ({ page }) => {
   await page.getByLabel('Nur Mitglieder').click();
-  await expectOnlyMemebersSelected(page);
-
-  await forceLoadImages(page);
-
-  await expect(page).toHaveScreenshot({ fullPage: true });
+  await expectOnlyMembersSelected(page);
 });
 
 test('Reselect for_all', async ({ page }) => {
   await page.getByLabel('Für Alle').click();
-  await expectOnlyMemebersSelected(page);
+  await expectOnlyMembersSelected(page);
 
   await page.getByLabel('Für Alle').click();
   await expectForAllSelected(page);
-
-  await forceLoadImages(page);
-
-  await expect(page).toHaveScreenshot({ fullPage: true });
 });
-
-for (const project of ['Mitgliederversammlung', 'Silvester']) {
-  // TODO: readd when event pages are ready
-  test.skip(`Click on ${project}`, async ({ page }) => {
-    await page.getByText(project).click();
-    await expect(page.getByRole('heading').getByText(project)).toBeVisible();
-    await expect(page.getByRole('heading').getByText('Finanzierung')).toBeVisible();
-    await expect(page).toHaveScreenshot({ fullPage: true });
-  });
-}

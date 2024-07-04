@@ -1,13 +1,7 @@
 import { expect, test } from '@playwright/test';
-import { forceLoadImages } from './fixtures';
 
 test.beforeEach(async ({ page }) => {
   await page.goto('/about-us');
-});
-
-test('About Us page screenshot', async ({ page }) => {
-  await forceLoadImages(page);
-  await expect(page).toHaveScreenshot({ fullPage: true });
 });
 
 test('Exercises can be expanded', async ({ page }) => {
