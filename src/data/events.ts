@@ -36,7 +36,7 @@ export interface EventPage {
   timetable?: ImageWithAlt;
 }
 
-export type ImageWithAlt = {
+type ImageWithAlt = {
   src: ImageMetadata;
   alt: string;
 };
@@ -183,9 +183,7 @@ export async function getNext3Events(): Promise<
   return result;
 }
 
-export async function getEventImage(
-  image: string | Media | undefined,
-): Promise<ImageWithAlt | null> {
+async function getEventImage(image: string | Media | undefined): Promise<ImageWithAlt | null> {
   if (!image) {
     return null;
   } else if (typeof image === 'string') {
@@ -220,11 +218,6 @@ export type YVEvent = {
   for_all: boolean;
   future?: string;
 };
-
-export async function getEventBySlug(slug: string): Promise<YVEvent | undefined> {
-  const allEvents = await getAllYearlyEvents();
-  return allEvents.find((e) => e.slug === slug);
-}
 
 export async function getAllYearlyEvents(): Promise<YVEvent[]> {
   if (process.env.PLAYWRIGHT_TEST === 'true') {
