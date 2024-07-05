@@ -1,7 +1,5 @@
 import { getImage } from 'astro:assets';
 
-import type { GetImageResult } from 'astro';
-
 import ExpertiseImage from '@assets/support-us/Expertise-spenden.jpeg';
 import GeldspendenImage from '@assets/support-us/Geld-spenden.jpeg';
 import PartnerImage from '@assets/support-us/Partner-werden.jpeg';
@@ -11,19 +9,6 @@ import CircleDecorations from '@assets/icons/CircleDecorations.svg';
 import DonationBoxHand from '@assets/icons/DonationBoxHand.svg';
 import HandShake from '@assets/icons/HandShake.svg';
 import HeadLightbulb from '@assets/icons/HeadLightbulb.svg';
-
-export type DonationMethod = {
-  title: string;
-  description: string;
-  text: string;
-  buttonAtEnd?: boolean;
-  icon: {
-    src: string;
-    width: number;
-    height: number;
-  };
-  image: GetImageResult;
-};
 
 async function optimizeImage(src: ImageMetadata) {
   return getImage({
