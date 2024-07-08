@@ -20,7 +20,7 @@
     "prepare": "node .husky/install.mjs"
   },
   "dependencies": {
-    "@astrojs/check": "0.7.0",
+    "@astrojs/check": "0.8.0",
     "@astrojs/svelte": "5.6.0",
     "@astrojs/tailwind": "5.1.0",
     "@melt-ui/svelte": "0.83.0",
