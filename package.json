@@ -47,7 +47,7 @@
     "eslint": "8.57.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-astro": "1.2.3",
-    "eslint-plugin-svelte": "2.41.0",
+    "eslint-plugin-svelte": "2.42.0",
     "git-format-staged": "3.1.1",
     "globals": "15.8.0",
     "husky": "9.0.11",
