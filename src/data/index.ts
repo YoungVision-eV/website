@@ -1,7 +1,9 @@
 import type { GetImageResult } from 'astro';
 import type { Event as EventCMS } from './payload-types.ts';
 import { realEventData } from './real/events.ts';
+import { realInstagramData } from './real/instagram.ts';
 import { testEventData } from './test/events.ts';
+import { testInstagramData } from './test/instagram.ts';
 
 export interface EventCalendarEntry {
   title: string;
@@ -49,10 +51,28 @@ export type YearlyEvent = {
   future?: string;
 };
 
+export type InstagramPost = {
+  src: GetImageResult;
+  alt: string;
+  link: string;
+};
+
 export interface EventData {
   getAllPages: () => Promise<EventPage[]>;
   get3CalendarEntries: () => Promise<[EventCalendarEntry, EventCalendarEntry, EventCalendarEntry]>;
   getAllYearlyEvents: () => Promise<YearlyEvent[]>;
 }
 
+export interface InstagramData {
+  getRecentPhotos: (count: number) => Promise<InstagramPost[]>;
+}
+
 export const eventData = process.env.PLAYWRIGHT_TEST === 'true' ? testEventData : realEventData;
+
+// Use fake posts in dev because otherwise we hit instagrams rate limit very quickly
+export const instagramData =
+  process.env.NODE_ENV === 'development' ||
+  process.env.PLAYWRIGHT_TEST === 'true' ||
+  process.env.PREVIEW_DEPLOYMENT === 'true'
+    ? testInstagramData
+    : realInstagramData;
