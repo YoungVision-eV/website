@@ -32,9 +32,6 @@ import HandWithMoney from '@assets/icons/HandWithMoney.svelte';
 import LocationPin from '@assets/icons/LocationPin.svelte';
 import People from '@assets/icons/People.svelte';
 
-// TODO: implement formatting logic if not same month (or year)
-// for example 30.04.24 - 02.05.24 should be '30. April - 02. Mai'
-
 const locationPictures = [
   {
     src: Rosow1,
@@ -113,9 +110,11 @@ const locationPictures = [
           </div>
           <h3 class="mt-8 font-serif text-xl font-bold">Wann</h3>
           <p class="mt-3 text-center">
-            {event.start.toLocaleDateString('de', { day: '2-digit' })} - {
-              event.end.toLocaleDateString('de', { day: '2-digit', month: 'long' })
-            }
+            {
+              event.start.getMonth() === event.end.getMonth()
+                ? event.start.toLocaleDateString('de', { day: '2-digit' })
+                : event.start.toLocaleDateString('de', { day: '2-digit', month: 'long' })
+            } - {event.end.toLocaleDateString('de', { day: '2-digit', month: 'long' })}
           </p>
         </div>
         <div class="flex flex-col items-center">
