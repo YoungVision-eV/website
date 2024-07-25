@@ -18,9 +18,6 @@ import LocationPin from '@assets/icons/LocationPin.svelte';
 import People from '@assets/icons/People.svelte';
 import { eventData, type EventPage } from '@data/index';
 
-// TODO: implement formatting logic if not same month (or year)
-// for example 30.04.24 - 02.05.24 should be '30. April - 02. Mai'
-
 const { event }: { event: EventPage } = Astro.props;
 
 export async function getStaticPaths() {
