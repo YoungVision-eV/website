@@ -27,7 +27,7 @@ export async function getAllPages(): Promise<EventPage[]> {
       contentTitle: 'Dein Event 1',
       content_html: 'Some content',
       heroImage: {
-        src: calendarCoverImage,
+        ...calendarCoverImage,
         alt: 'Leute sitzen am Tisch',
       },
       address: {
@@ -43,12 +43,9 @@ export async function getAllPages(): Promise<EventPage[]> {
           job: 'Some job',
           bio: 'Thats my life',
           image: {
-            src: {
-              src: 'https://placehold.co/500',
-              width: 500,
-              height: 500,
-              format: 'svg',
-            },
+            src: 'https://placehold.co/500',
+            width: 500,
+            height: 500,
             alt: 'Portait von Erika Mustermann',
           },
         },
@@ -68,7 +65,7 @@ export async function get3CalendarEntries(): Promise<
       description: 'This event covers the test case for past events',
       link: '/events/bauwoche-2024',
       image: {
-        src: thirdEventImage,
+        ...thirdEventImage,
         alt: '',
       },
     },
@@ -78,7 +75,7 @@ export async function get3CalendarEntries(): Promise<
       description: 'This event will always (until the year 2999) be in the future.',
       link: '/events/bauwoche-2024',
       image: {
-        src: calendarCoverImage,
+        ...calendarCoverImage,
         alt: '',
       },
     },
@@ -87,7 +84,7 @@ export async function get3CalendarEntries(): Promise<
       date: new Date(3024, 0, 28),
       description: 'This is test data. Test 1 2 3. Test test.',
       image: {
-        src: pastEvent,
+        ...pastEvent,
         alt: '',
       },
     },

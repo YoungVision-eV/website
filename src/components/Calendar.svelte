@@ -33,7 +33,7 @@
           loading="lazy"
           id={`event-${selectedEvent + 1}`}
           {...currentEvent.image.src.attributes}
-          src={currentEvent.image.src.src}
+          src={currentEvent.image.src}
           alt={currentEvent.image.alt}
           class="absolute left-0 top-0 h-full w-full rounded-t-2xl object-cover transition-opacity lg:rounded-l-2xl lg:rounded-tr-none"
         />

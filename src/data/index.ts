@@ -30,7 +30,9 @@ export interface EventPage {
 }
 
 export type ImageWithAlt = {
-  src: ImageMetadata;
+  src: string;
+  width: number;
+  height: number;
   alt: string;
 };
 
