@@ -73,8 +73,8 @@ importers:
         specifier: 8.1.8
         version: 8.1.8
       embla-carousel-svelte:
-        specifier: 8.1.7
-        version: 8.1.7(svelte@4.2.18)
+        specifier: 8.1.8
+        version: 8.1.8(svelte@4.2.18)
       eslint:
         specifier: 8.57.0
         version: 8.57.0
@@ -1293,18 +1293,15 @@ packages:
   electron-to-chromium@1.4.829:
     resolution: {integrity: sha512-5qp1N2POAfW0u1qGAxXEtz6P7bO1m6gpZr5hdf5ve6lxpLM7MpiM4jIPz7xcrNlClQMafbyUDDWjlIQZ1Mw0Rw==}
 
-  embla-carousel-reactive-utils@8.1.7:
-    resolution: {integrity: sha512-FDPcWjNtW04KSuvSfGbVeoB8yl5no3E0++HikO/uW12cNkMnWt68C4OBOakZQZlpUdRQSA9KCYoBuQzfpVGvZQ==}
+  embla-carousel-reactive-utils@8.1.8:
+    resolution: {integrity: sha512-bwV/23WD3Ecm0YuQ4I6Syzs3tdVJw0Oj3VCZlEODv1kH8LZ5kNDLgX2Uvx5brvoe2hpifBHPBQ8gYlxNL5kMPA==}
     peerDependencies:
-      embla-carousel: 8.1.7
+      embla-carousel: 8.1.8
 
-  embla-carousel-svelte@8.1.7:
-    resolution: {integrity: sha512-LKum2WmydzZJeOIiepUnAEy0ioJhRim7tLOsGAVfCsiA975f+08560OTBDToq/XNDj+UrLePvq7IkorDP6nrPA==}
+  embla-carousel-svelte@8.1.8:
+    resolution: {integrity: sha512-6tX0C+GJ4loCVV015zePPeONupTvus4ZuDWiAV4LHvlrVqtD/I1uEuWUurtYDoB6tuVS6f8e5aN9mY+a1CfGxw==}
     peerDependencies:
       svelte: ^3.49.0 || ^4.0.0
-
-  embla-carousel@8.1.7:
-    resolution: {integrity: sha512-b3kBr2H+S1gx4neki0P+aqN6cA5Ibjqy4CR3Ufi3X+Q3JpoNXJgOmJMSPkoP9DKcDREwADN6UWZzRwF2oo0y9Q==}
 
   embla-carousel@8.1.8:
     resolution: {integrity: sha512-KuHPA8qcAts6YE6ELtt38XYAb26hnKw8Ga0lSXmrhm1oI97t6oACFkqSsy33dfeZQEhaZB6VwWvaWQJRJVgSgA==}
@@ -4317,17 +4314,15 @@ snapshots:
 
   electron-to-chromium@1.4.829: {}
 
-  embla-carousel-reactive-utils@8.1.7(embla-carousel@8.1.7):
+  embla-carousel-reactive-utils@8.1.8(embla-carousel@8.1.8):
     dependencies:
-      embla-carousel: 8.1.7
+      embla-carousel: 8.1.8
 
-  embla-carousel-svelte@8.1.7(svelte@4.2.18):
+  embla-carousel-svelte@8.1.8(svelte@4.2.18):
     dependencies:
-      embla-carousel: 8.1.7
-      embla-carousel-reactive-utils: 8.1.7(embla-carousel@8.1.7)
+      embla-carousel: 8.1.8
+      embla-carousel-reactive-utils: 8.1.8(embla-carousel@8.1.8)
       svelte: 4.2.18
-
-  embla-carousel@8.1.7: {}
 
   embla-carousel@8.1.8: {}
 
