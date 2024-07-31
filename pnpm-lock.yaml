@@ -70,8 +70,8 @@ importers:
         specifier: 7.18.0
         version: 7.18.0(eslint@8.57.0)(typescript@5.5.4)
       embla-carousel:
-        specifier: 8.1.7
-        version: 8.1.7
+        specifier: 8.1.8
+        version: 8.1.8
       embla-carousel-svelte:
         specifier: 8.1.7
         version: 8.1.7(svelte@4.2.18)
@@ -1305,6 +1305,9 @@ packages:
 
   embla-carousel@8.1.7:
     resolution: {integrity: sha512-b3kBr2H+S1gx4neki0P+aqN6cA5Ibjqy4CR3Ufi3X+Q3JpoNXJgOmJMSPkoP9DKcDREwADN6UWZzRwF2oo0y9Q==}
+
+  embla-carousel@8.1.8:
+    resolution: {integrity: sha512-KuHPA8qcAts6YE6ELtt38XYAb26hnKw8Ga0lSXmrhm1oI97t6oACFkqSsy33dfeZQEhaZB6VwWvaWQJRJVgSgA==}
 
   emmet@2.4.7:
     resolution: {integrity: sha512-O5O5QNqtdlnQM2bmKHtJgyChcrFMgQuulI+WdiOw2NArzprUqqxUW6bgYtKvzKgrsYpuLWalOkdhNP+1jluhCA==}
@@ -4325,6 +4328,8 @@ snapshots:
       svelte: 4.2.18
 
   embla-carousel@8.1.7: {}
+
+  embla-carousel@8.1.8: {}
 
   emmet@2.4.7:
     dependencies:
