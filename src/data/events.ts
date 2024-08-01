@@ -34,6 +34,7 @@ export interface EventPage {
   team: { name: string; job: string; bio: string; image: ImageWithAlt }[];
   registrationLink: string;
   timetable?: ImageWithAlt;
+  sponsorLogo?: ImageWithAlt;
 }
 
 export type ImageWithAlt = {
@@ -98,6 +99,7 @@ export async function getAllEvents(): Promise<EventPage[]> {
     ),
     heroImage: await getEventImage(event.heroImage?.value),
     timetable: await getEventImage(event.timetable?.value),
+    sponsorLogo: await getEventImage(event.sponsorLogo?.value),
   })) as Promise<EventPage>[];
   const result = await Promise.all(promises);
   return result;
