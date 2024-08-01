@@ -17,7 +17,7 @@ export interface EventCalendarEntry {
   date: Date;
   description: string;
   link?: string;
-  image: ImageWithAlt;
+  image: { src: GetImageResult; alt: string };
 }
 
 export interface EventPage {
@@ -116,7 +116,7 @@ export async function getNext3Events(): Promise<
         description: 'This event covers the test case for past events',
         link: '/events/bauwoche-2024',
         image: {
-          src: thirdEventImage,
+          src: await getImage({ src: thirdEventImage }),
           alt: '',
         },
       },
@@ -126,7 +126,7 @@ export async function getNext3Events(): Promise<
         description: 'This event will always (until the year 2999) be in the future.',
         link: '/events/bauwoche-2024',
         image: {
-          src: calendarCoverImage,
+          src: await getImage({ src: calendarCoverImage }),
           alt: '',
         },
       },
@@ -135,7 +135,7 @@ export async function getNext3Events(): Promise<
         date: new Date(3024, 0, 28),
         description: 'This is test data. Test 1 2 3. Test test.',
         image: {
-          src: pastEvent,
+          src: await getImage({ src: pastEvent }),
           alt: '',
         },
       },
@@ -179,7 +179,10 @@ export async function getNext3Events(): Promise<
     date: new Date(event.start),
     description: event.shortDescription,
     link: event.slug ? `/events/${event.slug}` : null,
-    image: await getEventImage(event.calendarCover.value),
+    image: await getEventImage(event.calendarCover.value).then(async (r) => ({
+      src: await getImage(r!),
+      alt: r!.alt,
+    })),
   })) as [Promise<EventCalendarEntry>, Promise<EventCalendarEntry>, Promise<EventCalendarEntry>];
   const result = await Promise.all(promises);
   return result;
