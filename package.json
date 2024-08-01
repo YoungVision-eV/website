@@ -49,7 +49,7 @@
     "eslint-plugin-astro": "1.2.3",
     "eslint-plugin-svelte": "2.43.0",
     "git-format-staged": "3.1.1",
-    "globals": "15.8.0",
+    "globals": "15.9.0",
     "husky": "9.1.4",
     "prettier": "3.3.3",
     "prettier-plugin-astro": "0.14.1",
