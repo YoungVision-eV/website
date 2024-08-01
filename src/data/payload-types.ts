@@ -22,6 +22,7 @@ export interface Config {
  */
 export interface User {
   id: string;
+  admin?: boolean | null;
   updatedAt: string;
   createdAt: string;
   email: string;
@@ -93,8 +94,13 @@ export interface Event {
     relationTo: 'media';
     value: string | Media;
   } | null;
+  sponsorLogo?: {
+    relationTo: 'media';
+    value: string | Media;
+  } | null;
   updatedAt: string;
   createdAt: string;
+  _status?: ('draft' | 'published') | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -112,6 +118,8 @@ export interface Media {
   filesize?: number | null;
   width?: number | null;
   height?: number | null;
+  focalX?: number | null;
+  focalY?: number | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
