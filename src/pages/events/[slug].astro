@@ -212,11 +212,7 @@ const locationPictures = [
         event.sponsorLogo && (
           <div class="py-12">
             <h2 class="font-serif text-2xl font-bold lg:text-4xl">Förderung</h2>
-            <Image
-              src={event.sponsorLogo.src}
-              alt={event.sponsorLogo.alt}
-              class="mt-3 w-full max-w-md"
-            />
+            <Image {...event.sponsorLogo} class="mt-3 w-full max-w-md" />
           </div>
         )
       }

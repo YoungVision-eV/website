@@ -27,17 +27,17 @@ export interface EventPage {
   slug: string;
   contentTitle: string;
   content_html: string;
-  heroImage: ImageWithAlt;
+  heroImage: RemoteImage;
   address: EventCMS['address'];
   audience: string;
   cost: string;
-  team: { name: string; job: string; bio: string; image: ImageWithAlt }[];
+  team: { name: string; job: string; bio: string; image: RemoteImage }[];
   registrationLink: string;
-  timetable?: ImageWithAlt;
-  sponsorLogo?: ImageWithAlt;
+  timetable?: RemoteImage;
+  sponsorLogo?: RemoteImage;
 }
 
-export type ImageWithAlt = {
+type RemoteImage = {
   src: string;
   width: number;
   height: number;
@@ -171,9 +171,11 @@ export async function getNext3Events(): Promise<
     );
     const pastEventsData = await pastEventsResponse.json();
     const pastEvents = pastEventsData.docs as EventCMS[];
+    // Reverse the past events so they appear in the correct order
+    // after we've sorted them in the wrong order to get the most recent ones
     events = pastEvents.reverse().concat(events);
   }
-  const promises = events.map(async (event) => ({
+  const optimizedEvents = events.map(async (event) => ({
     title: event.title,
     date: new Date(event.start),
     description: event.shortDescription,
@@ -183,13 +185,12 @@ export async function getNext3Events(): Promise<
       alt: r!.alt,
     })),
   })) as [Promise<EventCalendarEntry>, Promise<EventCalendarEntry>, Promise<EventCalendarEntry>];
-  const result = await Promise.all(promises);
-  return result;
+  return Promise.all(optimizedEvents);
 }
 
 export async function getEventImage(
   image: string | Media | undefined,
-): Promise<ImageWithAlt | null> {
+): Promise<RemoteImage | null> {
   if (!image) {
     return null;
   } else if (typeof image === 'string') {
