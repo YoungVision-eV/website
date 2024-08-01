@@ -54,8 +54,7 @@ const locationPictures = [
 <Layout title={event.title}>
   <Image
     class="h-[27rem] w-full object-cover"
-    src={event.heroImage.src}
-    alt={event.heroImage.alt}
+    {...event.heroImage}
     sizes="100vw"
     widths={[360, 540, 720, 960, 1200, 1920]}
   />
@@ -151,9 +150,8 @@ const locationPictures = [
       event.timetable && (
         <div class="mx-auto mt-6 max-w-[80rem] pt-12 lg:mt-14 lg:text-xl">
           <Image
-            src={event.timetable.src}
+            {...event.timetable}
             class="w-full object-cover"
-            alt={event.timetable.alt}
             sizes="100vw"
             widths={[360, 540, 720, 960, 1200, 1920]}
           />
@@ -169,8 +167,7 @@ const locationPictures = [
               {event.team?.map(async (member) => (
                 <div class="row-span-3 mt-8 lg:mt-16">
                   <Image
-                    src={member.image.src}
-                    alt={member.image.alt}
+                    {...member.image}
                     class="aspect-square rounded-lg object-cover object-center"
                     sizes="(max-width: 1024px) 100vw, 40rem"
                     widths={[360, 440, 540, 720, 1024]}
