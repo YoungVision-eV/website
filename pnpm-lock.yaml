@@ -13,16 +13,16 @@ importers:
         version: 0.9.1(prettier-plugin-astro@0.14.1)(prettier@3.3.3)(typescript@5.5.4)
       '@astrojs/svelte':
         specifier: 5.7.0
-        version: 5.7.0(astro@4.13.0(@types/node@20.14.13)(typescript@5.5.4))(svelte@4.2.18)(typescript@5.5.4)(vite@5.3.5(@types/node@20.14.13))
+        version: 5.7.0(astro@4.13.0(@types/node@20.14.14)(typescript@5.5.4))(svelte@4.2.18)(typescript@5.5.4)(vite@5.3.5(@types/node@20.14.14))
       '@astrojs/tailwind':
         specifier: 5.1.0
-        version: 5.1.0(astro@4.13.0(@types/node@20.14.13)(typescript@5.5.4))(tailwindcss@3.4.7)
+        version: 5.1.0(astro@4.13.0(@types/node@20.14.14)(typescript@5.5.4))(tailwindcss@3.4.7)
       '@melt-ui/svelte':
         specifier: 0.83.0
         version: 0.83.0(svelte@4.2.18)
       astro:
         specifier: 4.13.0
-        version: 4.13.0(@types/node@20.14.13)(typescript@5.5.4)
+        version: 4.13.0(@types/node@20.14.14)(typescript@5.5.4)
       clsx:
         specifier: 2.1.1
         version: 2.1.1
@@ -58,8 +58,8 @@ importers:
         specifier: ^0.5.13
         version: 0.5.13(tailwindcss@3.4.7)
       '@types/node':
-        specifier: 20.14.13
-        version: 20.14.13
+        specifier: 20.14.14
+        version: 20.14.14
       '@types/qs':
         specifier: ^6.9.15
         version: 6.9.15
@@ -814,8 +814,8 @@ packages:
   '@types/nlcst@2.0.3':
     resolution: {integrity: sha512-vSYNSDe6Ix3q+6Z7ri9lyWqgGhJTmzRjZRqyq15N0Z/1/UnVsno9G/N40NBijoYx2seFDIl0+B2mgAb9mezUCA==}
 
-  '@types/node@20.14.13':
-    resolution: {integrity: sha512-+bHoGiZb8UiQ0+WEtmph2IWQCjIqg8MDZMAV+ppRRhUZnquF5mQkP/9vpSwJClEiSM/C7fZZExPzfU0vJTyp8w==}
+  '@types/node@20.14.14':
+    resolution: {integrity: sha512-d64f00982fS9YoOgJkAMolK7MN8Iq3TDdVjchbYHdEmjth/DHowx82GnoA+tVUAN+7vxfYUgAzi+JXbKNd2SDQ==}
 
   '@types/qs@6.9.15':
     resolution: {integrity: sha512-uXHQKES6DQKKCLh441Xv/dwxOq1TVS3JPUMlEqoEglvlhR6Mxnlew/Xq/LRVHpLyk7iK3zODe1qYHIMltO7XGg==}
@@ -3107,10 +3107,10 @@ snapshots:
     dependencies:
       prismjs: 1.29.0
 
-  '@astrojs/svelte@5.7.0(astro@4.13.0(@types/node@20.14.13)(typescript@5.5.4))(svelte@4.2.18)(typescript@5.5.4)(vite@5.3.5(@types/node@20.14.13))':
+  '@astrojs/svelte@5.7.0(astro@4.13.0(@types/node@20.14.14)(typescript@5.5.4))(svelte@4.2.18)(typescript@5.5.4)(vite@5.3.5(@types/node@20.14.14))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 3.1.1(svelte@4.2.18)(vite@5.3.5(@types/node@20.14.13))
-      astro: 4.13.0(@types/node@20.14.13)(typescript@5.5.4)
+      '@sveltejs/vite-plugin-svelte': 3.1.1(svelte@4.2.18)(vite@5.3.5(@types/node@20.14.14))
+      astro: 4.13.0(@types/node@20.14.14)(typescript@5.5.4)
       svelte: 4.2.18
       svelte2tsx: 0.7.13(svelte@4.2.18)(typescript@5.5.4)
       typescript: 5.5.4
@@ -3118,9 +3118,9 @@ snapshots:
       - supports-color
       - vite
 
-  '@astrojs/tailwind@5.1.0(astro@4.13.0(@types/node@20.14.13)(typescript@5.5.4))(tailwindcss@3.4.7)':
+  '@astrojs/tailwind@5.1.0(astro@4.13.0(@types/node@20.14.14)(typescript@5.5.4))(tailwindcss@3.4.7)':
     dependencies:
-      astro: 4.13.0(@types/node@20.14.13)(typescript@5.5.4)
+      astro: 4.13.0(@types/node@20.14.14)(typescript@5.5.4)
       autoprefixer: 10.4.19(postcss@8.4.38)
       postcss: 8.4.38
       postcss-load-config: 4.0.2(postcss@8.4.38)
@@ -3634,26 +3634,26 @@ snapshots:
     dependencies:
       '@types/hast': 3.0.4
 
-  '@sveltejs/vite-plugin-svelte-inspector@2.1.0(@sveltejs/vite-plugin-svelte@3.1.1(svelte@4.2.18)(vite@5.3.5(@types/node@20.14.13)))(svelte@4.2.18)(vite@5.3.5(@types/node@20.14.13))':
+  '@sveltejs/vite-plugin-svelte-inspector@2.1.0(@sveltejs/vite-plugin-svelte@3.1.1(svelte@4.2.18)(vite@5.3.5(@types/node@20.14.14)))(svelte@4.2.18)(vite@5.3.5(@types/node@20.14.14))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 3.1.1(svelte@4.2.18)(vite@5.3.5(@types/node@20.14.13))
+      '@sveltejs/vite-plugin-svelte': 3.1.1(svelte@4.2.18)(vite@5.3.5(@types/node@20.14.14))
       debug: 4.3.5
       svelte: 4.2.18
-      vite: 5.3.5(@types/node@20.14.13)
+      vite: 5.3.5(@types/node@20.14.14)
     transitivePeerDependencies:
       - supports-color
 
-  '@sveltejs/vite-plugin-svelte@3.1.1(svelte@4.2.18)(vite@5.3.5(@types/node@20.14.13))':
+  '@sveltejs/vite-plugin-svelte@3.1.1(svelte@4.2.18)(vite@5.3.5(@types/node@20.14.14))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte-inspector': 2.1.0(@sveltejs/vite-plugin-svelte@3.1.1(svelte@4.2.18)(vite@5.3.5(@types/node@20.14.13)))(svelte@4.2.18)(vite@5.3.5(@types/node@20.14.13))
+      '@sveltejs/vite-plugin-svelte-inspector': 2.1.0(@sveltejs/vite-plugin-svelte@3.1.1(svelte@4.2.18)(vite@5.3.5(@types/node@20.14.14)))(svelte@4.2.18)(vite@5.3.5(@types/node@20.14.14))
       debug: 4.3.5
       deepmerge: 4.3.1
       kleur: 4.1.5
       magic-string: 0.30.10
       svelte: 4.2.18
       svelte-hmr: 0.16.0(svelte@4.2.18)
-      vite: 5.3.5(@types/node@20.14.13)
-      vitefu: 0.2.5(vite@5.3.5(@types/node@20.14.13))
+      vite: 5.3.5(@types/node@20.14.14)
+      vitefu: 0.2.5(vite@5.3.5(@types/node@20.14.14))
     transitivePeerDependencies:
       - supports-color
 
@@ -3714,7 +3714,7 @@ snapshots:
     dependencies:
       '@types/unist': 3.0.2
 
-  '@types/node@20.14.13':
+  '@types/node@20.14.14':
     dependencies:
       undici-types: 5.26.5
 
@@ -3965,7 +3965,7 @@ snapshots:
       - supports-color
       - typescript
 
-  astro@4.13.0(@types/node@20.14.13)(typescript@5.5.4):
+  astro@4.13.0(@types/node@20.14.14)(typescript@5.5.4):
     dependencies:
       '@astrojs/compiler': 2.10.1
       '@astrojs/internal-helpers': 0.4.1
@@ -4023,8 +4023,8 @@ snapshots:
       tsconfck: 3.1.1(typescript@5.5.4)
       unist-util-visit: 5.0.0
       vfile: 6.0.2
-      vite: 5.3.5(@types/node@20.14.13)
-      vitefu: 0.2.5(vite@5.3.5(@types/node@20.14.13))
+      vite: 5.3.5(@types/node@20.14.14)
+      vitefu: 0.2.5(vite@5.3.5(@types/node@20.14.14))
       which-pm: 3.0.0
       yargs-parser: 21.1.1
       zod: 3.23.8
@@ -6112,18 +6112,18 @@ snapshots:
       unist-util-stringify-position: 4.0.0
       vfile-message: 4.0.2
 
-  vite@5.3.5(@types/node@20.14.13):
+  vite@5.3.5(@types/node@20.14.14):
     dependencies:
       esbuild: 0.21.5
       postcss: 8.4.39
       rollup: 4.17.2
     optionalDependencies:
-      '@types/node': 20.14.13
+      '@types/node': 20.14.14
       fsevents: 2.3.3
 
-  vitefu@0.2.5(vite@5.3.5(@types/node@20.14.13)):
+  vitefu@0.2.5(vite@5.3.5(@types/node@20.14.14)):
     optionalDependencies:
-      vite: 5.3.5(@types/node@20.14.13)
+      vite: 5.3.5(@types/node@20.14.14)
 
   volar-service-css@0.0.59(@volar/language-service@2.4.0-alpha.15):
     dependencies:
