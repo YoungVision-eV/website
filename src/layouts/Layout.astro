@@ -7,9 +7,10 @@ import NewsletterDialog from './NewsletterDialog.svelte';
 
 export interface Props {
   title: string;
+  description: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
@@ -29,6 +30,8 @@ const { title } = Astro.props;
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
     <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
   </head>
 
   <body class="bg-background">
