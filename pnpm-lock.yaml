@@ -13,16 +13,16 @@ importers:
         version: 0.9.3(prettier-plugin-astro@0.14.1)(prettier@3.3.3)(typescript@5.5.4)
       '@astrojs/svelte':
         specifier: 5.7.0
-        version: 5.7.0(astro@4.15.0(@types/node@20.16.2)(rollup@4.21.0)(typescript@5.5.4))(svelte@4.2.19)(typescript@5.5.4)(vite@5.4.2(@types/node@20.16.2))
+        version: 5.7.0(astro@4.15.1(@types/node@20.16.2)(rollup@4.21.0)(typescript@5.5.4))(svelte@4.2.19)(typescript@5.5.4)(vite@5.4.2(@types/node@20.16.2))
       '@astrojs/tailwind':
         specifier: 5.1.0
-        version: 5.1.0(astro@4.15.0(@types/node@20.16.2)(rollup@4.21.0)(typescript@5.5.4))(tailwindcss@3.4.10)
+        version: 5.1.0(astro@4.15.1(@types/node@20.16.2)(rollup@4.21.0)(typescript@5.5.4))(tailwindcss@3.4.10)
       '@melt-ui/svelte':
         specifier: 0.83.0
         version: 0.83.0(svelte@4.2.19)
       astro:
-        specifier: 4.15.0
-        version: 4.15.0(@types/node@20.16.2)(rollup@4.21.0)(typescript@5.5.4)
+        specifier: 4.15.1
+        version: 4.15.1(@types/node@20.16.2)(rollup@4.21.0)(typescript@5.5.4)
       clsx:
         specifier: 2.1.1
         version: 2.1.1
@@ -1012,8 +1012,8 @@ packages:
     resolution: {integrity: sha512-8hJaCuqxObShWl2wEsnASqh/DbQ2O+S66m0Q3ctJlzBPEQ4pfGwwama3FCjZO3GDLQsjvn1T0v93Vxyu/+5fGw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  astro@4.15.0:
-    resolution: {integrity: sha512-bL2ol1+j1Xf/7Q8DQSWP1BfkBd6RkkgVsmp9TCzYklqPSeInpAYGGsAgi+SY7Sf40Vk9o+ku6Zl1zav4MLN4uA==}
+  astro@4.15.1:
+    resolution: {integrity: sha512-XvKZ2GaDbCsMfcJess4o+4D4cCKja45GJ/9o6EJ6n96xaen8HZMRoJn3YKL9TOjIrL2NuU4mBFMG2JivPJ0foA==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -3177,10 +3177,10 @@ snapshots:
     dependencies:
       prismjs: 1.29.0
 
-  '@astrojs/svelte@5.7.0(astro@4.15.0(@types/node@20.16.2)(rollup@4.21.0)(typescript@5.5.4))(svelte@4.2.19)(typescript@5.5.4)(vite@5.4.2(@types/node@20.16.2))':
+  '@astrojs/svelte@5.7.0(astro@4.15.1(@types/node@20.16.2)(rollup@4.21.0)(typescript@5.5.4))(svelte@4.2.19)(typescript@5.5.4)(vite@5.4.2(@types/node@20.16.2))':
     dependencies:
       '@sveltejs/vite-plugin-svelte': 3.1.1(svelte@4.2.19)(vite@5.4.2(@types/node@20.16.2))
-      astro: 4.15.0(@types/node@20.16.2)(rollup@4.21.0)(typescript@5.5.4)
+      astro: 4.15.1(@types/node@20.16.2)(rollup@4.21.0)(typescript@5.5.4)
       svelte: 4.2.19
       svelte2tsx: 0.7.13(svelte@4.2.19)(typescript@5.5.4)
       typescript: 5.5.4
@@ -3188,9 +3188,9 @@ snapshots:
       - supports-color
       - vite
 
-  '@astrojs/tailwind@5.1.0(astro@4.15.0(@types/node@20.16.2)(rollup@4.21.0)(typescript@5.5.4))(tailwindcss@3.4.10)':
+  '@astrojs/tailwind@5.1.0(astro@4.15.1(@types/node@20.16.2)(rollup@4.21.0)(typescript@5.5.4))(tailwindcss@3.4.10)':
     dependencies:
-      astro: 4.15.0(@types/node@20.16.2)(rollup@4.21.0)(typescript@5.5.4)
+      astro: 4.15.1(@types/node@20.16.2)(rollup@4.21.0)(typescript@5.5.4)
       autoprefixer: 10.4.19(postcss@8.4.38)
       postcss: 8.4.38
       postcss-load-config: 4.0.2(postcss@8.4.38)
@@ -4048,7 +4048,7 @@ snapshots:
       - supports-color
       - typescript
 
-  astro@4.15.0(@types/node@20.16.2)(rollup@4.21.0)(typescript@5.5.4):
+  astro@4.15.1(@types/node@20.16.2)(rollup@4.21.0)(typescript@5.5.4):
     dependencies:
       '@astrojs/compiler': 2.10.3
       '@astrojs/internal-helpers': 0.4.1
@@ -4080,6 +4080,7 @@ snapshots:
       esbuild: 0.21.5
       estree-walker: 3.0.3
       fast-glob: 3.3.2
+      fastq: 1.17.1
       flattie: 1.1.1
       github-slugger: 2.0.0
       gray-matter: 4.0.3
