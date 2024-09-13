@@ -13,16 +13,16 @@ importers:
         version: 0.9.3(prettier-plugin-astro@0.14.1)(prettier@3.3.3)(typescript@5.6.2)
       '@astrojs/svelte':
         specifier: 5.7.0
-        version: 5.7.0(astro@4.15.5(@types/node@20.16.5)(rollup@4.21.0)(typescript@5.6.2))(svelte@4.2.19)(typescript@5.6.2)(vite@5.4.5(@types/node@20.16.5))
+        version: 5.7.0(astro@4.15.6(@types/node@20.16.5)(rollup@4.21.0)(typescript@5.6.2))(svelte@4.2.19)(typescript@5.6.2)(vite@5.4.5(@types/node@20.16.5))
       '@astrojs/tailwind':
         specifier: 5.1.0
-        version: 5.1.0(astro@4.15.5(@types/node@20.16.5)(rollup@4.21.0)(typescript@5.6.2))(tailwindcss@3.4.11)
+        version: 5.1.0(astro@4.15.6(@types/node@20.16.5)(rollup@4.21.0)(typescript@5.6.2))(tailwindcss@3.4.11)
       '@melt-ui/svelte':
         specifier: 0.83.0
         version: 0.83.0(svelte@4.2.19)
       astro:
-        specifier: 4.15.5
-        version: 4.15.5(@types/node@20.16.5)(rollup@4.21.0)(typescript@5.6.2)
+        specifier: 4.15.6
+        version: 4.15.6(@types/node@20.16.5)(rollup@4.21.0)(typescript@5.6.2)
       clsx:
         specifier: 2.1.1
         version: 2.1.1
@@ -1003,8 +1003,8 @@ packages:
     resolution: {integrity: sha512-8hJaCuqxObShWl2wEsnASqh/DbQ2O+S66m0Q3ctJlzBPEQ4pfGwwama3FCjZO3GDLQsjvn1T0v93Vxyu/+5fGw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  astro@4.15.5:
-    resolution: {integrity: sha512-zcHXpRav0dtYpddxoGMDN7A7SKrGL9wsu5IxLjqCcZhylfZ/5mfLfoGYnSg7aFwuAleUXP66lyfY+GDbFTbF2w==}
+  astro@4.15.6:
+    resolution: {integrity: sha512-SWcUNwm8CiVRaIbh4w5byh62BNihpsovlCd4ElvC7cL/53D24HcI7AaGFsPrromCamQklwQmIan/QS7x/3lLuQ==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -1630,9 +1630,6 @@ packages:
   hast-util-raw@9.0.3:
     resolution: {integrity: sha512-ICWvVOF2fq4+7CMmtCPD5CM4QKjPbHpPotE6+8tDooV0ZuyJVUzHsrNX+O5NaRbieTf0F7FfeBOMAwi6Td0+yQ==}
 
-  hast-util-to-html@9.0.1:
-    resolution: {integrity: sha512-hZOofyZANbyWo+9RP75xIDV/gq+OUKx+T46IlwERnKmfpwp81XBFbT9mi26ws+SJchA4RVUQwIBJpqEOBhMzEQ==}
-
   hast-util-to-html@9.0.2:
     resolution: {integrity: sha512-RP5wNpj5nm1Z8cloDv4Sl4RS8jH5HYa0v93YB6Wb4poEzgMo/dAAL0KcT4974dCjcNG5pkLqTImeFHHCwwfY3g==}
 
@@ -2194,6 +2191,9 @@ packages:
   path-scurry@1.11.1:
     resolution: {integrity: sha512-Xa4Nw17FS9ApQFJ9umLiJS4orGjm7ZzwUrwamcGQuHSzDyth9boKDaycYdDcZDuqYATXw4HFXgaqWTctW/v1HA==}
     engines: {node: '>=16 || 14 >=14.18'}
+
+  path-to-regexp@6.2.2:
+    resolution: {integrity: sha512-GQX3SSMokngb36+whdpRXE+3f9V8UzyAorlYvOGx87ufGHehNTn5lCxrKtLyZ4Yl/wEKnNnr98ZzOwwDZV5ogw==}
 
   path-type@4.0.0:
     resolution: {integrity: sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==}
@@ -3177,10 +3177,10 @@ snapshots:
     dependencies:
       prismjs: 1.29.0
 
-  '@astrojs/svelte@5.7.0(astro@4.15.5(@types/node@20.16.5)(rollup@4.21.0)(typescript@5.6.2))(svelte@4.2.19)(typescript@5.6.2)(vite@5.4.5(@types/node@20.16.5))':
+  '@astrojs/svelte@5.7.0(astro@4.15.6(@types/node@20.16.5)(rollup@4.21.0)(typescript@5.6.2))(svelte@4.2.19)(typescript@5.6.2)(vite@5.4.5(@types/node@20.16.5))':
     dependencies:
       '@sveltejs/vite-plugin-svelte': 3.1.1(svelte@4.2.19)(vite@5.4.5(@types/node@20.16.5))
-      astro: 4.15.5(@types/node@20.16.5)(rollup@4.21.0)(typescript@5.6.2)
+      astro: 4.15.6(@types/node@20.16.5)(rollup@4.21.0)(typescript@5.6.2)
       svelte: 4.2.19
       svelte2tsx: 0.7.13(svelte@4.2.19)(typescript@5.6.2)
       typescript: 5.6.2
@@ -3188,9 +3188,9 @@ snapshots:
       - supports-color
       - vite
 
-  '@astrojs/tailwind@5.1.0(astro@4.15.5(@types/node@20.16.5)(rollup@4.21.0)(typescript@5.6.2))(tailwindcss@3.4.11)':
+  '@astrojs/tailwind@5.1.0(astro@4.15.6(@types/node@20.16.5)(rollup@4.21.0)(typescript@5.6.2))(tailwindcss@3.4.11)':
     dependencies:
-      astro: 4.15.5(@types/node@20.16.5)(rollup@4.21.0)(typescript@5.6.2)
+      astro: 4.15.6(@types/node@20.16.5)(rollup@4.21.0)(typescript@5.6.2)
       autoprefixer: 10.4.19(postcss@8.4.38)
       postcss: 8.4.38
       postcss-load-config: 4.0.2(postcss@8.4.38)
@@ -3743,7 +3743,7 @@ snapshots:
   '@sveltejs/vite-plugin-svelte-inspector@2.1.0(@sveltejs/vite-plugin-svelte@3.1.1(svelte@4.2.19)(vite@5.4.5(@types/node@20.16.5)))(svelte@4.2.19)(vite@5.4.5(@types/node@20.16.5))':
     dependencies:
       '@sveltejs/vite-plugin-svelte': 3.1.1(svelte@4.2.19)(vite@5.4.5(@types/node@20.16.5))
-      debug: 4.3.6
+      debug: 4.3.7
       svelte: 4.2.19
       vite: 5.4.5(@types/node@20.16.5)
     transitivePeerDependencies:
@@ -3882,7 +3882,7 @@ snapshots:
     dependencies:
       '@typescript-eslint/types': 7.18.0
       '@typescript-eslint/visitor-keys': 7.18.0
-      debug: 4.3.6
+      debug: 4.3.7
       globby: 11.1.0
       is-glob: 4.0.3
       minimatch: 9.0.4
@@ -4043,7 +4043,7 @@ snapshots:
       - supports-color
       - typescript
 
-  astro@4.15.5(@types/node@20.16.5)(rollup@4.21.0)(typescript@5.6.2):
+  astro@4.15.6(@types/node@20.16.5)(rollup@4.21.0)(typescript@5.6.2):
     dependencies:
       '@astrojs/compiler': 2.10.3
       '@astrojs/internal-helpers': 0.4.1
@@ -4091,6 +4091,7 @@ snapshots:
       ora: 8.1.0
       p-limit: 6.1.0
       p-queue: 8.0.1
+      path-to-regexp: 6.2.2
       preferred-pm: 4.0.0
       prompts: 2.4.2
       rehype: 13.0.1
@@ -4794,21 +4795,6 @@ snapshots:
       unist-util-visit: 5.0.0
       vfile: 6.0.3
       web-namespaces: 2.0.1
-      zwitch: 2.0.4
-
-  hast-util-to-html@9.0.1:
-    dependencies:
-      '@types/hast': 3.0.4
-      '@types/unist': 3.0.2
-      ccount: 2.0.1
-      comma-separated-tokens: 2.0.3
-      hast-util-raw: 9.0.3
-      hast-util-whitespace: 3.0.0
-      html-void-elements: 3.0.0
-      mdast-util-to-hast: 13.1.0
-      property-information: 6.5.0
-      space-separated-tokens: 2.0.2
-      stringify-entities: 4.0.4
       zwitch: 2.0.4
 
   hast-util-to-html@9.0.2:
@@ -5524,6 +5510,8 @@ snapshots:
       lru-cache: 10.2.2
       minipass: 7.1.1
 
+  path-to-regexp@6.2.2: {}
+
   path-type@4.0.0: {}
 
   periscopic@3.1.0:
@@ -5718,7 +5706,7 @@ snapshots:
   rehype-stringify@10.0.0:
     dependencies:
       '@types/hast': 3.0.4
-      hast-util-to-html: 9.0.1
+      hast-util-to-html: 9.0.2
       unified: 11.0.5
 
   rehype@13.0.1:
