@@ -46,7 +46,7 @@
     "embla-carousel-svelte": "8.2.1",
     "eslint": "8.57.0",
     "eslint-config-prettier": "9.1.0",
-    "eslint-plugin-astro": "1.2.3",
+    "eslint-plugin-astro": "1.2.4",
     "eslint-plugin-svelte": "2.43.0",
     "git-format-staged": "3.1.1",
     "globals": "15.9.0",
