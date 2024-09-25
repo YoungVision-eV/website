@@ -38,7 +38,7 @@
     "@playwright/test": "1.47.2",
     "@rgossiaux/svelte-headlessui": "2.0.0",
     "@tailwindcss/typography": "^0.5.13",
-    "@types/node": "20.16.8",
+    "@types/node": "20.16.9",
     "@types/qs": "^6.9.15",
     "@typescript-eslint/eslint-plugin": "7.18.0",
     "@typescript-eslint/parser": "7.18.0",
