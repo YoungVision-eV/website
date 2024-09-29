@@ -121,8 +121,8 @@ importers:
         specifier: 0.4.1
         version: 0.4.1(svelte@4.2.19)
       svelte-sequential-preprocessor:
-        specifier: 2.0.1
-        version: 2.0.1
+        specifier: 2.0.2
+        version: 2.0.2
 
 packages:
 
@@ -2647,8 +2647,8 @@ packages:
     peerDependencies:
       svelte: ^4.0.0
 
-  svelte-sequential-preprocessor@2.0.1:
-    resolution: {integrity: sha512-N5JqlBni6BzElxmuFrOPxOJnjsxh1cFDACLEVKs8OHBcx8ZNRO1p5SxuQex1m3qbLzAC8G99EHeWcxGkjyKjLQ==}
+  svelte-sequential-preprocessor@2.0.2:
+    resolution: {integrity: sha512-DIFm0kSNscVxtBmKkBiygAHB5otoqN1aVmJ3t57jZhJfCB7Np/lUSoTtSrvPFjmlBbMeOsb1VQ06cut1+rBYOg==}
     engines: {node: '>=16'}
 
   svelte2tsx@0.7.19:
@@ -2721,6 +2721,9 @@ packages:
 
   tslib@2.6.2:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
+
+  tslib@2.7.0:
+    resolution: {integrity: sha512-gLXCKdN1/j47AiHiOkJN69hJmcbGTHI0ImLmbYLHykhgeN0jVGola9yVjFgzCUklsZQMW55o+dW7IXv3RCXDzA==}
 
   type-check@0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
@@ -5933,10 +5936,10 @@ snapshots:
       marked: 5.1.2
       svelte: 4.2.19
 
-  svelte-sequential-preprocessor@2.0.1:
+  svelte-sequential-preprocessor@2.0.2:
     dependencies:
       svelte: 4.2.19
-      tslib: 2.6.2
+      tslib: 2.7.0
 
   svelte2tsx@0.7.19(svelte@4.2.19)(typescript@5.6.2):
     dependencies:
@@ -6029,6 +6032,8 @@ snapshots:
       typescript: 5.6.2
 
   tslib@2.6.2: {}
+
+  tslib@2.7.0: {}
 
   type-check@0.4.0:
     dependencies:
