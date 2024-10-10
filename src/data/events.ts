@@ -158,7 +158,7 @@ export async function getNext3Events(): Promise<
   if (events.length < 3) {
     // If there are less than 3 events in the future, we want to fill the remaining slots with past events
     const request2 = {
-      sort: '-date',
+      sort: '-start',
       where: {
         start: {
           less_than: today.toISOString(),
