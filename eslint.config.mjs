@@ -1,16 +1,15 @@
 import eslint from '@eslint/js';
-import typescriptEslint from '@typescript-eslint/eslint-plugin';
-import tsParser from '@typescript-eslint/parser';
-import astroParser from 'astro-eslint-parser';
 import eslintConfigPrettier from 'eslint-config-prettier';
 import eslintPluginAstro from 'eslint-plugin-astro';
-import globals from 'globals';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import eslintPluginSvelte from 'eslint-plugin-svelte';
 import tseslint from 'typescript-eslint';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+import parserAstro from 'astro-eslint-parser';
+import parserSvelte from 'svelte-eslint-parser';
+
+import globals from 'globals';
+
+import svelteConfig from './svelte.config.js';
 
 export default tseslint.config(
   {
@@ -32,19 +31,21 @@ export default tseslint.config(
   },
   eslint.configs.recommended,
   eslintConfigPrettier,
+  ...eslintPluginSvelte.configs['flat/recommended'],
   ...tseslint.configs.recommended,
   ...eslintPluginAstro.configs.recommended,
   {
     plugins: {
-      '@typescript-eslint': typescriptEslint,
+      '@typescript-eslint': tseslint.plugin,
     },
+
     languageOptions: {
       globals: {
         ...globals.browser,
         ...globals.node,
       },
 
-      parser: tsParser,
+      parser: tseslint.parser,
       ecmaVersion: 2020,
       sourceType: 'module',
     },
@@ -59,21 +60,23 @@ export default tseslint.config(
     },
   },
   {
-    files: ['tests/*.ts'],
+    files: ['tests/**/*.ts'],
 
     languageOptions: {
+      parser: tseslint.parser,
       ecmaVersion: 5,
       sourceType: 'script',
 
       parserOptions: {
         project: true,
-        tsconfigRootDir: __dirname,
+        tsconfigRootDir: import.meta.dirname,
       },
     },
 
     rules: {
       'require-await': 'off',
       '@typescript-eslint/require-await': 'error',
+      'svelte/no-inner-declarations': 'off', // FIXME: for some reason this rule is broken and causes eslint to crash
     },
   },
 
@@ -81,13 +84,26 @@ export default tseslint.config(
     files: ['**/*.astro'],
 
     languageOptions: {
-      parser: astroParser,
+      parser: parserAstro,
       ecmaVersion: 5,
       sourceType: 'script',
 
       parserOptions: {
-        parser: '@typescript-eslint/parser',
+        parser: tseslint.parser,
         extraFileExtensions: ['.astro'],
+      },
+    },
+  },
+
+  {
+    files: ['*.svelte', '**/*.svelte'],
+
+    languageOptions: {
+      parser: parserSvelte,
+      parserOptions: {
+        parser: tseslint.parser,
+        svelteConfig,
+        extraFileExtensions: ['.svelte'],
       },
     },
   },
