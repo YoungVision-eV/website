@@ -192,7 +192,7 @@ export async function getNext3Events(): Promise<
     description: event.shortDescription,
     link: event.slug ? `/events/${event.slug}` : null,
     image: await getEventImage(event.calendarCover.value).then(async (r) => ({
-      src: await getImage(r!),
+      src: await getImage({ ...r!, widths: [400, 620, 900, 1320, r!.width] }),
       alt: r!.alt,
     })),
   })) as [Promise<EventCalendarEntry>, Promise<EventCalendarEntry>, Promise<EventCalendarEntry>];
