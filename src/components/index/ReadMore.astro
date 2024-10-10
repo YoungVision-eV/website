@@ -17,6 +17,8 @@ const BackgroundUrl = await getImage({ src: Background });
         <Image
           class="h-[29rem] w-[27rem] rounded-2xl object-cover"
           src={ReadMoreImage}
+          widths={[432, 864, 1200, ReadMoreImage.width]}
+          sizes="27rem"
           alt="Menschen sitzen in einem Van und singen. Die Person in der Mitte spielt Ukulele."
         />
       </div>
