@@ -104,6 +104,17 @@ export async function getAllEvents(): Promise<EventPage[]> {
   return result;
 }
 
+type EventRequest = {
+  sort?: keyof EventCMS | `-${keyof EventCMS}`;
+  where: {
+    [key in keyof EventCMS]?: {
+      greater_than?: EventCMS[key];
+      less_than?: EventCMS[key];
+    };
+  };
+  limit?: number;
+};
+
 export async function getNext3Events(): Promise<
   [EventCalendarEntry, EventCalendarEntry, EventCalendarEntry]
 > {
@@ -142,7 +153,7 @@ export async function getNext3Events(): Promise<
   }
   const today = new Date();
   today.setHours(0, 0, 0, 0);
-  const request = {
+  const request: EventRequest = {
     sort: 'start',
     where: {
       start: {
@@ -157,7 +168,7 @@ export async function getNext3Events(): Promise<
   console.log('events', events);
   if (events.length < 3) {
     // If there are less than 3 events in the future, we want to fill the remaining slots with past events
-    const request2 = {
+    const request2: EventRequest = {
       sort: '-start',
       where: {
         start: {
