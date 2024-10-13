@@ -170,7 +170,7 @@ const locationPictures = [
                   <Image
                     {...member.image}
                     class="aspect-square rounded-lg object-cover object-center"
-                    sizes="(max-width: 1024px) 100vw, 40rem"
+                    sizes="(min-width: 1024px) 40rem, 100vw"
                     widths={[360, 440, 540, 720, 1024]}
                   />
                   <div class="mt-2 lg:mt-4">
@@ -196,7 +196,7 @@ const locationPictures = [
                 src={image.src}
                 alt={image.alt}
                 widths={[310, 400, 540, 720, 1024]}
-                sizes="(max-width: 1024px) 100vw, 310px"
+                sizes="(min-width: 1024px) 310px, 100vw"
                 class="aspect-square w-full object-cover"
               />
             ))

@@ -41,8 +41,10 @@
           <div class="embla__slide mr-5 min-w-0 items-center gap-x-28 lg:mr-32 lg:flex">
             <div class="flex-none">
               <img
+                src={testimonial.image.src.src}
                 srcset={testimonial.image.src.srcSet.attribute}
                 {...testimonial.image.src.attributes}
+                sizes="(min-width: 1024px) 24rem, 6rem"
                 alt={testimonial.name}
                 class="mx-auto h-24 w-24 rounded-full object-cover lg:mx-0 lg:h-96 lg:w-96"
               />
