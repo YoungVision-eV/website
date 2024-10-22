@@ -18,8 +18,8 @@ importers:
         specifier: 5.1.2
         version: 5.1.2(astro@4.16.7(@types/node@20.16.14)(rollup@4.21.0)(typescript@5.6.3))(tailwindcss@3.4.14)
       '@melt-ui/svelte':
-        specifier: 0.83.0
-        version: 0.83.0(svelte@4.2.19)
+        specifier: 0.84.0
+        version: 0.84.0(svelte@4.2.19)
       astro:
         specifier: 4.16.7
         version: 4.16.7(@types/node@20.16.14)(rollup@4.21.0)(typescript@5.6.3)
@@ -47,7 +47,7 @@ importers:
         version: 9.13.0
       '@melt-ui/pp':
         specifier: 0.3.2
-        version: 0.3.2(@melt-ui/svelte@0.83.0(svelte@4.2.19))(svelte@4.2.19)
+        version: 0.3.2(@melt-ui/svelte@0.84.0(svelte@4.2.19))(svelte@4.2.19)
       '@playwright/test':
         specifier: 1.48.1
         version: 1.48.1
@@ -629,8 +629,8 @@ packages:
       '@melt-ui/svelte': '>= 0.29.0'
       svelte: ^3.55.0 || ^4.0.0 || ^5.0.0-next.1
 
-  '@melt-ui/svelte@0.83.0':
-    resolution: {integrity: sha512-E7QT+8YSftz+Hdk1W0hNR3f+cnaF2COMWkStn+2u4vk0RO1I9mXRJl+bJD6uhYaH146oxEB+5elu/ABbv6rpsA==}
+  '@melt-ui/svelte@0.84.0':
+    resolution: {integrity: sha512-KZHu/I2MRmvRE5fIHSbGTZRlbfcu2uV6cit+1kTYKr4isuDy/T2+e4OngKYxNTvyB+zA5tp7BXUOMkoKrpqkCw==}
     peerDependencies:
       svelte: ^3.0.0 || ^4.0.0 || ^5.0.0-next.118
 
@@ -3593,14 +3593,14 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  '@melt-ui/pp@0.3.2(@melt-ui/svelte@0.83.0(svelte@4.2.19))(svelte@4.2.19)':
+  '@melt-ui/pp@0.3.2(@melt-ui/svelte@0.84.0(svelte@4.2.19))(svelte@4.2.19)':
     dependencies:
-      '@melt-ui/svelte': 0.83.0(svelte@4.2.19)
+      '@melt-ui/svelte': 0.84.0(svelte@4.2.19)
       estree-walker: 3.0.3
       magic-string: 0.30.10
       svelte: 4.2.19
 
-  '@melt-ui/svelte@0.83.0(svelte@4.2.19)':
+  '@melt-ui/svelte@0.84.0(svelte@4.2.19)':
     dependencies:
       '@floating-ui/core': 1.6.2
       '@floating-ui/dom': 1.6.5
@@ -3745,7 +3745,7 @@ snapshots:
 
   '@swc/helpers@0.5.11':
     dependencies:
-      tslib: 2.6.2
+      tslib: 2.7.0
 
   '@tailwindcss/typography@0.5.15(tailwindcss@3.4.14)':
     dependencies:
@@ -6058,7 +6058,8 @@ snapshots:
     optionalDependencies:
       typescript: 5.6.3
 
-  tslib@2.6.2: {}
+  tslib@2.6.2:
+    optional: true
 
   tslib@2.7.0: {}
 
