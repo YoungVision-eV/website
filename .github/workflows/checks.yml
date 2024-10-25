@@ -19,7 +19,7 @@ jobs:
           node-version: 18
           cache: 'pnpm'
       - name: 'Add custom eslint matcher' # see https://github.com/actions/setup-node/issues/403
-        run: echo "::add-matcher::.github/workflows/eslint-matcher.json"
+        run: echo "::add-matcher::.github/workflows/eslint-matcher.json" && echo "::add-matcher::.github/workflows/svelte-check-matcher.json"
       - name: Install Node Dependencies
         run: pnpm install
       - name: Run all lints
