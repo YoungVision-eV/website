@@ -228,9 +228,7 @@ export type YVEvent = {
   day: string;
   month: string;
   short_description: string;
-  image: {
-    src: GetImageResult;
-  };
+  image: GetImageResult & { alt: string };
   for_all: boolean;
   future?: string;
 };
@@ -238,6 +236,10 @@ export type YVEvent = {
 export async function getEventBySlug(slug: string): Promise<YVEvent | undefined> {
   const allEvents = await getAllYearlyEvents();
   return allEvents.find((e) => e.slug === slug);
+}
+
+async function getYearlyEventImage(src: Parameters<typeof getImage>[0]['src']) {
+  return getImage({ src, widths: [270, 540, 620, 1240] });
 }
 
 export async function getAllYearlyEvents(): Promise<YVEvent[]> {
@@ -249,7 +251,7 @@ export async function getAllYearlyEvents(): Promise<YVEvent[]> {
         day: '1',
         month: 'Januar',
         short_description: 'Das ist ein Test Event. Komm nicht vorbei, weil es ist nicht real.',
-        image: { src: await getImage({ src: EventImage1 }) },
+        image: { ...(await getYearlyEventImage(EventImage1)), alt: 'Example 1 alt text' },
         for_all: true,
       },
       {
@@ -259,7 +261,7 @@ export async function getAllYearlyEvents(): Promise<YVEvent[]> {
         month: 'Oktober',
         short_description:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium, felis sed luctus tempor',
-        image: { src: await getImage({ src: EventImage2 }) },
+        image: { ...(await getYearlyEventImage(EventImage2)), alt: 'Example 2 alt text' },
         for_all: true,
       },
       {
@@ -268,7 +270,7 @@ export async function getAllYearlyEvents(): Promise<YVEvent[]> {
         day: '24',
         month: 'Mai',
         short_description: 'Noch ein Test Event, aber nur für Mitglieder !!!1!!11!111elf1',
-        image: { src: await getImage({ src: EventImage3 }) },
+        image: { ...(await getYearlyEventImage(EventImage3)), alt: 'Example 3 alt text' },
         for_all: false,
       },
     ];
@@ -281,7 +283,10 @@ export async function getAllYearlyEvents(): Promise<YVEvent[]> {
       month: 'September',
       short_description:
         'Unsere jährliche Sommerveranstaltung ist für viele das Highlight des Jahres!',
-      image: { src: await getImage({ src: EventImage1 }) },
+      image: {
+        ...(await getYearlyEventImage(EventImage1)),
+        alt: 'Eine Gruppe Menschen sitzt in einer Reihe.',
+      },
       for_all: true,
     },
     {
@@ -291,7 +296,10 @@ export async function getAllYearlyEvents(): Promise<YVEvent[]> {
       month: 'Dezember',
       short_description:
         'Lass uns das vergangene Jahr ausklingen lassen und gemeinsam in das neue Jahr starten!',
-      image: { src: await getImage({ src: EventImage2 }) },
+      image: {
+        ...(await getYearlyEventImage(EventImage2)),
+        alt: 'Menschen sitzen an einem Holztisch und spielen ein Kartenspiel im Garten.',
+      },
       for_all: true,
     },
     {
@@ -301,7 +309,10 @@ export async function getAllYearlyEvents(): Promise<YVEvent[]> {
       month: 'April',
       short_description:
         'Werde Mitglied und entscheide gemeinsam über die Zukunft von YoungVision!',
-      image: { src: await getImage({ src: EventImage3 }) },
+      image: {
+        ...(await getYearlyEventImage(EventImage3)),
+        alt: 'Ein großer Kuschelhaufen liegt vor einer Frau die Ukulele spielt.',
+      },
       for_all: false,
     },
   ];
