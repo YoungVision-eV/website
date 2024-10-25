@@ -61,6 +61,7 @@ export type YearlyEvent = {
   future?: string;
   //TODO: this should probably also be an ImageWithAlt
   image: {
+    alt: string;
     src: GetImageResult;
   };
   month: string;

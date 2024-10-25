@@ -1,5 +1,3 @@
-import type { GetImageResult } from 'astro';
-
 import calendarCoverImage from '@assets/events/calendar-cover.jpeg';
 import pastEvent from '@assets/events/calendar-past-event.jpeg';
 import thirdEventImage from '@assets/events/calendar-third-event.jpeg';
@@ -8,25 +6,12 @@ import EventImage2 from '@assets/events/projects-event-image-2.jpeg';
 import EventImage3 from '@assets/events/projects-event-image-3.jpeg';
 import { getImage } from 'astro:assets';
 
-import type { EventCalendarEntry, EventData, EventPage } from '../index.ts';
+import type { EventCalendarEntry, EventData, EventPage, YearlyEvent } from '../index.ts';
 
 export const testEventData: EventData = {
   get3CalendarEntries,
   getAllPages,
   getAllYearlyEvents,
-};
-
-export type YVEvent = {
-  day: string;
-  for_all: boolean;
-  future?: string;
-  image: {
-    src: GetImageResult;
-  };
-  month: string;
-  short_description: string;
-  slug: string;
-  title: string;
 };
 
 export async function get3CalendarEntries(): Promise<
@@ -103,12 +88,12 @@ export async function getAllPages(): Promise<EventPage[]> {
   ];
 }
 
-export async function getAllYearlyEvents(): Promise<YVEvent[]> {
+export async function getAllYearlyEvents(): Promise<YearlyEvent[]> {
   return [
     {
       day: '1',
       for_all: true,
-      image: { src: await getImage({ src: EventImage1 }) },
+      image: { alt: 'Test Event Image 1', src: await getImage({ src: EventImage1 }) },
       month: 'Januar',
       short_description: 'Das ist ein Test Event. Komm nicht vorbei, weil es ist nicht real.',
       slug: 'event-1',
@@ -117,7 +102,7 @@ export async function getAllYearlyEvents(): Promise<YVEvent[]> {
     {
       day: '31',
       for_all: true,
-      image: { src: await getImage({ src: EventImage2 }) },
+      image: { alt: 'Test Event Image 2', src: await getImage({ src: EventImage2 }) },
       month: 'Oktober',
       short_description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium, felis sed luctus tempor',
@@ -127,7 +112,7 @@ export async function getAllYearlyEvents(): Promise<YVEvent[]> {
     {
       day: '24',
       for_all: false,
-      image: { src: await getImage({ src: EventImage3 }) },
+      image: { alt: 'Test Event Image 3', src: await getImage({ src: EventImage3 }) },
       month: 'Mai',
       short_description: 'Noch ein Test Event, aber nur für Mitglieder !!!1!!11!111elf1',
       slug: 'event-3',
