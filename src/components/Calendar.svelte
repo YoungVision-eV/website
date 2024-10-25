@@ -35,7 +35,7 @@
           src={currentEvent.image.src.src}
           srcset={currentEvent.image.src.srcSet.attribute}
           alt={currentEvent.image.alt}
-          sizes="(min-width: 1024px) 50vw, 100vw"
+          sizes="(min-width: 1360px) 622px, (min-width: 1040px) calc(44.33vw + 28px), 100vw"
           class="absolute left-0 top-0 h-full w-full rounded-t-2xl object-cover transition-opacity lg:rounded-l-2xl lg:rounded-tr-none"
         />
       {/key}
