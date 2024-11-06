@@ -22,6 +22,8 @@ jobs:
         run: echo "::add-matcher::.github/workflows/eslint-matcher.json"
       - name: 'Add custom svelte-check matcher'
         run: echo "::add-matcher::.github/workflows/svelte-check-matcher.json"
+      - name: 'Add custom astro-check matcher'
+        run: echo "::add-matcher::.github/workflows/astro-check-matcher.json"
       - name: Install Node Dependencies
         run: pnpm install
       - name: Run all lints
