@@ -6,17 +6,27 @@
   import { tweened } from 'svelte/motion';
   import type { EventCalendarEntry } from '@data/events';
 
+  export let events: [EventCalendarEntry, EventCalendarEntry, EventCalendarEntry];
+
+  const TODAY = new Date();
+
+  function relativeDate(date: Date): 'Vorbei' | 'Demnächst' {
+    if (date < TODAY) {
+      return 'Vorbei';
+    }
+    return 'Demnächst';
+  }
+
+  const initialEvent: number = events.findIndex((e) => e.date >= TODAY);
   // TODO: should this be the event itself instead of the index?
   // Perhaps we should also just use embla
-  let selectedEvent = 0;
+  let selectedEvent = initialEvent >= 0 ? initialEvent : 0; // findIndex returns -1 if not found
 
   const ANIMATION_DURATION = 300;
 
-  const location = tweened(0, { duration: ANIMATION_DURATION, easing: cubicOut });
+  const location = tweened(selectedEvent, { duration: ANIMATION_DURATION, easing: cubicOut });
   $: location.set(selectedEvent);
   $: currentEvent = events[selectedEvent];
-
-  export let events: [EventCalendarEntry, EventCalendarEntry, EventCalendarEntry];
 </script>
 
 <div class="mx-auto grid w-full max-w-[80rem] grid-cols-4 lg:grid-cols-9 lg:px-20">
@@ -105,7 +115,7 @@
             <span class="font-serif text-5xl font-bold">{event.date.getDate()}</span>
             <span>{event.date.toLocaleString('de-DE', { month: 'long' })}</span>
             <p class="text-sm italic text-gray-700 lg:text-base">
-              {event.date <= new Date() ? 'Vorbei' : 'Demnächst'}
+              {relativeDate(event.date)}
             </p>
           </div>
           <div class="z-30 col-span-3 px-4 lg:col-span-4 lg:px-10 lg:py-9">
