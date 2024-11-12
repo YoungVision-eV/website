@@ -37,7 +37,6 @@ jobs:
       - name: 'Add custom matcher' # see https://github.com/actions/setup-node/issues/403
         env:
           linter: ${{ matrix.linter }}
-        if: ${{ hashFiles('.github/workflows/${{ matrix.linter }}-matcher.json') != '' }} # only run if a custom matcher exists
         run: echo "::add-matcher::.github/workflows/$linter-matcher.json"
       - name: Install Node Dependencies
         run: pnpm install
