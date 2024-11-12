@@ -17,7 +17,7 @@ jobs:
       - uses: sergeysova/jq-action@v2
         id: lints
         with:
-          cmd: jq '[.scripts | keys | .[] | select (contains("lint:")) | sub("^lint:"; "") ]' package.json
+          cmd: jq '[.scripts | keys | .[] | select (contains("lint:")) | sub("^lint:"; "") ]' package.json --compact-output
   lint:
     runs-on: ubuntu-latest
     strategy:
