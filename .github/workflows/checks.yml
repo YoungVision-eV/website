@@ -20,6 +20,7 @@ jobs:
           cmd: jq '[.scripts | keys | .[] | select (contains("lint:")) | sub("^lint:"; "") ]' package.json --compact-output
   lint:
     runs-on: ubuntu-latest
+    needs: define-lint
     strategy:
       matrix:
         lint: ${{ fromJSON(needs.define-lints.outputs.lints) }}
