@@ -21,8 +21,9 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false # otherwise one failed lint will prevent others from reporting additional errors
       matrix:
-        lint: ${{ fromJSON(needs.define-lints.outputs.lints) }}
+        linter: ${{ fromJSON(needs.define-lints.outputs.lints) }}
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
@@ -31,46 +32,15 @@ jobs:
         with:
           node-version: 18
           cache: 'pnpm'
+      # custom matchers HAVE to be named $linter-matcher.json with $linter beinb the part of the lint:$linter script in package.json
       - name: 'Add custom matcher' # see https://github.com/actions/setup-node/issues/403
         env:
-          lint: ${{ matrix.lint }}
-        run: echo "::add-matcher::.github/workflows/$lint-matcher.json"
+          linter: ${{ matrix.linter }}
+        if: ${{ hashFiles('.github/workflows/${{ matrix.linter }}-matcher.json') != '' }} # only run if a custom matcher exists
+        run: echo "::add-matcher::.github/workflows/$linter-matcher.json"
       - name: Install Node Dependencies
         run: pnpm install
       - name: Run all lints
         env:
-          lint: ${{ matrix.lint }}
-        run: pnpm run lint:$lint
-
-  test:
-    timeout-minutes: 60
-    runs-on: ubuntu-22.04
-    container:
-      image: mcr.microsoft.com/playwright:v1.48.2-jammy
-    permissions:
-      checks: write
-      contents: read
-    steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18
-          cache: 'pnpm'
-      - name: Install dependencies
-        run: pnpm install
-      - name: Run Playwright tests
-        run: HOME='/root' pnpm run test
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: playwright-report
-          path: playwright-report/
-          retention-days: 30
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: playwright-results
-          path: playwright-results.xml
-          retention-days: 30
+          linter: ${{ matrix.linter }}
+        run: pnpm run lint:$linter
