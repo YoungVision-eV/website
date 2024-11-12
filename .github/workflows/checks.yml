@@ -8,7 +8,7 @@ on:
       - main
 
 jobs:
-  define-lint:
+  define-lints:
     runs-on: ubuntu-latest
     outputs:
       lints: ${{ steps.lints.outputs.value }}
@@ -20,7 +20,7 @@ jobs:
           cmd: jq '[.scripts | keys | .[] | select (contains("lint:")) | sub("^lint:"; "") ]' package.json --compact-output
   lint:
     runs-on: ubuntu-latest
-    needs: define-lint
+    needs: define-lints
     strategy:
       fail-fast: false # otherwise one failed lint will prevent others from reporting additional errors
       matrix:
