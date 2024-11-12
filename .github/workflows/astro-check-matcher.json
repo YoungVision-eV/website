@@ -4,7 +4,7 @@
       "owner": "astro-check",
       "pattern": [
         {
-          "regexp": "^\\. lint:astro: (.+):(\\d+):(\\d+) - (error|warning) (\\w+\\(\\d+\\)): (.+)$",
+          "regexp": "(.+):(\\d+):(\\d+) - (error|warning) (\\w+\\(\\d+\\)): (.+)$",
           "file": 1,
           "line": 2,
           "column": 3,

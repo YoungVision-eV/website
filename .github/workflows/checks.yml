@@ -8,8 +8,21 @@ on:
       - main
 
 jobs:
+  define-lint:
+    runs-on: ubuntu-latest
+    outputs:
+      lints: ${{ steps.lints.outputs.value }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: sergeysova/jq-action@v2
+        id: lints
+        with:
+          cmd: jq '[.scripts | keys | .[] | select (contains("lint:")) | sub("^lint:"; "") ]' package.json
   lint:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        lint: ${{ fromJSON(needs.define-lints.outputs.lints) }}
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
@@ -18,16 +31,16 @@ jobs:
         with:
           node-version: 18
           cache: 'pnpm'
-      - name: 'Add custom eslint matcher' # see https://github.com/actions/setup-node/issues/403
-        run: echo "::add-matcher::.github/workflows/eslint-matcher.json"
-      - name: 'Add custom svelte-check matcher'
-        run: echo "::add-matcher::.github/workflows/svelte-check-matcher.json"
-      - name: 'Add custom astro-check matcher'
-        run: echo "::add-matcher::.github/workflows/astro-check-matcher.json"
+      - name: 'Add custom matcher' # see https://github.com/actions/setup-node/issues/403
+        env:
+          lint: ${{ matrix.lint }}
+        run: echo "::add-matcher::.github/workflows/$lint-matcher.json"
       - name: Install Node Dependencies
         run: pnpm install
       - name: Run all lints
-        run: pnpm run lint
+        env:
+          lint: ${{ matrix.lint }}
+        run: pnpm run lint:$lint
 
   test:
     timeout-minutes: 60
