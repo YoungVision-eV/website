@@ -6,6 +6,7 @@
         {
           "regexp": "^\\[(\\w+)\\] (.+)$",
           "severity": 1,
+          "message": 1,
           "file": 2
         }
       ]
