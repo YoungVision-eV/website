@@ -12,10 +12,15 @@
     },
     {
       "matchPackagePatterns": ["eslint"],
-      "groupName": "eslint"
+      "groupName": "eslint",
+      "automerge": true
     },
     {
       "matchPackagePatterns": ["^@types/"],
+      "automerge": true
+    },
+    {
+      "matchPackagePatterns": ["prettier"],
       "automerge": true
     }
   ]
