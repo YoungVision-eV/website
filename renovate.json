@@ -9,6 +9,10 @@
     {
       "matchPackagePatterns": ["playwright"],
       "groupName": "Playwright"
+    },
+    {
+      "matchPackagePatterns": ["eslint"],
+      "groupName": "eslint"
     }
   ]
 }
