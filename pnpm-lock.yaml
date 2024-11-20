@@ -73,11 +73,11 @@ importers:
         specifier: 8.15.0
         version: 8.15.0(eslint@9.15.0(jiti@1.21.6))(typescript@5.6.3)
       embla-carousel:
-        specifier: 8.5.0
-        version: 8.5.0
+        specifier: 8.5.1
+        version: 8.5.1
       embla-carousel-svelte:
-        specifier: 8.5.0
-        version: 8.5.0(svelte@4.2.19)
+        specifier: 8.5.1
+        version: 8.5.1(svelte@4.2.19)
       eslint:
         specifier: 9.15.0
         version: 9.15.0(jiti@1.21.6)
@@ -1300,18 +1300,18 @@ packages:
   electron-to-chromium@1.5.33:
     resolution: {integrity: sha512-+cYTcFB1QqD4j4LegwLfpCNxifb6dDFUAwk6RsLusCwIaZI6or2f+q8rs5tTB2YC53HhOlIbEaqHMAAC8IOIwA==}
 
-  embla-carousel-reactive-utils@8.5.0:
-    resolution: {integrity: sha512-K4mOsS0ZIEzD1u8vzmAGdeh9rirL9B31WJNd99XJ9aGtXC2oe7Jlb04Z7iFDG/HgjfYC9x9zk7lS6Dyo5NAHiw==}
+  embla-carousel-reactive-utils@8.5.1:
+    resolution: {integrity: sha512-n7VSoGIiiDIc4MfXF3ZRTO59KDp820QDuyBDGlt5/65+lumPHxX2JLz0EZ23hZ4eg4vZGUXwMkYv02fw2JVo/A==}
     peerDependencies:
-      embla-carousel: 8.5.0
+      embla-carousel: 8.5.1
 
-  embla-carousel-svelte@8.5.0:
-    resolution: {integrity: sha512-N8+tNrqpdEMmMpwFhF3AhzqWkr41H0+OVDhR8Af7lmm36vzYn/mxHtC8zMi2aNzyEfZ7GMb2HcB0sv09vKXHdQ==}
+  embla-carousel-svelte@8.5.1:
+    resolution: {integrity: sha512-sCQDCn+kyuLUysXFRCTboSTslI0LUV5OhVqBAXnSphJ/mYdlbYfMhk03MGck+Mogdgpf9zYrBocp2uF6qUBNAw==}
     peerDependencies:
       svelte: ^3.49.0 || ^4.0.0 || ^5.0.0
 
-  embla-carousel@8.5.0:
-    resolution: {integrity: sha512-4cZ+50mAfrQySxp1C/0GSRZYSIHB0Osr+1S0SugY6Io2rfSsZizhj+A/HdUUJ1ZQroMNFqRIKw8ZRIe+0MFlXg==}
+  embla-carousel@8.5.1:
+    resolution: {integrity: sha512-JUb5+FOHobSiWQ2EJNaueCNT/cQU9L6XWBbWmorWPQT9bkbk+fhsuLr8wWrzXKagO3oWszBO7MSx+GfaRk4E6A==}
 
   emmet@2.4.7:
     resolution: {integrity: sha512-O5O5QNqtdlnQM2bmKHtJgyChcrFMgQuulI+WdiOw2NArzprUqqxUW6bgYtKvzKgrsYpuLWalOkdhNP+1jluhCA==}
@@ -4372,17 +4372,17 @@ snapshots:
 
   electron-to-chromium@1.5.33: {}
 
-  embla-carousel-reactive-utils@8.5.0(embla-carousel@8.5.0):
+  embla-carousel-reactive-utils@8.5.1(embla-carousel@8.5.1):
     dependencies:
-      embla-carousel: 8.5.0
+      embla-carousel: 8.5.1
 
-  embla-carousel-svelte@8.5.0(svelte@4.2.19):
+  embla-carousel-svelte@8.5.1(svelte@4.2.19):
     dependencies:
-      embla-carousel: 8.5.0
-      embla-carousel-reactive-utils: 8.5.0(embla-carousel@8.5.0)
+      embla-carousel: 8.5.1
+      embla-carousel-reactive-utils: 8.5.1(embla-carousel@8.5.1)
       svelte: 4.2.19
 
-  embla-carousel@8.5.0: {}
+  embla-carousel@8.5.1: {}
 
   emmet@2.4.7:
     dependencies:
