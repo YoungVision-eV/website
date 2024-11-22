@@ -1,20 +1,6 @@
 ---
-import { getAllEvents, type EventPage } from '@data/events';
 import Layout from '@layouts/Layout.astro';
 import { Image } from 'astro:assets';
-
-const { event }: { event: EventPage } = Astro.props;
-
-export async function getStaticPaths() {
-  let events = await getAllEvents();
-
-  return events.map((event) => {
-    return {
-      params: { slug: event.slug },
-      props: { event },
-    };
-  });
-}
 
 import ArrowLeft from '@assets/icons/ArrowLeft.svelte';
 
@@ -31,6 +17,20 @@ import CalendarIcon from '@assets/icons/CalendarIcon.svelte';
 import HandWithMoney from '@assets/icons/HandWithMoney.svelte';
 import LocationPin from '@assets/icons/LocationPin.svelte';
 import People from '@assets/icons/People.svelte';
+import { eventData, type EventPage } from '@data';
+
+const { event }: { event: EventPage } = Astro.props;
+
+export async function getStaticPaths() {
+  let events = await eventData.getAllPages();
+
+  return events.map((event) => {
+    return {
+      params: { slug: event.slug },
+      props: { event },
+    };
+  });
+}
 
 const locationPictures = [
   {

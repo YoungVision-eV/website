@@ -1,8 +1,8 @@
 <script lang="ts">
   import ProjectBackground3 from '@assets/events/projects-bg-lg-3.jpg';
-  import type { YVEvent } from '@data/events';
+  import type { YearlyEvent } from '@data';
 
-  export let events: YVEvent[];
+  export let events: YearlyEvent[];
 
   let filter_for_all = true;
 

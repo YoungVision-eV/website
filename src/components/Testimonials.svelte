@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Testimonial } from '@data/testimonials';
+  import type { Testimonial } from '@data/real/testimonials';
   import emblaCarouselSvelte from 'embla-carousel-svelte';
 
   import EmblaCarousel from 'embla-carousel';

@@ -1,10 +1,9 @@
 ---
 import ArrowLeft from '@assets/icons/ArrowLeft.svelte';
 import ArrowRight from '@assets/icons/ArrowRight.svelte';
+import { instagramData } from '@data';
 
-import { getRecentPhotos } from '@data/instagram';
-
-const images = await getRecentPhotos(5);
+const images = await instagramData.getRecentPhotos(5);
 ---
 
 <section class="mx-auto w-full max-w-[80rem] pb-32 pt-12 lg:px-6">
