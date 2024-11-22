@@ -4,7 +4,7 @@ import ProjectBackground2 from '@assets/events/projects-bg-lg-2.jpg';
 import { Image } from 'astro:assets';
 
 import Calendar from '@components/Calendar.svelte';
-import { eventData } from '@data/index';
+import { eventData } from '@data';
 
 const events = await eventData.get3CalendarEntries();
 ---

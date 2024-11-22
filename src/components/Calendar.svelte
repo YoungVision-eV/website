@@ -4,7 +4,7 @@
   import { fade, blur } from 'svelte/transition';
   import { cubicOut } from 'svelte/easing';
   import { tweened } from 'svelte/motion';
-  import type { EventCalendarEntry } from '@data/events';
+  import type { EventCalendarEntry } from '@data';
 
   export let events: [EventCalendarEntry, EventCalendarEntry, EventCalendarEntry];
 

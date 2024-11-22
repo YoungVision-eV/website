@@ -2,7 +2,7 @@
 import Hero from '@components/events/Hero.astro';
 import NextEvents from '@components/events/NextEvents.astro';
 import YearlyEvents from '@components/events/YearlyEvents.svelte';
-import { eventData } from '@data/index';
+import { eventData } from '@data';
 import Layout from '@layouts/Layout.astro';
 
 const yearlyEvents = await eventData.getAllYearlyEvents();

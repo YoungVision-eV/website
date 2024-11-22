@@ -4,7 +4,7 @@
   import { createCollapsible, melt } from '@melt-ui/svelte';
   import { slide } from 'svelte/transition';
 
-  import type { Exercise } from '@data/exercises';
+  import type { Exercise } from '@data/real/exercises';
   import ChevronUp from '@assets/icons/ChevronUp.svelte';
   import ChevronDown from '@assets/icons/ChevronDown.svelte';
 
