@@ -23,9 +23,9 @@
   "dependencies": {
     "@astrojs/check": "0.9.4",
     "@astrojs/svelte": "5.7.3",
-    "@astrojs/tailwind": "5.1.2",
+    "@astrojs/tailwind": "5.1.4",
     "@melt-ui/svelte": "0.86.1",
-    "astro": "4.16.14",
+    "astro": "4.16.18",
     "clsx": "2.1.1",
     "qs": "^6.12.1",
     "svelte": "4.2.19",
