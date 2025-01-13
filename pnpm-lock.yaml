@@ -107,16 +107,16 @@ importers:
         version: 0.14.1
       prettier-plugin-astro-organize-imports:
         specifier: 0.4.11
-        version: 0.4.11(prettier-plugin-astro@0.14.1)(prettier-plugin-tailwindcss@0.6.9(prettier-plugin-astro@0.14.1)(prettier-plugin-organize-imports@4.1.0(prettier@3.3.3)(typescript@5.7.3))(prettier-plugin-svelte@3.3.2(prettier@3.3.3)(svelte@4.2.19))(prettier@3.3.3))(prettier@3.3.3)
+        version: 0.4.11(prettier-plugin-astro@0.14.1)(prettier-plugin-tailwindcss@0.6.9(prettier-plugin-astro@0.14.1)(prettier-plugin-organize-imports@4.1.0(prettier@3.3.3)(typescript@5.7.3))(prettier-plugin-svelte@3.3.3(prettier@3.3.3)(svelte@4.2.19))(prettier@3.3.3))(prettier@3.3.3)
       prettier-plugin-organize-imports:
         specifier: 4.1.0
         version: 4.1.0(prettier@3.3.3)(typescript@5.7.3)
       prettier-plugin-svelte:
-        specifier: 3.3.2
-        version: 3.3.2(prettier@3.3.3)(svelte@4.2.19)
+        specifier: 3.3.3
+        version: 3.3.3(prettier@3.3.3)(svelte@4.2.19)
       prettier-plugin-tailwindcss:
         specifier: 0.6.9
-        version: 0.6.9(prettier-plugin-astro@0.14.1)(prettier-plugin-organize-imports@4.1.0(prettier@3.3.3)(typescript@5.7.3))(prettier-plugin-svelte@3.3.2(prettier@3.3.3)(svelte@4.2.19))(prettier@3.3.3)
+        version: 0.6.9(prettier-plugin-astro@0.14.1)(prettier-plugin-organize-imports@4.1.0(prettier@3.3.3)(typescript@5.7.3))(prettier-plugin-svelte@3.3.3(prettier@3.3.3)(svelte@4.2.19))(prettier@3.3.3)
       sharp:
         specifier: 0.33.5
         version: 0.33.5
@@ -2344,8 +2344,8 @@ packages:
       vue-tsc:
         optional: true
 
-  prettier-plugin-svelte@3.3.2:
-    resolution: {integrity: sha512-kRPjH8wSj2iu+dO+XaUv4vD8qr5mdDmlak3IT/7AOgGIMRG86z/EHOLauFcClKEnOUf4A4nOA7sre5KrJD4Raw==}
+  prettier-plugin-svelte@3.3.3:
+    resolution: {integrity: sha512-yViK9zqQ+H2qZD1w/bH7W8i+bVfKrD8GIFjkFe4Thl6kCT9SlAsXVNmt3jCvQOCsnOhcvYgsoVlRV/Eu6x5nNw==}
     peerDependencies:
       prettier: ^3.0.0
       svelte: ^3.2.0 || ^4.0.0-next.0 || ^5.0.0-next.0
@@ -5614,14 +5614,14 @@ snapshots:
 
   prelude-ls@1.2.1: {}
 
-  prettier-plugin-astro-organize-imports@0.4.11(prettier-plugin-astro@0.14.1)(prettier-plugin-tailwindcss@0.6.9(prettier-plugin-astro@0.14.1)(prettier-plugin-organize-imports@4.1.0(prettier@3.3.3)(typescript@5.7.3))(prettier-plugin-svelte@3.3.2(prettier@3.3.3)(svelte@4.2.19))(prettier@3.3.3))(prettier@3.3.3):
+  prettier-plugin-astro-organize-imports@0.4.11(prettier-plugin-astro@0.14.1)(prettier-plugin-tailwindcss@0.6.9(prettier-plugin-astro@0.14.1)(prettier-plugin-organize-imports@4.1.0(prettier@3.3.3)(typescript@5.7.3))(prettier-plugin-svelte@3.3.3(prettier@3.3.3)(svelte@4.2.19))(prettier@3.3.3))(prettier@3.3.3):
     dependencies:
       '@astrojs/compiler': 2.10.3
       prettier: 3.3.3
       typescript: 5.7.3
     optionalDependencies:
       prettier-plugin-astro: 0.14.1
-      prettier-plugin-tailwindcss: 0.6.9(prettier-plugin-astro@0.14.1)(prettier-plugin-organize-imports@4.1.0(prettier@3.3.3)(typescript@5.7.3))(prettier-plugin-svelte@3.3.2(prettier@3.3.3)(svelte@4.2.19))(prettier@3.3.3)
+      prettier-plugin-tailwindcss: 0.6.9(prettier-plugin-astro@0.14.1)(prettier-plugin-organize-imports@4.1.0(prettier@3.3.3)(typescript@5.7.3))(prettier-plugin-svelte@3.3.3(prettier@3.3.3)(svelte@4.2.19))(prettier@3.3.3)
 
   prettier-plugin-astro@0.14.1:
     dependencies:
@@ -5634,18 +5634,18 @@ snapshots:
       prettier: 3.3.3
       typescript: 5.7.3
 
-  prettier-plugin-svelte@3.3.2(prettier@3.3.3)(svelte@4.2.19):
+  prettier-plugin-svelte@3.3.3(prettier@3.3.3)(svelte@4.2.19):
     dependencies:
       prettier: 3.3.3
       svelte: 4.2.19
 
-  prettier-plugin-tailwindcss@0.6.9(prettier-plugin-astro@0.14.1)(prettier-plugin-organize-imports@4.1.0(prettier@3.3.3)(typescript@5.7.3))(prettier-plugin-svelte@3.3.2(prettier@3.3.3)(svelte@4.2.19))(prettier@3.3.3):
+  prettier-plugin-tailwindcss@0.6.9(prettier-plugin-astro@0.14.1)(prettier-plugin-organize-imports@4.1.0(prettier@3.3.3)(typescript@5.7.3))(prettier-plugin-svelte@3.3.3(prettier@3.3.3)(svelte@4.2.19))(prettier@3.3.3):
     dependencies:
       prettier: 3.3.3
     optionalDependencies:
       prettier-plugin-astro: 0.14.1
       prettier-plugin-organize-imports: 4.1.0(prettier@3.3.3)(typescript@5.7.3)
-      prettier-plugin-svelte: 3.3.2(prettier@3.3.3)(svelte@4.2.19)
+      prettier-plugin-svelte: 3.3.3(prettier@3.3.3)(svelte@4.2.19)
 
   prettier@2.8.7:
     optional: true
