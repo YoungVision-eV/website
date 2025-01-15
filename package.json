@@ -22,10 +22,10 @@
   },
   "dependencies": {
     "@astrojs/check": "0.9.4",
-    "@astrojs/svelte": "5.7.3",
+    "@astrojs/svelte": "7.0.3",
     "@astrojs/tailwind": "5.1.4",
     "@melt-ui/svelte": "0.86.2",
-    "astro": "4.16.18",
+    "astro": "5.1.7",
     "clsx": "2.1.1",
     "qs": "^6.12.1",
     "svelte": "4.2.19",
