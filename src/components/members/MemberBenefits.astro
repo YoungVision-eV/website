@@ -1,26 +1,24 @@
 ---
-import { Image } from 'astro:assets';
-
 import Image1 from '@assets/members/member-benefits-image-1.jpeg';
 import Image2 from '@assets/members/member-benefits-image-2.jpeg';
 import Background from '@assets/members/members-background.png';
 import BenefitsImage from '@assets/members/members-benefits.jpeg';
-
 import Button from '@components/Button.astro';
+import { Image } from 'astro:assets';
 ---
 
 <main class="relative pt-14 lg:pt-36">
   <Image
+    alt="Background"
     class="absolute left-0 top-0 -z-10 h-full w-full object-cover opacity-40"
     src={Background}
-    alt="Background"
   />
 
   <div class="mx-auto max-w-[80rem] flex-col items-center px-4 lg:flex lg:px-44">
     <Image
-      src={BenefitsImage}
       alt="Leute sitzen im Kreis auf dem Boden"
       class="h-48 w-full bg-gray-300 object-cover object-bottom lg:h-[27rem] lg:w-[50rem]"
+      src={BenefitsImage}
     />
     <h2 class="mt-10 text-center font-serif text-2xl font-bold lg:hidden">Werde Mitglied</h2>
     <h2 class="mt-20 hidden text-center font-serif text-4xl font-bold lg:block">
@@ -64,21 +62,21 @@ import Button from '@components/Button.astro';
 
     <Button
       class="mt-12 lg:mt-6"
-      text="Mitglied werden"
-      href="https://easyverein.com/public/yv/applicationform/7213"
       color="dark"
+      href="https://easyverein.com/public/yv/applicationform/7213"
+      text="Mitglied werden"
     />
 
     <div class="mt-10 flex w-full flex-col gap-4 lg:mt-20 lg:h-[22rem] lg:flex-row">
       <Image
-        src={Image1}
         alt="YoungVision"
         class="h-48 w-full bg-gray-300 object-cover lg:h-full"
+        src={Image1}
       />
       <Image
-        src={Image2}
         alt="YoungVision"
         class="h-48 w-full bg-gray-300 object-cover lg:h-full"
+        src={Image2}
       />
     </div>
   </div>

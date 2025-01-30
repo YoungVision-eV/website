@@ -1,9 +1,8 @@
 ---
 import JakobPortrait from '@assets/team-members/jakob-portait.jpeg';
-import { Image } from 'astro:assets';
-
 import Button from '@components/Button.astro';
 import { getDonationMethods } from '@data/real/donations';
+import { Image } from 'astro:assets';
 
 import DonationMethodList from './DonationMethodList.svelte';
 import DonationMethodTabs from './DonationMethodTabs.svelte';
@@ -20,8 +19,8 @@ const possibilities = await getDonationMethods();
       wertvolle Wege, wie du uns unterstützen kannst:
     </p>
 
-    <DonationMethodTabs possibilities={possibilities} client:idle />
-    <DonationMethodList possibilities={possibilities} client:idle />
+    <DonationMethodTabs client:idle possibilities={possibilities} />
+    <DonationMethodList client:idle possibilities={possibilities} />
   </div>
 
   <div
@@ -29,9 +28,9 @@ const possibilities = await getDonationMethods();
   >
     <h3 class="font-serif text-2xl font-bold lg:hidden">Falls sie Fragen haben!</h3>
     <Image
-      src={JakobPortrait}
       alt="Jakob"
       class="mx-auto mt-5 h-56 w-56 rounded-2xl bg-gray-300 object-cover object-center lg:mx-0 lg:mt-0"
+      src={JakobPortrait}
     />
     <div>
       <h3 class="hidden text-center font-serif text-4xl font-bold lg:block">
@@ -48,7 +47,7 @@ const possibilities = await getDonationMethods();
           >
         </dd>
       </dl>
-      <Button class="mt-7" text="Schreibe uns" href="mailto:kontakt@youngvision.org" color="dark" />
+      <Button class="mt-7" color="dark" href="mailto:kontakt@youngvision.org" text="Schreibe uns" />
     </div>
   </div>
 </section>

@@ -1,71 +1,73 @@
 import type { GetImageResult } from 'astro';
+
 import type { Event as EventCMS } from './payload-types.ts';
+
 import { realEventData } from './real/events.ts';
 import { realInstagramData } from './real/instagram.ts';
 import { testEventData } from './test/events.ts';
 import { testInstagramData } from './test/instagram.ts';
 
 export interface EventCalendarEntry {
-  title: string;
   date: Date;
   description: string;
+  image: { alt: string; src: GetImageResult };
   link?: string;
-  image: { src: GetImageResult; alt: string };
+  title: string;
+}
+
+export interface EventData {
+  get3CalendarEntries: () => Promise<[EventCalendarEntry, EventCalendarEntry, EventCalendarEntry]>;
+  getAllPages: () => Promise<EventPage[]>;
+  getAllYearlyEvents: () => Promise<YearlyEvent[]>;
 }
 
 export interface EventPage {
-  title: string;
-  start: Date;
-  end: Date;
-  slug: string;
-  contentTitle: string;
-  content_html: string;
-  heroImage: RemoteImage;
   address: EventCMS['address'];
   audience: string;
+  content_html: string;
+  contentTitle: string;
   cost: string;
-  team: { name: string; job: string; bio: string; image: RemoteImage }[];
+  end: Date;
+  heroImage: RemoteImage;
   registrationLink: string;
-  timetable?: RemoteImage;
+  slug: string;
   sponsorLogo?: RemoteImage;
-}
-
-export type RemoteImage = {
-  src: string;
-  width: number;
-  height: number;
-  alt: string;
-};
-
-export type YearlyEvent = {
-  slug: string; // I think this slug is used nowhere
+  start: Date;
+  team: { bio: string; image: RemoteImage; job: string; name: string }[];
+  timetable?: RemoteImage;
   title: string;
-  day: string;
-  month: string;
-  short_description: string;
-  //TODO: this should probably also be an ImageWithAlt
-  image: {
-    src: GetImageResult;
-  };
-  for_all: boolean;
-  future?: string;
-};
-
-export type InstagramPost = {
-  src: GetImageResult;
-  alt: string;
-  link: string;
-};
-
-export interface EventData {
-  getAllPages: () => Promise<EventPage[]>;
-  get3CalendarEntries: () => Promise<[EventCalendarEntry, EventCalendarEntry, EventCalendarEntry]>;
-  getAllYearlyEvents: () => Promise<YearlyEvent[]>;
 }
 
 export interface InstagramData {
   getRecentPhotos: (count: number) => Promise<InstagramPost[]>;
 }
+
+export type InstagramPost = {
+  alt: string;
+  link: string;
+  src: GetImageResult;
+};
+
+export type RemoteImage = {
+  alt: string;
+  height: number;
+  src: string;
+  width: number;
+};
+
+export type YearlyEvent = {
+  day: string;
+  for_all: boolean;
+  future?: string;
+  //TODO: this should probably also be an ImageWithAlt
+  image: {
+    src: GetImageResult;
+  };
+  month: string;
+  short_description: string;
+  slug: string; // I think this slug is used nowhere
+  title: string;
+};
 
 export const eventData = process.env.PLAYWRIGHT_TEST === 'true' ? testEventData : realEventData;
 

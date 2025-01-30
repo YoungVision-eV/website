@@ -1,9 +1,8 @@
 <script>
-  import { melt } from '@melt-ui/svelte';
   import ArrowRight from '@assets/icons/ArrowRight.svelte';
   import YoungVisionLogoFull from '@assets/icons/YoungVisionLogoFull.svelte';
-
   import newsletterSignup from '@components/stores/newsletterSignup';
+  import { melt } from '@melt-ui/svelte';
 
   const {
     elements: { trigger },

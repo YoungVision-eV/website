@@ -1,17 +1,15 @@
 <script>
+  import Button from '@components/Button.svelte';
+  import { createTabs, melt } from '@melt-ui/svelte';
   import clsx from 'clsx';
   import SvelteMarkdown from 'svelte-markdown';
 
-  import { createTabs, melt } from '@melt-ui/svelte';
-
-  import Button from '@components/Button.svelte';
-
-  import Paragraph from './markdown/Paragraph.svelte';
   import List from './markdown/List.svelte';
   import ListItem from './markdown/ListItem.svelte';
+  import Paragraph from './markdown/Paragraph.svelte';
 
   const {
-    elements: { root, list, content, trigger },
+    elements: { content, list, root, trigger },
     states: { value },
   } = createTabs({
     autoSet: false,
@@ -32,8 +30,8 @@
           class={clsx(
             'mx-auto flex h-56 w-56 items-center justify-center rounded-full shadow-lg transition-colors',
             {
-              'border-2 border-black bg-green-200': $value === possibility.title,
               'bg-green-500': $value !== possibility.title,
+              'border-2 border-black bg-green-200': $value === possibility.title,
             },
           )}
         >
@@ -73,7 +71,7 @@
             {#if possibility.extraText != null}
               <SvelteMarkdown
                 source={possibility.extraText}
-                renderers={{ paragraph: Paragraph, list: List, listitem: ListItem }}
+                renderers={{ list: List, listitem: ListItem, paragraph: Paragraph }}
               />
             {/if}
             {#if possibility.buttonAtEnd}

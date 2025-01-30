@@ -1,9 +1,8 @@
 ---
+import Background from '@assets/events/events-hero-bg.jpeg';
 import { getImage } from 'astro:assets';
 
-import Background from '@assets/events/events-hero-bg.jpeg';
-
-const backgroundImage = await getImage({ src: Background, width: 1920, height: 1080 });
+const backgroundImage = await getImage({ height: 1080, src: Background, width: 1920 });
 ---
 
 <section class="flex h-[44rem] w-full flex-col justify-between bg-cover bg-center pt-12 lg:pt-20">

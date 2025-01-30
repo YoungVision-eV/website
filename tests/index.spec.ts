@@ -4,7 +4,7 @@ test.beforeEach(async ({ page }) => {
   await page.goto('/');
 });
 
-test('index page screenshot', async ({ page, browserName }) => {
+test('index page screenshot', async ({ browserName, page }) => {
   // firefox and chrome load images differently
   // TODO: remove this after port
   if (browserName !== 'firefox') {

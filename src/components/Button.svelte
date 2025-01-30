@@ -5,7 +5,7 @@
   let className = '';
   export { className as class };
   export let text: string;
-  export let color: 'dark' | 'bright';
+  export let color: 'bright' | 'dark';
   export let href: string = '#';
   export let download: string | undefined = undefined;
 </script>
@@ -18,10 +18,10 @@
     {
       // black background, white text
       'bg-green-50': color === 'dark',
-      'text-white': color === 'dark',
       // white background, black text
       'bg-white': color === 'bright',
       'text-black': color === 'bright',
+      'text-white': color === 'dark',
     },
     className,
   )}

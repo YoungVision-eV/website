@@ -1,11 +1,12 @@
 <script>
-  import { fade, fly } from 'svelte/transition';
-  import { melt } from '@melt-ui/svelte';
   import newsletterSignup from '@components/stores/newsletterSignup';
+  import { melt } from '@melt-ui/svelte';
+  import { fade, fly } from 'svelte/transition';
+
   import NewsletterSignupDialog from './NewsletterSignupDialog.svelte';
 
   const {
-    elements: { overlay, content },
+    elements: { content, overlay },
     states: { open },
   } = newsletterSignup;
 </script>
