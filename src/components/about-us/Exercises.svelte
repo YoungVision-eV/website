@@ -99,7 +99,7 @@
   </div>
 </button>
 
-<div class="mx-2 mt-2 w-full border-t border-gray-300" />
+<div class="mx-2 mt-2 w-full border-t border-gray-300"></div>
 <div
   class={clsx(
     'mt-16 hidden auto-rows-[0] grid-cols-[1fr] gap-y-12 overflow-hidden transition-all lg:mt-40 lg:grid-cols-6 lg:gap-12',

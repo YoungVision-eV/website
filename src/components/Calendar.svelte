@@ -95,7 +95,7 @@
         selectedEvent === 0 ? 'rounded-t-2xl' : '',
       )}
       style="top: 0%; transform: translateY({$location * 100}%)"
-    />
+    ></div>
     {#each events as event, index}
       <li
         role="tab"
