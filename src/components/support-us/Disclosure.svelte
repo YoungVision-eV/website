@@ -17,7 +17,7 @@
 
 <div use:melt={$root} data-testid="benefits">
   {#if $open}
-    <div transition:slide use:melt={$content} class="pb-12 pt-16 lg:px-16">
+    <div transition:slide use:melt={$content} class="pt-16 pb-12 lg:px-16">
       <h3 class="font-serif text-2xl font-bold">Vorteile</h3>
       <ol id="benefits" class="grid grid-cols-3 py-12 lg:gap-y-14">
         {#each benefits as benefit, index}
@@ -33,7 +33,7 @@
                 {index + 1}
               </div>
             </div>
-            <p class="col-span-2 ml-2 text-sm lg:ml-8 lg:mr-5 lg:text-xl">
+            <p class="col-span-2 ml-2 text-sm lg:mr-5 lg:ml-8 lg:text-xl">
               {benefit}
             </p>
           </li>

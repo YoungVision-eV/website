@@ -40,7 +40,7 @@
         {#if $isSelected(possibility.title)}
           <div
             title={possibility.title}
-            class="pb-8 pt-4"
+            class="pt-4 pb-8"
             use:melt={$content(possibility.title)}
             transition:slide
           >

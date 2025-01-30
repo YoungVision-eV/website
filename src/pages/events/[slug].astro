@@ -56,7 +56,7 @@ const locationPictures = [
     widths={[360, 540, 720, 960, 1200, 1920]}
   />
   <div class="pr-4 lg:pr-20">
-    <div class="flex h-12 w-full items-center rounded-br-xl bg-yellow-500 bg-opacity-60 lg:text-xl">
+    <div class="bg-opacity-60 flex h-12 w-full items-center rounded-br-xl bg-yellow-500 lg:text-xl">
       <a class="p-3" href="/events">
         <ArrowLeft />
         <span class="sr-only">Zur vorherigen Seite</span>
@@ -129,7 +129,7 @@ const locationPictures = [
           {event.contentTitle}
         </h2>
         <div
-          class="prose prose-neutral mt-4 max-w-prose text-justify leading-7 lg:prose-xl lg:mt-8"
+          class="prose prose-neutral lg:prose-xl mt-4 max-w-prose text-justify leading-7 lg:mt-8"
         >
           <p set:html={event.content_html} />
         </div>
