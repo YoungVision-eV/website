@@ -1,29 +1,25 @@
 ---
-import Layout from '@layouts/Layout.astro';
-import { Image } from 'astro:assets';
-
-import BauwochenPlan from '@assets/events/bauwoche-2024/Bauwoche Zeitplan.svg';
 import BauwocheHero from '@assets/events/bauwoche-2024/bauwoche-hero.jpeg';
+import BauwochenPlan from '@assets/events/bauwoche-2024/Bauwoche Zeitplan.svg';
 import JakobUndJonas from '@assets/events/bauwoche-2024/jakob-und-jonas.png';
 import ArrowLeft from '@assets/icons/ArrowLeft.svelte';
-
-import Button from '@components/Button.astro';
-
 import CalendarIcon from '@assets/icons/CalendarIcon.svelte';
 import HandWithMoney from '@assets/icons/HandWithMoney.svelte';
 import LocationPin from '@assets/icons/LocationPin.svelte';
 import People from '@assets/icons/People.svelte';
-
+import Button from '@components/Button.astro';
 import KompostToiletteIcon from '@components/events/bauwoche-2024/KompostToiletteIcon.svelte';
 import LagerIcon from '@components/events/bauwoche-2024/LagerIcon.svelte';
 import PlattformIcon from '@components/events/bauwoche-2024/PlattformIcon.svelte';
+import Layout from '@layouts/Layout.astro';
+import { Image } from 'astro:assets';
 ---
 
 <Layout title="YoungVision e.V. - Bauwoche">
-  <Image class="h-[27rem] w-full object-cover" src={BauwocheHero} alt="Gathering 2024" />
+  <Image alt="Gathering 2024" class="h-[27rem] w-full object-cover" src={BauwocheHero} />
   <div class="pr-4 lg:pr-20">
     <div class="flex h-12 w-full items-center rounded-br-xl bg-yellow-500 bg-opacity-60 lg:text-xl">
-      <a href="/events" class="p-3">
+      <a class="p-3" href="/events">
         <ArrowLeft />
         <span class="sr-only">Zur vorherigen Seite</span>
       </a>
@@ -115,10 +111,10 @@ import PlattformIcon from '@components/events/bauwoche-2024/PlattformIcon.svelte
         </div>
 
         <Button
-          text="Anmelden"
-          color="dark"
           class="mt-12 lg:mt-8"
+          color="dark"
           href="https://coda.io/form/YoungVision-Bauwoche-2024_dfqXbo6awYm"
+          text="Anmelden"
         />
       </div>
 
@@ -145,28 +141,28 @@ import PlattformIcon from '@components/events/bauwoche-2024/PlattformIcon.svelte
         <h2 class="font-serif text-2xl font-bold lg:text-4xl">Wochenplan</h2>
 
         <Button
-          text="Wochenplan runterladen"
-          href="/Bauwoche Zeitplan.pdf"
-          download="YoungVision Bauwoche 2024 - Wochenplan"
-          color="dark"
           class="mt-8 lg:hidden"
+          color="dark"
+          download="YoungVision Bauwoche 2024 - Wochenplan"
+          href="/Bauwoche Zeitplan.pdf"
+          text="Wochenplan runterladen"
         />
       </div>
     </div>
   </div>
 
   <div class="mt-20 hidden lg:block">
-    <a href="/Bauwoche Zeitplan.pdf" download="YoungVision Bauwoche 2024 - Wochenplan">
-      <Image src={BauwochenPlan} class="w-full object-cover" alt="Wochenplan Bauwoche 2024" />
+    <a download="YoungVision Bauwoche 2024 - Wochenplan" href="/Bauwoche Zeitplan.pdf">
+      <Image alt="Wochenplan Bauwoche 2024" class="w-full object-cover" src={BauwochenPlan} />
     </a>
   </div>
   <div class="py-24 lg:px-44 lg:py-28 lg:text-xl">
     <div class="flex flex-col items-center lg:flex-row lg:gap-x-20">
       <div class="h-64 w-64 rounded-full lg:h-80 lg:w-80">
         <Image
+          alt="Jakob & Jonas"
           class="h-full w-full rounded-full object-cover object-center"
           src={JakobUndJonas}
-          alt="Jakob & Jonas"
         />
       </div>
       <div class="text-center">
@@ -175,10 +171,10 @@ import PlattformIcon from '@components/events/bauwoche-2024/PlattformIcon.svelte
         <p>Rechts: Jakob Voigt (Organisation)</p>
 
         <Button
+          class="mt-12 lg:mt-14"
+          color="dark"
           href="https://coda.io/form/YoungVision-Bauwoche-2024_dfqXbo6awYm"
           text="Anmelden"
-          color="dark"
-          class="mt-12 lg:mt-14"
         />
       </div>
     </div>

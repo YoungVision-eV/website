@@ -1,17 +1,16 @@
 ---
 import ProjectBackground1 from '@assets/events/projects-bg-lg-1.jpg';
 import ProjectBackground2 from '@assets/events/projects-bg-lg-2.jpg';
-import { Image } from 'astro:assets';
-
 import Calendar from '@components/Calendar.svelte';
 import { eventData } from '@data';
+import { Image } from 'astro:assets';
 
 const events = await eventData.get3CalendarEntries();
 ---
 
 <section class="relative mt-14">
   <div class="not-sr-only absolute -z-10 mt-16">
-    <Image src={ProjectBackground1} alt="" />
+    <Image alt="" src={ProjectBackground1} />
   </div>
 </section>
 <div class="mx-auto mb-10 max-w-[80rem] px-4 lg:mb-16 lg:px-20">
@@ -24,7 +23,7 @@ const events = await eventData.get3CalendarEntries();
   </p>
 </div>
 <div class="not-sr-only absolute -bottom-52 right-0 -z-20">
-  <Image src={ProjectBackground2} alt="" />
+  <Image alt="" src={ProjectBackground2} />
 </div>
 
-<Calendar events={events} client:visible />
+<Calendar client:visible events={events} />

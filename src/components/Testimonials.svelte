@@ -1,13 +1,13 @@
 <script lang="ts">
   import type { Testimonial } from '@data/real/testimonials';
-  import emblaCarouselSvelte from 'embla-carousel-svelte';
 
   import EmblaCarousel from 'embla-carousel';
+  import emblaCarouselSvelte from 'embla-carousel-svelte';
 
   type EmblaCarouselType = ReturnType<typeof EmblaCarousel>;
 
-  import ArrowRight from '@assets/icons/ArrowRight.svelte';
   import ArrowLeft from '@assets/icons/ArrowLeft.svelte';
+  import ArrowRight from '@assets/icons/ArrowRight.svelte';
   import clsx from 'clsx';
 
   let className = '';

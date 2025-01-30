@@ -1,13 +1,11 @@
 <script>
-  import clsx from 'clsx';
-
+  import Button from '@components/Button.svelte';
   import { createAccordion, melt } from '@melt-ui/svelte';
+  import clsx from 'clsx';
   import { slide } from 'svelte/transition';
 
-  import Button from '@components/Button.svelte';
-
   const {
-    elements: { content, item, trigger, root },
+    elements: { content, item, root, trigger },
     helpers: { isSelected },
   } = createAccordion();
 
@@ -27,8 +25,8 @@
             class={clsx(
               'flex h-40 w-40 flex-none items-center justify-center rounded-full transition-colors',
               {
-                'border-2 border-black bg-green-200': $isSelected(possibility.title),
                 'bg-green-500': !$isSelected(possibility.title),
+                'border-2 border-black bg-green-200': $isSelected(possibility.title),
               },
             )}
           >

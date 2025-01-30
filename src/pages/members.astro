@@ -1,13 +1,11 @@
 ---
 import FooterBackground from '@assets/members/members-footer-background.jpeg';
-import Layout from '@layouts/Layout.astro';
-import { Image } from 'astro:assets';
-
 import Hero from '@components/members/Hero.astro';
 import MemberBenefits from '@components/members/MemberBenefits.astro';
 import Testimonials from '@components/Testimonials.svelte';
-
 import { getTestimonials } from '@data/real/testimonials';
+import Layout from '@layouts/Layout.astro';
+import { Image } from 'astro:assets';
 
 const testimonials = await getTestimonials();
 ---
@@ -20,8 +18,8 @@ const testimonials = await getTestimonials();
     <Testimonials client:load {testimonials} />
   </div>
   <Image
-    src={FooterBackground}
-    class="h-[35rem] w-full object-cover lg:h-[60rem]"
     alt="YoungVision Menschen sitzen am Lagerfeuer"
+    class="h-[35rem] w-full object-cover lg:h-[60rem]"
+    src={FooterBackground}
   />
 </Layout>

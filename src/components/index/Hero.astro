@@ -1,6 +1,6 @@
 ---
 import Button from '@components/Button.astro';
-import { Image, getImage } from 'astro:assets';
+import { getImage, Image } from 'astro:assets';
 
 import LandscapeBackground from './background-hero-landscape.png';
 import PortraitBackground from './background-hero.png';
@@ -16,11 +16,11 @@ const PortraitBackgroundUrl = await getImage({ src: PortraitBackground });
   >
     <div class="h-96 px-9 lg:h-[36rem] lg:px-0">
       <Image
+        alt="Eine Frau breitet ihre Arme aus und lächelt mit geschlossenen Augen in die Kamera, während sie ihren Kopf zur Seite neigt. Hinter ihr ist ein Haufen mit Holzscheiten zu sehen."
         class="h-full w-full rounded-2xl object-cover object-center"
+        sizes="(min-width: 1360px) 520px, (min-width: 1040px) 40vw, calc(100vw - 112px)"
         src={HeroImage}
         widths={[360, 540, 720, 960, 1200, 1920, HeroImage.width]}
-        sizes="(min-width: 1360px) 520px, (min-width: 1040px) 40vw, calc(100vw - 112px)"
-        alt="Eine Frau breitet ihre Arme aus und lächelt mit geschlossenen Augen in die Kamera, während sie ihren Kopf zur Seite neigt. Hinter ihr ist ein Haufen mit Holzscheiten zu sehen."
       />
     </div>
     <div class="lg:order-first">
@@ -33,9 +33,9 @@ const PortraitBackgroundUrl = await getImage({ src: PortraitBackground });
       </p>
       <Button
         class="mx-auto mt-12 w-64 lg:mx-0"
-        text="Mitglied werden"
-        href="/members"
         color="dark"
+        href="/members"
+        text="Mitglied werden"
       />
     </div>
   </div>

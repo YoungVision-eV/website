@@ -1,7 +1,7 @@
 <script>
-  import { melt } from '@melt-ui/svelte';
-  import newsletterSignup from '@components/stores/newsletterSignup';
   import Close from '@assets/icons/Close.svelte';
+  import newsletterSignup from '@components/stores/newsletterSignup';
+  import { melt } from '@melt-ui/svelte';
 
   const {
     elements: { close },

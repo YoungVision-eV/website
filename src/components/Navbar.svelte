@@ -1,6 +1,6 @@
 <script>
-  import clsx from 'clsx';
   import YoungVisionLogoFull from '@assets/icons/YoungVisionLogoFull.svelte';
+  import clsx from 'clsx';
 
   const pages = [
     { name: 'Home', url: '/' },

@@ -8,7 +8,7 @@ const images = await instagramData.getRecentPhotos(5);
 
 <section class="mx-auto w-full max-w-[80rem] pb-32 pt-12 lg:px-6">
   <h2 class="mx-5 font-serif text-3xl font-bold text-dark-green lg:mx-12 lg:text-black">
-    <a href="https://www.instagram.com/youngvision_ev/" target="_blank" rel="noopener">
+    <a href="https://www.instagram.com/youngvision_ev/" rel="noopener" target="_blank">
       Folge uns auf Instagram
     </a>
   </h2>
@@ -16,11 +16,11 @@ const images = await instagramData.getRecentPhotos(5);
     <div class="flex max-w-full gap-x-2 overflow-hidden lg:mx-14">
       {
         images.map((image) => (
-          <a href={image.link} target="_blank" rel="noopener">
+          <a href={image.link} rel="noopener" target="_blank">
             <div class="h-52 w-52 shrink-0">
               <img
-                sizes="13rem"
                 class="object-cover"
+                sizes="13rem"
                 srcset={image.src.srcSet.attribute}
                 {...image.src.attributes}
                 alt={image.alt}

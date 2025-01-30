@@ -1,23 +1,19 @@
 ---
-import Layout from '@layouts/Layout.astro';
-import { Image } from 'astro:assets';
-
-import ArrowLeft from '@assets/icons/ArrowLeft.svelte';
-
 import Rosow1 from '@assets/events/forschungsraum/rosow_01.jpg';
 import Rosow2 from '@assets/events/forschungsraum/rosow_02.jpg';
 import Rosow3 from '@assets/events/forschungsraum/rosow_03.jpg';
 import Rosow4 from '@assets/events/forschungsraum/rosow_04.jpg';
 import Rosow5 from '@assets/events/forschungsraum/rosow_05.jpg';
 import Rosow6 from '@assets/events/forschungsraum/rosow_06.jpg';
-
-import Button from '@components/Button.astro';
-
+import ArrowLeft from '@assets/icons/ArrowLeft.svelte';
 import CalendarIcon from '@assets/icons/CalendarIcon.svelte';
 import HandWithMoney from '@assets/icons/HandWithMoney.svelte';
 import LocationPin from '@assets/icons/LocationPin.svelte';
 import People from '@assets/icons/People.svelte';
+import Button from '@components/Button.astro';
 import { eventData, type EventPage } from '@data';
+import Layout from '@layouts/Layout.astro';
+import { Image } from 'astro:assets';
 
 const { event }: { event: EventPage } = Astro.props;
 
@@ -34,19 +30,19 @@ export async function getStaticPaths() {
 
 const locationPictures = [
   {
-    src: Rosow1,
     alt: 'Ein 2-stöckiges rotes Backsteinhaus mit Garten und Windrädern am Horizont.',
+    src: Rosow1,
   },
   {
-    src: Rosow2,
     alt: 'Die Sonne scheint von hinten durch ein Baumhaus. Im rechten Vordergrund steht ein lila blühender Fliederbusch.',
+    src: Rosow2,
   },
-  { src: Rosow3, alt: 'Ein blühender Apfelbaum steht im Garten vor einem roten Backsteinhaus.' },
-  { src: Rosow4, alt: 'Die Sonne geht hinter Windrädern unter, mit Blick über ein Getreidefeld.' },
-  { src: Rosow5, alt: 'Zelte stehen zwischen Büschen und Bäumen im Garten.' },
+  { alt: 'Ein blühender Apfelbaum steht im Garten vor einem roten Backsteinhaus.', src: Rosow3 },
+  { alt: 'Die Sonne geht hinter Windrädern unter, mit Blick über ein Getreidefeld.', src: Rosow4 },
+  { alt: 'Zelte stehen zwischen Büschen und Bäumen im Garten.', src: Rosow5 },
   {
-    src: Rosow6,
     alt: 'Menschen sitzen und stehen um ein Lagerfeuer. Oben hängt eine Discokugel, die blau angeleuchtet wird.',
+    src: Rosow6,
   },
 ];
 ---
@@ -61,7 +57,7 @@ const locationPictures = [
   />
   <div class="pr-4 lg:pr-20">
     <div class="flex h-12 w-full items-center rounded-br-xl bg-yellow-500 bg-opacity-60 lg:text-xl">
-      <a href="/events" class="p-3">
+      <a class="p-3" href="/events">
         <ArrowLeft />
         <span class="sr-only">Zur vorherigen Seite</span>
       </a>
@@ -139,10 +135,10 @@ const locationPictures = [
         </div>
 
         <Button
-          text="Jetzt Anmelden"
-          color="dark"
           class="mt-12 uppercase lg:mt-8"
+          color="dark"
           href={event.registrationLink}
+          text="Jetzt Anmelden"
         />
       </div>
     </div>
@@ -193,20 +189,20 @@ const locationPictures = [
           {
             locationPictures.map((image) => (
               <Image
-                src={image.src}
                 alt={image.alt}
-                widths={[310, 400, 540, 720, 1024]}
-                sizes="(min-width: 1024px) 310px, 100vw"
                 class="aspect-square w-full object-cover"
+                sizes="(min-width: 1024px) 310px, 100vw"
+                src={image.src}
+                widths={[310, 400, 540, 720, 1024]}
               />
             ))
           }
         </div>
         <Button
-          text="Jetzt Anmelden"
-          color="dark"
           class="mt-12 uppercase lg:mt-8"
+          color="dark"
           href={event.registrationLink}
+          text="Jetzt Anmelden"
         />
       </div>
       {

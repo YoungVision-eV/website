@@ -4,9 +4,9 @@ import Button from '@components/Button.astro';
 import { getImage } from 'astro:assets';
 
 const BackgroundImageSrc = await getImage({
-  width: 1920,
   height: 1080,
   src: BackgroundImage,
+  width: 1920,
 });
 ---
 
@@ -19,9 +19,9 @@ const BackgroundImageSrc = await getImage({
     </p>
     <Button
       class="mt-12 lg:mt-4"
-      text="Mitglied werden"
-      href="https://easyverein.com/public/yv/applicationform/7213"
       color="dark"
+      href="https://easyverein.com/public/yv/applicationform/7213"
+      text="Mitglied werden"
     />
   </div>
 </section>

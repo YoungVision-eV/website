@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test';
+
 import { forceLoadImages } from './fixtures';
 
 test('Bauwoche 2024 screenshot', async ({ page }) => {

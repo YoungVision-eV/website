@@ -1,8 +1,8 @@
 <script>
-  import { slide, fade } from 'svelte/transition';
   import { createCollapsible, melt } from '@melt-ui/svelte';
+  import { fade, slide } from 'svelte/transition';
   const {
-    elements: { root, content, trigger },
+    elements: { content, root, trigger },
     states: { open },
   } = createCollapsible();
 

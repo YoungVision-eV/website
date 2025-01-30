@@ -7,24 +7,24 @@ import { Image } from 'astro:assets';
 
 const members = [
   {
-    name: 'Emma',
-    job: 'Design, ÖA',
     image: EmmaPortrait,
+    job: 'Design, ÖA',
+    name: 'Emma',
   },
   {
-    name: 'Jakob',
-    job: 'Finanzen, Events',
     image: JakobPortrait,
+    job: 'Finanzen, Events',
+    name: 'Jakob',
   },
   {
-    name: 'Rebecca',
-    job: 'ÖA, Events',
     image: RebeccaPortrait,
+    job: 'ÖA, Events',
+    name: 'Rebecca',
   },
   {
-    name: 'Jonas',
-    job: 'IT, Datenschutz',
     image: JonasPortrait,
+    job: 'IT, Datenschutz',
+    name: 'Jonas',
   },
 ];
 ---
@@ -37,9 +37,9 @@ const members = [
         members.map((member) => (
           <div class="flex flex-col items-center">
             <Image
-              src={member.image}
               alt={member.name}
               class="aspect-square h-auto w-full rounded-full bg-white object-cover object-center"
+              src={member.image}
             />
             <h2 class="mt-6 font-sans font-bold lg:mt-5 lg:text-xl">{member.name}</h2>
             <p class="lg:mt-3">{member.job}</p>

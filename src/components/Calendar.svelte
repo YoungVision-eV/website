@@ -1,16 +1,16 @@
 <script lang="ts">
-  import clsx from 'clsx';
+  import type { EventCalendarEntry } from '@data';
 
-  import { fade, blur } from 'svelte/transition';
+  import clsx from 'clsx';
   import { cubicOut } from 'svelte/easing';
   import { tweened } from 'svelte/motion';
-  import type { EventCalendarEntry } from '@data';
+  import { blur, fade } from 'svelte/transition';
 
   export let events: [EventCalendarEntry, EventCalendarEntry, EventCalendarEntry];
 
   const TODAY = new Date();
 
-  function relativeDate(date: Date): 'Vorbei' | 'Demnächst' {
+  function relativeDate(date: Date): 'Demnächst' | 'Vorbei' {
     if (date < TODAY) {
       return 'Vorbei';
     }

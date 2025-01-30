@@ -1,17 +1,16 @@
 <script lang="ts">
-  import clsx from 'clsx';
-
-  import { createCollapsible, melt } from '@melt-ui/svelte';
-  import { slide } from 'svelte/transition';
-
   import type { Exercise } from '@data/real/exercises';
-  import ChevronUp from '@assets/icons/ChevronUp.svelte';
+
   import ChevronDown from '@assets/icons/ChevronDown.svelte';
+  import ChevronUp from '@assets/icons/ChevronUp.svelte';
+  import { createCollapsible, melt } from '@melt-ui/svelte';
+  import clsx from 'clsx';
+  import { slide } from 'svelte/transition';
 
   export let exercises: Exercise[];
 
   const {
-    elements: { root, content, trigger },
+    elements: { content, root, trigger },
     states: { open },
   } = createCollapsible();
 </script>

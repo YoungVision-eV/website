@@ -1,6 +1,7 @@
 <script lang="ts">
-  import ProjectBackground3 from '@assets/events/projects-bg-lg-3.jpg';
   import type { YearlyEvent } from '@data';
+
+  import ProjectBackground3 from '@assets/events/projects-bg-lg-3.jpg';
 
   export let events: YearlyEvent[];
 

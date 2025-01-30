@@ -1,6 +1,6 @@
 ---
 import Button from '@components/Button.astro';
-import { Image, getImage } from 'astro:assets';
+import { getImage, Image } from 'astro:assets';
 
 import Background from './background-read-more.png';
 import ReadMoreImage from './read-more-image.jpeg';
@@ -15,11 +15,11 @@ const BackgroundUrl = await getImage({ src: Background });
     >
       <div class="hidden flex-none rounded-2xl lg:block">
         <Image
+          alt="Menschen sitzen in einem Van und singen. Die Person in der Mitte spielt Ukulele."
           class="h-[29rem] w-[27rem] rounded-2xl object-cover"
+          sizes="27rem"
           src={ReadMoreImage}
           widths={[432, 864, 1200, ReadMoreImage.width]}
-          sizes="27rem"
-          alt="Menschen sitzen in einem Van und singen. Die Person in der Mitte spielt Ukulele."
         />
       </div>
       <div class="flex flex-col items-center px-4 py-6 lg:items-start lg:pr-24">
@@ -34,7 +34,7 @@ const BackgroundUrl = await getImage({ src: Background });
           von Erfahrungen entsteht. Gemeinsam gestalten wir so eine Welt, in der Achtsamkeit,
           Verbundenheit und persönliche Entwicklung im Mittelpunkt stehen.
         </p>
-        <Button class="mt-12" text="Erfahre mehr" href="/about-us" color="bright" />
+        <Button class="mt-12" color="bright" href="/about-us" text="Erfahre mehr" />
       </div>
     </div>
   </div>

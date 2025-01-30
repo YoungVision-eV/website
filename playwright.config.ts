@@ -1,4 +1,5 @@
 import type { PlaywrightTestConfig, ReporterDescription } from '@playwright/test';
+
 import { devices } from '@playwright/test';
 
 const webServer: PlaywrightTestConfig['webServer'] = process.env.PLAYWRIGHT_TEST_BASE_URL
@@ -12,19 +13,16 @@ const webServer: PlaywrightTestConfig['webServer'] = process.env.PLAYWRIGHT_TEST
 const reporter: ReporterDescription[] = process.env.CI
   ? [
       ['github', { outputMode: 'summary' }],
-      ['html', { outputFolder: 'playwright-report', open: 'never' }],
+      ['html', { open: 'never', outputFolder: 'playwright-report' }],
       ['junit', { outputFile: 'playwright-results.xml' }],
     ]
   : [['list'], ['html']];
 
 const config: PlaywrightTestConfig = {
-  retries: 3,
-  use: { actionTimeout: 10000 },
   expect: {
     // because of image optimizations we have to be lenient during the port to astro
-    toHaveScreenshot: { maxDiffPixels: 500, maxDiffPixelRatio: 0.07, threshold: 0.3 },
+    toHaveScreenshot: { maxDiffPixelRatio: 0.07, maxDiffPixels: 500, threshold: 0.3 },
   },
-  webServer,
   projects: [
     {
       name: 'chromium',
@@ -45,9 +43,12 @@ const config: PlaywrightTestConfig = {
       },
     },
   ],
+  reporter,
+  retries: 3,
   testDir: 'tests',
   testMatch: /(.+\.)?(test|spec)\.[jt]s/,
-  reporter,
+  use: { actionTimeout: 10000 },
+  webServer,
 };
 
 export default config;

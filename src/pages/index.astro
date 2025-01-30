@@ -1,16 +1,12 @@
 ---
 import InstagramBackground from '@assets/instagram/background-instagram.jpeg';
-import { getImage } from 'astro:assets';
-
-import Layout from '@layouts/Layout.astro';
-
 import Events from '@components/index/Events.astro';
 import Hero from '@components/index/Hero.astro';
 import ReadMore from '@components/index/ReadMore.astro';
-
 import Testimonials from '@components/Testimonials.svelte';
-
 import { getTestimonials } from '@data/real/testimonials';
+import Layout from '@layouts/Layout.astro';
+import { getImage } from 'astro:assets';
 
 const testimonials = await getTestimonials();
 
