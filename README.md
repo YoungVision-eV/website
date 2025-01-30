@@ -10,7 +10,6 @@
 
 [![Built with Astro](https://astro.badg.es/v2/built-with-astro/small.svg)](https://astro.build)
 
-
 This is the front-end repo for [YoungVision.org](https://www.youngvision.org/) ([CMS Repo](https://github.com/YoungVision-eV/website-cms)), built using [Astro](https://astro.build).
 
 ## 📦 Prerequisites
@@ -33,13 +32,13 @@ pnpm install
 
 1. Choose an issue to work on.
 2. Create a new branch using:
-   
+
    ```bash
    better-branch
    ```
 
 3. After making changes, commit them using:
-   
+
    ```bash
    better-commits
    ```
@@ -62,15 +61,14 @@ pnpm install
 
 ## 🛠️ Commands
 
-| Command                    | Description                                     |
-|----------------------------|-------------------------------------------------|
-| `pnpm install`             | Installs dependencies                          |
-| `pnpm run dev`             | Starts a local development server              |
-| `pnpm run build`           | Builds the production site                     |
-| `pnpm run preview`         | Previews the built site before deployment      |
-| `pnpm run astro ...`       | Runs Astro CLI commands                        |
-| `pnpm run astro -- --help` | Get help using the Astro CLI                   |
-
+| Command                    | Description                               |
+| -------------------------- | ----------------------------------------- |
+| `pnpm install`             | Installs dependencies                     |
+| `pnpm run dev`             | Starts a local development server         |
+| `pnpm run build`           | Builds the production site                |
+| `pnpm run preview`         | Previews the built site before deployment |
+| `pnpm run astro ...`       | Runs Astro CLI commands                   |
+| `pnpm run astro -- --help` | Get help using the Astro CLI              |
 
 ## 📜 Pull Request Process
 
