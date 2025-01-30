@@ -7,21 +7,21 @@
       "automerge": true
     },
     {
-      "matchPackagePatterns": ["playwright"],
-      "groupName": "Playwright"
+      "groupName": "Playwright",
+      "matchPackageNames": ["/playwright/"]
     },
     {
-      "matchPackagePatterns": ["eslint"],
       "groupName": "eslint",
-      "automerge": true
+      "automerge": true,
+      "matchPackageNames": ["/eslint/"]
     },
     {
-      "matchPackagePatterns": ["^@types/"],
-      "automerge": true
+      "automerge": true,
+      "matchPackageNames": ["/^@types//"]
     },
     {
-      "matchPackagePatterns": ["prettier"],
-      "automerge": true
+      "automerge": true,
+      "matchPackageNames": ["/prettier/"]
     }
   ]
 }
