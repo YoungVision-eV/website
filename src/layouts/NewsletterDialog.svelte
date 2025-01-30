@@ -19,7 +19,7 @@
   <div
     transition:fly={{ duration: 150 }}
     use:melt={$content}
-    class="fixed left-[50%] top-[50%] z-50 max-h-[85vh] w-[90vw]
+    class="fixed top-[50%] left-[50%] z-50 max-h-[85vh] w-[90vw]
             max-w-[540px] translate-x-[-50%] translate-y-[-50%] rounded-xl bg-white
             p-6 shadow-lg"
   >

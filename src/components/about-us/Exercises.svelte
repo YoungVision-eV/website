@@ -25,7 +25,7 @@
             srcSet={exercise.image.srcSet.attribute}
             {...exercise.image.attributes}
             alt={exercise.title}
-            class="aspect-square h-auto w-full rounded-full bg-light-green object-cover object-center"
+            class="bg-light-green aspect-square h-auto w-full rounded-full object-cover object-center"
           />
         </div>
         <h3 class="mt-5 text-center font-sans text-xl lg:mt-8">{exercise.title}</h3>
@@ -41,7 +41,7 @@
             <img
               src={exercise.image.src}
               alt={exercise.title}
-              class="aspect-square h-auto w-full rounded-full bg-light-green object-cover object-center"
+              class="bg-light-green aspect-square h-auto w-full rounded-full object-cover object-center"
             />
           </div>
           <h3 class="mt-5 text-center font-sans text-xl lg:mt-8">{exercise.title}</h3>
@@ -60,7 +60,7 @@
           <img
             src={exercise.image.src}
             alt={exercise.title}
-            class="aspect-square h-auto w-full rounded-full bg-light-green object-cover object-center"
+            class="bg-light-green aspect-square h-auto w-full rounded-full object-cover object-center"
           />
         </div>
         <h3 class="mt-5 text-center font-sans text-xl">{exercise.title}</h3>
@@ -76,7 +76,7 @@
             <img
               src={exercise.image.src}
               alt={exercise.title}
-              class="aspect-square h-auto w-full rounded-full bg-light-green object-cover object-center"
+              class="bg-light-green aspect-square h-auto w-full rounded-full object-cover object-center"
             />
           </div>
           <h3 class="mt-5 text-center font-sans text-xl">{exercise.title}</h3>
@@ -117,7 +117,7 @@
         <img
           src={exercise.image.src}
           alt={exercise.title}
-          class="aspect-square h-auto w-full rounded-full bg-light-green object-cover object-center"
+          class="bg-light-green aspect-square h-auto w-full rounded-full object-cover object-center"
         />
       </div>
       <h3 class="mt-5 text-center font-sans text-xl lg:mt-8">{exercise.title}</h3>

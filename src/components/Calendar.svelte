@@ -46,7 +46,7 @@
           srcset={currentEvent.image.src.srcSet.attribute}
           alt={currentEvent.image.alt}
           sizes="(min-width: 1024px) 50vw, 100vw"
-          class="absolute left-0 top-0 h-full w-full rounded-t-2xl object-cover transition-opacity lg:rounded-l-2xl lg:rounded-tr-none"
+          class="absolute top-0 left-0 h-full w-full rounded-t-2xl object-cover transition-opacity lg:rounded-l-2xl lg:rounded-tr-none"
         />
       {/key}
     </div>
@@ -70,7 +70,7 @@
           {#each events as event, index}
             <button on:click={() => (selectedEvent = index)} aria-label={event.title}>
               <svg
-                class="h-5 w-5 text-yellow-500 text-opacity-60"
+                class="text-opacity-60 h-5 w-5 text-yellow-500"
                 fill="currentColor"
                 viewBox="0 0 100 100"
                 xmlns="http://www.w3.org/2000/svg"
@@ -91,7 +91,7 @@
   >
     <div
       class={clsx(
-        'absolute z-20 h-1/3 w-full bg-background lg:-ml-8 lg:w-[calc(100%+2rem)] lg:rounded-l-2xl',
+        'bg-background absolute z-20 h-1/3 w-full lg:-ml-8 lg:w-[calc(100%+2rem)] lg:rounded-l-2xl',
         selectedEvent === 0 ? 'rounded-t-2xl' : '',
       )}
       style="top: 0%; transform: translateY({$location * 100}%)"
@@ -101,7 +101,7 @@
         role="tab"
         aria-selected={index === selectedEvent}
         class={clsx(
-          'col-span-4 grid grid-cols-subgrid bg-yellow-700 transition-colors lg:col-span-5 lg:bg-yellow-500 lg:bg-opacity-60',
+          'lg:bg-opacity-60 col-span-4 grid grid-cols-subgrid bg-yellow-700 transition-colors lg:col-span-5 lg:bg-yellow-500',
           index === 0 ? 'rounded-t-2xl lg:rounded-tl-none' : '',
         )}
       >
@@ -114,7 +114,7 @@
           <div class="z-30 flex flex-col items-center justify-center lg:py-6">
             <span class="font-serif text-5xl font-bold">{event.date.getDate()}</span>
             <span>{event.date.toLocaleString('de-DE', { month: 'long' })}</span>
-            <p class="text-sm italic text-gray-700 lg:text-base">
+            <p class="text-sm text-gray-700 italic lg:text-base">
               {relativeDate(event.date)}
             </p>
           </div>
@@ -122,7 +122,7 @@
             <h3 class="font-bold lg:text-xl" id={`title-${event.title}`}>{event.title}</h3>
             <p>{event.description}</p>
           </div>
-          <div class="absolute bottom-5 right-5 z-30">
+          <div class="absolute right-5 bottom-5 z-30">
             {#if index === selectedEvent && event.link}
               <a
                 transition:fade={{ duration: ANIMATION_DURATION, easing: cubicOut }}

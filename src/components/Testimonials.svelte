@@ -26,7 +26,7 @@
 <!-- TODO: add Background -->
 
 <section
-  class={clsx('mx-auto w-full max-w-[80rem] pb-12 pt-14', className)}
+  class={clsx('mx-auto w-full max-w-[80rem] pt-14 pb-12', className)}
   data-testid="testimonials"
 >
   <h2 class="mx-5 font-serif text-3xl font-bold lg:mx-16">Von YoungVision Leuten</h2>

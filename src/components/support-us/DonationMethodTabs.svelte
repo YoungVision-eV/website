@@ -47,7 +47,7 @@
     <!-- TODO: is there a better way than this hidden tab? -->
     <TabPanel class="hidden" />
     {#each possibilities as possibility, i}
-      <TabPanel class="pb-16 pt-40 text-2xl">
+      <TabPanel class="pt-40 pb-16 text-2xl">
         <h3 class="text-center font-serif text-5xl font-bold">{possibility.title}</h3>
         <div
           class={clsx('mt-16 flex justify-between gap-x-28', {
