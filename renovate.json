@@ -1,27 +1,42 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended"],
+  "extends": [
+    "config:recommended"
+  ],
   "packageRules": [
     {
-      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "pin",
+        "digest"
+      ],
       "automerge": true
     },
     {
-      "matchPackagePatterns": ["playwright"],
-      "groupName": "Playwright"
+      "groupName": "Playwright",
+      "matchPackageNames": [
+        "/playwright/"
+      ]
     },
     {
-      "matchPackagePatterns": ["eslint"],
       "groupName": "eslint",
-      "automerge": true
+      "automerge": true,
+      "matchPackageNames": [
+        "/eslint/"
+      ]
     },
     {
-      "matchPackagePatterns": ["^@types/"],
-      "automerge": true
+      "automerge": true,
+      "matchPackageNames": [
+        "/^@types//"
+      ]
     },
     {
-      "matchPackagePatterns": ["prettier"],
-      "automerge": true
+      "automerge": true,
+      "matchPackageNames": [
+        "/prettier/"
+      ]
     }
   ]
 }
