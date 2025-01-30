@@ -1,2 +1,4 @@
 # moved from tabs to spaces with prettier (+import sorting) see PR #60
 b685a8f4e1766f49f8ad11b45075c947dc230e45
+# use eslint-perfectionist for sorting imports see PR #551
+283a5b1c7536b6602ff3c261ce7afe7482c72df0
