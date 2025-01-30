@@ -15,7 +15,7 @@
     use:melt={$overlay}
     class="fixed inset-0 z-50 bg-black/50"
     transition:fade={{ duration: 150 }}
-  />
+  ></div>
   <div
     transition:fly={{ duration: 150 }}
     use:melt={$content}
