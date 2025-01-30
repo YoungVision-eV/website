@@ -13,16 +13,16 @@ importers:
         version: 0.9.4(prettier-plugin-astro@0.14.1)(prettier@3.3.3)(typescript@5.7.3)
       '@astrojs/svelte':
         specifier: 7.0.4
-        version: 7.0.4(@types/node@22.12.0)(astro@5.2.0(@types/node@22.12.0)(jiti@1.21.6)(rollup@4.32.1)(typescript@5.7.3)(yaml@2.5.0))(jiti@1.21.6)(svelte@5.19.5)(typescript@5.7.3)(yaml@2.5.0)
+        version: 7.0.4(@types/node@22.12.0)(astro@5.2.1(@types/node@22.12.0)(jiti@1.21.6)(rollup@4.32.1)(typescript@5.7.3)(yaml@2.5.0))(jiti@1.21.6)(svelte@5.19.5)(typescript@5.7.3)(yaml@2.5.0)
       '@astrojs/tailwind':
         specifier: 6.0.0
-        version: 6.0.0(astro@5.2.0(@types/node@22.12.0)(jiti@1.21.6)(rollup@4.32.1)(typescript@5.7.3)(yaml@2.5.0))(tailwindcss@3.4.17)
+        version: 6.0.0(astro@5.2.1(@types/node@22.12.0)(jiti@1.21.6)(rollup@4.32.1)(typescript@5.7.3)(yaml@2.5.0))(tailwindcss@3.4.17)
       '@melt-ui/svelte':
         specifier: 0.86.2
         version: 0.86.2(svelte@5.19.5)
       astro:
-        specifier: 5.2.0
-        version: 5.2.0(@types/node@22.12.0)(jiti@1.21.6)(rollup@4.32.1)(typescript@5.7.3)(yaml@2.5.0)
+        specifier: 5.2.1
+        version: 5.2.1(@types/node@22.12.0)(jiti@1.21.6)(rollup@4.32.1)(typescript@5.7.3)(yaml@2.5.0)
       clsx:
         specifier: 2.1.1
         version: 2.1.1
@@ -979,8 +979,8 @@ packages:
     resolution: {integrity: sha512-8hJaCuqxObShWl2wEsnASqh/DbQ2O+S66m0Q3ctJlzBPEQ4pfGwwama3FCjZO3GDLQsjvn1T0v93Vxyu/+5fGw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  astro@5.2.0:
-    resolution: {integrity: sha512-6Y7Ph4aTeIifrJiD/b6JY4IoVTlWRVcA2pN1l7ioYSd+W8NsZL6LRZWWGeGHX7xlOD9ovsoG9duiSaydJ1Ua1Q==}
+  astro@5.2.1:
+    resolution: {integrity: sha512-OYR2kUo9EqX6OYZ1OmM14xP8mjFwgrk1FzIr+3K3tS0gCCKJsXtfboCUhX3lODZFIsmY/on7NPZd+2PURA0R2Q==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -1788,10 +1788,6 @@ packages:
 
   lower-case@2.0.2:
     resolution: {integrity: sha512-7fm3l3NAF9WfN6W3JOmf5drwpVqX78JtoGJ3A6W0a6ZnldM41w2fV5D490psKFTpMds8TJse/eHLFFsNHHjHgg==}
-
-  lru-cache@10.2.2:
-    resolution: {integrity: sha512-9hp3Vp2/hFQUiIwKo8XCeFVnrg8Pk3TYNPIR7tJADKi5YfcF7vEaK7avFHTlSy3kOKYaJQaalfEo6YuXdceBOQ==}
-    engines: {node: 14 || >=16.14}
 
   lru-cache@10.4.3:
     resolution: {integrity: sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==}
@@ -3175,10 +3171,10 @@ snapshots:
     dependencies:
       prismjs: 1.29.0
 
-  '@astrojs/svelte@7.0.4(@types/node@22.12.0)(astro@5.2.0(@types/node@22.12.0)(jiti@1.21.6)(rollup@4.32.1)(typescript@5.7.3)(yaml@2.5.0))(jiti@1.21.6)(svelte@5.19.5)(typescript@5.7.3)(yaml@2.5.0)':
+  '@astrojs/svelte@7.0.4(@types/node@22.12.0)(astro@5.2.1(@types/node@22.12.0)(jiti@1.21.6)(rollup@4.32.1)(typescript@5.7.3)(yaml@2.5.0))(jiti@1.21.6)(svelte@5.19.5)(typescript@5.7.3)(yaml@2.5.0)':
     dependencies:
       '@sveltejs/vite-plugin-svelte': 5.0.3(svelte@5.19.5)(vite@6.0.11(@types/node@22.12.0)(jiti@1.21.6)(yaml@2.5.0))
-      astro: 5.2.0(@types/node@22.12.0)(jiti@1.21.6)(rollup@4.32.1)(typescript@5.7.3)(yaml@2.5.0)
+      astro: 5.2.1(@types/node@22.12.0)(jiti@1.21.6)(rollup@4.32.1)(typescript@5.7.3)(yaml@2.5.0)
       svelte: 5.19.5
       svelte2tsx: 0.7.34(svelte@5.19.5)(typescript@5.7.3)
       typescript: 5.7.3
@@ -3197,9 +3193,9 @@ snapshots:
       - tsx
       - yaml
 
-  '@astrojs/tailwind@6.0.0(astro@5.2.0(@types/node@22.12.0)(jiti@1.21.6)(rollup@4.32.1)(typescript@5.7.3)(yaml@2.5.0))(tailwindcss@3.4.17)':
+  '@astrojs/tailwind@6.0.0(astro@5.2.1(@types/node@22.12.0)(jiti@1.21.6)(rollup@4.32.1)(typescript@5.7.3)(yaml@2.5.0))(tailwindcss@3.4.17)':
     dependencies:
-      astro: 5.2.0(@types/node@22.12.0)(jiti@1.21.6)(rollup@4.32.1)(typescript@5.7.3)(yaml@2.5.0)
+      astro: 5.2.1(@types/node@22.12.0)(jiti@1.21.6)(rollup@4.32.1)(typescript@5.7.3)(yaml@2.5.0)
       autoprefixer: 10.4.20(postcss@8.5.1)
       postcss: 8.5.1
       postcss-load-config: 4.0.2(postcss@8.5.1)
@@ -3789,7 +3785,7 @@ snapshots:
     dependencies:
       '@typescript-eslint/types': 7.18.0
       '@typescript-eslint/visitor-keys': 7.18.0
-      debug: 4.3.7
+      debug: 4.4.0
       globby: 11.1.0
       is-glob: 4.0.3
       minimatch: 9.0.4
@@ -3804,8 +3800,8 @@ snapshots:
     dependencies:
       '@typescript-eslint/types': 8.22.0
       '@typescript-eslint/visitor-keys': 8.22.0
-      debug: 4.3.7
-      fast-glob: 3.3.2
+      debug: 4.4.0
+      fast-glob: 3.3.3
       is-glob: 4.0.3
       minimatch: 9.0.4
       semver: 7.6.3
@@ -3965,7 +3961,7 @@ snapshots:
       - supports-color
       - typescript
 
-  astro@5.2.0(@types/node@22.12.0)(jiti@1.21.6)(rollup@4.32.1)(typescript@5.7.3)(yaml@2.5.0):
+  astro@5.2.1(@types/node@22.12.0)(jiti@1.21.6)(rollup@4.32.1)(typescript@5.7.3)(yaml@2.5.0):
     dependencies:
       '@astrojs/compiler': 2.10.3
       '@astrojs/internal-helpers': 0.5.0
@@ -4653,7 +4649,7 @@ snapshots:
     dependencies:
       array-union: 2.1.0
       dir-glob: 3.0.1
-      fast-glob: 3.3.2
+      fast-glob: 3.3.3
       ignore: 5.3.1
       merge2: 1.4.1
       slash: 3.0.0
@@ -4915,8 +4911,6 @@ snapshots:
   lower-case@2.0.2:
     dependencies:
       tslib: 2.7.0
-
-  lru-cache@10.2.2: {}
 
   lru-cache@10.4.3: {}
 
@@ -5404,7 +5398,7 @@ snapshots:
 
   path-scurry@1.11.1:
     dependencies:
-      lru-cache: 10.2.2
+      lru-cache: 10.4.3
       minipass: 7.1.1
 
   path-type@4.0.0: {}
