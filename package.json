@@ -10,7 +10,7 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "lint": "pnpm run /^lint:.*/",
+    "lint": "pnpm run --no-bail /^lint:.*/",
     "lint:prettier": "prettier --check .",
     "lint:eslint": "eslint .",
     "lint:astro-check": "astro check",
