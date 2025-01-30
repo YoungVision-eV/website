@@ -1,7 +1,8 @@
 <script>
   import clsx from 'clsx';
-  import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@rgossiaux/svelte-headlessui';
   import SvelteMarkdown from 'svelte-markdown';
+
+  import { createTabs, melt } from '@melt-ui/svelte';
 
   import Button from '@components/Button.svelte';
 
@@ -9,24 +10,30 @@
   import List from './markdown/List.svelte';
   import ListItem from './markdown/ListItem.svelte';
 
+  const {
+    elements: { root, list, content, trigger },
+    states: { value },
+  } = createTabs({
+    autoSet: false,
+  });
+
   /** @type {import('@data/donations').DonationMethod[]} **/
   export let possibilities;
 </script>
 
-<TabGroup class="mt-20 hidden lg:block">
-  <TabList class="tab-list grid grid-cols-4 grid-rows-4 items-stretch gap-x-16">
-    <Tab class="hidden" />
+<div use:melt={$root} class="mt-20 hidden lg:block">
+  <div use:melt={$list} class="tab-list grid grid-cols-4 grid-rows-4 items-stretch gap-x-16">
     {#each possibilities as possibility}
-      <Tab
+      <button
+        use:melt={$trigger(possibility.title)}
         class="row-span-4 grid grid-rows-subgrid items-center justify-between text-center"
-        let:selected
       >
         <div
           class={clsx(
             'mx-auto flex h-56 w-56 items-center justify-center rounded-full shadow-lg transition-colors',
             {
-              'border-2 border-black bg-green-200': selected,
-              'bg-green-500': !selected,
+              'border-2 border-black bg-green-200': $value === possibility.title,
+              'bg-green-500': $value !== possibility.title,
             },
           )}
         >
@@ -40,14 +47,12 @@
           href="mailto:kontakt@youngvision.org"
           color="dark"
         />
-      </Tab>
+      </button>
     {/each}
-  </TabList>
-  <TabPanels>
-    <!-- TODO: is there a better way than this hidden tab? -->
-    <TabPanel class="hidden" />
+  </div>
+  <div>
     {#each possibilities as possibility, i}
-      <TabPanel class="pb-16 pt-40 text-2xl">
+      <div use:melt={$content(possibility.title)} class="pb-16 pt-40 text-2xl">
         <h3 class="text-center font-serif text-5xl font-bold">{possibility.title}</h3>
         <div
           class={clsx('mt-16 flex justify-between gap-x-28', {
@@ -89,10 +94,10 @@
             />
           </div>
         </div>
-      </TabPanel>
+      </div>
     {/each}
-  </TabPanels>
-</TabGroup>
+  </div>
+</div>
 
 <style>
   :global(.tab-list) {
