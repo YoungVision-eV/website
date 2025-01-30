@@ -1,15 +1,5 @@
 /** @type {import("prettier").Config} */
 const config = {
-  printWidth: 100,
-  singleQuote: true,
-  plugins: [
-    'prettier-plugin-svelte',
-    'prettier-plugin-astro',
-    'prettier-plugin-tailwindcss',
-    'prettier-plugin-organize-imports',
-    'prettier-plugin-astro-organize-imports',
-  ],
-  tailwindFunctions: ['clsx'],
   overrides: [
     {
       files: '*.astro',
@@ -24,6 +14,10 @@ const config = {
       },
     },
   ],
+  plugins: ['prettier-plugin-svelte', 'prettier-plugin-astro', 'prettier-plugin-tailwindcss'],
+  printWidth: 100,
+  singleQuote: true,
+  tailwindFunctions: ['clsx'],
 };
 
 export default config;

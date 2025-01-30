@@ -1,13 +1,12 @@
 import eslint from '@eslint/js';
+import parserAstro from 'astro-eslint-parser';
 import eslintConfigPrettier from 'eslint-config-prettier';
 import eslintPluginAstro from 'eslint-plugin-astro';
+import perfectionist from 'eslint-plugin-perfectionist';
 import eslintPluginSvelte from 'eslint-plugin-svelte';
-import tseslint from 'typescript-eslint';
-
-import parserAstro from 'astro-eslint-parser';
-import parserSvelte from 'svelte-eslint-parser';
-
 import globals from 'globals';
+import parserSvelte from 'svelte-eslint-parser';
+import tseslint from 'typescript-eslint';
 
 import svelteConfig from './svelte.config.js';
 
@@ -31,30 +30,31 @@ export default tseslint.config(
   },
   eslint.configs.recommended,
   eslintConfigPrettier,
+  perfectionist.configs['recommended-natural'],
   ...eslintPluginSvelte.configs['flat/recommended'],
   ...tseslint.configs.recommended,
   ...eslintPluginAstro.configs.recommended,
   {
-    plugins: {
-      '@typescript-eslint': tseslint.plugin,
-    },
-
     languageOptions: {
+      ecmaVersion: 2020,
+
       globals: {
         ...globals.browser,
         ...globals.node,
       },
-
       parser: tseslint.parser,
-      ecmaVersion: 2020,
       sourceType: 'module',
+    },
+
+    plugins: {
+      '@typescript-eslint': tseslint.plugin,
     },
     rules: {
       '@typescript-eslint/no-unused-vars': [
         'error',
         {
-          varsIgnorePattern: '^_',
           argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
         },
       ],
     },
@@ -63,19 +63,19 @@ export default tseslint.config(
     files: ['tests/**/*.ts'],
 
     languageOptions: {
-      parser: tseslint.parser,
       ecmaVersion: 5,
-      sourceType: 'script',
-
+      parser: tseslint.parser,
       parserOptions: {
         project: true,
         tsconfigRootDir: import.meta.dirname,
       },
+
+      sourceType: 'script',
     },
 
     rules: {
-      'require-await': 'off',
       '@typescript-eslint/require-await': 'error',
+      'require-await': 'off',
       'svelte/no-inner-declarations': 'off', // FIXME: for some reason this rule is broken and causes eslint to crash
     },
   },
@@ -84,14 +84,14 @@ export default tseslint.config(
     files: ['**/*.astro'],
 
     languageOptions: {
-      parser: parserAstro,
       ecmaVersion: 5,
-      sourceType: 'script',
-
+      parser: parserAstro,
       parserOptions: {
-        parser: tseslint.parser,
         extraFileExtensions: ['.astro'],
+        parser: tseslint.parser,
       },
+
+      sourceType: 'script',
     },
   },
 
@@ -101,9 +101,9 @@ export default tseslint.config(
     languageOptions: {
       parser: parserSvelte,
       parserOptions: {
+        extraFileExtensions: ['.svelte'],
         parser: tseslint.parser,
         svelteConfig,
-        extraFileExtensions: ['.svelte'],
       },
     },
   },
