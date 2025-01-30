@@ -25,13 +25,12 @@
   "dependencies": {
     "@astrojs/check": "0.9.4",
     "@astrojs/svelte": "7.0.4",
-    "@astrojs/tailwind": "6.0.0",
+    "@astrojs/tailwind": "^6.0.0",
     "@melt-ui/svelte": "0.86.2",
     "astro": "5.2.1",
     "clsx": "2.1.1",
     "qs": "^6.12.1",
     "svelte": "5.19.5",
-    "tailwindcss": "4.0.1",
     "typescript": "5.7.3"
   },
   "devDependencies": {
@@ -40,8 +39,9 @@
     "@melt-ui/pp": "0.3.2",
     "@playwright/test": "1.49.1",
     "@tailwindcss/typography": "^0.5.13",
-    "@types/eslint__js": "8.42.3",
     "@types/node": "22.12.0",
+    "@tailwindcss/vite": "4.0.1",
+    "@types/eslint__js": "8.42.3",
     "@types/qs": "^6.9.15",
     "@typescript-eslint/eslint-plugin": "8.22.0",
     "@typescript-eslint/parser": "8.22.0",
@@ -64,6 +64,7 @@
     "svelte-check": "4.1.4",
     "svelte-markdown": "0.4.1",
     "svelte-sequential-preprocessor": "2.0.2",
+    "tailwindcss": "4.0.1",
     "typescript": "5.7.3",
     "typescript-eslint": "8.22.0"
   }

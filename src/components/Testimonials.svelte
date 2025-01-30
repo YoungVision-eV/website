@@ -50,7 +50,7 @@
               />
             </div>
             <div class="lg:pb-4">
-              <blockquote class="mt-2.5 leading-6 lg:text-xl">
+              <blockquote class="mt-2.5 leading-6 lg:text-xl/7">
                 <p>{testimonial.text}</p>
               </blockquote>
 

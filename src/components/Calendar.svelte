@@ -101,7 +101,7 @@
         role="tab"
         aria-selected={index === selectedEvent}
         class={clsx(
-          'lg:bg-opacity-60 col-span-4 grid grid-cols-subgrid bg-yellow-700 transition-colors lg:col-span-5 lg:bg-yellow-500',
+          'col-span-4 grid grid-cols-subgrid bg-yellow-700 transition-colors lg:col-span-5 lg:bg-yellow-500/60',
           index === 0 ? 'rounded-t-2xl lg:rounded-tl-none' : '',
         )}
       >

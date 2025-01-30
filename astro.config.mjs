@@ -1,5 +1,5 @@
 import svelte from '@astrojs/svelte';
-import tailwind from '@astrojs/tailwind';
+import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
@@ -16,7 +16,12 @@ export default defineConfig({
       },
     ],
   },
-  integrations: [svelte(), tailwind()],
+
+  integrations: [svelte()],
   server: ({ command }) => ({ port: command === 'dev' ? 5173 : 4321 }),
   trailingSlash: 'never',
+
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });
