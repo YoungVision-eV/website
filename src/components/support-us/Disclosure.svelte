@@ -91,10 +91,9 @@
 <style>
   @media (min-width: 1024px) {
     #benefits {
-      grid-template-columns: 7rem repeat(2, minmax(0, 1fr)) 7rem repeat(
-          2,
-          minmax(0, 1fr)
-        ) 7rem repeat(2, minmax(0, 1fr));
+      grid-template-columns:
+        7rem repeat(2, minmax(0, 1fr)) 7rem repeat(2, minmax(0, 1fr))
+        7rem repeat(2, minmax(0, 1fr));
     }
   }
 </style>
