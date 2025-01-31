@@ -60,9 +60,8 @@ export type YearlyEvent = {
   for_all: boolean;
   future?: string;
   //TODO: this should probably also be an ImageWithAlt
-  image: {
+  image: GetImageResult & {
     alt: string;
-    src: GetImageResult;
   };
   month: string;
   short_description: string;
