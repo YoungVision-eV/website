@@ -10,69 +10,81 @@
 
 [![Built with Astro](https://astro.badg.es/v2/built-with-astro/small.svg)](https://astro.build)
 
-## 🏃 Get Started
+This is the front-end repo for [YoungVision.org](https://www.youngvision.org/) ([CMS Repo](https://github.com/YoungVision-eV/website-cms)), built using [Astro](https://astro.build).
 
-### 📦 Requirements
+## 📦 Prerequisites
 
 - Node.js v16 or higher
 - [pnpm](https://pnpm.io)
 - [better-commits](https://github.com/Everduin94/better-commits)
 
-### 📦 Install
+## 📥 Installation
+
+Clone the repository and install dependencies:
 
 ```bash
+git clone https://github.com/YoungVision-eV/website.git
+cd website
 pnpm install
 ```
 
-### 📦 Working on tasks
+## 🚧 Working on Tasks
 
-Choose an issue and then create a branch with
+1. Choose an issue to work on.
+2. Create a new branch using:
 
-```bash
-better-branch
-```
+   ```bash
+   better-branch
+   ```
 
-After you've done some work on it commit your changes with
+3. After making changes, commit them using:
 
-```bash
-better-commits
-```
+   ```bash
+   better-commits
+   ```
 
-## 🚀 Project Structure
+4. Push your branch and open a Pull Request (PR) following the process below.
 
-Inside of your Astro project, you'll see the following folders and files:
+## 📁 Project Structure
 
 ```text
 /
-├── public/
+├── public/            # Static assets (images, icons, etc.)
 ├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── components/    # UI components
+│   ├── pages/         # Astro pages
+│   ├── styles/        # Global styles
+│   └── utils/         # Utility functions
+├── package.json       # Project dependencies and scripts
+└── astro.config.mjs   # Astro configuration
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 🛠️ Commands
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+| Command                    | Description                               |
+| -------------------------- | ----------------------------------------- |
+| `pnpm install`             | Installs dependencies                     |
+| `pnpm run dev`             | Starts a local development server         |
+| `pnpm run build`           | Builds the production site                |
+| `pnpm run preview`         | Previews the built site before deployment |
+| `pnpm run astro ...`       | Runs Astro CLI commands                   |
+| `pnpm run astro -- --help` | Get help using the Astro CLI              |
 
-Any static assets, like images, can be placed in the `public/` directory.
+## 📜 Pull Request Process
 
-## 🧞 Commands
+To contribute to this project, follow these steps:
 
-All commands are run from the root of the project, from a terminal:
+1. **Fork** the repository and create your feature branch (`feature/your-feature`).
+2. **Commit** your changes using [better-commits](https://github.com/Everduin94/better-commits).
+3. **Push** to the branch.
+4. Open a **Pull Request** and describe your changes.
+5. Wait for a **review** and make requested changes if necessary.
+6. Once approved, your PR will be merged.
 
-| Command                    | Action                                           |
-| :------------------------- | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm run dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm run build`           | Build your production site to `./dist/`          |
-| `pnpm run preview`         | Preview your build locally, before deploying     |
-| `pnpm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm run astro -- --help` | Get help using the Astro CLI                     |
+## 📚 Want to Learn More?
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- [Astro Documentation](https://docs.astro.build)
+- [Astro Discord Community](https://astro.build/chat)
 
 ## Contributors
 
