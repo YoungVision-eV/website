@@ -114,7 +114,7 @@ export async function getAllYearlyEvents(): Promise<YearlyEvent[]> {
       for_all: true,
       image: {
         alt: 'Eine Gruppe Menschen sitzt in einer Reihe.',
-        src: await getYearlyEventImage(EventImage1),
+        ...(await getYearlyEventImage(EventImage1)),
       },
       month: 'September',
       short_description:
@@ -127,7 +127,7 @@ export async function getAllYearlyEvents(): Promise<YearlyEvent[]> {
       for_all: true,
       image: {
         alt: 'Menschen sitzen an einem Holztisch und spielen ein Kartenspiel im Garten.',
-        src: await getYearlyEventImage(EventImage2),
+        ...(await getYearlyEventImage(EventImage2)),
       },
       month: 'Dezember',
       short_description:
@@ -140,7 +140,7 @@ export async function getAllYearlyEvents(): Promise<YearlyEvent[]> {
       for_all: false,
       image: {
         alt: 'Ein großer Kuschelhaufen liegt vor einer Frau die Ukulele spielt.',
-        src: await getYearlyEventImage(EventImage3),
+        ...(await getYearlyEventImage(EventImage3)),
       },
       month: 'April',
       short_description:

@@ -93,7 +93,7 @@ export async function getAllYearlyEvents(): Promise<YearlyEvent[]> {
     {
       day: '1',
       for_all: true,
-      image: { alt: 'Test Event Image 1', src: await getImage({ src: EventImage1 }) },
+      image: { alt: 'Test Event Image 1', ...(await getImage({ src: EventImage1 })) },
       month: 'Januar',
       short_description: 'Das ist ein Test Event. Komm nicht vorbei, weil es ist nicht real.',
       slug: 'event-1',
@@ -102,7 +102,7 @@ export async function getAllYearlyEvents(): Promise<YearlyEvent[]> {
     {
       day: '31',
       for_all: true,
-      image: { alt: 'Test Event Image 2', src: await getImage({ src: EventImage2 }) },
+      image: { alt: 'Test Event Image 2', ...(await getImage({ src: EventImage2 })) },
       month: 'Oktober',
       short_description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium, felis sed luctus tempor',
@@ -112,7 +112,7 @@ export async function getAllYearlyEvents(): Promise<YearlyEvent[]> {
     {
       day: '24',
       for_all: false,
-      image: { alt: 'Test Event Image 3', src: await getImage({ src: EventImage3 }) },
+      image: { alt: 'Test Event Image 3', ...(await getImage({ src: EventImage3 })) },
       month: 'Mai',
       short_description: 'Noch ein Test Event, aber nur für Mitglieder !!!1!!11!111elf1',
       slug: 'event-3',
