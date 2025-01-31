@@ -11,11 +11,11 @@
 <button
   use:melt={$close}
   aria-label="close"
-  class="absolute right-2 top-2 inline-flex h-8 w-8 appearance-none items-center justify-center rounded-full p-1 text-gray-500 hover:text-gray-900 lg:right-3 lg:top-3 lg:h-10 lg:w-10"
+  class="absolute top-2 right-2 inline-flex h-8 w-8 appearance-none items-center justify-center rounded-full p-1 text-gray-500 hover:text-gray-900 lg:top-3 lg:right-3 lg:h-10 lg:w-10"
 >
   <Close />
 </button>
-<h2 class="text-center font-serif text-xl font-bold text-orange lg:text-2xl">
+<h2 class="text-orange text-center font-serif text-xl font-bold lg:text-2xl">
   Newsletter Anmeldung
 </h2>
 <iframe

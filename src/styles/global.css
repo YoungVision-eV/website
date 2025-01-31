@@ -1,0 +1,77 @@
+@import 'tailwindcss';
+
+@plugin '@tailwindcss/typography';
+
+@theme {
+  --font-*: initial;
+  --font-sans: Montserrat, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-serif: source-serif-pro, ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+
+  --color-*: initial;
+  --color-black: #000;
+  --color-white: #fff;
+
+  --color-green-50: #21291f;
+  --color-green-200: #6a845e;
+  --color-green-500: #bbcea8;
+  --color-green-700: #d4dec7;
+
+  --color-dark-green: #6a845e;
+  --color-light-green: #bbcea8;
+  --color-background: #f9f8f6;
+
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+  --color-gray-950: #030712;
+
+  --color-orange: #e97d2b;
+
+  --color-yellow-500: #f0ec57;
+  --color-yellow-700: #f4f197;
+  --color-yellow-900: #f9f6e4;
+
+  --color-pink: #ea6c92;
+
+  --color-blue-50: #eff6ff;
+  --color-blue-100: #dbeafe;
+  --color-blue-200: #bfdbfe;
+  --color-blue-300: #93c5fd;
+  --color-blue-400: #60a5fa;
+  --color-blue-500: #3b82f6;
+  --color-blue-600: #2563eb;
+  --color-blue-700: #1d4ed8;
+  --color-blue-800: #1e40af;
+  --color-blue-900: #1e3a8a;
+  --color-blue-950: #172554;
+
+  --grid-template-columns-subgrid: subgrid;
+
+  --grid-template-rows-subgrid: subgrid;
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}

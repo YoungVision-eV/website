@@ -26,7 +26,7 @@
 <!-- TODO: add Background -->
 
 <section
-  class={clsx('mx-auto w-full max-w-[80rem] pb-12 pt-14', className)}
+  class={clsx('mx-auto w-full max-w-[80rem] pt-14 pb-12', className)}
   data-testid="testimonials"
 >
   <h2 class="mx-5 font-serif text-3xl font-bold lg:mx-16">Von YoungVision Leuten</h2>
@@ -50,7 +50,7 @@
               />
             </div>
             <div class="lg:pb-4">
-              <blockquote class="mt-2.5 leading-6 lg:text-xl">
+              <blockquote class="mt-2.5 leading-6 lg:text-xl/7">
                 <p>{testimonial.text}</p>
               </blockquote>
 
