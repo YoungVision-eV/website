@@ -39,7 +39,7 @@
     "@melt-ui/pp": "0.3.2",
     "@playwright/test": "1.49.1",
     "@tailwindcss/typography": "0.5.16",
-    "@types/node": "22.12.0",
+    "@types/node": "22.13.0",
     "@tailwindcss/vite": "4.0.1",
     "@types/eslint__js": "8.42.3",
     "@types/qs": "6.9.18",
