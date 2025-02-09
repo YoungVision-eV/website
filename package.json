@@ -39,7 +39,7 @@
     "@melt-ui/pp": "0.3.2",
     "@playwright/test": "1.49.1",
     "@tailwindcss/typography": "0.5.16",
-    "@tailwindcss/vite": "4.0.4",
+    "@tailwindcss/vite": "4.0.5",
     "@types/eslint__js": "8.42.3",
     "@types/node": "22.13.1",
     "@types/qs": "6.9.18",
@@ -66,7 +66,7 @@
     "svelte-eslint-parser": "0.43.0",
     "svelte-markdown": "0.4.1",
     "svelte-sequential-preprocessor": "2.0.2",
-    "tailwindcss": "4.0.4",
+    "tailwindcss": "4.0.5",
     "typescript": "5.7.3",
     "typescript-eslint": "8.23.0"
   }
