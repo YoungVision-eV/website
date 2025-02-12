@@ -54,7 +54,7 @@
     "eslint-plugin-perfectionist": "4.8.0",
     "eslint-plugin-svelte": "2.46.1",
     "git-format-staged": "3.1.1",
-    "globals": "15.14.0",
+    "globals": "15.15.0",
     "husky": "9.1.7",
     "prettier": "3.5.0",
     "prettier-plugin-astro": "0.14.1",
