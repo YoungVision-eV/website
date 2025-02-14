@@ -43,18 +43,37 @@ pnpm install
    better-commits
    ```
 
-4. Push your branch and open a Pull Request (PR) following the process below.
+4. Push your branch and open a Pull Request (PR) following [the process](#-pull-request-process) below.
+
+## 🧪 Testing
+
+We use [playwright](https://playwright.dev/) for our E2E tests.
+You can find the tests in the [`tests/`](tests/) directory.
+
+You can run the tests with:
+
+```bash
+pnpm run test
+```
+
+This might need some additional setup. Usually you can run this to install the browsers:
+
+```bash
+pnpm exec playwright install --with-deps
+```
 
 ## 📁 Project Structure
 
 ```text
-/
 ├── public/            # Static assets (images, icons, etc.)
 ├── src/
 │   ├── components/    # UI components
 │   ├── pages/         # Astro pages
 │   ├── styles/        # Global styles
 │   └── utils/         # Utility functions
+├── tests/             # E2E tests
+│   ├── fixtures.ts    # Fixture files for tests
+│   └── *.test.ts      # Test files
 ├── package.json       # Project dependencies and scripts
 └── astro.config.mjs   # Astro configuration
 ```
@@ -67,6 +86,9 @@ pnpm install
 | `pnpm run dev`             | Starts a local development server         |
 | `pnpm run build`           | Builds the production site                |
 | `pnpm run preview`         | Previews the built site before deployment |
+| `pnpm run lint`            | Check the code                            |
+| `pnpm run format`          | Format the code                           |
+| `pnpm run test`            | Run our E2E tests (might need setup)      |
 | `pnpm run astro ...`       | Runs Astro CLI commands                   |
 | `pnpm run astro -- --help` | Get help using the Astro CLI              |
 
