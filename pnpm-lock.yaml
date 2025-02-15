@@ -18,8 +18,8 @@ importers:
         specifier: 6.0.0
         version: 6.0.0(astro@5.3.0(@types/node@22.13.4)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.1)(typescript@5.7.3)(yaml@2.7.0))(tailwindcss@4.0.6)
       '@melt-ui/svelte':
-        specifier: 0.86.2
-        version: 0.86.2(svelte@5.20.1)
+        specifier: 0.86.3
+        version: 0.86.3(svelte@5.20.1)
       astro:
         specifier: 5.3.0
         version: 5.3.0(@types/node@22.13.4)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.1)(typescript@5.7.3)(yaml@2.7.0)
@@ -44,7 +44,7 @@ importers:
         version: 9.20.0
       '@melt-ui/pp':
         specifier: 0.3.2
-        version: 0.3.2(@melt-ui/svelte@0.86.2(svelte@5.20.1))(svelte@5.20.1)
+        version: 0.3.2(@melt-ui/svelte@0.86.3(svelte@5.20.1))(svelte@5.20.1)
       '@playwright/test':
         specifier: 1.49.1
         version: 1.49.1
@@ -584,8 +584,8 @@ packages:
       '@melt-ui/svelte': '>= 0.29.0'
       svelte: ^3.55.0 || ^4.0.0 || ^5.0.0-next.1
 
-  '@melt-ui/svelte@0.86.2':
-    resolution: {integrity: sha512-wRVN603oIt1aXvx2QRmKqVDJgTScSvr/WJLLokkD8c4QzHgn6pfpPtUKmhV6Dvkk+OY89OG/1Irkd6ouA50Ztw==}
+  '@melt-ui/svelte@0.86.3':
+    resolution: {integrity: sha512-ZsWmHGd6P636mws1CgatlX7JtLkWoUBPXeNzPzvHYgZdagp8io8MPFotDIfRyKwTEQFUqF9fhBks6CWr0Nupuw==}
     peerDependencies:
       svelte: ^3.0.0 || ^4.0.0 || ^5.0.0-next.118
 
@@ -3457,14 +3457,14 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  '@melt-ui/pp@0.3.2(@melt-ui/svelte@0.86.2(svelte@5.20.1))(svelte@5.20.1)':
+  '@melt-ui/pp@0.3.2(@melt-ui/svelte@0.86.3(svelte@5.20.1))(svelte@5.20.1)':
     dependencies:
-      '@melt-ui/svelte': 0.86.2(svelte@5.20.1)
+      '@melt-ui/svelte': 0.86.3(svelte@5.20.1)
       estree-walker: 3.0.3
       magic-string: 0.30.17
       svelte: 5.20.1
 
-  '@melt-ui/svelte@0.86.2(svelte@5.20.1)':
+  '@melt-ui/svelte@0.86.3(svelte@5.20.1)':
     dependencies:
       '@floating-ui/core': 1.6.9
       '@floating-ui/dom': 1.6.13
