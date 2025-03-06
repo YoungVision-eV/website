@@ -54,9 +54,6 @@ importers:
       '@tailwindcss/vite':
         specifier: 4.0.6
         version: 4.0.6(vite@6.2.0(@types/node@22.13.9)(jiti@2.4.2)(lightningcss@1.29.1)(yaml@2.7.0))
-      '@types/eslint__js':
-        specifier: 9.14.0
-        version: 9.14.0
       '@types/node':
         specifier: 22.13.9
         version: 22.13.9
@@ -848,10 +845,6 @@ packages:
 
   '@types/debug@4.1.12':
     resolution: {integrity: sha512-vIChWdVG3LG1SMxEvI/AK+FWJthlrqlTu7fbrlywTkkaONwk/UAGaULXRlf8vkzFBLVm0zkMdCquhL5aOjhXPQ==}
-
-  '@types/eslint__js@9.14.0':
-    resolution: {integrity: sha512-s0jepCjOJWB/GKcuba4jISaVpBudw3ClXJ3fUK4tugChUMQsp6kSwuA8Dcx6wFd/JsJqcY8n4rEpa5RTHs5ypA==}
-    deprecated: This is a stub types definition. @eslint/js provides its own type definitions, so you do not need this installed.
 
   '@types/estree@1.0.6':
     resolution: {integrity: sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==}
@@ -3690,10 +3683,6 @@ snapshots:
   '@types/debug@4.1.12':
     dependencies:
       '@types/ms': 2.1.0
-
-  '@types/eslint__js@9.14.0':
-    dependencies:
-      '@eslint/js': 9.21.0
 
   '@types/estree@1.0.6': {}
 
