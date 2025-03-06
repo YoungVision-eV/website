@@ -67,7 +67,7 @@
           <circle cx="50" cy="50" r="50" />
         </svg>
         <div class="h-full lg:flex lg:flex-col lg:justify-center lg:gap-y-1">
-          {#each events as event, index}
+          {#each events as event, index (event.title)}
             <button on:click={() => (selectedEvent = index)} aria-label={event.title}>
               <svg
                 class="text-opacity-60 h-5 w-5 text-yellow-500"
@@ -96,7 +96,7 @@
       )}
       style="top: 0%; transform: translateY({$location * 100}%)"
     ></div>
-    {#each events as event, index}
+    {#each events as event, index (event.title)}
       <li
         role="tab"
         aria-selected={index === selectedEvent}

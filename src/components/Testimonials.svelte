@@ -37,7 +37,7 @@
       on:emblaInit={onInit}
     >
       <div class="flex">
-        {#each testimonials as testimonial}
+        {#each testimonials as testimonial (testimonial.name)}
           <div class="embla__slide mr-5 min-w-0 items-center gap-x-28 lg:mr-32 lg:flex">
             <div class="flex-none">
               <img

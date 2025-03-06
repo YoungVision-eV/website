@@ -62,7 +62,7 @@
     </div>
     <!-- Desktop menu -->
     <div class="hidden lg:flex lg:gap-x-12">
-      {#each pages as page}
+      {#each pages as page (page.url)}
         <a
           href={page.url}
           class={clsx('text-sm leading-6 text-black hover:underline ', {
@@ -105,7 +105,7 @@
         <div class="mt-6 flow-root">
           <div class="-my-6 divide-y divide-gray-500/10">
             <div class="space-y-2 py-6">
-              {#each pages as page}
+              {#each pages as page (page.url)}
                 <a
                   href={page.url}
                   aria-current={shouldHighlight(page) ? 'page' : undefined}

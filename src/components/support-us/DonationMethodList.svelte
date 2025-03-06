@@ -14,7 +14,7 @@
 </script>
 
 <ul class="mt-16 px-4 lg:hidden" use:melt={$root}>
-  {#each possibilities as possibility}
+  {#each possibilities as possibility (possibility.title)}
     <li class="group mt-24 first:mt-0" use:melt={$item(possibility.title)}>
       <div>
         <button

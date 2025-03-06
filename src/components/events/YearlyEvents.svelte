@@ -46,7 +46,7 @@
     </div>
   </div>
   <ul class="flex flex-col lg:mt-12 lg:grid lg:grid-cols-2 lg:gap-10">
-    {#each filteredEvents as event}
+    {#each filteredEvents as event (event.title)}
       <li
         class="mt-12 rounded-2xl shadow-lg lg:mt-0 {event.for_all
           ? 'bg-yellow-700'
