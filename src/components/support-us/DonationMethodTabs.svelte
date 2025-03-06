@@ -21,7 +21,7 @@
 
 <div use:melt={$root} class="mt-20 hidden lg:block">
   <div use:melt={$list} class="tab-list grid grid-cols-4 grid-rows-4 items-stretch gap-x-16">
-    {#each possibilities as possibility}
+    {#each possibilities as possibility (possibility.title)}
       <button
         use:melt={$trigger(possibility.title)}
         class="row-span-4 grid grid-rows-subgrid items-center justify-between text-center"
@@ -49,7 +49,7 @@
     {/each}
   </div>
   <div>
-    {#each possibilities as possibility, i}
+    {#each possibilities as possibility, i (possibility.title)}
       <div use:melt={$content(possibility.title)} class="pt-40 pb-16 text-2xl">
         <h3 class="text-center font-serif text-5xl font-bold">{possibility.title}</h3>
         <div

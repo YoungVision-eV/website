@@ -17,7 +17,7 @@
 
 <div class="hidden lg:mt-40 lg:block" use:melt={$root}>
   <div class="grid grid-cols-6 gap-x-12">
-    {#each exercises.slice(0, 3) as exercise}
+    {#each exercises.slice(0, 3) as exercise (exercise.title)}
       <div class="col-span-2">
         <div class="px-20 lg:px-0">
           <img
@@ -34,7 +34,7 @@
   </div>
   {#if $open}
     <div use:melt={$content} class="mt-12 grid grid-cols-6 gap-x-12" transition:slide>
-      {#each exercises.slice(3) as exercise}
+      {#each exercises.slice(3) as exercise (exercise.title)}
         <div class="col-span-2">
           <div class="px-20 lg:px-0">
             <img
@@ -53,7 +53,7 @@
 
 <div class="lg:hidden" use:melt={$root}>
   <div class="mt-16 flex flex-col gap-12">
-    {#each exercises.slice(0, 2) as exercise}
+    {#each exercises.slice(0, 2) as exercise (exercise.title)}
       <div class="flex-1">
         <div class="px-20">
           <img
@@ -69,7 +69,7 @@
   </div>
   {#if $open}
     <div use:melt={$content} class="mt-12 flex flex-col gap-12" transition:slide>
-      {#each exercises.slice(2) as exercise}
+      {#each exercises.slice(2) as exercise (exercise.title)}
         <div class="flex-1">
           <div class="px-20">
             <img
@@ -104,7 +104,7 @@
     'mt-16 hidden auto-rows-[0] grid-cols-[1fr] gap-y-12 overflow-hidden transition-all lg:mt-40 lg:grid-cols-6 lg:gap-12',
   )}
 >
-  {#each exercises as exercise, index}
+  {#each exercises as exercise, index (exercise.title)}
     <div
       class={clsx(
         'exercise lg:col-span-2',

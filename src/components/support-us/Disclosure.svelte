@@ -20,7 +20,7 @@
     <div transition:slide use:melt={$content} class="pt-16 pb-12 lg:px-16">
       <h3 class="font-serif text-2xl font-bold">Vorteile</h3>
       <ol id="benefits" class="grid grid-cols-3 py-12 lg:gap-y-14">
-        {#each benefits as benefit, index}
+        {#each benefits as benefit, index (benefit)}
           <li class="group col-span-3 grid grid-cols-subgrid items-center">
             <div
               class="flex flex-none flex-row group-odd:order-last group-odd:justify-end
