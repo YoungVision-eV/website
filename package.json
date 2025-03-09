@@ -37,7 +37,7 @@
     "@eslint/eslintrc": "3.3.0",
     "@eslint/js": "9.22.0",
     "@melt-ui/pp": "0.3.2",
-    "@playwright/test": "1.49.1",
+    "@playwright/test": "1.51.0",
     "@tailwindcss/typography": "0.5.16",
     "@tailwindcss/vite": "4.0.6",
     "@types/node": "22.13.10",
