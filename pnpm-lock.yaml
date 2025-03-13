@@ -13,16 +13,16 @@ importers:
         version: 0.9.4(prettier-plugin-astro@0.14.1)(prettier@3.5.3)(typescript@5.8.2)
       '@astrojs/svelte':
         specifier: 7.0.6
-        version: 7.0.6(@types/node@22.13.10)(astro@5.5.1(@types/node@22.13.10)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.1)(typescript@5.8.2)(yaml@2.7.0))(jiti@2.4.2)(lightningcss@1.29.1)(svelte@5.23.0)(typescript@5.8.2)(yaml@2.7.0)
+        version: 7.0.6(@types/node@22.13.10)(astro@5.5.2(@types/node@22.13.10)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.1)(typescript@5.8.2)(yaml@2.7.0))(jiti@2.4.2)(lightningcss@1.29.1)(svelte@5.23.0)(typescript@5.8.2)(yaml@2.7.0)
       '@astrojs/tailwind':
         specifier: 6.0.0
-        version: 6.0.0(astro@5.5.1(@types/node@22.13.10)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.1)(typescript@5.8.2)(yaml@2.7.0))(tailwindcss@4.0.6)
+        version: 6.0.0(astro@5.5.2(@types/node@22.13.10)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.1)(typescript@5.8.2)(yaml@2.7.0))(tailwindcss@4.0.6)
       '@melt-ui/svelte':
         specifier: 0.86.4
         version: 0.86.4(svelte@5.23.0)
       astro:
-        specifier: 5.5.1
-        version: 5.5.1(@types/node@22.13.10)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.1)(typescript@5.8.2)(yaml@2.7.0)
+        specifier: 5.5.2
+        version: 5.5.2(@types/node@22.13.10)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.1)(typescript@5.8.2)(yaml@2.7.0)
       clsx:
         specifier: 2.1.1
         version: 2.1.1
@@ -1055,8 +1055,8 @@ packages:
     resolution: {integrity: sha512-3oqANMjrvJ+IE5pwlUWsH/4UztmYf/GTL0HPUkWnYBNAHiGVGrOh2EbegxS5niAwlO0w9dRYk0CkCPlJcu8c3Q==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  astro@5.5.1:
-    resolution: {integrity: sha512-1bA4e7lbGKO0eXcuXy6GV8wjsypdrOO6EPLP3l1rNddMdkmj67VlMjWUp/3bti+kOe46ocXxJDh7Ux2L77YWjQ==}
+  astro@5.5.2:
+    resolution: {integrity: sha512-SOTJxB8mqxe/KEYEJiLIot0YULiCffyfTEclwmdeaASitDJ7eLM/KYrJ9sx3U5hq9GVI17Z4Y0P/1T2aQ0ZN3A==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -3098,10 +3098,10 @@ snapshots:
     dependencies:
       prismjs: 1.29.0
 
-  '@astrojs/svelte@7.0.6(@types/node@22.13.10)(astro@5.5.1(@types/node@22.13.10)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.1)(typescript@5.8.2)(yaml@2.7.0))(jiti@2.4.2)(lightningcss@1.29.1)(svelte@5.23.0)(typescript@5.8.2)(yaml@2.7.0)':
+  '@astrojs/svelte@7.0.6(@types/node@22.13.10)(astro@5.5.2(@types/node@22.13.10)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.1)(typescript@5.8.2)(yaml@2.7.0))(jiti@2.4.2)(lightningcss@1.29.1)(svelte@5.23.0)(typescript@5.8.2)(yaml@2.7.0)':
     dependencies:
       '@sveltejs/vite-plugin-svelte': 5.0.3(svelte@5.23.0)(vite@6.2.1(@types/node@22.13.10)(jiti@2.4.2)(lightningcss@1.29.1)(yaml@2.7.0))
-      astro: 5.5.1(@types/node@22.13.10)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.1)(typescript@5.8.2)(yaml@2.7.0)
+      astro: 5.5.2(@types/node@22.13.10)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.1)(typescript@5.8.2)(yaml@2.7.0)
       svelte: 5.23.0
       svelte2tsx: 0.7.34(svelte@5.23.0)(typescript@5.8.2)
       typescript: 5.8.2
@@ -3120,9 +3120,9 @@ snapshots:
       - tsx
       - yaml
 
-  '@astrojs/tailwind@6.0.0(astro@5.5.1(@types/node@22.13.10)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.1)(typescript@5.8.2)(yaml@2.7.0))(tailwindcss@4.0.6)':
+  '@astrojs/tailwind@6.0.0(astro@5.5.2(@types/node@22.13.10)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.1)(typescript@5.8.2)(yaml@2.7.0))(tailwindcss@4.0.6)':
     dependencies:
-      astro: 5.5.1(@types/node@22.13.10)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.1)(typescript@5.8.2)(yaml@2.7.0)
+      astro: 5.5.2(@types/node@22.13.10)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.1)(typescript@5.8.2)(yaml@2.7.0)
       autoprefixer: 10.4.20(postcss@8.5.1)
       postcss: 8.5.1
       postcss-load-config: 4.0.2(postcss@8.5.1)
@@ -3940,7 +3940,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  astro@5.5.1(@types/node@22.13.10)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.1)(typescript@5.8.2)(yaml@2.7.0):
+  astro@5.5.2(@types/node@22.13.10)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.1)(typescript@5.8.2)(yaml@2.7.0):
     dependencies:
       '@astrojs/compiler': 2.11.0
       '@astrojs/internal-helpers': 0.6.1
@@ -4141,7 +4141,7 @@ snapshots:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.0
       '@types/estree': 1.0.6
-      acorn: 8.14.0
+      acorn: 8.14.1
       estree-walker: 3.0.3
       periscopic: 3.1.0
 
