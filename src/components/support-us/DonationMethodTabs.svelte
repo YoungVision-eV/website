@@ -1,4 +1,6 @@
-<script>
+<script lang="ts">
+  import type { DonationMethod } from '@data/real/donations';
+
   import Button from '@components/Button.svelte';
   import { createTabs, melt } from '@melt-ui/svelte';
   import clsx from 'clsx';
@@ -15,8 +17,7 @@
     autoSet: false,
   });
 
-  /** @type {import('@data/donations').DonationMethod[]} **/
-  export let possibilities;
+  const { possibilities }: { possibilities: DonationMethod[] } = $props();
 </script>
 
 <div use:melt={$root} class="mt-20 hidden lg:block">

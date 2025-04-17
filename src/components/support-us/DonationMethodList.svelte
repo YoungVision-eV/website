@@ -1,4 +1,6 @@
-<script>
+<script lang="ts">
+  import type { DonationMethod } from '@data/real/donations';
+
   import Button from '@components/Button.svelte';
   import { createAccordion, melt } from '@melt-ui/svelte';
   import clsx from 'clsx';
@@ -9,8 +11,7 @@
     helpers: { isSelected },
   } = createAccordion();
 
-  /** @type {import('@data/donations').DonationMethod[]} **/
-  export let possibilities;
+  const { possibilities }: { possibilities: DonationMethod[] } = $props();
 </script>
 
 <ul class="mt-16 px-4 lg:hidden" use:melt={$root}>
