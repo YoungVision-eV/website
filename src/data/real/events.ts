@@ -47,7 +47,6 @@ export async function get3CalendarEntries(): Promise<
   const response = await fetch(`${process.env.CMS_URL}/api/events?${qs.stringify(request)}`);
   const data = await response.json();
   let events = data.docs as EventCMS[];
-  console.log('events', events);
   if (events.length < 3) {
     // If there are less than 3 events in the future, we want to fill the remaining slots with past events
     const request2: EventRequest = {
@@ -152,7 +151,6 @@ export async function getEventImage(
       'Image is a string, but should be a Media object. (Maybe wrong depth in the query?)',
     );
   } else {
-    console.log('event.calendarCover.value', image);
     return {
       alt: image.altText,
       height: image.height!,
