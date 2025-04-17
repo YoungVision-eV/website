@@ -15,7 +15,7 @@ import { eventData, type EventPage } from '@data';
 import Layout from '@layouts/Layout.astro';
 import { Image } from 'astro:assets';
 
-const { event }: { event: EventPage } = Astro.props;
+let { event }: { event: EventPage } = Astro.props;
 
 export async function getStaticPaths() {
   let events = await eventData.getAllPages();
@@ -26,6 +26,13 @@ export async function getStaticPaths() {
       props: { event },
     };
   });
+}
+
+// SSR does not use getStaticPaths so the props will be empty
+if (event == null && process.env.PREVIEW_DEPLOYMENT === 'true') {
+  event = (await getStaticPaths().then(
+    (paths) => paths.find((p) => p.params.slug === Astro.params.slug)?.props.event,
+  )) as EventPage;
 }
 
 const locationPictures = [
