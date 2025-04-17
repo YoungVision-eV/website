@@ -20,6 +20,7 @@ export const realEventData: EventData = {
 };
 
 type EventRequest = {
+  draft: boolean;
   limit?: number;
   sort?: `-${keyof EventCMS}` | keyof EventCMS;
   where: {
@@ -30,12 +31,15 @@ type EventRequest = {
   };
 };
 
+const DRAFT = process.env.PREVIEW_DEPLOYMENT === 'true';
+
 export async function get3CalendarEntries(): Promise<
   [EventCalendarEntry, EventCalendarEntry, EventCalendarEntry]
 > {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
   const request: EventRequest = {
+    draft: DRAFT,
     limit: 3,
     sort: 'start',
     where: {
@@ -44,12 +48,15 @@ export async function get3CalendarEntries(): Promise<
       },
     },
   };
+  console.log(request);
+  console.log(`${process.env.CMS_URL}/api/events?${qs.stringify(request)}`);
   const response = await fetch(`${process.env.CMS_URL}/api/events?${qs.stringify(request)}`);
   const data = await response.json();
   let events = data.docs as EventCMS[];
   if (events.length < 3) {
     // If there are less than 3 events in the future, we want to fill the remaining slots with past events
     const request2: EventRequest = {
+      draft: DRAFT,
       limit: 3 - events.length,
       sort: '-start',
       where: {
@@ -84,7 +91,7 @@ export async function get3CalendarEntries(): Promise<
 }
 
 export async function getAllPages(): Promise<EventPage[]> {
-  const response = await fetch(`${process.env.CMS_URL}/api/events`);
+  const response = await fetch(`${process.env.CMS_URL}/api/events?draft=${DRAFT}`);
   const data = await response.json();
   const events = data.docs as EventCMS[];
   const eventsWithSlug = events.filter((event) => event.slug);
