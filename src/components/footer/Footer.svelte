@@ -36,7 +36,7 @@
                 name="email"
                 id="email"
                 autocomplete="email"
-                class="block w-full rounded-md border-0 bg-white px-2 py-1.5 text-lg text-gray-900 ring-1 shadow-xs ring-gray-300 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-indigo-600 focus:ring-inset sm:text-sm sm:leading-6"
+                class="block w-full rounded-md border-0 bg-white px-2 py-1.5 text-lg text-gray-900 shadow-xs ring-1 ring-gray-300 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-indigo-600 focus:ring-inset sm:text-sm sm:leading-6"
                 placeholder="you@example.com"
               />
               <div class="absolute inset-y-0 right-0 flex items-center pr-3">
