@@ -11,7 +11,7 @@ import { Image } from 'astro:assets';
   <Image
     alt="Background"
     class="absolute top-0 left-0 -z-10 h-full w-full object-cover opacity-40"
-    sizes="100vw"
+    sizes="(min-width: 1780px) 100vw, (min-width: 1040px) 1858px, (min-width: 520px) calc(-57.6vw + 1916px), calc(-204vw + 2660px)"
     src={Background}
     widths={[700, 1330, 1530, 1704, 1920, 2048, 3072, 4930]}
   />
@@ -20,7 +20,7 @@ import { Image } from 'astro:assets';
     <Image
       alt="Leute sitzen im Kreis auf dem Boden"
       class="h-48 w-full bg-gray-300 object-cover object-bottom lg:h-[27rem] lg:w-[50rem]"
-      sizes="100vw"
+      sizes="(min-width: 1240px) 800px, (min-width: 1040px) calc(62.22vw + 41px), (min-width: 380px) calc(100vw - 32px), calc(65vw + 94px)"
       src={BenefitsImage}
       widths={[290, 800, 984, 1330, 1600, 1840, 2048]}
     />
@@ -75,14 +75,14 @@ import { Image } from 'astro:assets';
       <Image
         alt="YoungVision"
         class="h-48 w-full bg-gray-300 object-cover lg:h-full"
-        sizes="(max-width: 1024px) 100vw, 50vw"
+        sizes="(min-width: 1040px) 530px, (min-width: 380px) calc(100vw - 32px), calc(66.67vw + 88px)"
         src={Image1}
         widths={[665, 1056, 1350, 1584, 1790, 1980, 2048]}
       />
       <Image
         alt="YoungVision"
         class="h-48 w-full bg-gray-300 object-cover lg:h-full"
-        sizes="(max-width: 1024px) 100vw, 50vw"
+        sizes="(min-width: 1040px) 530px, (min-width: 380px) calc(100vw - 32px), calc(66.67vw + 88px)"
         src={Image2}
         widths={[665, 1056, 1350, 1584, 1790, 1980, 2048]}
       />
