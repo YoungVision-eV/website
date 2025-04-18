@@ -81,7 +81,7 @@ export async function get3CalendarEntries(): Promise<
       alt: r!.alt,
       src: await getImage({
         ...r!,
-        widths: [300, 622, 980, 1244, 1560, 1810, 2040, r!.width],
+        widths: [300, 721, 920, 1080, 1244, 1430, 1590, 1730, 1866, 1960, 2040, r!.width],
       }),
     })),
     link: event.slug ? `/events/${event.slug}` : null,
@@ -177,5 +177,5 @@ export async function getEventImage(
 }
 
 async function getYearlyEventImage(src: Parameters<typeof getImage>[0]['src']) {
-  return getImage({ src, widths: [270, 540, 620, 1240] });
+  return getImage({ src, widths: [665, 1080, 1380, 1620, 1810, 1980] });
 }
