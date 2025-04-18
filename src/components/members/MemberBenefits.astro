@@ -11,14 +11,18 @@ import { Image } from 'astro:assets';
   <Image
     alt="Background"
     class="absolute top-0 left-0 -z-10 h-full w-full object-cover opacity-40"
+    sizes="100vw"
     src={Background}
+    widths={[700, 1330, 1530, 1704, 1920, 2048, 3072, 4930]}
   />
 
   <div class="mx-auto max-w-[80rem] flex-col items-center px-4 lg:flex lg:px-44">
     <Image
       alt="Leute sitzen im Kreis auf dem Boden"
       class="h-48 w-full bg-gray-300 object-cover object-bottom lg:h-[27rem] lg:w-[50rem]"
+      sizes="100vw"
       src={BenefitsImage}
+      widths={[290, 800, 984, 1330, 1600, 1840, 2048]}
     />
     <h2 class="mt-10 text-center font-serif text-2xl font-bold lg:hidden">Werde Mitglied</h2>
     <h2 class="mt-20 hidden text-center font-serif text-4xl font-bold lg:block">
@@ -71,12 +75,16 @@ import { Image } from 'astro:assets';
       <Image
         alt="YoungVision"
         class="h-48 w-full bg-gray-300 object-cover lg:h-full"
+        sizes="(max-width: 1024px) 100vw, 50vw"
         src={Image1}
+        widths={[665, 1056, 1350, 1584, 1790, 1980, 2048]}
       />
       <Image
         alt="YoungVision"
         class="h-48 w-full bg-gray-300 object-cover lg:h-full"
+        sizes="(max-width: 1024px) 100vw, 50vw"
         src={Image2}
+        widths={[665, 1056, 1350, 1584, 1790, 1980, 2048]}
       />
     </div>
   </div>
