@@ -89,6 +89,7 @@
               src={possibility.image.src}
               {...possibility.image.attributes}
               class="h-full w-full bg-gray-300 object-cover object-center"
+              sizes="28rem"
               alt={possibility.title}
             />
           </div>
