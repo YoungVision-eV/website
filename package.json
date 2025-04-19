@@ -63,7 +63,7 @@
     "sharp": "0.34.1",
     "svelte": "5.28.1",
     "svelte-check": "4.1.6",
-    "svelte-eslint-parser": "1.1.2",
+    "svelte-eslint-parser": "1.1.3",
     "svelte-markdown": "0.4.1",
     "svelte-sequential-preprocessor": "2.0.2",
     "tailwindcss": "4.0.6",
