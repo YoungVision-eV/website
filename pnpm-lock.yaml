@@ -12,20 +12,20 @@ importers:
         specifier: 0.9.4
         version: 0.9.4(prettier-plugin-astro@0.14.1)(prettier@3.5.3)(typescript@5.8.3)
       '@astrojs/node':
-        specifier: 9.2.0
-        version: 9.2.0(astro@5.7.4(@types/node@22.14.1)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.1)(typescript@5.8.3)(yaml@2.7.0))
+        specifier: 9.2.1
+        version: 9.2.1(astro@5.7.5(@types/node@22.14.1)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.1)(typescript@5.8.3)(yaml@2.7.0))
       '@astrojs/svelte':
-        specifier: 7.0.10
-        version: 7.0.10(@types/node@22.14.1)(astro@5.7.4(@types/node@22.14.1)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.1)(typescript@5.8.3)(yaml@2.7.0))(jiti@2.4.2)(lightningcss@1.29.1)(svelte@5.28.2)(typescript@5.8.3)(yaml@2.7.0)
+        specifier: 7.0.11
+        version: 7.0.11(@types/node@22.14.1)(astro@5.7.5(@types/node@22.14.1)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.1)(typescript@5.8.3)(yaml@2.7.0))(jiti@2.4.2)(lightningcss@1.29.1)(svelte@5.28.2)(typescript@5.8.3)(yaml@2.7.0)
       '@astrojs/tailwind':
         specifier: 6.0.2
-        version: 6.0.2(astro@5.7.4(@types/node@22.14.1)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.1)(typescript@5.8.3)(yaml@2.7.0))(tailwindcss@4.0.6)
+        version: 6.0.2(astro@5.7.5(@types/node@22.14.1)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.1)(typescript@5.8.3)(yaml@2.7.0))(tailwindcss@4.0.6)
       '@melt-ui/svelte':
         specifier: 0.86.6
         version: 0.86.6(svelte@5.28.2)
       astro:
-        specifier: 5.7.4
-        version: 5.7.4(@types/node@22.14.1)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.1)(typescript@5.8.3)(yaml@2.7.0)
+        specifier: 5.7.5
+        version: 5.7.5(@types/node@22.14.1)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.1)(typescript@5.8.3)(yaml@2.7.0)
       clsx:
         specifier: 2.1.1
         version: 2.1.1
@@ -172,8 +172,8 @@ packages:
   '@astrojs/markdown-remark@6.3.1':
     resolution: {integrity: sha512-c5F5gGrkczUaTVgmMW9g1YMJGzOtRvjjhw6IfGuxarM6ct09MpwysP10US729dy07gg8y+ofVifezvP3BNsWZg==}
 
-  '@astrojs/node@9.2.0':
-    resolution: {integrity: sha512-TUQPsMz8OtMsVc66rE7R2c2KsHgZ31sgdnazbn1bQp+9JMAYUvl9XzDPwBnrb9WkVWtEKLdyw+W8h9DzU+LQ9w==}
+  '@astrojs/node@9.2.1':
+    resolution: {integrity: sha512-kEHLB37ooW91p7FLGalqa3jVQRIafntfKiZgCnjN1lEYw+j8NP6VJHQbLHmzzbtKUI0J+srGiTnGZmaHErHE5w==}
     peerDependencies:
       astro: ^5.3.0
 
@@ -181,8 +181,8 @@ packages:
     resolution: {integrity: sha512-GilTHKGCW6HMq7y3BUv9Ac7GMe/MO9gi9GW62GzKtth0SwukCu/qp2wLiGpEujhY+VVhaG9v7kv/5vFzvf4NYw==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0}
 
-  '@astrojs/svelte@7.0.10':
-    resolution: {integrity: sha512-ktu0GQeXsGUMhGEZWgsCWddV3pNqajeQlDNlDD7D1+Al6ImnU/j+xzjAkbbZgkp144guvPpo9dRqUTpgGKXodw==}
+  '@astrojs/svelte@7.0.11':
+    resolution: {integrity: sha512-+hn43pBQBLOMXrVYnxqP8b6JNLVhMVXzK3nEgqBfhXfAYdZxJkUUcnbpE8GL1OddTYUnUDFuk2E5hE2kA35LqA==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0}
     peerDependencies:
       astro: ^5.0.0
@@ -195,8 +195,8 @@ packages:
       astro: ^3.0.0 || ^4.0.0 || ^5.0.0
       tailwindcss: ^3.0.24
 
-  '@astrojs/telemetry@3.2.0':
-    resolution: {integrity: sha512-wxhSKRfKugLwLlr4OFfcqovk+LIFtKwLyGPqMsv+9/ibqqnW3Gv7tBhtKEb0gAyUAC4G9BTVQeQahqnQAhd6IQ==}
+  '@astrojs/telemetry@3.2.1':
+    resolution: {integrity: sha512-SSVM820Jqc6wjsn7qYfV9qfeQvePtVc1nSofhyap7l0/iakUKywj3hfy3UJAOV4sGV4Q/u450RD4AaCaFvNPlg==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0}
 
   '@astrojs/yaml2ts@0.2.2':
@@ -1143,8 +1143,8 @@ packages:
     resolution: {integrity: sha512-JepyLROIad6f44uyqMF6HKE2QbunNzp3mYKRcPoDGt0QkxXmH222FAFC64WTyQu2Kg8NNEXHTN/sWuUId9sSxw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  astro@5.7.4:
-    resolution: {integrity: sha512-h+pndGOyoYbsBd0YvP7bL3gotUSlyltp8OLpcYg062w0n5c96wJ9xt/RmwwXzGbdcUjWFtw0c5z4zCA92NDmlA==}
+  astro@5.7.5:
+    resolution: {integrity: sha512-c59YuYiXyWWnUMOBlDczrjqKzF0dJQP20EP9vqDggcyKm//tEt9iJHNwoYq4r3UeO9UJCwlGK8FwaGTAwwF3IA==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -3274,10 +3274,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/node@9.2.0(astro@5.7.4(@types/node@22.14.1)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.1)(typescript@5.8.3)(yaml@2.7.0))':
+  '@astrojs/node@9.2.1(astro@5.7.5(@types/node@22.14.1)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.1)(typescript@5.8.3)(yaml@2.7.0))':
     dependencies:
       '@astrojs/internal-helpers': 0.6.1
-      astro: 5.7.4(@types/node@22.14.1)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.1)(typescript@5.8.3)(yaml@2.7.0)
+      astro: 5.7.5(@types/node@22.14.1)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.1)(typescript@5.8.3)(yaml@2.7.0)
       send: 1.2.0
       server-destroy: 1.0.1
     transitivePeerDependencies:
@@ -3287,10 +3287,10 @@ snapshots:
     dependencies:
       prismjs: 1.29.0
 
-  '@astrojs/svelte@7.0.10(@types/node@22.14.1)(astro@5.7.4(@types/node@22.14.1)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.1)(typescript@5.8.3)(yaml@2.7.0))(jiti@2.4.2)(lightningcss@1.29.1)(svelte@5.28.2)(typescript@5.8.3)(yaml@2.7.0)':
+  '@astrojs/svelte@7.0.11(@types/node@22.14.1)(astro@5.7.5(@types/node@22.14.1)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.1)(typescript@5.8.3)(yaml@2.7.0))(jiti@2.4.2)(lightningcss@1.29.1)(svelte@5.28.2)(typescript@5.8.3)(yaml@2.7.0)':
     dependencies:
       '@sveltejs/vite-plugin-svelte': 5.0.3(svelte@5.28.2)(vite@6.2.6(@types/node@22.14.1)(jiti@2.4.2)(lightningcss@1.29.1)(yaml@2.7.0))
-      astro: 5.7.4(@types/node@22.14.1)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.1)(typescript@5.8.3)(yaml@2.7.0)
+      astro: 5.7.5(@types/node@22.14.1)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.1)(typescript@5.8.3)(yaml@2.7.0)
       svelte: 5.28.2
       svelte2tsx: 0.7.35(svelte@5.28.2)(typescript@5.8.3)
       typescript: 5.8.3
@@ -3309,9 +3309,9 @@ snapshots:
       - tsx
       - yaml
 
-  '@astrojs/tailwind@6.0.2(astro@5.7.4(@types/node@22.14.1)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.1)(typescript@5.8.3)(yaml@2.7.0))(tailwindcss@4.0.6)':
+  '@astrojs/tailwind@6.0.2(astro@5.7.5(@types/node@22.14.1)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.1)(typescript@5.8.3)(yaml@2.7.0))(tailwindcss@4.0.6)':
     dependencies:
-      astro: 5.7.4(@types/node@22.14.1)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.1)(typescript@5.8.3)(yaml@2.7.0)
+      astro: 5.7.5(@types/node@22.14.1)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.1)(typescript@5.8.3)(yaml@2.7.0)
       autoprefixer: 10.4.21(postcss@8.5.3)
       postcss: 8.5.3
       postcss-load-config: 4.0.2(postcss@8.5.3)
@@ -3319,7 +3319,7 @@ snapshots:
     transitivePeerDependencies:
       - ts-node
 
-  '@astrojs/telemetry@3.2.0':
+  '@astrojs/telemetry@3.2.1':
     dependencies:
       ci-info: 4.2.0
       debug: 4.4.0
@@ -4172,12 +4172,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  astro@5.7.4(@types/node@22.14.1)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.1)(typescript@5.8.3)(yaml@2.7.0):
+  astro@5.7.5(@types/node@22.14.1)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.1)(typescript@5.8.3)(yaml@2.7.0):
     dependencies:
       '@astrojs/compiler': 2.11.0
       '@astrojs/internal-helpers': 0.6.1
       '@astrojs/markdown-remark': 6.3.1
-      '@astrojs/telemetry': 3.2.0
+      '@astrojs/telemetry': 3.2.1
       '@capsizecss/unpack': 2.4.0
       '@oslojs/encoding': 1.1.0
       '@rollup/pluginutils': 5.1.4(rollup@4.32.1)
