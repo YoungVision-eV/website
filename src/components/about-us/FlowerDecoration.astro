@@ -5,8 +5,11 @@ import { Image } from 'astro:assets';
 
 <div class="w-full overflow-hidden">
   <Image
-    alt="Flower explosion"
+    alt=""
     class="h-60 w-full object-cover object-top lg:h-72"
+    role="presentation"
+    sizes="(min-width: 1040px) 800px, 288px"
     src={FlowerExplosion}
+    widths={[288, 300, 520, 721, 1080, 1340, 1560, 1750, 1920, 2048]}
   />
 </div>
