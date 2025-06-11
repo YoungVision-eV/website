@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { bounceOut, elasticOut } from 'svelte/easing';
-  import { Spring, Tween } from 'svelte/motion';
-  import { onMount, onDestroy } from 'svelte';
+  import { elasticOut } from 'svelte/easing';
+  import { Tween } from 'svelte/motion';
+  import { onMount } from 'svelte';
 
   let currentProgress = $state(236);
   let targetProgress = $state(1325);
