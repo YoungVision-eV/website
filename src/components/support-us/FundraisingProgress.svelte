@@ -1,7 +1,14 @@
 <script lang="ts">
+  import { bounceOut, elasticOut } from 'svelte/easing';
+  import { Spring, Tween } from 'svelte/motion';
+  import { onMount, onDestroy } from 'svelte';
+
   let currentProgress = $state(236);
   let targetProgress = $state(1325);
   let middleProgress = $state(965);
+  let waveOffset = $state(0);
+  let animationFrame: number;
+
   // const relativeProgress = $derived(currentProgress / targetProgress);
   const relativeProgress = $derived.by(() => {
     if (currentProgress <= middleProgress) {
@@ -12,8 +19,28 @@
     return 72 + ((currentProgress - middleProgress) / (targetProgress - middleProgress)) * 28;
   });
 
+  const relativeProgressSpring = new Tween(0, {
+    duration: 1000,
+    easing: elasticOut,
+  });
+
+  $effect(() => {
+    relativeProgressSpring.set(relativeProgress);
+  });
+
+  const animateWave = (timestamp: number) => {
+    // Move the wave to the right, but ensure it's always covering the full width
+    waveOffset = ((timestamp / 1000) * 10) % 39;
+    animationFrame = requestAnimationFrame(animateWave);
+  };
+
+  onMount(() => {
+    animationFrame = requestAnimationFrame(animateWave);
+    return () => cancelAnimationFrame(animationFrame);
+  });
+
   const textY = $derived.by(() => {
-    const value = 100 - relativeProgress + 15;
+    const value = 100 - relativeProgressSpring.current + 15;
     return Math.min(Math.max(65, value), 93);
   });
 </script>
@@ -28,7 +55,22 @@
   >
     <defs>
       <clipPath id="clip-top">
-        <rect height={relativeProgress} width="117" x="0" y={100 - relativeProgress} />
+        <path
+          d={`M-39,100 
+          v-${relativeProgressSpring.current + 5} 
+          q9.75,-7 19.5,0 
+          q9.75,7 19.5,0 
+          q9.75,-7 19.5,0 
+          q9.75,7 19.5,0 
+          q9.75,-7 19.5,0 
+          q9.75,7 19.5,0 
+          q9.75,-7 19.5,0 
+          q9.75,7 19.5,0 
+          q9.75,-7 19.5,0 
+          v${relativeProgressSpring.current + 5} 
+          z`}
+          transform={`translate(${waveOffset}, 0)`}
+        />
       </clipPath>
     </defs>
     <g id="logo-greyscale">
