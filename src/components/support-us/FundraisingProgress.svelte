@@ -1,5 +1,6 @@
 <script lang="ts">
-  let currentProgress = $state(236);
+  let { progress = 236 } = $props();
+  let currentProgress = $state(progress);
   let targetProgress = $state(1325);
   let middleProgress = $state(965);
   // const relativeProgress = $derived(currentProgress / targetProgress);

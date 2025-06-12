@@ -1,7 +1,31 @@
 ---
 import Button from '@components/Button.astro';
+import { gql, GraphQLClient } from 'graphql-request';
 
 import FundraisingProgress from './FundraisingProgress.svelte';
+
+const graphQLClient = new GraphQLClient('https://twenty.youngvision.work/graphql', {
+  headers: {
+    Authorization: import.meta.env.TWENTY_AUTH,
+    'Content-Type': 'application/json',
+  },
+});
+const query = gql`
+  {
+    fordermitglieder(filter: { austrittdatum: { is: NULL } }) {
+      totalCount
+      sumMonatlicherForderbeitragAmountMicros
+    }
+  }
+`;
+interface Data {
+  fordermitglieder: {
+    sumMonatlicherForderbeitragAmountMicros: number;
+    totalCount: number;
+  };
+}
+const data = await graphQLClient.request<Data>(query);
+console.log(data);
 ---
 
 <section class="py-8 lg:py-12" data-testid="supporting-members">
@@ -11,7 +35,10 @@ import FundraisingProgress from './FundraisingProgress.svelte';
       Deine Chance uns zu unterstützen und mehr über uns zu erfahren!
     </p>
     <p>
-      <FundraisingProgress client:only="svelte" />
+      <FundraisingProgress
+        client:only="svelte"
+        progress={data.fordermitglieder.sumMonatlicherForderbeitragAmountMicros / 1000000}
+      />
     </p>
     <p class="mt-8 max-w-prose lg:mt-10 lg:text-xl">
       Du willst junge Menschen auf ihrer Reise zur persönlichen Entwicklung und zur aktiven
