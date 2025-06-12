@@ -4,7 +4,7 @@
   import { Tween } from 'svelte/motion';
 
   let currentProgress = $state(236);
-  const { targetProgress, middleProgress } = $props();
+  const { middleProgress, targetProgress } = $props();
   let waveOffset = $state(0);
   let animationFrame: number;
 
