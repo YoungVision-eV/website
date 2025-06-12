@@ -4,12 +4,10 @@
   import { Tween } from 'svelte/motion';
 
   let currentProgress = $state(236);
-  let targetProgress = $state(1325);
-  let middleProgress = $state(965);
+  const { targetProgress, middleProgress } = $props();
   let waveOffset = $state(0);
   let animationFrame: number;
 
-  // const relativeProgress = $derived(currentProgress / targetProgress);
   const relativeProgress = $derived.by(() => {
     if (currentProgress <= middleProgress) {
       // the yellow triangle ends at around a height of 72
@@ -219,4 +217,18 @@
     <input id="progress" type="range" bind:value={currentProgress} max={targetProgress} min={0} />
     <output for="progress">{currentProgress}</output>
   </div>
+  <button
+    class="rounded bg-blue-600 px-4 py-2 text-white"
+    onclick={() => {
+      currentProgress = 0;
+      const increaseProgress = () => {
+        currentProgress = currentProgress + 5;
+        if (currentProgress < targetProgress) {
+          setTimeout(() => increaseProgress(), 50);
+        }
+      };
+      increaseProgress();
+    }}
+    type="button">Simulate</button
+  >
 </form>
