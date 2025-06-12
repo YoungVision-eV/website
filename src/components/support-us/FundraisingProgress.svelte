@@ -1,12 +1,9 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { elasticOut } from 'svelte/easing';
-  import { Tween } from 'svelte/motion';
 
   let currentProgress = $state(236);
   const { middleProgress, targetProgress } = $props();
   let waveOffset = $state(0);
-  let animationFrame: number;
 
   const relativeProgress = $derived.by(() => {
     if (currentProgress <= middleProgress) {
@@ -17,28 +14,21 @@
     return 72 + ((currentProgress - middleProgress) / (targetProgress - middleProgress)) * 28;
   });
 
-  const relativeProgressSpring = new Tween(0, {
-    duration: 1000,
-    easing: elasticOut,
-  });
-
-  $effect(() => {
-    relativeProgressSpring.set(relativeProgress);
-  });
-
-  const animateWave = (timestamp: number) => {
-    // Move the wave to the right, but ensure it's always covering the full width
-    waveOffset = ((timestamp / 1000) * 10) % 39;
-    animationFrame = requestAnimationFrame(animateWave);
-  };
-
   onMount(() => {
+    let animationFrame: number;
+
+    const animateWave = (timestamp: number) => {
+      // Move the wave to the right, but ensure it's always covering the full width
+      waveOffset = ((timestamp / 1000) * 10) % 39;
+      animationFrame = requestAnimationFrame(animateWave);
+    };
+
     animationFrame = requestAnimationFrame(animateWave);
     return () => cancelAnimationFrame(animationFrame);
   });
 
   const textY = $derived.by(() => {
-    const value = 100 - relativeProgressSpring.current + 15;
+    const value = 100 - relativeProgress + 15;
     return Math.min(Math.max(65, value), 93);
   });
 </script>
@@ -56,7 +46,7 @@
         <clipPath id="clip-top">
           <path
             d={`M-39,100 
-          v-${relativeProgressSpring.current + 5} 
+          v-${relativeProgress + 5} 
           q9.75,-7 19.5,0 
           q9.75,7 19.5,0 
           q9.75,-7 19.5,0 
@@ -66,7 +56,7 @@
           q9.75,-7 19.5,0 
           q9.75,7 19.5,0 
           q9.75,-7 19.5,0 
-          v${relativeProgressSpring.current + 5} 
+          v${relativeProgress + 5} 
           z`}
             transform={`translate(${waveOffset}, 0)`}
           />
