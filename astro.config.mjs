@@ -35,6 +35,9 @@ export default defineConfig({
   trailingSlash: 'never',
 
   vite: {
+    define: {
+      'process.env': process.env,
+    },
     plugins: [tailwindcss()],
   },
 });
