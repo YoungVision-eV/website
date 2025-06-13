@@ -1,3 +1,4 @@
+import cloudflare from '@astrojs/cloudflare';
 import node from '@astrojs/node';
 import svelte from '@astrojs/svelte';
 import tailwindcss from '@tailwindcss/vite';
@@ -14,7 +15,7 @@ const adapter = PREVIEW
 
 // https://astro.build/config
 export default defineConfig({
-  adapter,
+  adapter: cloudflare(),
   image: {
     remotePatterns: [
       {
