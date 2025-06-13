@@ -15,7 +15,11 @@ const adapter = PREVIEW
 
 // https://astro.build/config
 export default defineConfig({
-  adapter: cloudflare(),
+  adapter: cloudflare({
+    platformProxy: {
+      enabled: true,
+    },
+  }),
   image: {
     remotePatterns: [
       {
@@ -30,11 +34,14 @@ export default defineConfig({
   },
 
   integrations: [svelte()],
-  output: PREVIEW ? 'server' : 'static',
+  output: 'server', //PREVIEW ? 'server' : 'static',
   server: ({ command }) => ({ port: command === 'dev' ? 5173 : 4321 }),
   trailingSlash: 'never',
 
   vite: {
+    define: {
+      'process.env': process.env,
+    },
     plugins: [tailwindcss()],
   },
 });
