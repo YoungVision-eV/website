@@ -5,6 +5,8 @@
   const { middleProgress, targetProgress } = $props();
   let waveOffset = $state(0);
 
+  let finished = $derived(currentProgress >= targetProgress);
+
   const relativeProgress = $derived.by(() => {
     if (currentProgress <= middleProgress) {
       // the yellow triangle ends at around a height of 72
@@ -15,6 +17,9 @@
   });
 
   onMount(() => {
+    if (finished) {
+      return;
+    }
     let animationFrame: number;
 
     const animateWave = (timestamp: number) => {
@@ -46,7 +51,7 @@
         <clipPath id="clip-top">
           <path
             d={`M-39,100 
-          v-${relativeProgress + 5} 
+          v-${finished ? 105 : relativeProgress * 0.95 + 5} 
           q9.75,-7 19.5,0 
           q9.75,7 19.5,0 
           q9.75,-7 19.5,0 
