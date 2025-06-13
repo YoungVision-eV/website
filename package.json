@@ -71,7 +71,6 @@
     "svelte-sequential-preprocessor": "2.0.2",
     "tailwindcss": "4.0.6",
     "typescript": "5.8.3",
-    "typescript-eslint": "8.34.0",
-    "wrangler": "^4.20.0"
+    "typescript-eslint": "8.34.0"
   }
 }
