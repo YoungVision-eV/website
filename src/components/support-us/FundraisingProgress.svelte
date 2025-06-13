@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
 
+  let peopleCount = $state(14);
   let currentProgress = $state(236);
   const { middleProgress, targetProgress } = $props();
   let waveOffset = $state(0);
@@ -39,7 +40,7 @@
 </script>
 
 <div class="lg:relative lg:mx-auto lg:h-64 lg:w-3xl">
-  <div class="flex items-center justify-center lg:block">
+  <div class="flex flex-col items-center justify-center lg:block">
     <svg
       class="size-64 drop-shadow-xl"
       xmlns="http://www.w3.org/2000/svg"
@@ -117,19 +118,33 @@
           y1="27"
           x2="109"
           y2="27"
-          stroke="#000"
+          stroke="oklch(27.9% 0.041 260.031)"
           stroke-dasharray="2 2"
           stroke-width="1"
           class="lg:hidden"
         />
-        <text class="lg:hidden" font-weight="bold" x="85" y="25" font-size="9" text-anchor="middle"
-          >{middleProgress}€</text
+        <text
+          class="lg:hidden"
+          font-weight="bold"
+          x="85"
+          y="25"
+          font-size="9"
+          text-anchor="middle"
+          fill="oklch(27.9% 0.041 260.031)">{middleProgress}€</text
         >
       {/if}
-      <text font-weight="bold" x="59" y={textY} font-size="9" text-anchor="middle"
-        >{currentProgress}€</text
+      <text
+        font-weight="bold"
+        x="59"
+        y={textY}
+        font-size="9"
+        text-anchor="middle"
+        fill="oklch(12.9% 0.042 264.695)">{currentProgress}€</text
       >
     </svg>
+    <p class="text-center text-xl lg:ml-8 lg:text-left">
+      Dank <span class="font-bold">{peopleCount}</span> Menschen
+    </p>
   </div>
   <div class="hidden lg:block">
     <!-- Dashed line for middle progress -->
@@ -156,7 +171,7 @@
   </div>
   <div
     class={[
-      'mx-auto flex gap-y-4 md:flex-row lg:block lg:gap-y-8',
+      'mx-auto mt-8 flex gap-y-4 md:flex-row lg:mt-0 lg:block lg:gap-y-8',
       currentProgress >= middleProgress ? 'flex-col-reverse' : 'flex-col', // Show next unfulfilled target first
     ]}
   >
@@ -209,11 +224,16 @@
   </div>
 </div>
 
-<form>
+<form class="mt-16">
   <div>
     <label for="progress">Progress</label>
     <input id="progress" type="range" bind:value={currentProgress} max={targetProgress} min={0} />
     <output for="progress">{currentProgress}</output>
+  </div>
+  <div>
+    <label for="peopleCount">People Count</label>
+    <input id="peopleCount" type="range" bind:value={peopleCount} max={100} min={0} />
+    <output for="peopleCount">{peopleCount}</output>
   </div>
   <button
     class="rounded bg-blue-600 px-4 py-2 text-white"
