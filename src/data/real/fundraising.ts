@@ -6,7 +6,7 @@ export interface FoundraisingProgress {
 }
 
 interface ResponseData {
-  fordermitglieder: {
+  fordermitgliedschaften: {
     sumMonatlicherForderbeitragAmountMicros: number;
     totalCount: number;
   };
@@ -19,17 +19,19 @@ export async function getFoundraisingProgress(): Promise<FoundraisingProgress> {
       'Content-Type': 'application/json',
     },
   });
+  //TODO: also count foredermigliedschften that end in the futer
   const query = gql`
     {
-      fordermitglieder(filter: { austrittdatum: { is: NULL } }) {
+      fordermitgliedschaften(filter: { austrittdatum: { is: NULL } }) {
         totalCount
         sumMonatlicherForderbeitragAmountMicros
       }
     }
   `;
   const data = await graphQLClient.request<ResponseData>(query);
+  console.log(data);
   return {
-    amount: data.fordermitglieder.sumMonatlicherForderbeitragAmountMicros / 1000000,
-    count: data.fordermitglieder.totalCount,
+    amount: data.fordermitgliedschaften.sumMonatlicherForderbeitragAmountMicros / 1000000,
+    count: data.fordermitgliedschaften.totalCount,
   };
 }
