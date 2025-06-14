@@ -22,3 +22,5 @@ test-results/
 
 # macOS-specific files
 .DS_Store
+
+.wrangler

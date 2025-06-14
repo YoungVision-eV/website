@@ -1,10 +1,9 @@
 ---
-import type { FoundraisingProgress } from '@data/real/fundraising';
-
 import Button from '@components/Button.astro';
 import { getFoundraisingProgress } from '@data/real/fundraising';
 
 import FundraisingProgress from './FundraisingProgress.svelte';
+import SupportForm from './SupportForm.astro';
 
 const foundraisingProgress = await getFoundraisingProgress();
 ---
@@ -29,5 +28,6 @@ const foundraisingProgress = await getFoundraisingProgress();
         text="Werde Fördermitglied"
       />
     </div>
+    <SupportForm />
   </div>
 </section>
