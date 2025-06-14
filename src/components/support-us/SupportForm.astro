@@ -1,0 +1,50 @@
+---
+
+---
+
+<form class="mt-4 flex flex-col gap-4" method="post">
+  <label class="flex flex-col lg:flex-row">
+    Vorname:
+    <input class="border-2" name="first-name" placeholder="Vorname" required type="text" />
+  </label>
+  <label class="flex flex-col lg:flex-row">
+    Nachname:
+    <input class="border-2" name="last-name" placeholder="Nachname" required type="text" />
+  </label>
+  <label class="flex flex-col lg:flex-row">
+    Straße und Hausnummer:
+    <input class="border-2" name="street" placeholder="Beispielstraße 21" required type="text" />
+  </label>
+  <label class="flex flex-col lg:flex-row">
+    Postleitzahl:
+    <input class="border-2" name="post-code" placeholder="12345" required type="text" />
+  </label>
+  <label class="flex flex-col lg:flex-row">
+    Ort:
+    <input class="border-2" name="city" placeholder="Ort" required type="text" />
+  </label>
+  <label class="flex flex-col lg:flex-row">
+    Land:
+    <!-- TODO: make this a dropdown list -->
+    <input class="border-2" name="country" placeholder="Deutschland" required type="text" />
+  </label>
+  <label class="flex flex-col lg:flex-row">
+    E-Mail:
+    <input class="border-2" name="e-mail" placeholder="email" required type="email" />
+  </label>
+  <h3>Lastschriftmandat</h3>
+  <!-- TODO: brauchen wir hier auch den Text mit Gläubiger und Einwilligung wie bei https://easyverein.com/public/yv/applicationform/7237 -->
+  <label class="flex flex-col lg:flex-row">
+    Beitrag pro Monat in €
+    <input class="border-2" name="amount" placeholder="Beitrag" required type="number" />
+  </label>
+  <label class="flex flex-col lg:flex-row">
+    IBAN:
+    <input class="border-2" name="iban" placeholder="IBAN" required type="text" />
+  </label>
+  <label class="flex flex-col lg:flex-row">
+    BIC:
+    <input class="border-2" name="bic" placeholder="BIC" type="text" />
+  </label>
+  <button>Submit!</button>
+</form>
