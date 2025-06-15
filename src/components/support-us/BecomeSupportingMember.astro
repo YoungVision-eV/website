@@ -1,9 +1,8 @@
 ---
-import Button from '@components/Button.astro';
 import { getFoundraisingProgress } from '@data/real/fundraising';
 
 import FundraisingProgress from './FundraisingProgress.svelte';
-import SupportForm from './SupportForm.astro';
+import SupportForm from './SupportForm.svelte';
 
 const foundraisingProgress = await getFoundraisingProgress();
 ---
@@ -22,12 +21,7 @@ const foundraisingProgress = await getFoundraisingProgress();
       Gestaltung unserer Gesellschaft begleiten?
     </p>
     <div class="mt-8 flex items-center justify-center lg:mt-6 lg:block">
-      <Button
-        color="dark"
-        href="https://easyverein.com/public/yv/applicationform/7237"
-        text="Werde Fördermitglied"
-      />
+      <SupportForm client:load />
     </div>
-    <SupportForm />
   </div>
 </section>

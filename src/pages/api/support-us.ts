@@ -4,17 +4,18 @@ import type { APIRoute } from 'astro';
 import { gql, GraphQLClient } from 'graphql-request';
 export const POST: APIRoute = async ({ request }) => {
   const requiredFields = [
-    'first-name',
-    'last-name',
+    'firstName',
+    'lastName',
     'email',
-    'street',
+    'streetAddress',
     'city',
-    'post-code',
+    'postalCode',
     'country',
     'iban',
-    'amount',
+    'contribution',
   ];
 
+  console.log(import.meta.env.TWENTY_GRAPHQL_URL);
   const graphQLClient = new GraphQLClient(import.meta.env.TWENTY_GRAPHQL_URL, {
     headers: {
       Authorization: 'Bearer ' + import.meta.env.TWENTY_AUTH,
@@ -22,7 +23,9 @@ export const POST: APIRoute = async ({ request }) => {
     },
   });
   try {
+    console.log(request.body);
     const data = await request.formData();
+    console.log('Data: ', data);
 
     // Check if any required fields are missing
     const missingFields = requiredFields.filter((field) => data.get(field) === null);
@@ -41,28 +44,23 @@ export const POST: APIRoute = async ({ request }) => {
       );
     }
 
-    const person = {
-      adresse: { addressCity: 'a', addressPostcode: 'b', addressState: 'c', addressStreet1: 'd' },
-      emails: { primaryEmail: data.get('email') },
-      name: { firstName: data.get('first-name'), lastName: data.get('last-name') },
-    };
     const bic = data.get('bic');
     const personData = {
       adresse: {
         addressCity: data.get('city'),
         addressCountry: data.get('country'),
-        addressPostcode: data.get('post-code'),
-        addressStreet1: data.get('street'),
+        addressPostcode: data.get('postalCode'),
+        addressStreet1: data.get('streetAddress'),
       },
       emails: { primaryEmail: data.get('email') },
-      name: { firstName: data.get('first-name'), lastName: data.get('last-name') },
+      name: { firstName: data.get('firstName'), lastName: data.get('lastName') },
     };
 
     const fordermitgliedschaftData = {
-      fullName: { firstName: data.get('first-name'), lastName: data.get('last-name') },
+      fullName: { firstName: data.get('firstName'), lastName: data.get('lastName') },
       iban: data.get('iban'),
       monatlicherForderbeitrag: {
-        amountMicros: Number(data.get('amount') ?? 0) * 1000000,
+        amountMicros: Number(data.get('contribution') ?? 0) * 1000000,
         currencyCode: 'EUR',
       },
       ...(bic ? { bic } : {}),
@@ -98,6 +96,7 @@ export const POST: APIRoute = async ({ request }) => {
     const response = await graphQLClient.request<ResponseData>(mutation);
     console.log(response);
   } catch (error) {
+    console.error(error);
     if (error instanceof Error) {
       console.error(error.message);
     }
