@@ -17,6 +17,7 @@ const foundraisingProgress = await getFoundraisingProgress();
       <FundraisingProgress
         client:load
         middleProgress={965}
+        peopleCount={foundraisingProgress.totalCount}
         progress={foundraisingProgress.amount}
         targetProgress={1325}
       />
