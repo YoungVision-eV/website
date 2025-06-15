@@ -13,7 +13,7 @@ interface ResponseData {
 }
 
 export async function getFoundraisingProgress(): Promise<FoundraisingProgress> {
-  const graphQLClient = new GraphQLClient('https://twenty.youngvision.work/graphql', {
+  const graphQLClient = new GraphQLClient(import.meta.env.TWENTY_GRAPHQL_URL, {
     headers: {
       Authorization: 'Bearer ' + import.meta.env.TWENTY_AUTH,
       'Content-Type': 'application/json',
