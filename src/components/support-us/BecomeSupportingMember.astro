@@ -14,7 +14,7 @@ const foundraisingProgress = await getFoundraisingProgress();
       Deine Chance uns zu unterstützen und mehr über uns zu erfahren!
     </p>
     <p>
-      <FundraisingProgress client:only="svelte" progress={foundraisingProgress.amount} />
+      <FundraisingProgress client:load progress={foundraisingProgress.amount} />
     </p>
     <p class="mt-8 max-w-prose lg:mt-10 lg:text-xl">
       Du willst junge Menschen auf ihrer Reise zur persönlichen Entwicklung und zur aktiven
