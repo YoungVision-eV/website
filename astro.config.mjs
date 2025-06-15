@@ -11,11 +11,13 @@ const adapter = PREVIEW
   ? node({
       mode: 'standalone',
     })
-  : undefined;
+  : cloudflare({
+      imageService: 'compile',
+    });
 
 // https://astro.build/config
 export default defineConfig({
-  adapter: cloudflare(),
+  adapter,
   image: {
     remotePatterns: [
       {
