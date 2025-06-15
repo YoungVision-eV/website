@@ -38,7 +38,8 @@ export default defineConfig({
 
   vite: {
     define: {
-      'process.env': process.env,
+      'process.env.TWENTY_AUTH': process.env.TWENTY_AUTH,
+      'process.env.TWENTY_GRAPHQL_URL': process.env.TWENTY_GRAPHQL_URL,
     },
     plugins: [tailwindcss()],
   },
