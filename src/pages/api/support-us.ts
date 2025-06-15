@@ -2,6 +2,7 @@ export const prerender = false;
 import type { APIRoute } from 'astro';
 
 import { gql, GraphQLClient } from 'graphql-request';
+
 export const POST: APIRoute = async ({ request }) => {
   const requiredFields = [
     'firstName',
@@ -69,23 +70,25 @@ export const POST: APIRoute = async ({ request }) => {
 
     // With the replace method the the quotes from the property keys (from JSON) are removed, because graphql requires them unquoted
     const mutation = gql`
-      mutation {
-        createPerson(data: ${JSON.stringify(personData).replace(/"([^"]+)":/g, '$1:')}) {
+      mutation SupportFromMutation(
+        $personData: PersonCreateInput
+        $fordermitgliedschaftData: FordermitgliedschaftCreateInput
+      ) {
+        createPerson(data: $personData) {
           id
           createdAt
         }
-        createFordermitgliedschaft(
-          data: ${JSON.stringify(fordermitgliedschaftData).replace(/"([^"]+)":/g, '$1:')}
-        ) {
+        createFordermitgliedschaft(data: $fordermitgliedschaftData) {
           id
-          monatlicherForderbeitrag {
-            amountMicros
-            currencyCode
-          }
+          createdAt
         }
       }
     `;
     console.log(mutation);
+    const variables = {
+      fordermitgliedschaftData,
+      personData,
+    };
     //TODO: link the Fordermitgliedschaft with the person
     interface ResponseData {
       createPerson: {
@@ -93,7 +96,7 @@ export const POST: APIRoute = async ({ request }) => {
         id: string;
       };
     }
-    const response = await graphQLClient.request<ResponseData>(mutation);
+    const response = await graphQLClient.request<ResponseData>(mutation, variables);
     console.log(response);
   } catch (error) {
     console.error(error);
