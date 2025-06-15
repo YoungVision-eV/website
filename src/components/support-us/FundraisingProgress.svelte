@@ -2,8 +2,9 @@
   import { onMount } from 'svelte';
 
   let peopleCount = $state(14);
-  let currentProgress = $state(236);
-  const { middleProgress, targetProgress } = $props();
+
+  const { middleProgress, progress, targetProgress } = $props();
+  let currentProgress = $state(progress);
   let waveOffset = $state(0);
 
   let finished = $derived(currentProgress >= targetProgress);

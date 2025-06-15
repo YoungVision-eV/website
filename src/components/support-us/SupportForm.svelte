@@ -1,12 +1,13 @@
 <script lang="ts">
   import Circle from '@assets/icons/Circle.svelte';
+  import { slide } from 'svelte/transition';
 
   import LoadingDots from './LoadingDots.svelte';
   import Spinner from './Spinner.svelte';
 
   const contributionOptions = [{ value: 10 }, { value: 35 }, { value: 75 }];
 
-  let showForm = $state(true);
+  let showForm = $state(false);
   let customContribution = $state<boolean>(false);
   let customContributionValue = $state<null | number>(null);
 
@@ -91,7 +92,7 @@
     Fördermitglied werden
   </button>
 {:else}
-  <div class="mx-auto max-w-3xl">
+  <div transition:slide class="mx-auto max-w-3xl">
     <form
       bind:this={form}
       onsubmit={(e) => {

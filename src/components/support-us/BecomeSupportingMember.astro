@@ -13,12 +13,17 @@ const foundraisingProgress = await getFoundraisingProgress();
     <p class="mt-3 font-serif text-xl font-bold lg:mt-2 lg:text-2xl">
       Deine Chance uns zu unterstützen und mehr über uns zu erfahren!
     </p>
-    <p>
-      <FundraisingProgress client:load progress={foundraisingProgress.amount} />
-    </p>
+    <div class="py-8">
+      <FundraisingProgress
+        client:load
+        middleProgress={965}
+        progress={foundraisingProgress.amount}
+        targetProgress={1325}
+      />
+    </div>
     <p class="mt-8 max-w-prose lg:mt-10 lg:text-xl">
       Du willst junge Menschen auf ihrer Reise zur persönlichen Entwicklung und zur aktiven
-      Gestaltung unserer Gesellschaft begleiten?
+      Gestaltung unserer Gesellschaft unterstützen?
     </p>
     <div class="mt-8 flex items-center justify-center lg:mt-6 lg:block">
       <SupportForm client:load />
