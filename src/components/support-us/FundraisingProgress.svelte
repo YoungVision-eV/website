@@ -1,9 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
 
-  let peopleCount = $state(14);
-
-  const { middleProgress, progress, targetProgress } = $props();
+  const { middleProgress, peopleCount, progress, targetProgress } = $props();
   let currentProgress = $state(progress);
   let waveOffset = $state(0);
 
