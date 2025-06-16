@@ -7,6 +7,7 @@ import { gql, GraphQLClient } from 'graphql-request';
 export const POST: APIRoute = async ({ request }) => {
   const slackClient = new WebClient(import.meta.env.SLACK_TOKEN);
   const requiredFields = [
+    'agreement',
     'firstName',
     'lastName',
     'email',
@@ -16,6 +17,7 @@ export const POST: APIRoute = async ({ request }) => {
     'country',
     'iban',
     'contribution',
+    'nameMention',
   ];
 
   console.log(import.meta.env.TWENTY_GRAPHQL_URL);
@@ -63,6 +65,7 @@ export const POST: APIRoute = async ({ request }) => {
         addressPostcode: data.get('postalCode'),
         addressStreet1: data.get('streetAddress'),
       },
+      consentNameMention: data.get('nameMention') === 'true',
       emails: { primaryEmail: data.get('email') },
       name: { firstName: data.get('firstName'), lastName: data.get('lastName') },
     };
