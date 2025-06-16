@@ -81,7 +81,7 @@
     delayed = false;
     timeout = false;
     submitting = false;
-    if (submitResult !== 'success') {
+    if (submitResult === 'success') {
       document.querySelector('#logo')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
       showForm = false;
       setTimeout(() => {
