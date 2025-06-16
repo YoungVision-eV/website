@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Tween } from 'svelte/motion';
   import { onMount } from 'svelte';
+  import { Tween } from 'svelte/motion';
 
   import progressStore from './progress.store';
 
@@ -8,9 +8,9 @@
   let currentProgressTween;
   if (typeof requestAnimationFrame === 'undefined') {
     currentProgressTween = {
+      current: progress,
       set: () => {},
       subscribe: () => {},
-      current: progress,
       target: progress,
     };
   } else {
@@ -41,9 +41,10 @@
     }
 
     currentProgressTween.set(progress, { duration: 0 });
-    progressStore.update((v) => ({ ...v, amount: progress }));
+    progressStore.update((v) => ({ ...v, amount: progress, people: peopleCount }));
     progressStore.subscribe((v) => {
-      (currentProgressTween.target = v.amount), (peopleCount = v.people);
+      currentProgressTween.target = v.amount;
+      peopleCount = v.people;
     });
 
     let animationFrame: number;
