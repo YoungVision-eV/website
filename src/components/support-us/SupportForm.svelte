@@ -125,7 +125,7 @@
               <div class="mt-2">
                 <input
                   autocomplete="given-name"
-                  class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  class="focus:outline-dark-green block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 sm:text-sm/6"
                   id="first-name"
                   name="firstName"
                   type="text"
@@ -142,7 +142,7 @@
               <div class="mt-2">
                 <input
                   autocomplete="family-name"
-                  class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  class="focus:outline-dark-green block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 sm:text-sm/6"
                   id="last-name"
                   name="lastName"
                   type="text"
@@ -159,7 +159,7 @@
               <div class="mt-2">
                 <input
                   autocomplete="email"
-                  class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  class="focus:outline-dark-green block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 sm:text-sm/6"
                   id="email"
                   name="email"
                   type="email"
@@ -180,7 +180,7 @@
                   <div class="mt-1">
                     <input
                       autocomplete="street-address"
-                      class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                      class="focus:outline-dark-green block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 sm:text-sm/6"
                       id="street-address"
                       name="streetAddress"
                       type="text"
@@ -196,7 +196,7 @@
                   <div class="mt-1">
                     <input
                       autocomplete="postal-code"
-                      class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                      class="focus:outline-dark-green block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 sm:text-sm/6"
                       id="postal-code"
                       name="postalCode"
                       type="text"
@@ -211,7 +211,7 @@
                   <div class="mt-1">
                     <input
                       autocomplete="address-level2"
-                      class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                      class="focus:outline-dark-green block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 sm:text-sm/6"
                       id="city"
                       name="city"
                       type="text"
@@ -227,7 +227,7 @@
                   <div class="mt-1">
                     <input
                       autocomplete="country-name"
-                      class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                      class="focus:outline-dark-green block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 sm:text-sm/6"
                       id="country"
                       name="country"
                       type="text"
@@ -327,7 +327,7 @@
               <label class="block text-sm/6 font-medium text-gray-900" for="iban"> IBAN </label>
               <div class="mt-2">
                 <input
-                  class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  class="focus:outline-dark-green block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 sm:text-sm/6"
                   id="iban"
                   name="iban"
                   placeholder="DE00 0000 0000 0000 0000 00"
@@ -342,7 +342,7 @@
               <label class="block text-sm/6 font-medium text-gray-900" for="bic"> BIC </label>
               <div class="mt-2">
                 <input
-                  class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  class="focus:outline-dark-green block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 sm:text-sm/6"
                   id="bic"
                   name="bic"
                   placeholder="MARKDEF1100"
@@ -377,7 +377,7 @@
               type="checkbox"
               id="name-mention"
               name="nameMention"
-              class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
+              class="text-dark-green focus:ring-dark-green h-4 w-4 rounded border-gray-300"
               bind:checked={formData.nameMention}
             />
             <div class="text-sm/6">
@@ -403,7 +403,7 @@
               id="agreement"
               name="agreement"
               required
-              class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
+              class="text-dark-green focus:ring-dark-green h-4 w-4 rounded border-gray-300"
               bind:checked={formData.agreement}
             />
             <div class="text-sm/6">
