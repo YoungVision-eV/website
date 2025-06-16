@@ -4,14 +4,17 @@
 
   import progressStore from './progress.store';
 
-  const { middleProgress, peopleCount, progress, targetProgress } = $props();
-  let currentProgressTween = new Tween(progress);
+  const { middleProgress, peopleCount: currentPeopleCount, progress, targetProgress } = $props();
+  let currentProgressTween = new Tween<number>(progress);
+  let peopleCount = $state(currentPeopleCount);
   let currentProgress = $derived(Math.round(currentProgressTween.current));
   onMount(() => {
     currentProgressTween.set(progress, { duration: 0 });
-    progressStore.set(progress);
+    progressStore.update((v) => ({ ...v, amount: progress }));
   });
-  progressStore.subscribe((v) => (currentProgressTween.target = v));
+  progressStore.subscribe((v) => {
+    (currentProgressTween.target = v.amount), (peopleCount = v.people);
+  });
   let waveOffset = $state(0);
 
   let finished = $derived(currentProgress >= targetProgress);
