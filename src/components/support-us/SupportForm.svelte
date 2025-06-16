@@ -17,7 +17,7 @@
     bic: '',
     city: '',
     contribution: 35,
-    country: 'Deutschland',
+    country: '',
     email: '',
     firstName: '',
     iban: '',
