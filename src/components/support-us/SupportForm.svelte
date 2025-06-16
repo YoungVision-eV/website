@@ -81,15 +81,17 @@
     delayed = false;
     timeout = false;
     submitting = false;
-    document.querySelector('#logo')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    showForm = false;
-    setTimeout(() => {
-      progressStore.update((v) => ({
-        ...v,
-        amount: v.amount + formData.contribution,
-        people: v.people + 1,
-      }));
-    }, 1000);
+    if (submitResult !== 'success') {
+      document.querySelector('#logo')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      showForm = false;
+      setTimeout(() => {
+        progressStore.update((v) => ({
+          ...v,
+          amount: v.amount + formData.contribution,
+          people: v.people + 1,
+        }));
+      }, 1000);
+    }
   }
 </script>
 

@@ -14,7 +14,7 @@
       target: progress,
     };
   } else {
-    currentProgressTween = new Tween<number>(progress);
+    currentProgressTween = new Tween<number>(progress, { duration: 700 });
   }
   let peopleCount = $state(currentPeopleCount);
   let currentProgress = $derived(Math.round(currentProgressTween.current));
