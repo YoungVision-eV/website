@@ -29,6 +29,7 @@
     "@astrojs/svelte": "7.0.13",
     "@astrojs/tailwind": "6.0.2",
     "@melt-ui/svelte": "0.86.6",
+    "@slack/web-api": "^7.9.2",
     "astro": "5.7.14",
     "clsx": "2.1.1",
     "graphql": "^16.11.0",
