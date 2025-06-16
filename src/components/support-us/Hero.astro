@@ -5,11 +5,20 @@ import { getImage } from 'astro:assets';
 const SupportUsHeroBackgroundUrl = await getImage({ src: SupportUsHeroBackground });
 ---
 
-<section class="h-[34rem] w-full bg-cover bg-center pt-10 lg:pt-16">
-  <h1 class="text-center font-serif text-3xl font-bold text-white lg:text-5xl">Unterstütze Uns</h1>
+<section
+  class="flex h-[10rem] w-full items-center justify-center bg-cover bg-center pt-10 lg:block lg:h-[34rem] lg:pt-16"
+>
+  <h1 class="text-center font-serif text-4xl font-extrabold text-white lg:text-6xl">
+    Unterstütze Uns
+  </h1>
 </section>
 
 <style define:vars={{ backgroundImage: `url(${SupportUsHeroBackgroundUrl.src})` }}>
+  h1 {
+    -webkit-text-stroke: 2px black;
+    paint-order: stroke fill;
+  }
+
   section {
     background-image: var(--backgroundImage);
   }

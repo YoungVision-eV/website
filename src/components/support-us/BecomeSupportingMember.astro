@@ -1,6 +1,7 @@
 ---
 import { getFoundraisingProgress } from '@data/real/fundraising';
 
+import FundraisingInfo from './FundraisingInfo.svelte';
 import FundraisingProgress from './FundraisingProgress.svelte';
 import SupportForm from './SupportForm.svelte';
 
@@ -11,7 +12,7 @@ const foundraisingProgress = await getFoundraisingProgress();
   <div class="mx-auto max-w-[80rem] px-4 lg:px-20">
     <h2 class="font-serif text-2xl font-bold lg:text-4xl">Werde Fördermitglied</h2>
     <p class="mt-3 font-serif text-xl font-bold lg:mt-2 lg:text-2xl">
-      Deine Chance uns zu unterstützen und mehr über uns zu erfahren!
+      Deine Chance, junge Menschen zu unterstützen!
     </p>
     <div class="py-8">
       <FundraisingProgress
@@ -22,12 +23,11 @@ const foundraisingProgress = await getFoundraisingProgress();
         targetProgress={1325}
       />
     </div>
-    <p class="mt-8 max-w-prose lg:mt-10 lg:text-xl">
-      Du willst junge Menschen auf ihrer Reise zur persönlichen Entwicklung und zur aktiven
-      Gestaltung unserer Gesellschaft unterstützen?
-    </p>
-    <div class="mt-8 flex items-center justify-center lg:mt-6 lg:block">
+    <div class="mt-10 flex items-center justify-center lg:mt-14 lg:block lg:px-16">
       <SupportForm client:load />
+    </div>
+    <div class="mt-6 flex items-center justify-center lg:mt-8 lg:px-16 lg:text-xl">
+      <FundraisingInfo client:load />
     </div>
   </div>
 </section>

@@ -11,7 +11,7 @@
   let customContribution = $state<boolean>(false);
   let customContributionValue = $state<null | number>(null);
 
-  let formData: FormData = $state({
+  let formData = $state({
     agreement: false,
     bic: '',
     city: '',
@@ -34,7 +34,7 @@
 
   let form = $state<HTMLFormElement | null>(null);
 
-  async function handleSubmit(event: FormDataEvent) {
+  async function handleSubmit(event: Event) {
     if (submitting) return;
     submitting = true;
     loading = true;
@@ -43,7 +43,10 @@
     submitResult = null;
     event.preventDefault();
     const formDataSnapshot = $state.snapshot(formData);
-    const data = new URLSearchParams(formDataSnapshot);
+    const data = new URLSearchParams();
+    for (const [key, value] of Object.entries(formDataSnapshot)) {
+      data.append(key, String(value));
+    }
 
     // Log the form data for now
     console.log('Form submitted:', data, 'built from', formDataSnapshot);
@@ -83,21 +86,21 @@
 </script>
 
 {#if !showForm}
-  <button
-    type="button"
-    onclick={() => (showForm = true)}
-    class="inline-flex items-center gap-x-4 bg-green-50 p-4 px-8 font-bold text-white"
-  >
-    <Circle />
-    Fördermitglied werden
-  </button>
+  <div class="mx-auto flex items-center justify-center">
+    <button
+      type="button"
+      onclick={() => (showForm = true)}
+      class="inline-flex items-center gap-x-4 bg-green-50 p-4 px-8 font-bold text-white"
+    >
+      <Circle />
+      Fördermitglied werden
+    </button>
+  </div>
 {:else}
-  <div transition:slide class="mx-auto max-w-3xl">
+  <div transition:slide={{ duration: 500 }} class="mx-auto max-w-3xl pb-4">
     <form
       bind:this={form}
-      onsubmit={(e) => {
-        handleSubmit(e);
-      }}
+      onsubmit={handleSubmit}
       method="POST"
       class="space-y-8"
       action="/api/support-us"
@@ -240,7 +243,7 @@
               <label class="mb-3 block text-sm/6 font-medium text-gray-900" for="contribution">
                 Monatlicher Förderbeitrag
               </label>
-              <div class="mb-3 grid grid-cols-4 gap-3">
+              <div class="mb-3 grid grid-cols-2 gap-3 sm:grid-cols-4">
                 {#each contributionOptions as option (option.value)}
                   <button
                     type="button"
@@ -264,7 +267,7 @@
                     id="customContribution"
                     name="customContribution"
                     oninput={(e) => {
-                      const newCustomContribution = Number(e.target.value);
+                      const newCustomContribution = Number((e.target as HTMLInputElement).value);
                       if (!(newCustomContribution >= 0)) {
                         customContribution = false;
                         customContributionValue = null;
@@ -303,7 +306,7 @@
                   />
                 </div>
                 <input
-                  type="hidden"
+                  class="hidden"
                   id="contribution"
                   name="contribution"
                   required
