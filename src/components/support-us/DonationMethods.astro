@@ -1,32 +1,14 @@
 ---
 import JonasPortrait from '@assets/support-us/Jonas.png';
 import Button from '@components/Button.astro';
-import { getDonationMethods } from '@data/real/donations';
 import { Image } from 'astro:assets';
-
-import DonationMethodList from './DonationMethodList.svelte';
-import DonationMethodTabs from './DonationMethodTabs.svelte';
-
-const possibilities = await getDonationMethods();
 ---
 
 <section class="mx-auto max-w-[80rem] pb-16 lg:pb-24">
-  <div class="mt-4 px-4 lg:px-20">
-    <h2 class="font-serif text-2xl font-bold">Weitere Möglichkeiten, uns zu unterstützen</h2>
-    <p class="mt-3 text-xl lg:mt-4">
-      Deine Unterstützung ist der Schlüssel, um unsere Mission voranzutreiben und jungen Menschen
-      transformative Erfahrungen zu ermöglichen. Neben der Fördermitgliedschaft gibt es auch
-      folgende wertvolle Wege, wie du uns unterstützen kannst:
-    </p>
-
-    <DonationMethodTabs client:idle possibilities={possibilities} />
-    <DonationMethodList client:idle possibilities={possibilities} />
-  </div>
-
   <div
-    class="mt-24 gap-x-28 border-y-2 border-yellow-500 bg-yellow-900 px-4 py-10 lg:mx-20 lg:mt-36 lg:flex lg:flex-row lg:rounded-2xl lg:border-2 lg:px-24"
+    class="mt-12 gap-x-28 border-y-2 border-yellow-500 bg-yellow-900 px-4 py-10 lg:mx-20 lg:mt-16 lg:flex lg:flex-row lg:rounded-2xl lg:border-2 lg:px-24"
   >
-    <h3 class="font-serif text-2xl font-bold lg:hidden">Falls sie Fragen haben!</h3>
+    <h3 class="font-serif text-2xl font-bold lg:hidden">Falls du Fragen hast!</h3>
     <Image
       alt="Jonas"
       class="mx-auto mt-5 h-56 w-56 rounded-2xl bg-gray-300 object-cover object-center lg:mx-0 lg:mt-0"
@@ -34,7 +16,7 @@ const possibilities = await getDonationMethods();
     />
     <div>
       <h3 class="hidden text-center font-serif text-4xl font-bold lg:block">
-        Falls sie Fragen haben!
+        Falls du Fragen hast!
       </h3>
       <dl class="mt-8 grid grid-cols-1 lg:grid-cols-2">
         <dt class="font-bold">Ansprechpartner</dt>
