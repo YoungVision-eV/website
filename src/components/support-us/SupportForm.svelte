@@ -3,6 +3,7 @@
   import { slide } from 'svelte/transition';
 
   import LoadingDots from './LoadingDots.svelte';
+  import progressStore from './progress.store';
   import Spinner from './Spinner.svelte';
 
   const contributionOptions = [{ value: 10 }, { value: 35 }, { value: 75 }];
@@ -31,8 +32,6 @@
   let submitResult = $state<'error' | 'success' | null>(null);
   let delayed = $state(false);
   let timeout = $state(false);
-
-  let form = $state<HTMLFormElement | null>(null);
 
   async function handleSubmit(event: Event) {
     if (submitting) return;
@@ -82,29 +81,32 @@
     delayed = false;
     timeout = false;
     submitting = false;
+    document.querySelector('#logo')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    showForm = false;
+    setTimeout(() => {
+      progressStore.update((v) => v + formData.contribution);
+    }, 1000);
   }
 </script>
 
 {#if !showForm}
   <div class="mx-auto flex items-center justify-center">
-    <button
-      type="button"
-      onclick={() => (showForm = true)}
-      class="inline-flex items-center gap-x-4 bg-green-50 p-4 px-8 font-bold text-white"
-    >
-      <Circle />
-      Fördermitglied werden
-    </button>
+    {#if submitResult == 'success'}
+      <p class="text-green-200">Vielen Dank für deine Spende ❤️</p>
+    {:else}
+      <button
+        type="button"
+        onclick={() => (showForm = true)}
+        class="inline-flex items-center gap-x-4 bg-green-50 p-4 px-8 font-bold text-white"
+      >
+        <Circle />
+        Fördermitglied werden
+      </button>
+    {/if}
   </div>
 {:else}
   <div transition:slide={{ duration: 500 }} class="mx-auto max-w-3xl pb-4">
-    <form
-      bind:this={form}
-      onsubmit={handleSubmit}
-      method="POST"
-      class="space-y-8"
-      action="/api/support-us"
-    >
+    <form onsubmit={handleSubmit} method="POST" class="space-y-8" action="/api/support-us">
       <div class="space-y-12">
         <div class="border-b border-gray-900/10 pb-12">
           <h2 class="text-base/7 font-semibold text-gray-900">Persönliche Informationen</h2>
@@ -438,25 +440,21 @@
         </div>
       {/if}
       <div class="mt-6 flex justify-end">
-        {#if submitResult == 'success'}
-          <p class="text-green-200">Vielen Dank für deine Spende ❤️</p>
-        {:else}
-          <button
-            class="bg-dark-green flex w-[160px] items-center justify-center rounded-md px-8 py-4 font-bold text-white shadow-sm hover:bg-green-200 focus:ring-2 focus:ring-green-200 focus:ring-offset-2 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
-            type="submit"
-            disabled={loading}
-          >
-            {#if timeout}
-              <LoadingDots />
-            {:else if delayed}
-              <Spinner />
-            {:else if submitResult == 'error'}
-              Nochmal
-            {:else}
-              Abschicken
-            {/if}
-          </button>
-        {/if}
+        <button
+          class="bg-dark-green flex w-[160px] items-center justify-center rounded-md px-8 py-4 font-bold text-white shadow-sm hover:bg-green-200 focus:ring-2 focus:ring-green-200 focus:ring-offset-2 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
+          type="submit"
+          disabled={loading}
+        >
+          {#if timeout}
+            <LoadingDots />
+          {:else if delayed}
+            <Spinner />
+          {:else if submitResult == 'error'}
+            Nochmal
+          {:else}
+            Abschicken
+          {/if}
+        </button>
       </div>
     </form>
   </div>

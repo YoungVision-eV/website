@@ -1,8 +1,17 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import { Tween } from 'svelte/motion';
+
+  import progressStore from './progress.store';
 
   const { middleProgress, peopleCount, progress, targetProgress } = $props();
-  let currentProgress = $state(progress);
+  let currentProgressTween = new Tween(progress);
+  let currentProgress = $derived(Math.round(currentProgressTween.current));
+  onMount(() => {
+    currentProgressTween.set(progress, { duration: 0 });
+    progressStore.set(progress);
+  });
+  progressStore.subscribe((v) => (currentProgressTween.target = v));
   let waveOffset = $state(0);
 
   let finished = $derived(currentProgress >= targetProgress);
