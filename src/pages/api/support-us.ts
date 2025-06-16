@@ -18,6 +18,7 @@ export const POST: APIRoute = async ({ request }) => {
     'iban',
     'contribution',
     'nameMention',
+    'preferredLanguage',
   ];
 
   console.log(import.meta.env.TWENTY_GRAPHQL_URL);
@@ -68,6 +69,7 @@ export const POST: APIRoute = async ({ request }) => {
       consentNameMention: data.get('nameMention') === 'true',
       emails: { primaryEmail: data.get('email') },
       name: { firstName: data.get('firstName'), lastName: data.get('lastName') },
+      preferredLanguage: data.get('preferredLanguage'),
     };
 
     const fordermitgliedschaftData = {

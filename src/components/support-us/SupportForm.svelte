@@ -24,6 +24,7 @@
     lastName: '',
     nameMention: false,
     postalCode: '',
+    preferredLanguage: 'GERMAN',
     streetAddress: '',
   });
 
@@ -152,7 +153,7 @@
               </div>
             </div>
 
-            <div class="sm:col-span-6">
+            <div class="sm:col-span-4">
               <label class="block text-sm/6 font-medium text-gray-900" for="email">
                 E-Mail-Adresse
               </label>
@@ -166,6 +167,24 @@
                   bind:value={formData.email}
                   required
                 />
+              </div>
+            </div>
+
+            <div class="sm:col-span-2">
+              <label class="block text-sm/6 font-medium text-gray-900" for="preferredLanguage">
+                Bevorzugte Sprache
+              </label>
+              <div class="mt-2">
+                <select
+                  class="focus:outline-dark-green block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 sm:text-sm/6"
+                  id="preferredLanguage"
+                  name="preferredLanguage"
+                  bind:value={formData.preferredLanguage}
+                  required
+                >
+                  <option value="GERMAN">Deutsch</option>
+                  <option value="ENGLISH">Englisch</option>
+                </select>
               </div>
             </div>
 
