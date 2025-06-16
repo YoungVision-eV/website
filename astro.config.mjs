@@ -41,8 +41,5 @@ export default defineConfig({
       'process.env': process.env,
     },
     plugins: [tailwindcss()],
-    ssr: {
-      external: ['@slack/web-api'],
-    },
   },
 });

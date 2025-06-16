@@ -1,11 +1,9 @@
 export const prerender = false;
 import type { APIRoute } from 'astro';
 
-import { WebClient } from '@slack/web-api';
 import { gql, GraphQLClient } from 'graphql-request';
 
 export const POST: APIRoute = async ({ request }) => {
-  const slackClient = new WebClient(import.meta.env.SLACK_TOKEN);
   const requiredFields = [
     'agreement',
     'firstName',
@@ -35,10 +33,19 @@ export const POST: APIRoute = async ({ request }) => {
 
     // send form data to slack
     const dataObj = Object.fromEntries(data.entries());
-    const slackApiResponse = await slackClient.chat.postMessage({
+    const payload = {
       channel: 'C091N6B162E',
       text: JSON.stringify(dataObj, null, 2),
+    };
+    const slackApiResponse = await fetch('https://slack.com/api/chat.postMessage', {
+      body: JSON.stringify(payload),
+      headers: {
+        Authorization: `Bearer ${import.meta.env.SLACK_TOKEN}`,
+        'Content-Type': 'application/json; charset=utf-8',
+      },
+      method: 'POST',
     });
+
     console.log('SlackApiResponse: ', slackApiResponse);
 
     // Check if any required fields are missing
