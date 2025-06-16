@@ -1,20 +1,23 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
   import { Tween } from 'svelte/motion';
+  import { onMount } from 'svelte';
 
   import progressStore from './progress.store';
 
   const { middleProgress, peopleCount: currentPeopleCount, progress, targetProgress } = $props();
-  let currentProgressTween = new Tween<number>(progress);
+  let currentProgressTween;
+  if (typeof requestAnimationFrame === 'undefined') {
+    currentProgressTween = {
+      set: () => {},
+      subscribe: () => {},
+      current: progress,
+      target: progress,
+    };
+  } else {
+    currentProgressTween = new Tween<number>(progress);
+  }
   let peopleCount = $state(currentPeopleCount);
   let currentProgress = $derived(Math.round(currentProgressTween.current));
-  onMount(() => {
-    currentProgressTween.set(progress, { duration: 0 });
-    progressStore.update((v) => ({ ...v, amount: progress }));
-  });
-  progressStore.subscribe((v) => {
-    (currentProgressTween.target = v.amount), (peopleCount = v.people);
-  });
   let waveOffset = $state(0);
 
   let finished = $derived(currentProgress >= targetProgress);
@@ -33,9 +36,16 @@
       return;
     }
     // No animation during server rendering
-    if (requestAnimationFrame != null) {
+    if (typeof requestAnimationFrame === 'undefined') {
       return;
     }
+
+    currentProgressTween.set(progress, { duration: 0 });
+    progressStore.update((v) => ({ ...v, amount: progress }));
+    progressStore.subscribe((v) => {
+      (currentProgressTween.target = v.amount), (peopleCount = v.people);
+    });
+
     let animationFrame: number;
 
     const animateWave = (timestamp: number) => {
