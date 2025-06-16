@@ -32,6 +32,10 @@
     if (finished) {
       return;
     }
+    // No animation during server rendering
+    if (requestAnimationFrame != null) {
+      return;
+    }
     let animationFrame: number;
 
     const animateWave = (timestamp: number) => {
