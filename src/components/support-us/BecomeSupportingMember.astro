@@ -1,44 +1,33 @@
 ---
-import Background from '@assets/support-us/background-supporting-member.png';
-import Button from '@components/Button.astro';
-import { getImage } from 'astro:assets';
+import { getFoundraisingProgress } from '@data/real/fundraising';
 
-import Disclosure from './Disclosure.svelte';
+import FundraisingInfo from './FundraisingInfo.svelte';
+import FundraisingProgress from './FundraisingProgress.svelte';
+import SupportForm from './SupportForm.svelte';
 
-const backgroundImage = await getImage({ height: 1080, src: Background, width: 1920 });
+const foundraisingProgress = await getFoundraisingProgress();
 ---
 
-<section class="bg-light-green py-8 lg:py-12" data-testid="supporting-members">
+<section class="py-8 lg:py-12" data-testid="supporting-members">
   <div class="mx-auto max-w-[80rem] px-4 lg:px-20">
     <h2 class="font-serif text-2xl font-bold lg:text-4xl">Werde Fördermitglied</h2>
     <p class="mt-3 font-serif text-xl font-bold lg:mt-2 lg:text-2xl">
-      Deine Chance uns zu unterstützen und mehr über uns zu erfahren!
+      Deine Chance, junge Menschen zu unterstützen!
     </p>
-    <p class="mt-8 max-w-prose lg:mt-10 lg:text-xl">
-      Du willst junge Menschen auf ihrer Reise zur persönlichen Entwicklung und zur aktiven
-      Gestaltung unserer Gesellschaft begleiten? Erfahre hier, wie du uns unterstützen kannst!
-    </p>
-    <Button
-      class="mt-8 lg:mt-6"
-      color="dark"
-      href="https://easyverein.com/public/yv/applicationform/7237"
-      text="Werde Fördermitglied"
-    />
-    <Disclosure client:load />
-
-    <div class="mx-2 mt-2 w-full border-t border-gray-300"></div>
+    <div class="py-8">
+      <FundraisingProgress
+        client:load
+        middleProgress={965}
+        peopleCount={foundraisingProgress.count}
+        progress={foundraisingProgress.amount}
+        targetProgress={1325}
+      />
+    </div>
+    <div class="mt-10 flex items-center justify-center lg:mt-14 lg:block lg:px-16">
+      <SupportForm client:load />
+    </div>
+    <div class="mt-6 flex items-center justify-center lg:mt-8 lg:px-16 lg:text-xl">
+      <FundraisingInfo client:load />
+    </div>
   </div>
 </section>
-
-<style define:vars={{ backgroundImage: `url(${backgroundImage.src})` }}>
-  section {
-    background-image: var(--backgroundImage);
-    background-position: top center;
-  }
-
-  @media (min-width: 1024px) {
-    section {
-      background-size: cover;
-    }
-  }
-</style>

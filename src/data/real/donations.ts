@@ -44,7 +44,7 @@ export async function getDonationMethods() {
       icon: await optimizeImage(HeadLightbulb),
       image: await optimizeImage(ExpertiseImage),
       text: 'Du hast Lust YoungVision mit deiner Expertise voranzubringen?',
-      title: 'Expertise Spenden',
+      title: 'Expertise teilen',
     },
     {
       description: 'Du möchtest uns mit einer Sachspende unterszützen?',

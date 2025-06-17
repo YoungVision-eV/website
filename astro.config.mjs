@@ -1,3 +1,4 @@
+import cloudflare from '@astrojs/cloudflare';
 import node from '@astrojs/node';
 import svelte from '@astrojs/svelte';
 import tailwindcss from '@tailwindcss/vite';
@@ -10,7 +11,9 @@ const adapter = PREVIEW
   ? node({
       mode: 'standalone',
     })
-  : undefined;
+  : cloudflare({
+      imageService: 'compile',
+    });
 
 // https://astro.build/config
 export default defineConfig({
@@ -34,6 +37,9 @@ export default defineConfig({
   trailingSlash: 'never',
 
   vite: {
+    define: {
+      'process.env': process.env,
+    },
     plugins: [tailwindcss()],
   },
 });
