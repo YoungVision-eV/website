@@ -5,7 +5,7 @@
   "version": "0.0.1",
   "packageManager": "pnpm@10.12.1",
   "scripts": {
-    "dev": "CMS_URL='http://localhost:3000' astro dev",
+    "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
