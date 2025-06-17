@@ -153,7 +153,7 @@
               </div>
             </div>
 
-            <div class="sm:col-span-4">
+            <div class="sm:col-span-6">
               <label class="block text-sm/6 font-medium text-gray-900" for="email">
                 E-Mail-Adresse
               </label>
@@ -170,23 +170,44 @@
               </div>
             </div>
 
-            <div class="sm:col-span-2">
-              <label class="block text-sm/6 font-medium text-gray-900" for="preferredLanguage">
-                Bevorzugte Sprache
-              </label>
-              <div class="mt-2">
-                <select
-                  class="focus:outline-dark-green block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 sm:text-sm/6"
-                  id="preferredLanguage"
-                  name="preferredLanguage"
-                  bind:value={formData.preferredLanguage}
-                  required
-                >
-                  <option value="GERMAN">Deutsch</option>
-                  <option value="ENGLISH">Englisch</option>
-                </select>
+            <fieldset class="sm:col-span-6">
+              <legend class="block text-sm/6 font-medium text-gray-900">Bevorzugte Sprache</legend>
+              <p class="mt-1 text-sm/6 text-gray-600">
+                Diese Sprache wird für alle Kommunikation verwendet.<br />This language will be used
+                for all communication.
+              </p>
+              <div
+                class="mt-6 flex flex-col space-y-6 lg:flex-row lg:items-center lg:space-y-0 lg:space-x-6"
+              >
+                <div class="flex items-center gap-x-3">
+                  <input
+                    id="push-everything"
+                    name="preferredLanguage"
+                    type="radio"
+                    checked
+                    class="checked:border-dark-green checked:bg-dark-green focus-visible:outline-dark-green relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white not-checked:before:hidden focus-visible:outline-2 focus-visible:outline-offset-2 disabled:border-gray-300 disabled:bg-gray-100 disabled:before:bg-gray-400 forced-colors:appearance-auto forced-colors:before:hidden"
+                    bind:group={formData.preferredLanguage}
+                    value="GERMAN"
+                  />
+                  <label for="push-everything" class="block text-sm/6 font-medium text-gray-900"
+                    >Deutsch</label
+                  >
+                </div>
+                <div class="flex items-center gap-x-3">
+                  <input
+                    id="push-email"
+                    name="preferredLanguage"
+                    type="radio"
+                    class="checked:border-dark-green checked:bg-dark-green focus-visible:outline-dark-green relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white not-checked:before:hidden focus-visible:outline-2 focus-visible:outline-offset-2 disabled:border-gray-300 disabled:bg-gray-100 disabled:before:bg-gray-400 forced-colors:appearance-auto forced-colors:before:hidden"
+                    bind:group={formData.preferredLanguage}
+                    value="ENGLISH"
+                  />
+                  <label for="push-email" class="block text-sm/6 font-medium text-gray-900"
+                    >English</label
+                  >
+                </div>
               </div>
-            </div>
+            </fieldset>
 
             <!-- Address Group -->
             <div class="col-span-full space-y-4">
