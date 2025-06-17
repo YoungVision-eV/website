@@ -46,7 +46,7 @@ export const POST: APIRoute = async ({ request }) => {
       method: 'POST',
     });
 
-    console.log('SlackApiResponse: ', slackApiResponse);
+    console.log('SlackApiResponse: ', await slackApiResponse.json());
 
     // Check if any required fields are missing
     const missingFields = requiredFields.filter((field) => data.get(field) === null);
