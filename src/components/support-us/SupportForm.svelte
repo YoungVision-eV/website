@@ -12,6 +12,8 @@
   let customContribution = $state<boolean>(false);
   let customContributionValue = $state<null | number>(null);
 
+  const languageFormatter = new Intl.DisplayNames(undefined, { type: 'language' });
+
   let formData = $state({
     agreement: false,
     bic: '',
@@ -190,7 +192,7 @@
                     value="GERMAN"
                   />
                   <label for="push-everything" class="block text-sm/6 font-medium text-gray-900"
-                    >Deutsch</label
+                    >{languageFormatter.of('de')}</label
                   >
                 </div>
                 <div class="flex items-center gap-x-3">
@@ -203,7 +205,7 @@
                     value="ENGLISH"
                   />
                   <label for="push-email" class="block text-sm/6 font-medium text-gray-900"
-                    >English</label
+                    >{languageFormatter.of('en')}</label
                   >
                 </div>
               </div>
