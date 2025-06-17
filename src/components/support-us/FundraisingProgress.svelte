@@ -1,4 +1,5 @@
 <script lang="ts">
+  import MockTween from '@components/mockTween';
   import { onMount } from 'svelte';
   import { Tween } from 'svelte/motion';
 
@@ -7,12 +8,7 @@
   const { middleProgress, peopleCount: currentPeopleCount, progress, targetProgress } = $props();
   let currentProgressTween;
   if (typeof requestAnimationFrame === 'undefined') {
-    currentProgressTween = {
-      current: progress,
-      set: () => {},
-      subscribe: () => {},
-      target: progress,
-    };
+    currentProgressTween = new MockTween(progress);
   } else {
     currentProgressTween = new Tween<number>(progress, { duration: 700 });
   }

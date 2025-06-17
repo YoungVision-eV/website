@@ -1,8 +1,10 @@
 <script lang="ts">
   import type { EventCalendarEntry } from '@data';
 
+  import MockTween from '@components/mockTween';
   import clsx from 'clsx';
   import { cubicOut } from 'svelte/easing';
+  import { Tween } from 'svelte/motion';
   import { blur, fade } from 'svelte/transition';
 
   export let events: [EventCalendarEntry, EventCalendarEntry, EventCalendarEntry];
@@ -23,6 +25,13 @@
 
   const ANIMATION_DURATION = 300;
 
+  let location;
+  if (typeof requestAnimationFrame === 'undefined') {
+    location = new MockTween(selectedEvent);
+  } else {
+    location = new Tween<number>(selectedEvent, { duration: ANIMATION_DURATION, easing: cubicOut });
+  }
+  $: location.set(selectedEvent);
   $: currentEvent = events[selectedEvent];
 </script>
 
@@ -56,7 +65,7 @@
 				-->
         <svg
           class="absolute h-5 w-5 text-white"
-          style="top: 0%; transform: translateY(calc({selectedEvent * 100}% + {selectedEvent *
+          style="top: 0%; transform: translateY(calc({location.current * 100}% + {location.current *
             0.25}rem))"
           fill="currentColor"
           viewBox="0 0 100 100"
@@ -92,7 +101,7 @@
         'bg-background absolute z-20 h-1/3 w-full lg:-ml-8 lg:w-[calc(100%+2rem)] lg:rounded-l-2xl',
         selectedEvent === 0 ? 'rounded-t-2xl' : '',
       )}
-      style="top: 0%; transform: translateY({selectedEvent * 100}%)"
+      style="top: 0%; transform: translateY({location.current * 100}%)"
     ></div>
     {#each events as event, index (event.title)}
       <li
