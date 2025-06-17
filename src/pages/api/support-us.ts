@@ -3,6 +3,20 @@ import type { APIRoute } from 'astro';
 
 import { gql, GraphQLClient } from 'graphql-request';
 
+const config = {
+  SLACK_TOKEN: import.meta.env.SLACK_TOKEN,
+  TWENTY_AUTH: import.meta.env.TWENTY_AUTH,
+  TWENTY_GRAPHQL_URL: import.meta.env.TWENTY_GRAPHQL_URL,
+};
+const missingConfig = Object.entries(config).filter(([_, v]) => !v);
+if (missingConfig.length > 0) {
+  console.error(
+    'Missing environment variables:',
+    missingConfig.map(([k, _]) => k),
+  );
+  throw new Error('Missing configuration');
+}
+
 export const POST: APIRoute = async ({ request }) => {
   const requiredFields = [
     'agreement',
@@ -19,10 +33,11 @@ export const POST: APIRoute = async ({ request }) => {
     'preferredLanguage',
   ];
 
-  console.log(import.meta.env.TWENTY_GRAPHQL_URL);
-  const graphQLClient = new GraphQLClient(import.meta.env.TWENTY_GRAPHQL_URL, {
+  console.log('Config:', config);
+
+  const graphQLClient = new GraphQLClient(config.TWENTY_GRAPHQL_URL, {
     headers: {
-      Authorization: 'Bearer ' + import.meta.env.TWENTY_AUTH,
+      Authorization: `Bearer ${config.TWENTY_AUTH}`,
       'Content-Type': 'application/json',
     },
   });
@@ -40,7 +55,7 @@ export const POST: APIRoute = async ({ request }) => {
     const slackApiResponse = await fetch('https://slack.com/api/chat.postMessage', {
       body: JSON.stringify(payload),
       headers: {
-        Authorization: `Bearer ${import.meta.env.SLACK_TOKEN}`,
+        Authorization: `Bearer ${config.SLACK_TOKEN}`,
         'Content-Type': 'application/json; charset=utf-8',
       },
       method: 'POST',
@@ -50,6 +65,7 @@ export const POST: APIRoute = async ({ request }) => {
 
     // Check if any required fields are missing
     const missingFields = requiredFields.filter((field) => data.get(field) === null);
+    console.log('Missing fields:', missingFields);
     if (missingFields.length > 0) {
       return new Response(
         JSON.stringify({
@@ -78,6 +94,7 @@ export const POST: APIRoute = async ({ request }) => {
       name: { firstName: data.get('firstName'), lastName: data.get('lastName') },
       preferredLanguage: data.get('preferredLanguage'),
     };
+    console.log('Person data:', personData);
 
     const fordermitgliedschaftData = {
       fullName: { firstName: data.get('firstName'), lastName: data.get('lastName') },
@@ -89,6 +106,7 @@ export const POST: APIRoute = async ({ request }) => {
       ...(bic ? { bic } : {}),
       beitrittsdatum: new Date().toJSON(),
     };
+    console.log('Fördermitgliedschaft data:', fordermitgliedschaftData);
 
     // With the replace method the the quotes from the property keys (from JSON) are removed, because graphql requires them unquoted
     const mutation = gql`
@@ -132,7 +150,7 @@ export const POST: APIRoute = async ({ request }) => {
       { status: 500 },
     );
   }
-  // TODO: return failure on failure
+  console.log('Success!');
   return new Response(
     JSON.stringify({
       message: 'Success!',
