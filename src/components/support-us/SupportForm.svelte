@@ -12,7 +12,9 @@
   let customContribution = $state<boolean>(false);
   let customContributionValue = $state<null | number>(null);
 
-  const languageFormatter = new Intl.DisplayNames(undefined, { type: 'language' });
+  const language = navigator?.language?.split('-')[0] ?? 'de';
+
+  const languageFormatter = new Intl.DisplayNames(language, { type: 'language' });
 
   let formData = $state({
     agreement: false,
@@ -26,7 +28,7 @@
     lastName: '',
     nameMention: false,
     postalCode: '',
-    preferredLanguage: 'GERMAN',
+    preferredLanguage: language === 'de' ? 'GERMAN' : 'ENGLISH',
     streetAddress: '',
   });
 
@@ -209,6 +211,11 @@
                   >
                 </div>
               </div>
+              {#if formData.preferredLanguage !== 'GERMAN'}
+                <p class="mt-2 text-sm/6 text-gray-600">
+                  Sorry for not offering our website in english yet. We are working on it!
+                </p>
+              {/if}
             </fieldset>
 
             <!-- Address Group -->
