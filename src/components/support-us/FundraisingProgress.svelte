@@ -164,9 +164,16 @@
         fill="oklch(12.9% 0.042 264.695)">{currentProgress}€</text
       >
     </svg>
-    <p class="text-center text-xl lg:ml-8 lg:text-left">
-      Dank <span class="font-bold">{peopleCount}</span> Menschen
-    </p>
+    <div class="text-center text-xl lg:flex lg:w-64 lg:items-center lg:justify-center">
+      <div>
+        <p>
+          pro Monat <br />
+        </p>
+        <p class="text-lg">
+          Dank <span class="font-bold">{peopleCount}</span> Menschen
+        </p>
+      </div>
+    </div>
   </div>
   <div class="hidden lg:block">
     <!-- Dashed line for middle progress -->
@@ -191,9 +198,10 @@
       ]}
     ></div>
   </div>
+  <h2 class="mt-6 text-center font-serif text-2xl font-bold lg:hidden">Ziele</h2>
   <div
     class={[
-      'mx-auto mt-8 flex gap-y-4 md:flex-row lg:mt-0 lg:block lg:gap-y-8',
+      'mx-auto mt-2 flex gap-y-4 md:flex-row lg:mt-0 lg:block lg:gap-y-8',
       currentProgress >= middleProgress ? 'flex-col-reverse' : 'flex-col', // Show next unfulfilled target first
     ]}
   >
@@ -203,7 +211,7 @@
         'lg:absolute lg:top-[88px] lg:right-1/3 lg:w-48',
       ]}
     >
-      <h3 class="flex items-center gap-2">
+      <h3 class="flex items-center justify-center gap-2 lg:justify-start">
         <span class="font-bold">{middleProgress}€</span> <span class="font-light">/ Monat</span>
         {#if currentProgress >= middleProgress}
           <svg
@@ -226,7 +234,7 @@
         'lg:absolute lg:top-1/8 lg:right-0 lg:w-48',
       ]}
     >
-      <h3 class="flex items-center gap-2">
+      <h3 class="flex items-center justify-center gap-2 lg:justify-start">
         <span class="font-bold">{targetProgress}€</span> <span class="font-light">/ Monat</span>
         {#if currentProgress >= targetProgress}
           <svg
