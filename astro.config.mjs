@@ -34,7 +34,7 @@ export default defineConfig({
   integrations: [svelte()],
   output: PREVIEW ? 'server' : 'static',
   server: ({ command }) => ({ port: command === 'dev' ? 5173 : 4321 }),
-  trailingSlash: 'never',
+  trailingSlash: 'ignore',
 
   vite: {
     define: {
