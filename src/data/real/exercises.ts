@@ -50,5 +50,9 @@ export async function getExercises(): Promise<Exercise[]> {
 }
 
 async function optimizeImage(src: ImageMetadata) {
-  return await getImage({ formats: ['avif', 'webp'], src, widths: [300, 600, 900] });
+  return await getImage({
+    formats: ['avif', 'webp'],
+    src,
+    widths: [639, 1090, 1390, 1640, 1860, 2048],
+  });
 }
