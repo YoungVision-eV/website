@@ -54,8 +54,10 @@
       >
         <img
           alt=""
-          src={event.image.src.src}
-          {...event.image.src.attributes}
+          src={event.image.src}
+          srcset={event.image.srcSet.attribute}
+          {...event.image.attributes}
+          sizes="(min-width: 1360px) 540px, (min-width: 1040px) 40vw, calc(100vw - 32px)"
           class="max-h-64 w-full rounded-t-2xl object-cover"
         />
         <div class="flex p-6">

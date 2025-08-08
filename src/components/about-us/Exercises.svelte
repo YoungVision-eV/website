@@ -24,6 +24,7 @@
             srcSet={exercise.image.srcSet.attribute}
             {...exercise.image.attributes}
             alt={exercise.title}
+            sizes="(min-width: 1360px) 455px, calc(35.67vw - 23px)"
             class="bg-light-green aspect-square h-auto w-full rounded-full object-cover object-center"
           />
         </div>
@@ -40,6 +41,8 @@
             <img
               src={exercise.image.src}
               alt={exercise.title}
+              {...exercise.image.attributes}
+              sizes="(min-width: 1360px) 455px, calc(35.67vw - 23px)"
               class="bg-light-green aspect-square h-auto w-full rounded-full object-cover object-center"
             />
           </div>
@@ -59,6 +62,8 @@
           <img
             src={exercise.image.src}
             alt={exercise.title}
+            {...exercise.image.attributes}
+            sizes="(min-width: 1360px) 455px, calc(35.67vw - 23px)"
             class="bg-light-green aspect-square h-auto w-full rounded-full object-cover object-center"
           />
         </div>
@@ -75,6 +80,8 @@
             <img
               src={exercise.image.src}
               alt={exercise.title}
+              {...exercise.image.attributes}
+              sizes="(min-width: 1360px) 455px, calc(35.67vw - 23px)"
               class="bg-light-green aspect-square h-auto w-full rounded-full object-cover object-center"
             />
           </div>
@@ -116,6 +123,8 @@
         <img
           src={exercise.image.src}
           alt={exercise.title}
+          {...exercise.image.attributes}
+          sizes="(min-width: 1360px) 455px, calc(35.67vw - 23px)"
           class="bg-light-green aspect-square h-auto w-full rounded-full object-cover object-center"
         />
       </div>

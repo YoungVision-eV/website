@@ -13,24 +13,36 @@ import { Image } from 'astro:assets';
 <Layout title="YoungVision e.V. - About Us">
   <div class="relative overflow-hidden">
     <Image
-      alt="YoungVision Logo"
+      alt=""
       class="absolute top-[-5rem] right-[-5rem] -z-10 h-[19rem] w-auto lg:top-[-7rem] lg:right-[-7rem] lg:h-[32rem]"
+      role="presentation"
+      sizes="(min-width: 1040px) 32rem, 19rem"
       src={Background}
+      widths={[304, 608, 912, 1024, 1310, 1536]}
     />
     <Image
-      alt="YoungVision Logo"
+      alt=""
       class="absolute top-[7rem] left-[-7rem] -z-10 h-[14rem] w-auto lg:top-[17rem] lg:left-[-14rem] lg:h-[25rem]"
+      role="presentation"
+      sizes="(min-width: 1040px) 400px, 224px"
       src={Background}
+      widths={[448, 800, 1020, 1200]}
     />
     <Image
-      alt="YoungVision Logo"
+      alt=""
       class="absolute right-[-4rem] bottom-[-7rem] -z-10 h-[14rem] w-auto"
+      role="presentation"
+      sizes="224px"
       src={Background}
+      widths={[448, 672]}
     />
     <Image
-      alt="YoungVision Logo"
+      alt=""
       class="absolute top-[70rem] left-[-4rem] -z-10 h-[14rem] w-auto lg:top-[43rem] lg:left-[5rem]"
+      role="presentation"
+      sizes="224px"
       src={Background}
+      widths={[448, 672]}
     />
     <VisionMissionValues />
     <History />

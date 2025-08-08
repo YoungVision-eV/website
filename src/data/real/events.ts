@@ -81,7 +81,7 @@ export async function get3CalendarEntries(): Promise<
       alt: r!.alt,
       src: await getImage({
         ...r!,
-        widths: [300, 622, 980, 1244, 1560, 1810, 2040, r!.width],
+        widths: [300, 721, 920, 1080, 1244, 1430, 1590, 1730, 1866, 1960, 2040, r!.width],
       }),
     })),
     link: event.slug ? `/events/${event.slug}` : null,
@@ -118,7 +118,10 @@ export async function getAllYearlyEvents(): Promise<YearlyEvent[]> {
     {
       day: '2',
       for_all: true,
-      image: { src: await getImage({ src: EventImage1 }) },
+      image: {
+        alt: 'Eine Gruppe Menschen sitzt in einer Reihe.',
+        ...(await getYearlyEventImage(EventImage1)),
+      },
       month: 'September',
       short_description:
         'Unsere jährliche Sommerveranstaltung ist für viele das Highlight des Jahres!',
@@ -128,7 +131,10 @@ export async function getAllYearlyEvents(): Promise<YearlyEvent[]> {
     {
       day: '31',
       for_all: true,
-      image: { src: await getImage({ src: EventImage2 }) },
+      image: {
+        alt: 'Menschen sitzen an einem Holztisch und spielen ein Kartenspiel im Garten.',
+        ...(await getYearlyEventImage(EventImage2)),
+      },
       month: 'Dezember',
       short_description:
         'Lass uns das vergangene Jahr ausklingen lassen und gemeinsam in das neue Jahr starten!',
@@ -138,7 +144,10 @@ export async function getAllYearlyEvents(): Promise<YearlyEvent[]> {
     {
       day: '4',
       for_all: false,
-      image: { src: await getImage({ src: EventImage3 }) },
+      image: {
+        alt: 'Ein großer Kuschelhaufen liegt vor einer Frau die Ukulele spielt.',
+        ...(await getYearlyEventImage(EventImage3)),
+      },
       month: 'April',
       short_description:
         'Werde Mitglied und entscheide gemeinsam über die Zukunft von YoungVision!',
@@ -165,4 +174,8 @@ export async function getEventImage(
       width: image.width!,
     };
   }
+}
+
+async function getYearlyEventImage(src: Parameters<typeof getImage>[0]['src']) {
+  return getImage({ src, widths: [665, 1080, 1380, 1620, 1810, 1980] });
 }

@@ -39,7 +39,9 @@ const members = [
             <Image
               alt={member.name}
               class="aspect-square h-auto w-full rounded-full bg-white object-cover object-center"
+              sizes="(min-width: 1340px) 208px, (min-width: 1040px) calc(21.43vw - 75px), calc(50vw - 30px)"
               src={member.image}
+              widths={[208, 416, 960]}
             />
             <h2 class="mt-6 font-sans font-bold lg:mt-5 lg:text-xl">{member.name}</h2>
             <p class="lg:mt-3">{member.job}</p>

@@ -11,14 +11,18 @@ import { Image } from 'astro:assets';
   <Image
     alt="Background"
     class="absolute top-0 left-0 -z-10 h-full w-full object-cover opacity-40"
+    sizes="(min-width: 1780px) 100vw, (min-width: 1040px) 1858px, (min-width: 520px) calc(-57.6vw + 1916px), calc(-204vw + 2660px)"
     src={Background}
+    widths={[700, 1330, 1530, 1704, 1920, 2048, 3072, 4930]}
   />
 
   <div class="mx-auto max-w-[80rem] flex-col items-center px-4 lg:flex lg:px-44">
     <Image
       alt="Leute sitzen im Kreis auf dem Boden"
       class="h-48 w-full bg-gray-300 object-cover object-bottom lg:h-[27rem] lg:w-[50rem]"
+      sizes="(min-width: 1240px) 800px, (min-width: 1040px) calc(62.22vw + 41px), (min-width: 380px) calc(100vw - 32px), calc(65vw + 94px)"
       src={BenefitsImage}
+      widths={[290, 800, 984, 1330, 1600, 1840, 2048]}
     />
     <h2 class="mt-10 text-center font-serif text-2xl font-bold lg:hidden">Werde Mitglied</h2>
     <h2 class="mt-20 hidden text-center font-serif text-4xl font-bold lg:block">
@@ -67,16 +71,20 @@ import { Image } from 'astro:assets';
       text="Mitglied werden"
     />
 
-    <div class="mt-10 flex w-full flex-col gap-4 lg:mt-20 lg:h-[22rem] lg:flex-row">
+    <div class="mt-10 grid w-full grid-cols-1 gap-4 lg:mt-20 lg:h-[22rem] lg:grid-cols-2">
       <Image
-        alt="YoungVision"
+        alt="Zwei Menschen liegen schlafend auf der Wiese. Auf der einen Person schläft eine weiße Katze."
         class="h-48 w-full bg-gray-300 object-cover lg:h-full"
+        sizes="(min-width: 1040px) 470px, calc(100vw - 32px)"
         src={Image1}
+        widths={[665, 1056, 1350, 1584, 1790, 1980, 2048]}
       />
       <Image
-        alt="YoungVision"
+        alt="Eine Frau mit Tatoo auf ihrem Rücken schreibt das Word 'Open Stage' auf ein Flip-Chart"
         class="h-48 w-full bg-gray-300 object-cover lg:h-full"
+        sizes="(min-width: 1040px) 470px, calc(100vw - 32px)"
         src={Image2}
+        widths={[665, 1056, 1350, 1584, 1790, 1980, 2048]}
       />
     </div>
   </div>
