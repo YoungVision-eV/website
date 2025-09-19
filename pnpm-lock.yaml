@@ -52,8 +52,8 @@ importers:
         specifier: 1.49.1
         version: 1.49.1
       '@tailwindcss/typography':
-        specifier: 0.5.17
-        version: 0.5.17(tailwindcss@4.0.6)
+        specifier: 0.5.18
+        version: 0.5.18(tailwindcss@4.0.6)
       '@tailwindcss/vite':
         specifier: 4.0.6
         version: 4.0.6(vite@6.3.4(@types/node@22.17.1)(jiti@2.4.2)(lightningcss@1.29.1)(yaml@2.7.0))
@@ -994,8 +994,8 @@ packages:
     resolution: {integrity: sha512-lVyKV2y58UE9CeKVcYykULe9QaE1dtKdxDEdrTPIdbzRgBk6bdxHNAoDqvcqXbIGXubn3VOl1O/CFF77v/EqSA==}
     engines: {node: '>= 10'}
 
-  '@tailwindcss/typography@0.5.17':
-    resolution: {integrity: sha512-Ll/jGz1flUVaSxK/Y7OqT+kHOhrbDpSXpAszhEBCE82yTcs47bJJLI0MB5Peoh9TgBOMUjJpsGez9MECzXLw9Q==}
+  '@tailwindcss/typography@0.5.18':
+    resolution: {integrity: sha512-dDIgwZOlf+tVkZ7A029VvQ1+ngKATENDjMEx2N35s2yPjfTS05RWSM8ilhEWSa5DMJ6ci2Ha9WNZEd2GQjrdQg==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders || >=4.0.0-alpha.20 || >=4.0.0-beta.1'
 
@@ -4089,7 +4089,7 @@ snapshots:
       '@tailwindcss/oxide-win32-arm64-msvc': 4.0.6
       '@tailwindcss/oxide-win32-x64-msvc': 4.0.6
 
-  '@tailwindcss/typography@0.5.17(tailwindcss@4.0.6)':
+  '@tailwindcss/typography@0.5.18(tailwindcss@4.0.6)':
     dependencies:
       postcss-selector-parser: 6.0.10
       tailwindcss: 4.0.6
