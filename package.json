@@ -59,7 +59,7 @@
     "prettier": "3.6.2",
     "prettier-plugin-astro": "0.14.1",
     "prettier-plugin-svelte": "3.4.0",
-    "prettier-plugin-tailwindcss": "0.7.0",
+    "prettier-plugin-tailwindcss": "0.7.1",
     "sharp": "0.34.4",
     "svelte": "5.40.1",
     "svelte-check": "4.3.3",
