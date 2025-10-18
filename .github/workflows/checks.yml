@@ -13,7 +13,7 @@ jobs:
     outputs:
       lints: ${{ steps.lints.outputs.value }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: sergeysova/jq-action@v2
         id: lints
         with:
@@ -26,7 +26,7 @@ jobs:
       matrix:
         linter: ${{ fromJSON(needs.define-lints.outputs.lints) }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: pnpm/action-setup@v4
       - name: Setup Node
         uses: actions/setup-node@v4
