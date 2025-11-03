@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "3.3.1",
-    "@eslint/js": "9.39.0",
+    "@eslint/js": "9.39.1",
     "@melt-ui/pp": "0.3.2",
     "@playwright/test": "1.49.1",
     "@tailwindcss/typography": "0.5.19",
@@ -48,7 +48,7 @@
     "astro-eslint-parser": "1.2.2",
     "embla-carousel": "8.6.0",
     "embla-carousel-svelte": "8.6.0",
-    "eslint": "9.39.0",
+    "eslint": "9.39.1",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-astro": "1.4.0",
     "eslint-plugin-perfectionist": "4.15.1",
