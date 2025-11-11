@@ -62,7 +62,7 @@
     "prettier-plugin-tailwindcss": "0.7.1",
     "sharp": "0.34.5",
     "svelte": "5.43.5",
-    "svelte-check": "4.3.3",
+    "svelte-check": "4.3.4",
     "svelte-eslint-parser": "1.4.0",
     "svelte-markdown": "0.4.1",
     "svelte-sequential-preprocessor": "2.0.2",
