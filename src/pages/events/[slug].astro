@@ -87,13 +87,11 @@ const locationPictures = [
           </div>
           <h3 class="mt-8 font-serif text-xl font-bold">Wo</h3>
           <!-- TODO: Add link from CMS -->
-          <a class="mt-3 text-center underline" href="https://maps.app.goo.gl/kak1RX8pJwZGnFFD7">
-            <address class="not-italic">
-              {event.address.street}<br />
-              {event.address.zip}
-              {event.address.city}
-            </address>
-          </a>
+          <address class="mt-3 text-center not-italic">
+            {event.address.street}<br />
+            {event.address.zip}
+            {event.address.city}
+          </address>
         </div>
 
         <div class="flex flex-col items-center">
@@ -141,12 +139,16 @@ const locationPictures = [
           <p set:html={event.content_html} />
         </div>
 
-        <Button
-          class="mt-12 uppercase lg:mt-8"
-          color="dark"
-          href={event.registrationLink}
-          text="Jetzt Anmelden"
-        />
+        {
+          event.registrationLink && (
+            <Button
+              class="mt-12 uppercase lg:mt-8"
+              color="dark"
+              href={event.registrationLink}
+              text="Jetzt Anmelden"
+            />
+          )
+        }
       </div>
     </div>
 
@@ -188,30 +190,34 @@ const locationPictures = [
         )
       }
       <!-- TODO: Allow different locations than Rosow -->
-      <div class="py-12">
-        <h2 class="font-serif text-2xl font-bold lg:text-4xl">Veranstaltungsort Rosow</h2>
-        <p class="mt-3">Der Forschungsraum findet im idyllischen Rosow statt.</p>
-        <p>Vegane Verpflegung und Unterkunft sind wie immer inklusive.</p>
-        <div class="mt-4 grid grid-cols-1 lg:mt-8 lg:grid-cols-3">
-          {
-            locationPictures.map((image) => (
-              <Image
-                alt={image.alt}
-                class="aspect-square w-full object-cover"
-                sizes="(min-width: 1024px) 310px, 100vw"
-                src={image.src}
-                widths={[310, 400, 540, 720, 1024]}
+      {
+        event.slug != 'silvester-2025' && (
+          <div class="py-12">
+            <h2 class="font-serif text-2xl font-bold lg:text-4xl">Veranstaltungsort Rosow</h2>
+            <p class="mt-3">Der Forschungsraum findet im idyllischen Rosow statt.</p>
+            <p>Vegane Verpflegung und Unterkunft sind wie immer inklusive.</p>
+            <div class="mt-4 grid grid-cols-1 lg:mt-8 lg:grid-cols-3">
+              {locationPictures.map((image) => (
+                <Image
+                  alt={image.alt}
+                  class="aspect-square w-full object-cover"
+                  sizes="(min-width: 1024px) 310px, 100vw"
+                  src={image.src}
+                  widths={[310, 400, 540, 720, 1024]}
+                />
+              ))}
+            </div>
+            {event.registrationLink && (
+              <Button
+                class="mt-12 uppercase lg:mt-8"
+                color="dark"
+                href={event.registrationLink}
+                text="Jetzt Anmelden"
               />
-            ))
-          }
-        </div>
-        <Button
-          class="mt-12 uppercase lg:mt-8"
-          color="dark"
-          href={event.registrationLink}
-          text="Jetzt Anmelden"
-        />
-      </div>
+            )}
+          </div>
+        )
+      }
       {
         event.sponsorLogo && (
           <div class="py-12">
