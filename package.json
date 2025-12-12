@@ -31,7 +31,7 @@
     "astro": "5.7.14",
     "clsx": "2.1.1",
     "qs": "6.14.0",
-    "svelte": "5.45.9",
+    "svelte": "5.45.10",
     "typescript": "5.9.3"
   },
   "devDependencies": {
@@ -61,7 +61,7 @@
     "prettier-plugin-svelte": "3.4.0",
     "prettier-plugin-tailwindcss": "0.7.2",
     "sharp": "0.34.5",
-    "svelte": "5.45.9",
+    "svelte": "5.45.10",
     "svelte-check": "4.3.4",
     "svelte-eslint-parser": "1.4.1",
     "svelte-markdown": "0.4.1",
