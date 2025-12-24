@@ -31,7 +31,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 24
           cache: 'pnpm'
       # custom matchers HAVE to be named $linter-matcher.json with $linter beinb the part of the lint:$linter script in package.json
       - name: 'Add custom matcher' # see https://github.com/actions/setup-node/issues/403
