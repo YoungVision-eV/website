@@ -94,8 +94,8 @@ importers:
         specifier: 3.13.1
         version: 3.13.1(eslint@9.39.2(jiti@2.4.2))(svelte@5.46.1)
       git-format-staged:
-        specifier: 3.1.1
-        version: 3.1.1
+        specifier: 3.1.2
+        version: 3.1.2
       globals:
         specifier: 16.5.0
         version: 16.5.0
@@ -1786,8 +1786,8 @@ packages:
     resolution: {integrity: sha512-sTSfBjoXBp89JvIKIefqw7U2CCebsc74kiY6awiGogKtoSGbgjYE/G/+l9sF3MWFPNc9IcoOC4ODfKHfxFmp0g==}
     engines: {node: '>= 0.4'}
 
-  git-format-staged@3.1.1:
-    resolution: {integrity: sha512-P749fkktaiAchFZKR7bgdvruzhvbcIDr1uRBrS9/Wdimb7wH1Twchz9gOixj8tUaHVMuXY/ckDojfOwV6AxgPA==}
+  git-format-staged@3.1.2:
+    resolution: {integrity: sha512-Rnwj9+Te/EEi9zLQHotGYksMHAhYH62MUembu2QfBujcLACYyk3FkHEKldZxFjNN7MpRXC1/OPCcT6QhaFBuLg==}
     hasBin: true
 
   github-slugger@2.0.0:
@@ -5055,7 +5055,7 @@ snapshots:
       dunder-proto: 1.0.1
       es-object-atoms: 1.1.1
 
-  git-format-staged@3.1.1: {}
+  git-format-staged@3.1.2: {}
 
   github-slugger@2.0.0: {}
 
