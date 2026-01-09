@@ -23,12 +23,12 @@
     "prepare": "node .husky/install.mjs"
   },
   "dependencies": {
-    "@astrojs/check": "0.9.5",
-    "@astrojs/node": "9.2.2",
-    "@astrojs/svelte": "7.0.13",
+    "@astrojs/check": "0.9.6",
+    "@astrojs/node": "9.5.1",
+    "@astrojs/svelte": "7.2.5",
     "@astrojs/tailwind": "6.0.2",
     "@melt-ui/svelte": "0.86.6",
-    "astro": "5.7.14",
+    "astro": "5.16.8",
     "clsx": "2.1.1",
     "qs": "6.14.1",
     "svelte": "5.46.1",
