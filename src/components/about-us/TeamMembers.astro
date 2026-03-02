@@ -1,35 +1,33 @@
 ---
-import EmmaPortrait from '@assets/team-members/emma-portrait.png';
-import JakobPortrait from '@assets/team-members/jakob-portait.jpeg';
-import JonasPortrait from '@assets/team-members/jonas-portrait.jpeg';
+import PlaceholderPortrait from '@assets/team-members/profile.svg';
 import RebeccaPortrait from '@assets/team-members/rebecca-portrait.jpeg';
 import { Image } from 'astro:assets';
 
 const members = [
   {
-    image: EmmaPortrait,
-    job: 'Design, ÖA',
-    name: 'Emma',
+    image: PlaceholderPortrait,
+    job: '',
+    name: 'Nika',
   },
   {
-    image: JakobPortrait,
-    job: 'Finanzen, Events',
-    name: 'Jakob',
+    image: PlaceholderPortrait,
+    job: '',
+    name: 'Lena',
   },
   {
     image: RebeccaPortrait,
-    job: 'ÖA, Events',
+    job: '',
     name: 'Rebecca',
   },
   {
-    image: JonasPortrait,
-    job: 'IT, Datenschutz',
-    name: 'Jonas',
+    image: PlaceholderPortrait,
+    job: '',
+    name: 'Anton',
   },
 ];
 ---
 
-<section class="bg-light-green py-14 lg:pt-20 lg:pb-36">
+<section class="bg-light-green py-14 lg:py-20">
   <div class="mx-auto max-w-[80rem] px-5 lg:px-20">
     <h1 class="font-serif text-3xl font-bold">Das Team</h1>
     <div class="mt-14 grid grid-cols-2 gap-x-5 gap-y-14 lg:grid-cols-4 lg:gap-x-24">
@@ -47,5 +45,6 @@ const members = [
         ))
       }
     </div>
+    <p class="pt-4 italic">Das ist nur der Vereinsvorstand. Zum Team gehören noch viele mehr.</p>
   </div>
 </section>
