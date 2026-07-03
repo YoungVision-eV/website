@@ -40,7 +40,7 @@ export async function getDonationMethods() {
       buttonAtEnd: true,
       description: 'Du hast Lust deine Expertise mit uns zu teilen?',
       extraText:
-        'Wir suchen Unterstützung für folgende Bereiche\n- Supervision\n- Kassenprüfer\n- Steuerberatung\n- Therapeutische Begleitung bei Events\n\nWir freuen uns auf deine Kontaktaufnahme zu [kontakt@youngvision.org](mailto:kontakt@youngvision.org)',
+        'Wir suchen Unterstützung für folgende Bereiche\n- Supervision\n- Kassenprüfung\n- Steuerberatung\n- Therapeutische Begleitung bei Events\n\nWir freuen uns auf deine Kontaktaufnahme zu [kontakt@youngvision.org](mailto:kontakt@youngvision.org)',
       icon: await optimizeImage(HeadLightbulb),
       image: await optimizeImage(ExpertiseImage),
       text: 'Du hast Lust YoungVision mit deiner Expertise voranzubringen?',
