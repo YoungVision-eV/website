@@ -1,18 +1,18 @@
 ---
 import ProjectBackground1 from '@assets/events/projects-bg-lg-1.jpg';
 import ProjectBackground2 from '@assets/events/projects-bg-lg-2.jpg';
-import Calendar from '@components/Calendar.svelte';
 import { eventData } from '@data';
 import { Image } from 'astro:assets';
+
+import EventsGrid from './EventsGrid.astro';
 
 const events = await eventData.get3CalendarEntries();
 ---
 
-<section class="relative mt-14">
+<section class="relative my-14">
   <div class="not-sr-only absolute -z-10 mt-16">
     <Image alt="" src={ProjectBackground1} />
   </div>
-</section>
 <div class="mx-auto mb-10 max-w-[80rem] px-4 lg:mb-16 lg:px-20">
   <h2 class="font-serif text-2xl font-bold">Unsere nächsten Veranstaltungen</h2>
   <p class="mt-3 max-w-prose lg:mt-6">
@@ -26,4 +26,5 @@ const events = await eventData.get3CalendarEntries();
   <Image alt="" src={ProjectBackground2} />
 </div>
 
-<Calendar client:visible events={events} />
+<EventsGrid events={events}/>
+</section>

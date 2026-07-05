@@ -1,0 +1,38 @@
+---
+import type { EventCalendarEntry } from '@data';
+
+interface Props {
+  events: EventCalendarEntry[];
+}
+const { events } = Astro.props;
+
+const TODAY = new Date();
+
+function relativeDate(date: Date): 'Demnächst' | 'Vorbei' {
+  if (date < TODAY) {
+    return 'Vorbei';
+  }
+  return 'Demnächst';
+}
+---
+
+<div class="mx-auto grid max-w-[80rem] grid-cols-1 gap-4 px-4 lg:grid-cols-3 lg:px-20">
+  {
+    events.map((event) => (
+      <a class="rounded-lg bg-yellow-500/50 flex flex-col" href={event.link}>
+        <img
+          alt={event.image.alt}
+          class="h-80 rounded-t-lg object-cover"
+          src={event.image.src.src}
+          srcset={event.image.src.srcSet.attribute}
+          {...event.image.src.attributes}
+        />
+        <div class="flex-1 flex flex-col h-fit justify-between p-4">
+          <h3 class="font-serif text-2xl font-bold">{event.title}</h3>
+          <p>{event.description}</p>
+          <span class="font-serif pt-2 text-2xl font-bold">{event.date.getDate()}. {event.date.toLocaleString('de-DE', { month: 'short' })} {event.date.getFullYear()}</span>
+        </div>
+      </a>
+    ))
+  }
+</div>
