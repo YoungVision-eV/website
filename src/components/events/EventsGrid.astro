@@ -7,12 +7,45 @@ interface Props {
 const { events } = Astro.props;
 
 const TODAY = new Date();
+const CURRENT_YEAR = TODAY.getFullYear();
 
 function relativeDate(date: Date): 'Demnächst' | 'Vorbei' {
   if (date < TODAY) {
     return 'Vorbei';
   }
   return 'Demnächst';
+}
+
+function formatRange(start: Date, end?: Date): string {
+  const startDay = start.getDate();
+  const startMonth = start.toLocaleString('de-DE', { month: 'short' });
+  const startYearStr = String(start.getFullYear()).slice(-2);
+
+  // No end date (or same day): show a single date.
+  if (!end || end.toDateString() === start.toDateString()) {
+    const suffix = start.getFullYear() !== CURRENT_YEAR ? ` ${startYearStr}` : '';
+    return `${startDay}. ${startMonth}${suffix}`;
+  }
+
+  const endDay = end.getDate();
+  const endMonth = end.toLocaleString('de-DE', { month: 'short' });
+  const endYearStr = String(end.getFullYear()).slice(-2);
+
+  const sameYear = start.getFullYear() === end.getFullYear();
+  const showYear = sameYear ? start.getFullYear() !== CURRENT_YEAR : true;
+
+  if (startMonth === endMonth && sameYear) {
+    // 2. - 5. Jun
+    return `${startDay}. - ${endDay}. ${endMonth}${showYear ? ` ${endYearStr}` : ''}`;
+  }
+
+  if (sameYear) {
+    // 30. Mai - 3. Jun [YY]
+    return `${startDay}. ${startMonth} - ${endDay}. ${endMonth}${showYear ? ` ${endYearStr}` : ''}`;
+  }
+
+  // Spans multiple years: include both years.
+  return `${startDay}. ${startMonth} ${startYearStr} - ${endDay}. ${endMonth} ${endYearStr}`;
 }
 ---
 
@@ -35,8 +68,7 @@ function relativeDate(date: Date): 'Demnächst' | 'Vorbei' {
           <p>{event.description}</p>
           <span class="pt-2 flex justify-between items-end">
             <div class="font-serif text-2xl font-bold ">
-              {event.date.getDate()}. {event.date.toLocaleString('de-DE', { month: 'short' })}{' '}
-              {event.date.getFullYear()}
+              {formatRange(event.date, event.end)}
             </div>
             {event.link && <div class="hover:underline">Mehr Infos &gt;</div>}
           </span>

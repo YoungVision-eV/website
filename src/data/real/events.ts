@@ -76,6 +76,7 @@ export async function get3CalendarEntries(): Promise<
   }
   const optimizedEvents = events.map(async (event) => ({
     date: new Date(event.start),
+    end: new Date(event.end),
     description: event.shortDescription,
     image: await getEventImage(event.calendarCover.value).then(async (r) => ({
       alt: r!.alt,
