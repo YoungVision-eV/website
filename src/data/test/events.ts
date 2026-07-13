@@ -35,8 +35,8 @@ export async function get3CalendarEntries(): Promise<
   return [
     {
       date: new Date(1999, 6, 10),
-      end: new Date(1999, 6, 13),
       description: 'This event covers the test case for past events',
+      end: new Date(1999, 6, 13),
       image: {
         alt: '',
         src: await getImage({ src: thirdEventImage }),
@@ -46,8 +46,8 @@ export async function get3CalendarEntries(): Promise<
     },
     {
       date: new Date(2999, 10, 2),
-      end: new Date(2999, 10, 5),
       description: 'This event will always (until the year 2999) be in the future.',
+      end: new Date(2999, 10, 5),
       image: {
         alt: '',
         src: await getImage({ src: calendarCoverImage }),
@@ -57,8 +57,8 @@ export async function get3CalendarEntries(): Promise<
     },
     {
       date: new Date(3024, 0, 28),
-      end: new Date(3024, 1, 3),
       description: 'This is test data. Test 1 2 3. Test test.',
+      end: new Date(3024, 1, 3),
       image: {
         alt: '',
         src: await getImage({ src: pastEvent }),
