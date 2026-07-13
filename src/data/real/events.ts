@@ -26,6 +26,7 @@ type EventRequest = {
   where: {
     [key in keyof EventCMS]?: {
       equals?: EventCMS[key];
+      exists?: boolean;
       greater_than?: EventCMS[key];
       less_than?: EventCMS[key];
       not_equals?: EventCMS[key];
@@ -104,11 +105,23 @@ export async function get3CalendarEntries(): Promise<
 }
 
 export async function getAllPages(): Promise<EventPage[]> {
-  const response = await fetch(`${process.env.CMS_URL}/api/events?draft=${DRAFT}`);
+  const request: EventRequest = {
+    draft: DRAFT,
+    where: {
+      slug: {
+        exists: true,
+      },
+    },
+  };
+  if (!DRAFT) {
+    request.where._status = {
+      equals: 'published',
+    };
+  }
+  const response = await fetch(`${process.env.CMS_URL}/api/events?${qs.stringify(request)}`);
   const data = await response.json();
   const events = data.docs as EventCMS[];
-  const eventsWithSlug = events.filter((event) => event.slug);
-  const promises = eventsWithSlug.map(async (event) => ({
+  const promises = events.map(async (event) => ({
     ...event,
     end: new Date(event.end),
     heroImage: await getEventImage(event.heroImage?.value),
