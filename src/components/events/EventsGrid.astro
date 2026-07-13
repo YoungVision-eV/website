@@ -59,7 +59,7 @@ function formatRange(start: Date, end?: Date): string {
         <div class="flex h-fit flex-1 flex-col justify-between p-4">
           <h3 class="font-serif text-2xl font-bold">{event.title}</h3>
           <p>{event.description}</p>
-          <span class="flex items-end justify-between pt-2">
+          <span class="flex flex-wrap items-center justify-between pt-2">
             <div class="font-serif text-2xl font-bold">{formatRange(event.date, event.end)}</div>
             {event.link && <div class="hover:underline">Mehr Infos &gt;</div>}
           </span>

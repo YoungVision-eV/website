@@ -25,8 +25,10 @@ type EventRequest = {
   sort?: `-${keyof EventCMS}` | keyof EventCMS;
   where: {
     [key in keyof EventCMS]?: {
+      equals?: EventCMS[key];
       greater_than?: EventCMS[key];
       less_than?: EventCMS[key];
+      not_equals?: EventCMS[key];
     };
   };
 };
@@ -48,6 +50,11 @@ export async function get3CalendarEntries(): Promise<
       },
     },
   };
+  if (!DRAFT) {
+    request.where._status = {
+      equals: 'published',
+    };
+  }
   console.log(request);
   console.log(`${process.env.CMS_URL}/api/events?${qs.stringify(request)}`);
   const response = await fetch(`${process.env.CMS_URL}/api/events?${qs.stringify(request)}`);
@@ -65,6 +72,11 @@ export async function get3CalendarEntries(): Promise<
         },
       },
     };
+    if (!DRAFT) {
+      request2.where._status = {
+        equals: 'published',
+      };
+    }
     const pastEventsResponse = await fetch(
       `${process.env.CMS_URL}/api/events?${qs.stringify(request2)}`,
     );
