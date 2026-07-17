@@ -25,8 +25,11 @@ type EventRequest = {
   sort?: `-${keyof EventCMS}` | keyof EventCMS;
   where: {
     [key in keyof EventCMS]?: {
+      equals?: EventCMS[key];
+      exists?: boolean;
       greater_than?: EventCMS[key];
       less_than?: EventCMS[key];
+      not_equals?: EventCMS[key];
     };
   };
 };
@@ -48,6 +51,11 @@ export async function get3CalendarEntries(): Promise<
       },
     },
   };
+  if (!DRAFT) {
+    request.where._status = {
+      equals: 'published',
+    };
+  }
   console.log(request);
   console.log(`${process.env.CMS_URL}/api/events?${qs.stringify(request)}`);
   const response = await fetch(`${process.env.CMS_URL}/api/events?${qs.stringify(request)}`);
@@ -65,6 +73,11 @@ export async function get3CalendarEntries(): Promise<
         },
       },
     };
+    if (!DRAFT) {
+      request2.where._status = {
+        equals: 'published',
+      };
+    }
     const pastEventsResponse = await fetch(
       `${process.env.CMS_URL}/api/events?${qs.stringify(request2)}`,
     );
@@ -77,6 +90,7 @@ export async function get3CalendarEntries(): Promise<
   const optimizedEvents = events.map(async (event) => ({
     date: new Date(event.start),
     description: event.shortDescription,
+    end: new Date(event.end),
     image: await getEventImage(event.calendarCover.value).then(async (r) => ({
       alt: r!.alt,
       src: await getImage({
@@ -91,11 +105,23 @@ export async function get3CalendarEntries(): Promise<
 }
 
 export async function getAllPages(): Promise<EventPage[]> {
-  const response = await fetch(`${process.env.CMS_URL}/api/events?draft=${DRAFT}`);
+  const request: EventRequest = {
+    draft: DRAFT,
+    where: {
+      slug: {
+        exists: true,
+      },
+    },
+  };
+  if (!DRAFT) {
+    request.where._status = {
+      equals: 'published',
+    };
+  }
+  const response = await fetch(`${process.env.CMS_URL}/api/events?${qs.stringify(request)}`);
   const data = await response.json();
   const events = data.docs as EventCMS[];
-  const eventsWithSlug = events.filter((event) => event.slug);
-  const promises = eventsWithSlug.map(async (event) => ({
+  const promises = events.map(async (event) => ({
     ...event,
     end: new Date(event.end),
     heroImage: await getEventImage(event.heroImage?.value),

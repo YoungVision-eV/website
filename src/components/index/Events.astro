@@ -1,6 +1,6 @@
 ---
 import Button from '@components/Button.astro';
-import Calendar from '@components/Calendar.svelte';
+import EventsGrid from '@components/events/EventsGrid.astro';
 import { eventData } from '@data';
 const events = await eventData.get3CalendarEntries();
 ---
@@ -10,7 +10,7 @@ const events = await eventData.get3CalendarEntries();
     <h2 class="font-serif text-3xl font-bold lg:text-4xl">Unsere Events</h2>
   </div>
   <div class="mt-6 lg:mt-14">
-    <Calendar client:load events={events} />
+    <EventsGrid events={events} />
     <div class="mx-auto mt-10 max-w-[80rem] px-5 lg:mt-12 lg:px-20">
       <div class="justify-between gap-x-10 lg:flex">
         <p class="text-justify">

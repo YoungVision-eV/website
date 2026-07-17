@@ -10,6 +10,7 @@ import { testInstagramData } from './test/instagram.ts';
 export interface EventCalendarEntry {
   date: Date;
   description: string;
+  end?: Date;
   image: { alt: string; src: GetImageResult };
   link?: string;
   title: string;

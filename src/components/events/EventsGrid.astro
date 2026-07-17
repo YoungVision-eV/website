@@ -1,0 +1,70 @@
+---
+import type { EventCalendarEntry } from '@data';
+
+interface Props {
+  events: EventCalendarEntry[];
+}
+const { events } = Astro.props;
+
+const TODAY = new Date();
+const CURRENT_YEAR = TODAY.getFullYear();
+
+function formatRange(start: Date, end?: Date): string {
+  const startDay = start.getDate();
+  const startMonth = start.toLocaleString('de-DE', { month: 'short' });
+  const startYearStr = String(start.getFullYear()).slice(-2);
+
+  // No end date (or same day): show a single date.
+  if (!end || end.toDateString() === start.toDateString()) {
+    const suffix = start.getFullYear() !== CURRENT_YEAR ? ` ${startYearStr}` : '';
+    return `${startDay}. ${startMonth}${suffix}`;
+  }
+
+  const endDay = end.getDate();
+  const endMonth = end.toLocaleString('de-DE', { month: 'short' });
+  const endYearStr = String(end.getFullYear()).slice(-2);
+
+  const sameYear = start.getFullYear() === end.getFullYear();
+  const showYear = sameYear ? start.getFullYear() !== CURRENT_YEAR : true;
+
+  if (startMonth === endMonth && sameYear) {
+    // 2. - 5. Jun
+    return `${startDay}. - ${endDay}. ${endMonth}${showYear ? ` ${endYearStr}` : ''}`;
+  }
+
+  if (sameYear) {
+    // 30. Mai - 3. Jun [YY]
+    return `${startDay}. ${startMonth} - ${endDay}. ${endMonth}${showYear ? ` ${endYearStr}` : ''}`;
+  }
+
+  // Spans multiple years: include both years.
+  return `${startDay}. ${startMonth} ${startYearStr} - ${endDay}. ${endMonth} ${endYearStr}`;
+}
+---
+
+<div class="mx-auto grid max-w-[80rem] grid-cols-1 gap-4 px-4 lg:grid-cols-3 lg:px-20">
+  {
+    events.map((event) => (
+      <a
+        class={`flex flex-col rounded-lg bg-yellow-700 ${event.date < TODAY && 'grayscale-90'}`}
+        href={event.link}
+      >
+        <img
+          alt={event.image.alt}
+          class={`h-80 rounded-t-lg object-cover`}
+          src={event.image.src.src}
+          srcset={event.image.src.srcSet.attribute}
+          {...event.image.src.attributes}
+        />
+        <div class="flex h-fit flex-1 flex-col justify-between p-4">
+          <h3 class="font-serif text-2xl font-bold">{event.title}</h3>
+          <p>{event.description}</p>
+          <span class="flex flex-wrap items-center justify-between pt-2">
+            <div class="font-serif text-2xl font-bold">{formatRange(event.date, event.end)}</div>
+            {event.link && <div class="hover:underline">Mehr Infos &gt;</div>}
+          </span>
+        </div>
+      </a>
+    ))
+  }
+</div>
