@@ -83,9 +83,8 @@ export async function get3CalendarEntries(): Promise<
     );
     const pastEventsData = await pastEventsResponse.json();
     const pastEvents = pastEventsData.docs as EventCMS[];
-    // Reverse the past events so they appear in the correct order
-    // after we've sorted them in the wrong order to get the most recent ones
-    events = pastEvents.reverse().concat(events);
+    // concat first future then past events both sorted, so the events nearer to today come first and then the events more in the future/past
+    events = events.concat(pastEvents);
   }
   const optimizedEvents = events.map(async (event) => ({
     date: new Date(event.start),
