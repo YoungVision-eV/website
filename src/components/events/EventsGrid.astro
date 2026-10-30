@@ -43,28 +43,26 @@ function formatRange(start: Date, end?: Date): string {
 ---
 
 <div class="mx-auto grid max-w-[80rem] grid-cols-1 gap-4 px-4 lg:grid-cols-3 lg:px-20">
-  {
-    events.map((event) => (
-      <a
-        class={`flex flex-col rounded-lg bg-yellow-700 ${event.date < TODAY && 'grayscale-90'}`}
-        href={event.link}
-      >
-        <img
-          alt={event.image.alt}
-          class={`h-80 rounded-t-lg object-cover`}
-          src={event.image.src.src}
-          srcset={event.image.src.srcSet.attribute}
-          {...event.image.src.attributes}
-        />
-        <div class="flex h-fit flex-1 flex-col justify-between p-4">
-          <h3 class="font-serif text-2xl font-bold">{event.title}</h3>
-          <p>{event.description}</p>
-          <span class="flex flex-wrap items-center justify-between pt-2">
-            <div class="font-serif text-2xl font-bold">{formatRange(event.date, event.end)}</div>
-            {event.link && <div class="hover:underline">Mehr Infos &gt;</div>}
-          </span>
-        </div>
-      </a>
-    ))
-  }
+  {events.map((event) => (
+    <a
+      class={`flex flex-col rounded-lg bg-yellow-700 ${event.date < TODAY && 'grayscale-90'}`}
+      href={event.link}
+    >
+      <img
+        alt={event.image.alt}
+        class={`h-80 rounded-t-lg object-cover`}
+        src={event.image.src.src}
+        srcset={event.image.src.srcSet.attribute}
+        {...event.image.src.attributes}
+      />
+      <div class="flex h-fit flex-1 flex-col justify-between p-4">
+        <h3 class="font-serif text-2xl font-bold">{event.title}</h3>
+        <p>{event.description}</p>
+        <span class="flex flex-wrap items-center justify-between pt-2">
+          <div class="font-serif text-2xl font-bold">{formatRange(event.date, event.end)}</div>
+          {event.link && <div class="hover:underline">Mehr Infos &gt;</div>}
+        </span>
+      </div>
+    </a>
+  ))}
 </div>
