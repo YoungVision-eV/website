@@ -1,7 +1,6 @@
 import type { GetImageResult, ImageMetadata } from 'astro';
 
 import AndreaPortrait from '@assets/testimonials/Portrait-Andrea.jpg';
-import LenaPortrait from '@assets/testimonials/Portrait-Lena.jpeg';
 import { getImage } from 'astro:assets';
 
 export type Testimonial = {
