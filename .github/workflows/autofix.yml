@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   autofix:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
